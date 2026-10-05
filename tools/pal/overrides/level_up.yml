@@ -1,0 +1,471 @@
+# PAL level-up overlay: textures (ver/pal/splat.yaml 'level_up', rom 0x7F2BE0 vram 0x802A1000)
+
+:config:
+  virtual: [0x802A1000, 0x7F2BE0]
+
+heart:
+  { type: TEXTURE, offset: 0x7F2BE0, format: CI4, width: 40, height: 40, symbol: level_up_heart_png }
+heart.pal:
+  { type: TEXTURE, offset: 0x7F2F00, format: TLUT, colors: 16, symbol: level_up_heart_pal }
+flower:
+  { type: TEXTURE, offset: 0x7F2F20, format: CI4, width: 40, height: 40, symbol: level_up_flower_png }
+flower.pal:
+  { type: TEXTURE, offset: 0x7F3240, format: TLUT, colors: 16, symbol: level_up_flower_pal }
+leaves:
+  { type: TEXTURE, offset: 0x7F3260, format: CI4, width: 40, height: 40, symbol: level_up_leaves_png }
+leaves.pal:
+  { type: TEXTURE, offset: 0x7F3580, format: TLUT, colors: 16, symbol: level_up_leaves_pal }
+badge:
+  { type: TEXTURE, offset: 0x7F35A0, format: CI4, width: 40, height: 40, symbol: level_up_badge_png }
+badge.pal:
+  { type: TEXTURE, offset: 0x7F38C0, format: TLUT, colors: 16, symbol: level_up_badge_pal }
+FP:
+  { type: TEXTURE, offset: 0x7F38E0, format: CI4, width: 32, height: 24, symbol: level_up_FP_png }
+FP.pal:
+  { type: TEXTURE, offset: 0x7F3A60, format: TLUT, colors: 16, symbol: level_up_FP_pal }
+BP:
+  { type: TEXTURE, offset: 0x7F3A80, format: CI4, width: 32, height: 24, symbol: level_up_BP_png }
+BP.pal:
+  { type: TEXTURE, offset: 0x7F3C00, format: TLUT, colors: 16, symbol: level_up_BP_pal }
+HP:
+  { type: TEXTURE, offset: 0x7F3C20, format: CI4, width: 32, height: 24, symbol: level_up_HP_png }
+HP.pal:
+  { type: TEXTURE, offset: 0x7F3DA0, format: TLUT, colors: 16, symbol: level_up_HP_pal }
+de_FP:
+  { type: TEXTURE, offset: 0x7F3DC0, format: CI4, width: 32, height: 24, symbol: level_up_de_FP_png }
+de_FP.pal:
+  { type: TEXTURE, offset: 0x7F3F40, format: TLUT, colors: 16, symbol: level_up_de_FP_pal }
+de_BP:
+  { type: TEXTURE, offset: 0x7F3F60, format: CI4, width: 32, height: 24, symbol: level_up_de_BP_png }
+de_BP.pal:
+  { type: TEXTURE, offset: 0x7F40E0, format: TLUT, colors: 16, symbol: level_up_de_BP_pal }
+de_HP:
+  { type: TEXTURE, offset: 0x7F4100, format: CI4, width: 32, height: 24, symbol: level_up_de_HP_png }
+de_HP.pal:
+  { type: TEXTURE, offset: 0x7F4280, format: TLUT, colors: 16, symbol: level_up_de_HP_pal }
+fr_FP:
+  { type: TEXTURE, offset: 0x7F42A0, format: CI4, width: 32, height: 24, symbol: level_up_fr_FP_png }
+fr_FP.pal:
+  { type: TEXTURE, offset: 0x7F4420, format: TLUT, colors: 16, symbol: level_up_fr_FP_pal }
+fr_BP:
+  { type: TEXTURE, offset: 0x7F4440, format: CI4, width: 32, height: 24, symbol: level_up_fr_BP_png }
+fr_BP.pal:
+  { type: TEXTURE, offset: 0x7F45C0, format: TLUT, colors: 16, symbol: level_up_fr_BP_pal }
+fr_HP:
+  { type: TEXTURE, offset: 0x7F45E0, format: CI4, width: 32, height: 24, symbol: level_up_fr_HP_png }
+fr_HP.pal:
+  { type: TEXTURE, offset: 0x7F4760, format: TLUT, colors: 16, symbol: level_up_fr_HP_pal }
+es_FP:
+  { type: TEXTURE, offset: 0x7F4780, format: CI4, width: 32, height: 24, symbol: level_up_es_FP_png }
+es_FP.pal:
+  { type: TEXTURE, offset: 0x7F4900, format: TLUT, colors: 16, symbol: level_up_es_FP_pal }
+es_BP:
+  { type: TEXTURE, offset: 0x7F4920, format: CI4, width: 32, height: 24, symbol: level_up_es_BP_png }
+es_BP.pal:
+  { type: TEXTURE, offset: 0x7F4AA0, format: TLUT, colors: 16, symbol: level_up_es_BP_pal }
+es_HP:
+  { type: TEXTURE, offset: 0x7F4AC0, format: CI4, width: 32, height: 24, symbol: level_up_es_HP_png }
+es_HP.pal:
+  { type: TEXTURE, offset: 0x7F4C40, format: TLUT, colors: 16, symbol: level_up_es_HP_pal }
+digit_0:
+  { type: TEXTURE, offset: 0x7F4C60, format: CI4, width: 8, height: 16, symbol: level_up_digit_0_png }
+digit_0.pal:
+  { type: TEXTURE, offset: 0x7F4CA0, format: TLUT, colors: 16, symbol: level_up_digit_0_pal }
+digit_1:
+  { type: TEXTURE, offset: 0x7F4CC0, format: CI4, width: 8, height: 16, symbol: level_up_digit_1_png }
+digit_1.pal:
+  { type: TEXTURE, offset: 0x7F4D00, format: TLUT, colors: 16, symbol: level_up_digit_1_pal }
+digit_2:
+  { type: TEXTURE, offset: 0x7F4D20, format: CI4, width: 8, height: 16, symbol: level_up_digit_2_png }
+digit_2.pal:
+  { type: TEXTURE, offset: 0x7F4D60, format: TLUT, colors: 16, symbol: level_up_digit_2_pal }
+digit_3:
+  { type: TEXTURE, offset: 0x7F4D80, format: CI4, width: 8, height: 16, symbol: level_up_digit_3_png }
+digit_3.pal:
+  { type: TEXTURE, offset: 0x7F4DC0, format: TLUT, colors: 16, symbol: level_up_digit_3_pal }
+digit_4:
+  { type: TEXTURE, offset: 0x7F4DE0, format: CI4, width: 8, height: 16, symbol: level_up_digit_4_png }
+digit_4.pal:
+  { type: TEXTURE, offset: 0x7F4E20, format: TLUT, colors: 16, symbol: level_up_digit_4_pal }
+digit_5:
+  { type: TEXTURE, offset: 0x7F4E40, format: CI4, width: 8, height: 16, symbol: level_up_digit_5_png }
+digit_5.pal:
+  { type: TEXTURE, offset: 0x7F4E80, format: TLUT, colors: 16, symbol: level_up_digit_5_pal }
+digit_6:
+  { type: TEXTURE, offset: 0x7F4EA0, format: CI4, width: 8, height: 16, symbol: level_up_digit_6_png }
+digit_6.pal:
+  { type: TEXTURE, offset: 0x7F4EE0, format: TLUT, colors: 16, symbol: level_up_digit_6_pal }
+digit_7:
+  { type: TEXTURE, offset: 0x7F4F00, format: CI4, width: 8, height: 16, symbol: level_up_digit_7_png }
+digit_7.pal:
+  { type: TEXTURE, offset: 0x7F4F40, format: TLUT, colors: 16, symbol: level_up_digit_7_pal }
+digit_8:
+  { type: TEXTURE, offset: 0x7F4F60, format: CI4, width: 8, height: 16, symbol: level_up_digit_8_png }
+digit_8.pal:
+  { type: TEXTURE, offset: 0x7F4FA0, format: TLUT, colors: 16, symbol: level_up_digit_8_pal }
+digit_9:
+  { type: TEXTURE, offset: 0x7F4FC0, format: CI4, width: 8, height: 16, symbol: level_up_digit_9_png }
+digit_9.pal:
+  { type: TEXTURE, offset: 0x7F5000, format: TLUT, colors: 16, symbol: level_up_digit_9_pal }
+small_digit_0:
+  { type: TEXTURE, offset: 0x7F5020, format: CI4, width: 8, height: 8, symbol: level_up_small_digit_0_png }
+small_digit_0.pal:
+  { type: TEXTURE, offset: 0x7F5040, format: TLUT, colors: 16, symbol: level_up_small_digit_0_pal }
+small_digit_1:
+  { type: TEXTURE, offset: 0x7F5060, format: CI4, width: 8, height: 8, symbol: level_up_small_digit_1_png }
+small_digit_1.pal:
+  { type: TEXTURE, offset: 0x7F5080, format: TLUT, colors: 16, symbol: level_up_small_digit_1_pal }
+small_digit_2:
+  { type: TEXTURE, offset: 0x7F50A0, format: CI4, width: 8, height: 8, symbol: level_up_small_digit_2_png }
+small_digit_2.pal:
+  { type: TEXTURE, offset: 0x7F50C0, format: TLUT, colors: 16, symbol: level_up_small_digit_2_pal }
+small_digit_3:
+  { type: TEXTURE, offset: 0x7F50E0, format: CI4, width: 8, height: 8, symbol: level_up_small_digit_3_png }
+small_digit_3.pal:
+  { type: TEXTURE, offset: 0x7F5100, format: TLUT, colors: 16, symbol: level_up_small_digit_3_pal }
+small_digit_4:
+  { type: TEXTURE, offset: 0x7F5120, format: CI4, width: 8, height: 8, symbol: level_up_small_digit_4_png }
+small_digit_4.pal:
+  { type: TEXTURE, offset: 0x7F5140, format: TLUT, colors: 16, symbol: level_up_small_digit_4_pal }
+small_digit_5:
+  { type: TEXTURE, offset: 0x7F5160, format: CI4, width: 8, height: 8, symbol: level_up_small_digit_5_png }
+small_digit_5.pal:
+  { type: TEXTURE, offset: 0x7F5180, format: TLUT, colors: 16, symbol: level_up_small_digit_5_pal }
+small_digit_6:
+  { type: TEXTURE, offset: 0x7F51A0, format: CI4, width: 8, height: 8, symbol: level_up_small_digit_6_png }
+small_digit_6.pal:
+  { type: TEXTURE, offset: 0x7F51C0, format: TLUT, colors: 16, symbol: level_up_small_digit_6_pal }
+small_digit_7:
+  { type: TEXTURE, offset: 0x7F51E0, format: CI4, width: 8, height: 8, symbol: level_up_small_digit_7_png }
+small_digit_7.pal:
+  { type: TEXTURE, offset: 0x7F5200, format: TLUT, colors: 16, symbol: level_up_small_digit_7_pal }
+small_digit_8:
+  { type: TEXTURE, offset: 0x7F5220, format: CI4, width: 8, height: 8, symbol: level_up_small_digit_8_png }
+small_digit_8.pal:
+  { type: TEXTURE, offset: 0x7F5240, format: TLUT, colors: 16, symbol: level_up_small_digit_8_pal }
+small_digit_9:
+  { type: TEXTURE, offset: 0x7F5260, format: CI4, width: 8, height: 8, symbol: level_up_small_digit_9_png }
+small_digit_9.pal:
+  { type: TEXTURE, offset: 0x7F5280, format: TLUT, colors: 16, symbol: level_up_small_digit_9_pal }
+small_arrow:
+  { type: TEXTURE, offset: 0x7F52A0, format: CI4, width: 8, height: 8, symbol: level_up_small_arrow_png }
+small_arrow.pal:
+  { type: TEXTURE, offset: 0x7F52C0, format: TLUT, colors: 16, symbol: level_up_small_arrow_pal }
+digit_0.red.pal:
+  { type: TEXTURE, offset: 0x7F52E0, format: TLUT, colors: 16, symbol: level_up_digit_0_red_pal }
+digit_1.red.pal:
+  { type: TEXTURE, offset: 0x7F5300, format: TLUT, colors: 16, symbol: level_up_digit_1_red_pal }
+digit_2.red.pal:
+  { type: TEXTURE, offset: 0x7F5320, format: TLUT, colors: 16, symbol: level_up_digit_2_red_pal }
+digit_3.red.pal:
+  { type: TEXTURE, offset: 0x7F5340, format: TLUT, colors: 16, symbol: level_up_digit_3_red_pal }
+digit_4.red.pal:
+  { type: TEXTURE, offset: 0x7F5360, format: TLUT, colors: 16, symbol: level_up_digit_4_red_pal }
+digit_5.red.pal:
+  { type: TEXTURE, offset: 0x7F5380, format: TLUT, colors: 16, symbol: level_up_digit_5_red_pal }
+digit_6.red.pal:
+  { type: TEXTURE, offset: 0x7F53A0, format: TLUT, colors: 16, symbol: level_up_digit_6_red_pal }
+digit_7.red.pal:
+  { type: TEXTURE, offset: 0x7F53C0, format: TLUT, colors: 16, symbol: level_up_digit_7_red_pal }
+digit_8.red.pal:
+  { type: TEXTURE, offset: 0x7F53E0, format: TLUT, colors: 16, symbol: level_up_digit_8_red_pal }
+digit_9.red.pal:
+  { type: TEXTURE, offset: 0x7F5400, format: TLUT, colors: 16, symbol: level_up_digit_9_red_pal }
+small_digit_0.red.pal:
+  { type: TEXTURE, offset: 0x7F5420, format: TLUT, colors: 16, symbol: level_up_small_digit_0_red_pal }
+small_digit_1.red.pal:
+  { type: TEXTURE, offset: 0x7F5440, format: TLUT, colors: 16, symbol: level_up_small_digit_1_red_pal }
+small_digit_2.red.pal:
+  { type: TEXTURE, offset: 0x7F5460, format: TLUT, colors: 16, symbol: level_up_small_digit_2_red_pal }
+small_digit_3.red.pal:
+  { type: TEXTURE, offset: 0x7F5480, format: TLUT, colors: 16, symbol: level_up_small_digit_3_red_pal }
+small_digit_4.red.pal:
+  { type: TEXTURE, offset: 0x7F54A0, format: TLUT, colors: 16, symbol: level_up_small_digit_4_red_pal }
+small_digit_5.red.pal:
+  { type: TEXTURE, offset: 0x7F54C0, format: TLUT, colors: 16, symbol: level_up_small_digit_5_red_pal }
+small_digit_6.red.pal:
+  { type: TEXTURE, offset: 0x7F54E0, format: TLUT, colors: 16, symbol: level_up_small_digit_6_red_pal }
+small_digit_7.red.pal:
+  { type: TEXTURE, offset: 0x7F5500, format: TLUT, colors: 16, symbol: level_up_small_digit_7_red_pal }
+small_digit_8.red.pal:
+  { type: TEXTURE, offset: 0x7F5520, format: TLUT, colors: 16, symbol: level_up_small_digit_8_red_pal }
+small_digit_9.red.pal:
+  { type: TEXTURE, offset: 0x7F5540, format: TLUT, colors: 16, symbol: level_up_small_digit_9_red_pal }
+small_arrow.red.pal:
+  { type: TEXTURE, offset: 0x7F5560, format: TLUT, colors: 16, symbol: level_up_small_arrow_red_pal }
+digit_0.blue.pal:
+  { type: TEXTURE, offset: 0x7F5580, format: TLUT, colors: 16, symbol: level_up_digit_0_blue_pal }
+digit_1.blue.pal:
+  { type: TEXTURE, offset: 0x7F55A0, format: TLUT, colors: 16, symbol: level_up_digit_1_blue_pal }
+digit_2.blue.pal:
+  { type: TEXTURE, offset: 0x7F55C0, format: TLUT, colors: 16, symbol: level_up_digit_2_blue_pal }
+digit_3.blue.pal:
+  { type: TEXTURE, offset: 0x7F55E0, format: TLUT, colors: 16, symbol: level_up_digit_3_blue_pal }
+digit_4.blue.pal:
+  { type: TEXTURE, offset: 0x7F5600, format: TLUT, colors: 16, symbol: level_up_digit_4_blue_pal }
+digit_5.blue.pal:
+  { type: TEXTURE, offset: 0x7F5620, format: TLUT, colors: 16, symbol: level_up_digit_5_blue_pal }
+digit_6.blue.pal:
+  { type: TEXTURE, offset: 0x7F5640, format: TLUT, colors: 16, symbol: level_up_digit_6_blue_pal }
+digit_7.blue.pal:
+  { type: TEXTURE, offset: 0x7F5660, format: TLUT, colors: 16, symbol: level_up_digit_7_blue_pal }
+digit_8.blue.pal:
+  { type: TEXTURE, offset: 0x7F5680, format: TLUT, colors: 16, symbol: level_up_digit_8_blue_pal }
+digit_9.blue.pal:
+  { type: TEXTURE, offset: 0x7F56A0, format: TLUT, colors: 16, symbol: level_up_digit_9_blue_pal }
+small_digit_0.blue.pal:
+  { type: TEXTURE, offset: 0x7F56C0, format: TLUT, colors: 16, symbol: level_up_small_digit_0_blue_pal }
+small_digit_1.blue.pal:
+  { type: TEXTURE, offset: 0x7F56E0, format: TLUT, colors: 16, symbol: level_up_small_digit_1_blue_pal }
+small_digit_2.blue.pal:
+  { type: TEXTURE, offset: 0x7F5700, format: TLUT, colors: 16, symbol: level_up_small_digit_2_blue_pal }
+small_digit_3.blue.pal:
+  { type: TEXTURE, offset: 0x7F5720, format: TLUT, colors: 16, symbol: level_up_small_digit_3_blue_pal }
+small_digit_4.blue.pal:
+  { type: TEXTURE, offset: 0x7F5740, format: TLUT, colors: 16, symbol: level_up_small_digit_4_blue_pal }
+small_digit_5.blue.pal:
+  { type: TEXTURE, offset: 0x7F5760, format: TLUT, colors: 16, symbol: level_up_small_digit_5_blue_pal }
+small_digit_6.blue.pal:
+  { type: TEXTURE, offset: 0x7F5780, format: TLUT, colors: 16, symbol: level_up_small_digit_6_blue_pal }
+small_digit_7.blue.pal:
+  { type: TEXTURE, offset: 0x7F57A0, format: TLUT, colors: 16, symbol: level_up_small_digit_7_blue_pal }
+small_digit_8.blue.pal:
+  { type: TEXTURE, offset: 0x7F57C0, format: TLUT, colors: 16, symbol: level_up_small_digit_8_blue_pal }
+small_digit_9.blue.pal:
+  { type: TEXTURE, offset: 0x7F57E0, format: TLUT, colors: 16, symbol: level_up_small_digit_9_blue_pal }
+small_arrow.blue.pal:
+  { type: TEXTURE, offset: 0x7F5800, format: TLUT, colors: 16, symbol: level_up_small_arrow_blue_pal }
+select_one_to_upgrade:
+  { type: TEXTURE, offset: 0x7F5820, format: CI4, width: 208, height: 16, symbol: level_up_select_one_to_upgrade_png }
+select_one_to_upgrade.pal:
+  { type: TEXTURE, offset: 0x7F5EA0, format: TLUT, colors: 16, symbol: level_up_select_one_to_upgrade_pal }
+de_select_one_to_upgrade:
+  { type: TEXTURE, offset: 0x7F5EC0, format: CI4, width: 208, height: 16, symbol: level_up_de_select_one_to_upgrade_png }
+de_select_one_to_upgrade.pal:
+  { type: TEXTURE, offset: 0x7F6540, format: TLUT, colors: 16, symbol: level_up_de_select_one_to_upgrade_pal }
+fr_select_one_to_upgrade:
+  { type: TEXTURE, offset: 0x7F6560, format: CI4, width: 208, height: 16, symbol: level_up_fr_select_one_to_upgrade_png }
+fr_select_one_to_upgrade.pal:
+  { type: TEXTURE, offset: 0x7F6BE0, format: TLUT, colors: 16, symbol: level_up_fr_select_one_to_upgrade_pal }
+es_select_one_to_upgrade:
+  { type: TEXTURE, offset: 0x7F6C00, format: CI4, width: 208, height: 16, symbol: level_up_es_select_one_to_upgrade_png }
+es_select_one_to_upgrade.pal:
+  { type: TEXTURE, offset: 0x7F7280, format: TLUT, colors: 16, symbol: level_up_es_select_one_to_upgrade_pal }
+heart_block:
+  { type: TEXTURE, offset: 0x933F00, format: CI4, width: 32, height: 32, symbol: level_up_heart_block_png }
+heart_block.pal:
+  { type: TEXTURE, offset: 0x934100, format: TLUT, colors: 16, symbol: level_up_heart_block_pal }
+hammer_block_message:
+  { type: TEXTURE, offset: 0x938880, format: CI4, width: 48, height: 48, symbol: level_up_hammer_block_message_png }
+hammer_block_message.pal:
+  { type: TEXTURE, offset: 0x938D00, format: TLUT, colors: 16, symbol: level_up_hammer_block_message_pal }
+lava_piranha_vine:
+  { type: TEXTURE, offset: 0x96D2E0, format: CI4, width: 64, height: 32, symbol: level_up_lava_piranha_vine_png }
+lava_piranha_vine.pal:
+  { type: TEXTURE, offset: 0x96D6E0, format: TLUT, colors: 16, symbol: level_up_lava_piranha_vine_pal }
+card:
+  { type: TEXTURE, offset: 0x9DCBC8, format: CI4, width: 32, height: 32, symbol: level_up_card_png }
+card.pal:
+  { type: TEXTURE, offset: 0x9DCDC8, format: TLUT, colors: 16, symbol: level_up_card_pal }
+vine:
+  { type: TEXTURE, offset: 0xCFCFA8, format: CI4, width: 64, height: 32, symbol: level_up_vine_png }
+vine.pal:
+  { type: TEXTURE, offset: 0xCFD3A8, format: TLUT, colors: 16, symbol: level_up_vine_pal }
+monstar:
+  { type: TEXTURE, offset: 0xD86F00, format: CI4, width: 32, height: 32, symbol: level_up_monstar_png }
+monstar.pal:
+  { type: TEXTURE, offset: 0xD87700, format: TLUT, colors: 16, symbol: level_up_monstar_pal }
+texture_1:
+  { type: TEXTURE, offset: 0xDEE260, format: CI4, width: 64, height: 64, symbol: level_up_texture_1_png }
+texture_1.pal:
+  { type: TEXTURE, offset: 0xDEEA60, format: TLUT, colors: 16, symbol: level_up_texture_1_pal }
+texture_2:
+  { type: TEXTURE, offset: 0xDEEB40, format: CI4, width: 64, height: 64, symbol: level_up_texture_2_png }
+texture_2.pal:
+  { type: TEXTURE, offset: 0xDEF340, format: TLUT, colors: 16, symbol: level_up_texture_2_pal }
+panel_1_coin:
+  { type: TEXTURE, offset: 0xE81EB0, format: CI4, width: 32, height: 32, symbol: level_up_panel_1_coin_png }
+panel_1_coin.pal:
+  { type: TEXTURE, offset: 0xE820B0, format: TLUT, colors: 16, symbol: level_up_panel_1_coin_pal }
+panel_5_coins:
+  { type: TEXTURE, offset: 0xE820D0, format: CI4, width: 32, height: 32, symbol: level_up_panel_5_coins_png }
+panel_5_coins.pal:
+  { type: TEXTURE, offset: 0xE822D0, format: TLUT, colors: 16, symbol: level_up_panel_5_coins_pal }
+panel_times_5:
+  { type: TEXTURE, offset: 0xE822F0, format: CI4, width: 32, height: 32, symbol: level_up_panel_times_5_png }
+panel_times_5.pal:
+  { type: TEXTURE, offset: 0xE824F0, format: TLUT, colors: 16, symbol: level_up_panel_times_5_pal }
+panel_bowser:
+  { type: TEXTURE, offset: 0xE82510, format: CI4, width: 32, height: 32, symbol: level_up_panel_bowser_png }
+panel_bowser.pal:
+  { type: TEXTURE, offset: 0xE82710, format: TLUT, colors: 16, symbol: level_up_panel_bowser_pal }
+panel_peach:
+  { type: TEXTURE, offset: 0xE8AB70, format: CI4, width: 32, height: 32, symbol: level_up_panel_peach_png }
+panel_peach.pal:
+  { type: TEXTURE, offset: 0xE8AD70, format: TLUT, colors: 16, symbol: level_up_panel_peach_pal }
+inspect_icon:
+  { type: TEXTURE, offset: 0xE8DB40, format: CI4, width: 32, height: 32, symbol: level_up_inspect_icon_png }
+inspect_icon.pal:
+  { type: TEXTURE, offset: 0xE8DD40, format: TLUT, colors: 16, symbol: level_up_inspect_icon_pal }
+speech_bubble:
+  { type: TEXTURE, offset: 0xE8E5D0, format: CI4, width: 32, height: 32, symbol: level_up_speech_bubble_png }
+speech_bubble.pal:
+  { type: TEXTURE, offset: 0xE8E7D0, format: TLUT, colors: 16, symbol: level_up_speech_bubble_pal }
+pulse_stone_icon:
+  { type: TEXTURE, offset: 0xE8EEC0, format: CI4, width: 56, height: 56, symbol: level_up_pulse_stone_icon_png }
+pulse_stone_icon.pal:
+  { type: TEXTURE, offset: 0xE8F4E0, format: TLUT, colors: 16, symbol: level_up_pulse_stone_icon_pal }
+pulse_stone_icon.flash.pal:
+  { type: TEXTURE, offset: 0xE8F500, format: TLUT, colors: 16, symbol: level_up_pulse_stone_icon_flash_pal }
+ispy_icon:
+  { type: TEXTURE, offset: 0xE8FB40, format: CI4, width: 56, height: 56, symbol: level_up_ispy_icon_png }
+ispy_icon.pal:
+  { type: TEXTURE, offset: 0xE90160, format: TLUT, colors: 16, symbol: level_up_ispy_icon_pal }
+ispy_icon.2.pal:
+  { type: TEXTURE, offset: 0xE90180, format: TLUT, colors: 16, symbol: level_up_ispy_icon_2_pal }
+ispy_icon.3.pal:
+  { type: TEXTURE, offset: 0xE901A0, format: TLUT, colors: 16, symbol: level_up_ispy_icon_3_pal }
+Hammer1Block_face:
+  { type: TEXTURE, offset: 0xE9E7C0, format: CI4, width: 16, height: 32, symbol: level_up_Hammer1Block_face_png }
+Hammer1Block_face.pal:
+  { type: TEXTURE, offset: 0xE9E8C0, format: TLUT, colors: 16, symbol: level_up_Hammer1Block_face_pal }
+Hammer2Block_face:
+  { type: TEXTURE, offset: 0xE9ECC0, format: CI4, width: 16, height: 32, symbol: level_up_Hammer2Block_face_png }
+Hammer2Block_face.pal:
+  { type: TEXTURE, offset: 0xE9EDC0, format: TLUT, colors: 16, symbol: level_up_Hammer2Block_face_pal }
+Hammer3Block_face:
+  { type: TEXTURE, offset: 0xE9F1C0, format: CI4, width: 16, height: 32, symbol: level_up_Hammer3Block_face_png }
+Hammer3Block_face.pal:
+  { type: TEXTURE, offset: 0xE9F2C0, format: TLUT, colors: 16, symbol: level_up_Hammer3Block_face_pal }
+ShatteringHammer1Block_texture.pal:
+  { type: TEXTURE, offset: 0xEA0690, format: TLUT, colors: 16, symbol: level_up_ShatteringHammer1Block_texture_pal }
+ShatteringHammer3Block_texture:
+  { type: TEXTURE, offset: 0xEA68F0, format: CI4, width: 16, height: 32, symbol: level_up_ShatteringHammer3Block_texture_png }
+ShatteringHammer3Block_texture.pal:
+  { type: TEXTURE, offset: 0xEA69F0, format: TLUT, colors: 16, symbol: level_up_ShatteringHammer3Block_texture_pal }
+UnusedBlock_img2:
+  { type: TEXTURE, offset: 0xEAA628, format: CI4, width: 16, height: 32, symbol: level_up_UnusedBlock_img2_png }
+UnusedBlock_img2.pal:
+  { type: TEXTURE, offset: 0xEAA728, format: TLUT, colors: 16, symbol: level_up_UnusedBlock_img2_pal }
+PushBlock_face:
+  { type: TEXTURE, offset: 0xEAAB90, format: CI4, width: 16, height: 16, symbol: level_up_PushBlock_face_png }
+PushBlock_face.pal:
+  { type: TEXTURE, offset: 0xEAAC10, format: TLUT, colors: 16, symbol: level_up_PushBlock_face_pal }
+BrickBlock_face:
+  { type: TEXTURE, offset: 0xEAAF00, format: CI4, width: 32, height: 32, symbol: level_up_BrickBlock_face_png }
+BrickBlock_face.pal:
+  { type: TEXTURE, offset: 0xEAB100, format: TLUT, colors: 16, symbol: level_up_BrickBlock_face_pal }
+InertYellowBlock_face:
+  { type: TEXTURE, offset: 0xEAF3D0, format: CI4, width: 32, height: 32, symbol: level_up_InertYellowBlock_face_png }
+InertYellowBlock_face.pal:
+  { type: TEXTURE, offset: 0xEAF5D0, format: TLUT, colors: 16, symbol: level_up_InertYellowBlock_face_pal }
+PowBlock_face.pal:
+  { type: TEXTURE, offset: 0xEB1430, format: TLUT, colors: 16, symbol: level_up_PowBlock_face_pal }
+SuperBlock_tex:
+  { type: TEXTURE, offset: 0xEB1C90, format: CI4, width: 16, height: 32, symbol: level_up_SuperBlock_tex_png }
+SuperBlock_tex.pal:
+  { type: TEXTURE, offset: 0xEB1D90, format: TLUT, colors: 16, symbol: level_up_SuperBlock_tex_pal }
+UltraBlock_tex:
+  { type: TEXTURE, offset: 0xEB25A0, format: CI4, width: 16, height: 32, symbol: level_up_UltraBlock_tex_png }
+UltraBlock_tex.pal:
+  { type: TEXTURE, offset: 0xEB26A0, format: TLUT, colors: 16, symbol: level_up_UltraBlock_tex_pal }
+SuperBlockContent:
+  { type: TEXTURE, offset: 0xEB76B0, format: CI4, width: 32, height: 32, symbol: level_up_SuperBlockContent_png }
+SuperBlockContent.pal:
+  { type: TEXTURE, offset: 0xEB78B0, format: TLUT, colors: 16, symbol: level_up_SuperBlockContent_pal }
+SuperBlockContent.pal2.pal:
+  { type: TEXTURE, offset: 0xEB78D0, format: TLUT, colors: 16, symbol: level_up_SuperBlockContent_pal2_pal }
+SuperBlockContent.pal3.pal:
+  { type: TEXTURE, offset: 0xEB78F0, format: TLUT, colors: 16, symbol: level_up_SuperBlockContent_pal3_pal }
+SuperBlockContent.pal4.pal:
+  { type: TEXTURE, offset: 0xEB7910, format: TLUT, colors: 16, symbol: level_up_SuperBlockContent_pal4_pal }
+WoodenCrate_img1:
+  { type: TEXTURE, offset: 0xEBF490, format: CI4, width: 64, height: 64, symbol: level_up_WoodenCrate_img1_png }
+WoodenCrate_img1.pal:
+  { type: TEXTURE, offset: 0xEBFC90, format: TLUT, colors: 16, symbol: level_up_WoodenCrate_img1_pal }
+WoodenCrate_img2:
+  { type: TEXTURE, offset: 0xEBFD58, format: CI4, width: 64, height: 64, symbol: level_up_WoodenCrate_img2_png }
+WoodenCrate_img2.pal:
+  { type: TEXTURE, offset: 0xEC0558, format: TLUT, colors: 16, symbol: level_up_WoodenCrate_img2_pal }
+StarBoxLauncher_face:
+  { type: TEXTURE, offset: 0xEC2838, format: CI4, width: 128, height: 32, symbol: level_up_StarBoxLauncher_face_png }
+StarBoxLauncher_face.pal:
+  { type: TEXTURE, offset: 0xEC3038, format: TLUT, colors: 16, symbol: level_up_StarBoxLauncher_face_pal }
+StarBoxLauncher_box:
+  { type: TEXTURE, offset: 0xEC3100, format: CI4, width: 16, height: 32, symbol: level_up_StarBoxLauncher_box_png }
+StarBoxLauncher_box.pal:
+  { type: TEXTURE, offset: 0xEC3200, format: TLUT, colors: 16, symbol: level_up_StarBoxLauncher_box_pal }
+Tweester_img3:
+  { type: TEXTURE, offset: 0xEC4BF0, format: CI4, width: 64, height: 32, symbol: level_up_Tweester_img3_png }
+Tweester_img3.pal:
+  { type: TEXTURE, offset: 0xEC4FF0, format: TLUT, colors: 16, symbol: level_up_Tweester_img3_pal }
+BlueWarpPipe_texBase:
+  { type: TEXTURE, offset: 0xEC58E0, format: CI4, width: 16, height: 16, symbol: level_up_BlueWarpPipe_texBase_png }
+BlueWarpPipe_texBase.pal:
+  { type: TEXTURE, offset: 0xEC5960, format: TLUT, colors: 16, symbol: level_up_BlueWarpPipe_texBase_pal }
+BlueWarpPipe_texPipe:
+  { type: TEXTURE, offset: 0xEC5A30, format: CI4, width: 32, height: 16, symbol: level_up_BlueWarpPipe_texPipe_png }
+BlueWarpPipe_texPipe.pal:
+  { type: TEXTURE, offset: 0xEC5B30, format: TLUT, colors: 16, symbol: level_up_BlueWarpPipe_texPipe_pal }
+Signpost:
+  { type: TEXTURE, offset: 0xEC62F0, format: CI4, width: 32, height: 32, symbol: level_up_Signpost_png }
+Signpost.pal:
+  { type: TEXTURE, offset: 0xEC64F0, format: TLUT, colors: 16, symbol: level_up_Signpost_pal }
+ArrowSign.pal:
+  { type: TEXTURE, offset: 0xEC7070, format: TLUT, colors: 16, symbol: level_up_ArrowSign_pal }
+Padlock_face.pal:
+  { type: TEXTURE, offset: 0xEC7F40, format: TLUT, colors: 16, symbol: level_up_Padlock_face_pal }
+Padlock_keyhole.pal:
+  { type: TEXTURE, offset: 0xEC89E8, format: TLUT, colors: 16, symbol: level_up_Padlock_keyhole_pal }
+Padlock_body.pal:
+  { type: TEXTURE, offset: 0xEC9090, format: TLUT, colors: 16, symbol: level_up_Padlock_body_pal }
+PadlockRedFrame_keyhole.pal:
+  { type: TEXTURE, offset: 0xECA3B0, format: TLUT, colors: 16, symbol: level_up_PadlockRedFrame_keyhole_pal }
+PadlockRedFrame_face.pal:
+  { type: TEXTURE, offset: 0xECAA58, format: TLUT, colors: 16, symbol: level_up_PadlockRedFrame_face_pal }
+PadlockRedFace_keyhole.pal:
+  { type: TEXTURE, offset: 0xECC198, format: TLUT, colors: 16, symbol: level_up_PadlockRedFace_keyhole_pal }
+PadlockRedFace_body.pal:
+  { type: TEXTURE, offset: 0xECC840, format: TLUT, colors: 16, symbol: level_up_PadlockRedFace_body_pal }
+PadlockBlueFace_keyhole.pal:
+  { type: TEXTURE, offset: 0xECDFB8, format: TLUT, colors: 16, symbol: level_up_PadlockBlueFace_keyhole_pal }
+PadlockBlueFace_body.pal:
+  { type: TEXTURE, offset: 0xECE660, format: TLUT, colors: 16, symbol: level_up_PadlockBlueFace_body_pal }
+GreenStompSwitch_tex:
+  { type: TEXTURE, offset: 0xECEEE0, format: CI4, width: 16, height: 16, symbol: level_up_GreenStompSwitch_tex_png }
+GreenStompSwitch_tex.pal:
+  { type: TEXTURE, offset: 0xECEF60, format: TLUT, colors: 16, symbol: level_up_GreenStompSwitch_tex_pal }
+GreenStompSwitch_exclamationMark:
+  { type: TEXTURE, offset: 0xECF038, format: CI4, width: 16, height: 32, symbol: level_up_GreenStompSwitch_exclamationMark_png }
+GreenStompSwitch_exclamationMark.pal:
+  { type: TEXTURE, offset: 0xECF138, format: TLUT, colors: 16, symbol: level_up_GreenStompSwitch_exclamationMark_pal }
+RedSwitch_tex.pal:
+  { type: TEXTURE, offset: 0xECFA80, format: TLUT, colors: 16, symbol: level_up_RedSwitch_tex_pal }
+BlueSwitch_tex.pal:
+  { type: TEXTURE, offset: 0xED0980, format: TLUT, colors: 16, symbol: level_up_BlueSwitch_tex_pal }
+Chest_tex2:
+  { type: TEXTURE, offset: 0xED1A58, format: CI4, width: 16, height: 32, symbol: level_up_Chest_tex2_png }
+Chest_tex2.pal:
+  { type: TEXTURE, offset: 0xED1B58, format: TLUT, colors: 16, symbol: level_up_Chest_tex2_pal }
+Chest_lock:
+  { type: TEXTURE, offset: 0xED1C30, format: CI4, width: 16, height: 32, symbol: level_up_Chest_lock_png }
+Chest_lock.pal:
+  { type: TEXTURE, offset: 0xED1D30, format: TLUT, colors: 16, symbol: level_up_Chest_lock_pal }
+ScriptSpring_tex1.pal:
+  { type: TEXTURE, offset: 0xED29F0, format: TLUT, colors: 16, symbol: level_up_ScriptSpring_tex1_pal }
+ScriptSpring_tex2.pal:
+  { type: TEXTURE, offset: 0xED2D98, format: TLUT, colors: 16, symbol: level_up_ScriptSpring_tex2_pal }
+ScriptSpring_star.pal:
+  { type: TEXTURE, offset: 0xED3440, format: TLUT, colors: 16, symbol: level_up_ScriptSpring_star_pal }
+SimpleSpring_tex1.pal:
+  { type: TEXTURE, offset: 0xED5750, format: TLUT, colors: 16, symbol: level_up_SimpleSpring_tex1_pal }
+SimpleSpring_star.pal:
+  { type: TEXTURE, offset: 0xED6070, format: TLUT, colors: 16, symbol: level_up_SimpleSpring_star_pal }
+CymbalPlant:
+  { type: TEXTURE, offset: 0xF05BE0, format: CI4, width: 64, height: 64, symbol: level_up_CymbalPlant_png }
+CymbalPlant.pal:
+  { type: TEXTURE, offset: 0xF063E0, format: TLUT, colors: 16, symbol: level_up_CymbalPlant_pal }
+BombableRock:
+  { type: TEXTURE, offset: 0xF0A780, format: CI4, width: 64, height: 64, symbol: level_up_BombableRock_png }
+BombableRock.pal:
+  { type: TEXTURE, offset: 0xF0AF80, format: TLUT, colors: 16, symbol: level_up_BombableRock_pal }

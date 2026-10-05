@@ -6,7 +6,11 @@ NUSched nusched;
 NUScPreNMIFunc nuScPreNMIFunc = nullptr;
 u8 nuScPreNMIFlag;
 
+#if VERSION_PAL
+char nusys_version[] = "NuSystem2.07";
+#else
 char nusys_version[] = "NuSystem2.05";
+#endif
 
 //  u32 nuScRetraceCounter = (u32) nusys_version;
 u32 nuScRetraceCounter = 0;

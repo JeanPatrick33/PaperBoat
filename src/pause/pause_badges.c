@@ -353,6 +353,9 @@ void pause_badges_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width
     s32 orbColorR1, orbColorG1, orbColorB1;
     s32 badgeIconElement;
     intptr_t msg;
+#if VERSION_PAL
+    intptr_t msg2;
+#endif
     s32 msgX, msgY;
     s32 msgOpacity;
     s32 maxBP;

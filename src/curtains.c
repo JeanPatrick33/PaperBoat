@@ -210,26 +210,42 @@ Gfx TheaterInitGfx[] = {
     gsSPEndDisplayList(),
 };
 
-Gfx NoControllerSetupTexGfx[] = {
-    gsDPPipeSync(),
-    gsSPTexture(-1, -1, 0, G_TX_RENDERTILE, G_ON),
-    gsDPSetCycleType(G_CYC_1CYCLE),
-    gsDPSetTexturePersp(G_TP_NONE),
-    gsDPSetTextureDetail(G_TD_CLAMP),
-    gsDPSetTextureLOD(G_TL_TILE),
-    gsDPSetTextureFilter(G_TF_POINT),
-    gsDPSetTextureConvert(G_TC_FILT),
-    gsDPSetCombineMode(G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM),
-    gsDPSetRenderMode(G_RM_XLU_SURF, G_RM_XLU_SURF2),
-    gsDPSetTextureLUT(G_TT_NONE),
-    gsDPLoadTextureTile(ui_no_controller, G_IM_FMT_IA, G_IM_SIZ_8b, ui_no_controller_width,
-                        ui_no_controller_height, 0, 0, ui_no_controller_width - 1,
-                        ui_no_controller_height - 1, 0, G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMIRROR | G_TX_CLAMP, 7,
-                        5, G_TX_NOLOD, G_TX_NOLOD),
-    gsSPClearGeometryMode(G_CULL_BOTH | G_LIGHTING),
-    gsSPSetGeometryMode(G_SHADE | G_SHADING_SMOOTH),
-    gsSPEndDisplayList(),
+#define NO_CONTROLLER_SETUP_GFX(NAME, IMG) \
+Gfx NAME[] = { \
+    gsDPPipeSync(), \
+    gsSPTexture(-1, -1, 0, G_TX_RENDERTILE, G_ON), \
+    gsDPSetCycleType(G_CYC_1CYCLE), \
+    gsDPSetTexturePersp(G_TP_NONE), \
+    gsDPSetTextureDetail(G_TD_CLAMP), \
+    gsDPSetTextureLOD(G_TL_TILE), \
+    gsDPSetTextureFilter(G_TF_POINT), \
+    gsDPSetTextureConvert(G_TC_FILT), \
+    gsDPSetCombineMode(G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM), \
+    gsDPSetRenderMode(G_RM_XLU_SURF, G_RM_XLU_SURF2), \
+    gsDPSetTextureLUT(G_TT_NONE), \
+    gsDPLoadTextureTile(IMG, G_IM_FMT_IA, G_IM_SIZ_8b, ui_no_controller_width, \
+                        ui_no_controller_height, 0, 0, ui_no_controller_width - 1, \
+                        ui_no_controller_height - 1, 0, G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMIRROR | G_TX_CLAMP, 7, \
+                        5, G_TX_NOLOD, G_TX_NOLOD), \
+    gsSPClearGeometryMode(G_CULL_BOTH | G_LIGHTING), \
+    gsSPSetGeometryMode(G_SHADE | G_SHADING_SMOOTH), \
+    gsSPEndDisplayList(), \
 };
+
+#if VERSION_PAL
+#include "assets/ui_nc_pal.h"
+// [port] PAL cycles the notice through EN/DE/FR/ES (the console DMAs the next image into a buffer)
+NO_CONTROLLER_SETUP_GFX(NoControllerSetupTexGfx_EN, ui_no_controller)
+NO_CONTROLLER_SETUP_GFX(NoControllerSetupTexGfx_DE, ui_no_controller_de_png)
+NO_CONTROLLER_SETUP_GFX(NoControllerSetupTexGfx_FR, ui_no_controller_fr_png)
+NO_CONTROLLER_SETUP_GFX(NoControllerSetupTexGfx_ES, ui_no_controller_es_png)
+Gfx* NoControllerSetupTexGfxList[] = {
+    NoControllerSetupTexGfx_EN, NoControllerSetupTexGfx_DE, NoControllerSetupTexGfx_FR, NoControllerSetupTexGfx_ES,
+};
+BSS s32 NoControllerImgIdx;
+#else
+NO_CONTROLLER_SETUP_GFX(NoControllerSetupTexGfx, ui_no_controller)
+#endif
 
 Gfx NoControllerGfx[] = {
     gsSPTextureRectangle(0x0180, 0x0260, 0x0380, 0x02E0, G_TX_RENDERTILE, 0, 0, 0x0400, 0x0400),
@@ -242,6 +258,10 @@ BSS f32 gCurtainScaleGoal;
 BSS f32 gCurtainFade;
 BSS f32 gCurtainFadeGoal;
 BSS UNK_FUN_PTR(gCurtainDrawCallback);
+#if VERSION_PAL
+BSS s32 D_PAL_8009A204;
+BSS s32 D_PAL_8009A208;
+#endif
 BSS Mtx D_8009BAA8[2];
 
 void initialize_curtains(void) {
@@ -250,6 +270,11 @@ void initialize_curtains(void) {
     gCurtainScaleGoal = 2.0f;
     gCurtainFade = 0.0f;
     gCurtainFadeGoal = 0.0f;
+#if VERSION_PAL
+    D_PAL_8009A204 = 6;
+    D_PAL_8009A208 = 0;
+    NoControllerImgIdx = 0;
+#endif
 }
 
 void update_curtains(void) {
@@ -316,10 +341,34 @@ void render_curtains(void) {
                 alpha = 255;
             }
 
+#if VERSION_PAL
+            if (alpha == 0) {
+                D_PAL_8009A204 = 6;
+            }
+
+            if (D_PAL_8009A204 == 0) {
+                gSPDisplayList(gMainGfxPos++, &TheaterInitGfx);
+                gSPDisplayList(gMainGfxPos++, NoControllerSetupTexGfxList[NoControllerImgIdx]);
+                gDPSetPrimColor(gMainGfxPos++, 0, 0, 0xFF, 0x20, 0x10, alpha);
+                gSPDisplayList(gMainGfxPos++, &NoControllerGfx);
+            }
+
+            if (D_PAL_8009A204 == 3) {
+                NoControllerImgIdx = D_PAL_8009A208 / 2;
+                D_PAL_8009A208++;
+                if (D_PAL_8009A208 >= 8) {
+                    D_PAL_8009A208 = 0;
+                }
+            }
+            if (D_PAL_8009A204 != 0) {
+                D_PAL_8009A204--;
+            }
+#else
             gSPDisplayList(gMainGfxPos++, &TheaterInitGfx);
             gSPDisplayList(gMainGfxPos++, &NoControllerSetupTexGfx);
             gDPSetPrimColor(gMainGfxPos++, 0, 0, 0xFF, 0x20, 0x10, alpha);
             gSPDisplayList(gMainGfxPos++, &NoControllerGfx);
+#endif
         }
     }
 }

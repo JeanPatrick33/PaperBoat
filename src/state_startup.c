@@ -84,6 +84,13 @@ void state_step_startup(void) {
         snd_set_mono();
     }
 
+#if VERSION_PAL
+    if (gSaveGlobals.language >= 4) {
+        gSaveGlobals.language = LANGUAGE_DEFAULT;
+    }
+    gCurrentLanguage = gSaveGlobals.language;
+#endif
+
     gOverrideFlags &= ~GLOBAL_OVERRIDES_DISABLE_DRAW_FRAME;
 
     if (gPortResetToTitleScreen) {

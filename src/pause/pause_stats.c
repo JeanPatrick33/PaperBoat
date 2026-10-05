@@ -1,5 +1,15 @@
 #include "pause/pause_common.h"
 
+#if VERSION_PAL
+extern u8 D_PAL_80271B20[4];
+extern u8 D_PAL_80271B14[4];
+extern u8 D_PAL_80271B1C[4];
+extern u8 D_PAL_80271B18[4];
+extern u8 D_PAL_80271B10[4];
+extern u8 D_PAL_80271B24[4];
+extern u8 D_PAL_80271B28[4];
+#endif
+
 void pause_stats_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width, s32 height, s32 opacity, s32 darkening);
 void pause_stats_init(MenuPanel* panel);
 void pause_stats_handle_input(MenuPanel* panel);
@@ -18,6 +28,43 @@ static s32 gPauseStatsIconIDs[12];
 #define COL_C_X 110
 #define POS_1_X 60
 #define POS_2_X 100
+#define POS_3_X 61
+#define POS_4_X 16
+#define PAUSE_BOX_WIDTH 113
+#define X_VAR1 143
+#define X_VAR2 155
+#elif VERSION_PAL
+#define NUMBER_OFFSET_Y 0
+#define ROW_1_Y 51
+#define ROW_2_Y 51
+#define ROW_3_Y 85
+#define ROW_4_Y 119
+#define COL_A_X 25
+#define COL_B_X 78
+#define COL_C_X 105
+#define POS_1_X D_PAL_80271B20[gCurrentLanguage]
+#define POS_2_X D_PAL_80271B14[gCurrentLanguage]
+#define POS_3_X D_PAL_80271B1C[gCurrentLanguage]
+#define POS_4_X D_PAL_80271B18[gCurrentLanguage]
+#define PAUSE_BOX_WIDTH D_PAL_80271B10[gCurrentLanguage]
+#define X_VAR1 D_PAL_80271B24[gCurrentLanguage]
+#define X_VAR2 D_PAL_80271B28[gCurrentLanguage]
+#elif VERSION_JP
+#define NUMBER_OFFSET_Y 0
+#define ROW_1_Y 51
+#define ROW_2_Y 51
+#define ROW_3_Y 85
+#define ROW_4_Y 119
+#define COL_A_X 25
+#define COL_B_X 78
+#define COL_C_X 105
+#define POS_1_X 62
+#define POS_2_X 92
+#define POS_3_X 53
+#define POS_4_X 16
+#define PAUSE_BOX_WIDTH 102
+#define X_VAR1 151
+#define X_VAR2 163
 #else
 #define NUMBER_OFFSET_Y 0
 #define ROW_1_Y 51
@@ -29,6 +76,39 @@ static s32 gPauseStatsIconIDs[12];
 #define COL_C_X 105
 #define POS_1_X 67
 #define POS_2_X 106
+#define POS_3_X 61
+#define POS_4_X 16
+#define PAUSE_BOX_WIDTH 113
+#define X_VAR1 143
+#define X_VAR2 155
+#endif
+
+#if VERSION_JP
+#define X_VAR3 239
+#define X_VAR4 233
+#define COUNT_DRAW_STYLE DRAW_NUMBER_STYLE_MONOSPACE
+#define X_VAR5 239
+#define X_VAR6 248
+#define X_VAR7 127
+#define X_VAR8 151
+#define X_VAR9 164
+#define X_VAR10 128
+#define X_VAR11 128
+#define X_VAR12 138
+#define X_VAR13 150
+#else
+#define X_VAR3 281
+#define X_VAR4 248
+#define COUNT_DRAW_STYLE DRAW_NUMBER_STYLE_MONOSPACE_RIGHT
+#define X_VAR5 237
+#define X_VAR6 246
+#define X_VAR7 137
+#define X_VAR8 163
+#define X_VAR9 176
+#define X_VAR10 130
+#define X_VAR11 138
+#define X_VAR12 140
+#define X_VAR13 152
 #endif
 
 // Probably only used here, but could theoretically be used in the main menu too
@@ -88,9 +168,18 @@ s8 gPauseStatsGridData[] = {
 };
 
 #if VERSION_PAL
+#define BOOTS_X 138
+#define HAMMER_X 138
 #define STAR_POWER_X 122
 #define COLLECTABLES_X 127
+#elif VERSION_JP
+#define BOOTS_X 128
+#define HAMMER_X 128
+#define STAR_POWER_X 122
+#define COLLECTABLES_X 133
 #else
+#define BOOTS_X 138
+#define HAMMER_X 138
 #define STAR_POWER_X 132
 #define COLLECTABLES_X 125
 #endif
@@ -162,9 +251,6 @@ MenuPanel gPausePanelStats = {
     .fpCleanup = &pause_stats_cleanup
 };
 
-#if VERSION_PAL
-INCLUDE_ASM(void, "pause/pause_stats", pause_stats_draw_contents);
-#else
 void pause_stats_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width, s32 height, s32 opacity, s32 darkening) {
     PlayerData* playerData;
     s16 bootsLevel;
@@ -255,10 +341,10 @@ void pause_stats_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
 
     // draw level
 #if !VERSION_IQUE
-    hud_element_set_render_pos(gPauseStatsIconIDs[STAT_ICON_MARIO], baseX + 61, baseY + 21);
+    hud_element_set_render_pos(gPauseStatsIconIDs[STAT_ICON_MARIO], baseX + POS_3_X, baseY + 21);
     hud_element_draw_without_clipping(gPauseStatsIconIDs[STAT_ICON_MARIO]);
 #endif
-    draw_msg(pause_get_menu_msg(PAUSE_MSG_MARIO), baseX + 16, baseY + 14, 255, MSG_PAL_WHITE, 1);
+    draw_msg(pause_get_menu_msg(PAUSE_MSG_MARIO), baseX + POS_4_X, baseY + 14, 255, MSG_PAL_WHITE, 1);
     draw_msg(pause_get_menu_msg(PAUSE_MSG_LEVEL), baseX + POS_1_X, baseY + 14, 255, MSG_PAL_WHITE, 1);
     draw_number(level, baseX + POS_2_X, baseY + 14 + NUMBER_OFFSET_Y, 1, MSG_PAL_WHITE, 255, 2);
 
@@ -588,12 +674,18 @@ void pause_stats_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
     }
 
     if (gPauseMenuCurrentTab == 1) {
+#if VERSION_PAL
+        s32 palOffsetX = menu->selected >= 7 ? D_pause_80253814[gCurrentLanguage] : 0;
+        StatsEntryData* entry = &gStatsMenuEntries[menu->selected];
+
+        pause_set_cursor_pos(WIN_PAUSE_STATS, baseX + entry->cursorX + palOffsetX, baseY + entry->cursorY);
+#else
         StatsEntryData* entry = &gStatsMenuEntries[menu->selected];
 
         pause_set_cursor_pos(WIN_PAUSE_STATS, baseX + entry->cursorX, baseY + entry->cursorY);
+#endif
     }
 }
-#endif
 
 void pause_stats_init(MenuPanel* panel) {
     s32 i;

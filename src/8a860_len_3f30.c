@@ -345,8 +345,779 @@ void show_popup_menu(void) {
 }
 
 #if VERSION_PAL
-s32 popup_menu_update(void);
-INCLUDE_ASM(s32, "8a860_len_3f30", popup_menu_update);
+s32 popup_menu_update(void) {
+    s32 posX;
+    s32 posY;
+    s32 width;
+    HudElemID hid;
+    s32 cond;
+    s32 buttons;
+    s32 msgID;
+    s32 i;
+    s32 height;
+    s32 one;
+    s32 var_s6 = 0;
+    s32 var_s5 = 0;
+    s32 msgWidth;
+    s32 width2;
+    s32 height2;
+    s32 posX2;
+
+    switch (gPopupState) {
+        case POPUP_STATE_INIT:
+            PopupWinX = 20;
+            PopupWinY = 72;
+            PopupDescX = 20;
+            PopupDescY = 186;
+            PopupPromptX = 16;
+            PopupPromptY = 88;
+            PopupMenu_StarPieceCounterPosX = 32;
+            PopupMenu_StarPieceCounterPosY = 164;
+            if (PopupNotBattle) {
+                // Widescreen: world popup menus are right-edge anchored (each
+                // table entry preserves a per-menu right margin). At 4:3 this
+                // is exactly PopupWorldStartX[type] + 20.
+                PopupWinX = OTRGetRectDimensionFromRightEdge(SCREEN_WIDTH - (PopupWorldStartX[gPopupMenu->popupType] + 20));
+            }
+            if (PopupMenu_MaxDisplayableEntryCount >= 7) {
+                PopupWinY = 62;
+            }
+            D_8010D68C = 0;
+            hid = hud_element_create(&HES_EmptyBar);
+            PopupMenu_EmptybarHID = hid;
+            hud_element_set_flags(hid, HUD_ELEMENT_FLAG_MANUAL_RENDER);
+            hud_element_set_tint(hid, 255, 255, 255);
+            if (gPopupMenu->popupType != POPUP_MENU_THROW_AWAY_ITEM) {
+                hud_element_set_flags(hid, HUD_ELEMENT_FLAG_DISABLED);
+            }
+
+            hid = hud_element_create(gPopupMenu->ptrIcon[0]);
+            PopupMenu_EntryIconHID = hid;
+            hud_element_set_scale(hid, 0.45f);
+            hud_element_set_flags(hid, HUD_ELEMENT_FLAG_FILTER_TEX | HUD_ELEMENT_FLAG_MANUAL_RENDER);
+
+            hid = hud_element_create(&HES_AnimatedHandPointer);
+            PopupMenu_CursorHID = hid;
+            hud_element_set_flags(hid, HUD_ELEMENT_FLAG_DROP_SHADOW | HUD_ELEMENT_FLAG_MANUAL_RENDER);
+
+            hid = hud_element_create(&HES_GreenArrowUp);
+            PopupMenu_UpArrowHID = hid;
+            hud_element_set_flags(hid, HUD_ELEMENT_FLAG_DROP_SHADOW | HUD_ELEMENT_FLAG_MANUAL_RENDER);
+
+            hid = hud_element_create(&HES_GreenArrowDown);
+            PopupMenu_DownArrowHID = hid;
+            hud_element_set_flags(hid, HUD_ELEMENT_FLAG_DROP_SHADOW | HUD_ELEMENT_FLAG_MANUAL_RENDER);
+
+            if (gPopupMenu->popupType == POPUP_MENU_TRADE_FOR_BADGE) {
+                PopupMenu_TitleIconHID = hud_element_create(&HES_StatusStarPiece);
+                hid = PopupMenu_TitleIconHID;
+                hud_element_set_flags(hid, HUD_ELEMENT_FLAG_MANUAL_RENDER);
+                hud_element_set_tint(hid, 255, 255, 255);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_UPGRADE_PARTNER) {
+                PopupMenu_TitleIconHID = hud_element_create(&HES_StatusStarPiece);
+                hid = PopupMenu_TitleIconHID;
+                hud_element_set_flags(hid, HUD_ELEMENT_FLAG_FILTER_TEX | HUD_ELEMENT_FLAG_MANUAL_RENDER);
+                hud_element_set_tint(hid, 255, 255, 255);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_SELL_ITEM) {
+                PopupMenu_TitleIconHID = hud_element_create(&HES_StatusCoin);
+                hid = PopupMenu_TitleIconHID;
+                hud_element_set_flags(hid, HUD_ELEMENT_FLAG_MANUAL_RENDER);
+                hud_element_set_tint(hid, 255, 255, 255);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_TRADE_FOR_BADGE || gPopupMenu->popupType == POPUP_MENU_UPGRADE_PARTNER) {
+                PopupMenu_TimesHID = hud_element_create(&HES_MenuTimes);
+                hid = PopupMenu_TimesHID;
+                hud_element_set_flags(hid, HUD_ELEMENT_FLAG_MANUAL_RENDER);
+                hud_element_set_tint(hid, 255, 255, 255);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_SWITCH_PARTNER || gPopupMenu->popupType == POPUP_MENU_UPGRADE_PARTNER) {
+                PopupMenu_PartnerLevelHID = hud_element_create(D_80109890[0]);
+                hid = PopupMenu_PartnerLevelHID;
+                hud_element_set_flags(hid, HUD_ELEMENT_FLAG_MANUAL_RENDER);
+                hud_element_set_tint(hid, 255, 255, 255);
+            }
+
+            D_8010D65A = -200;
+            PopupDelayTime = D_8010D691;
+            if (!PopupNotBattle) {
+                PopupDelayTime = 1;
+            }
+            D_8010D690 = MSG_PAL_STANDARD;
+
+            posX = PopupWinX;
+            posY = PopupWinY;
+
+            gPopupMenu->unk_338 = 0;
+            gPopupMenu->unk_340 = 0;
+
+            switch (gPopupMenu->popupType) {
+                case POPUP_MENU_USE_ITEM:
+                    gPopupMenu->unk_33C = MSG_Menus_0061;
+                    switch (gPopupMenu->dipMode) {
+                        case 0:
+                            gPopupMenu->unk_330 = MSG_Menus_Items;
+                            break;
+                        case 1:
+                            gPopupMenu->unk_330 = MSG_Menus_DoubleDip;
+                            break;
+                        case 2:
+                            gPopupMenu->unk_330 = MSG_Menus_TripleDip;
+                            break;
+                    }
+                case POPUP_MENU_THROW_AWAY_ITEM:
+                    gPopupMenu->unk_330 = MSG_Menus_Items;
+                    gPopupMenu->unk_33C = MSG_Menus_0064;
+                case POPUP_MENU_CHECK_ITEM:
+                    gPopupMenu->unk_330 = MSG_Menus_Items;
+                    gPopupMenu->unk_33C = MSG_Menus_0066;
+                case POPUP_MENU_CLAIM_ITEM:
+                    gPopupMenu->unk_330 = MSG_Menus_Items;
+                    gPopupMenu->unk_33C = MSG_Menus_0067;
+                case POPUP_MENU_USEKEY:
+                    var_s6 = 145;
+                    var_s5 = 145;
+                    gPopupMenu->unk_33C = MSG_Menus_0062;
+                    gPopupMenu->unk_330 = MSG_Menus_Items;
+                    break;
+                case POPUP_MENU_SWITCH_PARTNER:
+                    var_s6 = 139;
+                    var_s5 = 139;
+                    gPopupMenu->unk_330 = MSG_Menus_PartyMember;
+                    gPopupMenu->unk_338 = 1;
+                    gPopupMenu->unk_33C = MSG_Menus_0063;
+                    break;
+                case POPUP_MENU_TRADE_FOR_BADGE:
+                    var_s6 = 162;
+                    var_s5 = 140;
+                    gPopupMenu->unk_340 = -16;
+                    gPopupMenu->unk_330 = MSG_MenuTip_0032;
+                    gPopupMenu->unk_33C = MSG_Menus_0070;
+                    break;
+                case POPUP_MENU_UPGRADE_PARTNER:
+                    var_s6 = 146;
+                    var_s5 = 140;
+                    gPopupMenu->unk_340 = -8;
+                    gPopupMenu->unk_330 = MSG_Menus_PartyMember;
+                    gPopupMenu->unk_338 = 1;
+                    gPopupMenu->unk_33C = MSG_Menus_006A;
+                    break;
+                case POPUP_MENU_SELL_ITEM:
+                    var_s6 = 167;
+                    var_s5 = 145;
+                    gPopupMenu->unk_340 = -24;
+                    gPopupMenu->unk_330 = MSG_Menus_Items;
+                    gPopupMenu->unk_33C = MSG_Menus_0065;
+                    break;
+                case POPUP_MENU_READ_LETTER:
+                    var_s6 = 170;
+                    var_s5 = 170;
+                    gPopupMenu->unk_340 = -32;
+                    gPopupMenu->unk_330 = MSG_MenuTip_0033;
+                    gPopupMenu->unk_33C = MSG_Menus_006D;
+                    break;
+                case POPUP_MENU_TAKE_FROM_CHEST:
+                    var_s6 = 145;
+                    var_s5 = 145;
+                    gPopupMenu->unk_330 = MSG_Menus_00D7;
+                    gPopupMenu->unk_33C = MSG_Menus_00D6;
+                    break;
+                case POPUP_MENU_READ_DIARY_PAGE:
+                    var_s6 = 140;
+                    var_s5 = 140;
+                    gPopupMenu->unk_340 = -16;
+                    gPopupMenu->unk_330 = MSG_Menus_00CE;
+                    gPopupMenu->unk_33C = MSG_Menus_006C;
+                    break;
+                case POPUP_MENU_READ_POSTCARD:
+                    var_s6 = 149;
+                    var_s5 = 149;
+                    gPopupMenu->unk_340 = -16;
+                    gPopupMenu->unk_330 = MSG_Menus_00D0;
+                    gPopupMenu->unk_33C = MSG_Menus_006D;
+                    break;
+                case POPUP_MENU_POST_OFFICE:
+                    var_s6 = 131;
+                    var_s5 = 131;
+                    gPopupMenu->unk_330 = MSG_Menus_PartyMember;
+                    gPopupMenu->unk_338 = 1;
+                    gPopupMenu->unk_33C = MSG_Menus_006F;
+                    break;
+            }
+            msgWidth = get_msg_width(gPopupMenu->unk_330, 0);
+            width2 = msgWidth + (((var_s5 - msgWidth) * 2) / 5);
+            posX2 = (var_s5 - width2) / 2;
+            gPopupMenu->unk_334 = (width2 - msgWidth) / 2;
+            if (gPopupMenu->popupType == POPUP_MENU_USE_ITEM && gPopupMenu->dipMode != 0) {
+                width2 = 125;
+                posX2 = (var_s5 - width2) / 2;
+                gPopupMenu->unk_334 = (80 - msgWidth) / 2;
+            }
+            set_window_properties(WIN_POPUP_CONTENT, posX, posY, var_s6, (PopupMenu_DisplayedEntryCount * LINE_HEIGHT) + 26,
+                                  WINDOW_PRIORITY_20, popup_draw_menu_content, nullptr, -1);
+            if (gPopupMenu->unk_338 == 0) {
+                posX = posX2;  //! required to match
+                set_window_properties(WIN_POPUP_TITLE_A, posX, -6, width2, 16, WINDOW_PRIORITY_21,
+                                      popup_draw_title_content, nullptr, WIN_POPUP_CONTENT);
+                set_window_update(WIN_POPUP_TITLE_A, 1);
+                set_window_update(WIN_POPUP_TITLE_B, 2);
+            } else {
+                posX = posX2;  //! required to match
+                set_window_properties(WIN_POPUP_TITLE_B, posX, -6, width2, 16, WINDOW_PRIORITY_21,
+                                      popup_draw_title_content, nullptr, WIN_POPUP_CONTENT);
+                set_window_update(WIN_POPUP_TITLE_A, 2);
+                set_window_update(WIN_POPUP_TITLE_B, 1);
+            }
+
+            switch (gPopupMenu->popupType) {
+                case POPUP_MENU_TRADE_FOR_BADGE:
+                    set_window_properties(WIN_POPUP_COST, 126, -14, 32, 32, WINDOW_PRIORITY_21, popup_draw_cost_icon, nullptr, WIN_POPUP_CONTENT);
+                    break;
+                case POPUP_MENU_SELL_ITEM:
+                    set_window_properties(WIN_POPUP_COST, 131, -14, 32, 32, WINDOW_PRIORITY_21, popup_draw_cost_icon, nullptr, WIN_POPUP_CONTENT);
+                    break;
+            }
+
+            if (gPopupMenu->popupType == POPUP_MENU_TRADE_FOR_BADGE) {
+                posX = PopupMenu_StarPieceCounterPosX;
+                posY = PopupMenu_StarPieceCounterPosY;
+                set_window_properties(WIN_CURRENCY_COUNTER, posX, posY, 64, 20, WINDOW_PRIORITY_21, popup_draw_star_pieces_content, nullptr, -1);
+            }
+
+            do {
+                cond = false;
+                if (PopupMenu_SelectedIndex >= PopupMenu_FirstDisplayIndex + PopupMenu_LastDisplayIndex - 1) {
+                    PopupMenu_FirstDisplayIndex++;
+                    if (PopupMenu_FirstDisplayIndex > gPopupMenu->numEntries - PopupMenu_MaxDisplayableEntryCount) {
+                        PopupMenu_FirstDisplayIndex = gPopupMenu->numEntries - PopupMenu_MaxDisplayableEntryCount;
+                        if (PopupMenu_FirstDisplayIndex < 0) {
+                            PopupMenu_FirstDisplayIndex = 0;
+                        }
+                    } else {
+                        cond = true;
+                    }
+                }
+            } while (cond);
+
+            PopupMenu_LastDisplayIndex = PopupMenu_FirstDisplayIndex + PopupMenu_MaxDisplayableEntryCount;
+            D_8010D658 = -PopupMenu_FirstDisplayIndex * LINE_HEIGHT;
+            if (gPopupMenu->popupType >= POPUP_MENU_USE_ITEM
+                && (gPopupMenu->popupType < POPUP_MENU_READ_DIARY_PAGE || gPopupMenu->popupType == POPUP_MENU_USEKEY))
+            {
+                posX = PopupDescX;
+                posY = PopupDescY;
+                set_window_properties(WIN_POPUP_DESC, posX, posY, WINDOW_KEY_WIDTH, 32, WINDOW_PRIORITY_20, popup_draw_desc_content, nullptr, -1);
+            }
+
+            posX = PopupPromptX;
+            posY = PopupPromptY;
+
+            height2 = 32;
+            if (get_msg_lines(gPopupMenu->unk_33C) == 2) {
+                height2 = 40;
+            }
+            set_window_properties(WIN_POPUP_PROMPT, posX, posY, gPopupMenu->unk_340 + 144, height2, WINDOW_PRIORITY_20, popup_draw_prompt_content, nullptr, -1);
+
+            if (!PopupNotBattle) {
+                switch (gPopupMenu->popupType) {
+                    case POPUP_MENU_USE_ITEM:
+                    case POPUP_MENU_THROW_AWAY_ITEM:
+                    case POPUP_MENU_TRADE_FOR_BADGE:
+                    case POPUP_MENU_SELL_ITEM:
+                    case POPUP_MENU_CHECK_ITEM:
+                    case POPUP_MENU_CLAIM_ITEM:
+                    case POPUP_MENU_READ_LETTER:
+                    case POPUP_MENU_TAKE_FROM_CHEST:
+                    case POPUP_MENU_USEKEY:
+                        set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_SHOW);
+                        set_window_update(WIN_POPUP_DESC, WINDOW_UPDATE_SHOW);
+                        break;
+                    case POPUP_MENU_SWITCH_PARTNER:
+                    case POPUP_MENU_UPGRADE_PARTNER:
+                        set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_SHOW);
+                        set_window_update(WIN_POPUP_DESC, WINDOW_UPDATE_SHOW);
+                        break;
+                    case POPUP_MENU_READ_DIARY_PAGE:
+                    case POPUP_MENU_READ_POSTCARD:
+                    case POPUP_MENU_POST_OFFICE:
+                        set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_SHOW);
+                        break;
+                }
+            } else {
+                switch (gPopupMenu->popupType) {
+                    case POPUP_MENU_USE_ITEM:
+                    case POPUP_MENU_THROW_AWAY_ITEM:
+                    case POPUP_MENU_TRADE_FOR_BADGE:
+                    case POPUP_MENU_SELL_ITEM:
+                    case POPUP_MENU_CHECK_ITEM:
+                    case POPUP_MENU_CLAIM_ITEM:
+                    case POPUP_MENU_READ_LETTER:
+                    case POPUP_MENU_TAKE_FROM_CHEST:
+                    case POPUP_MENU_USEKEY:
+                        set_window_update(WIN_POPUP_CONTENT, (intptr_t)basic_window_update);
+                        sfx_play_sound(SOUND_OPEN_POPUP_1);
+                        set_window_update(WIN_POPUP_DESC, (intptr_t)basic_window_update);
+                        break;
+                    case POPUP_MENU_SWITCH_PARTNER:
+                    case POPUP_MENU_UPGRADE_PARTNER:
+                        set_window_update(WIN_POPUP_CONTENT, (intptr_t)basic_window_update);
+                        sfx_play_sound(SOUND_OPEN_POPUP_2);
+                        set_window_update(WIN_POPUP_DESC, (intptr_t)basic_window_update);
+                        break;
+                    case POPUP_MENU_READ_DIARY_PAGE:
+                    case POPUP_MENU_READ_POSTCARD:
+                    case POPUP_MENU_POST_OFFICE:
+                        set_window_update(WIN_POPUP_CONTENT, (intptr_t)basic_window_update);
+                        sfx_play_sound(SOUND_OPEN_POPUP_1);
+                        break;
+                }
+                set_window_update(WIN_POPUP_PROMPT, WINDOW_UPDATE_SHOW);
+            }
+
+            if (gPopupMenu->popupType == POPUP_MENU_TRADE_FOR_BADGE) {
+                set_window_update(WIN_POPUP_COST, (intptr_t)basic_window_update);
+                set_window_update(WIN_CURRENCY_COUNTER, (intptr_t)basic_window_update);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_UPGRADE_PARTNER) {
+                set_window_update(WIN_PARTNER_COST, (intptr_t)basic_window_update);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_SELL_ITEM) {
+                set_window_update(WIN_POPUP_COST, (intptr_t)basic_window_update);
+            }
+            gPopupState = POPUP_STATE_CHOOSING;
+            break;
+        case POPUP_STATE_CHOOSING:
+            if (PopupDelayTime != 0) {
+                PopupDelayTime--;
+            } else {
+                PopupMenu_PrevSelectedIndex = PopupMenu_SelectedIndex;
+
+                // change selection on up input
+                if (gGameStatusPtr->heldButtons[0] & (BUTTON_STICK_UP | BUTTON_Z) &&
+                    (PopupMenu_SelectedIndex > 0 || (gGameStatusPtr->pressedButtons[0] & (BUTTON_STICK_UP | BUTTON_Z))))
+                {
+                    PopupMenu_SelectedIndex--;
+                }
+
+                // change selection on down input
+                if (gGameStatusPtr->heldButtons[0] & (BUTTON_STICK_DOWN | BUTTON_R) &&
+                    ((PopupMenu_SelectedIndex < gPopupMenu->numEntries - 1) || (gGameStatusPtr->pressedButtons[0] & (BUTTON_STICK_DOWN | BUTTON_R))))
+                {
+                    PopupMenu_SelectedIndex++;
+                }
+
+                // wrap selected index
+                if (PopupMenu_SelectedIndex < 0) {
+                    PopupMenu_SelectedIndex = gPopupMenu->numEntries - 1;
+                }
+                if (PopupMenu_SelectedIndex > gPopupMenu->numEntries - 1) {
+                    PopupMenu_SelectedIndex = 0;
+                }
+
+                if (PopupMenu_PrevSelectedIndex != PopupMenu_SelectedIndex) {
+                    sfx_play_sound(SOUND_MENU_CHANGE_SELECTION);
+                }
+
+                // ensure one option is displayed above the selected index, if applicable
+                // shift up to 4 entries at a time on list wrap
+                for (i = 0; i < 4; i++) {
+                    if (PopupMenu_SelectedIndex < PopupMenu_FirstDisplayIndex + 1) {
+                        PopupMenu_FirstDisplayIndex--;
+                        if (PopupMenu_FirstDisplayIndex < 0) {
+                            PopupMenu_FirstDisplayIndex = 0;
+                        }
+                    }
+                }
+
+                // ensure one option is displayed after the selected index, if applicable
+                // shift up to 4 entries at a time on list wrap
+                for (i = 0; i < 4; i++) {
+                    if (PopupMenu_SelectedIndex >= PopupMenu_LastDisplayIndex - 1) {
+                        PopupMenu_FirstDisplayIndex++;
+                        if (PopupMenu_FirstDisplayIndex > gPopupMenu->numEntries - PopupMenu_MaxDisplayableEntryCount) {
+                            PopupMenu_FirstDisplayIndex = gPopupMenu->numEntries - PopupMenu_MaxDisplayableEntryCount;
+                            if (PopupMenu_FirstDisplayIndex < 0) {
+                                PopupMenu_FirstDisplayIndex = 0;
+                            }
+                        }
+                    }
+                    PopupMenu_LastDisplayIndex = PopupMenu_FirstDisplayIndex + PopupMenu_MaxDisplayableEntryCount;
+                }
+
+                // make selection on A button input
+                if (gGameStatusPtr->pressedButtons[0] & BUTTON_A) {
+                    switch (gPopupMenu->popupType) {
+                        case POPUP_MENU_READ_LETTER:
+                            sfx_play_sound(SOUND_MENU_NEXT);
+                            if (!PopupNotBattle) {
+                                gPopupState = POPUP_STATE_CHOSE_WORLD;
+                            } else {
+                                gPopupState = POPUP_STATE_CHOSE_BATTLE;
+                            }
+                            break;
+                        case POPUP_MENU_POST_OFFICE:
+                            sfx_play_sound(SOUND_MENU_NEXT);
+                            if (!PopupNotBattle) {
+                                gPopupState = POPUP_STATE_CHOSE_WORLD;
+                            } else {
+                                gPopupState = POPUP_STATE_CHOSE_BATTLE;
+                            }
+                            break;
+                        default:
+                            if (gPopupMenu->enabled[PopupMenu_SelectedIndex]) {
+                                sfx_play_sound(SOUND_MENU_NEXT);
+                                if (!PopupNotBattle) {
+                                    gPopupState = POPUP_STATE_CHOSE_WORLD;
+                                } else {
+                                    gPopupState = POPUP_STATE_CHOSE_BATTLE;
+                                }
+                                break;
+                            }
+                            if (gPopupMenu->popupType == POPUP_MENU_SWITCH_PARTNER) {
+                                sfx_play_sound(SOUND_MENU_ERROR);
+                                gPopupState = POPUP_STATE_ALREADY_HAVE_PARTNER_BEGIN;
+                                break;
+                            }
+                            if (PopupNotBattle && (gPopupMenu->popupType == POPUP_MENU_USE_ITEM || gPopupMenu->popupType == POPUP_MENU_TRADE_FOR_BADGE)) {
+                                sfx_play_sound(SOUND_MENU_ERROR);
+                            }
+                            break;
+                    }
+                } else {
+                    switch (gPopupMenu->popupType) {
+                        case POPUP_MENU_USE_ITEM:
+                        case POPUP_MENU_THROW_AWAY_ITEM:
+                        case POPUP_MENU_TRADE_FOR_BADGE:
+                        case POPUP_MENU_SELL_ITEM:
+                        case POPUP_MENU_CHECK_ITEM:
+                        case POPUP_MENU_CLAIM_ITEM:
+                        case POPUP_MENU_USEKEY:
+                            if (PopupNotBattle) {
+                                buttons = BUTTON_B | BUTTON_C_LEFT;
+                            } else {
+                                buttons = BUTTON_B;
+                            }
+                            break;
+                        case POPUP_MENU_SWITCH_PARTNER:
+                        case POPUP_MENU_UPGRADE_PARTNER:
+                            if (PopupNotBattle) {
+                                buttons = BUTTON_B | BUTTON_C_RIGHT;
+                            } else {
+                                buttons = BUTTON_B;
+                            }
+                            break;
+                        case POPUP_MENU_READ_LETTER:
+                        case POPUP_MENU_TAKE_FROM_CHEST:
+                        case POPUP_MENU_READ_DIARY_PAGE:
+                        case POPUP_MENU_READ_POSTCARD:
+                        case POPUP_MENU_POST_OFFICE:
+                            buttons = BUTTON_B;
+                            break;
+                        default:
+                            buttons = 0;
+                            break;
+                    }
+
+                    if (gGameStatusPtr->pressedButtons[0] & buttons) {
+                        sfx_play_sound(SOUND_MENU_BACK);
+                        if (PopupNotDipping) {
+                            if (!PopupNotBattle) {
+                                gPopupState = POPUP_STATE_MINUS_3;
+                            } else {
+                                gPopupState = POPUP_STATE_MINUS_7;
+                            }
+                        } else {
+                            if (PopupDipMode == 0) {
+                                gPopupState = POPUP_STATE_ALREADY_HAVE_PARTNER_BEGIN;
+                            } else {
+                                gPopupState = POPUP_STATE_CANCEL_DIP;
+                            }
+                        }
+                        break;
+                    }
+
+                    switch (gPopupMenu->popupType) {
+                        default:
+                            buttons = 0;
+                            break;
+                        case POPUP_MENU_USE_ITEM:
+                            buttons = BUTTON_C_RIGHT;
+                            break;
+                        case POPUP_MENU_SWITCH_PARTNER:
+                            buttons = BUTTON_C_LEFT;
+                            break;
+                    }
+
+                    if (PopupNotBattle && (gGameStatusPtr->pressedButtons[0] & buttons)) {
+                        sfx_play_sound(SOUND_MENU_BACK);
+                        gPopupState = POPUP_STATE_CHOSE_SWAP;
+                        break;
+                    }
+                }
+            }
+            break;
+        case POPUP_STATE_CHOSE_WORLD:
+            hud_element_set_tint(PopupMenu_EmptybarHID, 160, 160, 160);
+            hud_element_set_tint(PopupMenu_EntryIconHID, 160, 160, 160);
+            hud_element_set_tint(PopupMenu_CursorHID, 160, 160, 160);
+            hud_element_set_tint(PopupMenu_UpArrowHID, 160, 160, 160);
+            hud_element_set_tint(PopupMenu_DownArrowHID, 160, 160, 160);
+            hud_element_set_script(PopupMenu_CursorHID, &HES_HandPointer);
+            if (gPopupMenu->popupType == POPUP_MENU_TRADE_FOR_BADGE) {
+                hud_element_set_tint(PopupMenu_TitleIconHID, 160, 160, 160);
+                hud_element_set_tint(PopupMenu_TimesHID, 160, 160, 160);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_UPGRADE_PARTNER) {
+                hud_element_set_tint(PopupMenu_TitleIconHID, 160, 160, 160);
+                hud_element_set_tint(PopupMenu_TimesHID, 160, 160, 160);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_SWITCH_PARTNER || gPopupMenu->popupType == POPUP_MENU_UPGRADE_PARTNER) {
+                hud_element_set_tint(PopupMenu_PartnerLevelHID, 160, 160, 160);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_SELL_ITEM) {
+                hud_element_set_tint(PopupMenu_TitleIconHID, 160, 160, 160);
+            }
+            D_8010D690 = MSG_PAL_0D;
+
+            gPopupMenu->result = PopupMenu_SelectedIndex + 1;
+            return PopupMenu_SelectedIndex + 1;
+        case POPUP_STATE_CHOSE_BATTLE:
+            gPopupMenu->result = PopupMenu_SelectedIndex + 1;
+            return PopupMenu_SelectedIndex + 1;
+        case POPUP_STATE_MINUS_3:
+            switch (gPopupMenu->popupType) {
+                case POPUP_MENU_USE_ITEM:
+                case POPUP_MENU_THROW_AWAY_ITEM:
+                case POPUP_MENU_TRADE_FOR_BADGE:
+                case POPUP_MENU_SELL_ITEM:
+                case POPUP_MENU_CHECK_ITEM:
+                case POPUP_MENU_CLAIM_ITEM:
+                case POPUP_MENU_READ_LETTER:
+                case POPUP_MENU_TAKE_FROM_CHEST:
+                case POPUP_MENU_USEKEY:
+                    set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_HIDE);
+                    set_window_update(WIN_POPUP_DESC, WINDOW_UPDATE_HIDE);
+                    break;
+                case POPUP_MENU_SWITCH_PARTNER:
+                case POPUP_MENU_UPGRADE_PARTNER:
+                    set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_HIDE);
+                    set_window_update(WIN_POPUP_DESC, WINDOW_UPDATE_HIDE);
+                    break;
+                case POPUP_MENU_READ_DIARY_PAGE:
+                case POPUP_MENU_READ_POSTCARD:
+                case POPUP_MENU_POST_OFFICE:
+                    set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_HIDE);
+                    break;
+            }
+            destroy_popup_menu();
+            free_worker(gPopupWorker);
+            gPopupState = POPUP_STATE_MINUS_5;
+            gPopupMenu->result = POPUP_RESULT_CANCEL;
+            return 255;
+        case POPUP_STATE_MINUS_4:
+            free_worker(gPopupWorker);
+            gPopupState = POPUP_STATE_MINUS_5;
+            gPopupMenu->result = POPUP_RESULT_CANCEL;
+            return 255;
+        case POPUP_STATE_CHOSE_SWAP:
+            gPopupMenu->result = POPUP_RESULT_SWAP_MENU;
+            return 255;
+        case POPUP_STATE_MINUS_7:
+        case POPUP_STATE_MINUS_5:
+            gPopupMenu->result = POPUP_RESULT_CANCEL;
+            return 255;
+        case POPUP_STATE_10:
+            PopupDelayTime--;
+            if (PopupDelayTime == 0) {
+                gPopupState = POPUP_STATE_11;
+                gPopupMenu->result = PopupMenu_SelectedIndex + 1;
+                return PopupMenu_SelectedIndex + 1;
+            }
+            break;
+        case POPUP_STATE_20:
+            PopupDelayTime++;
+            if (PopupDelayTime >= PopupDelayLength) {
+                gPopupState = POPUP_STATE_CHOOSING;
+                gPopupMenu->result = PopupMenu_SelectedIndex + 1;
+                return PopupMenu_SelectedIndex + 1;
+            }
+            break;
+        case POPUP_STATE_ALREADY_HAVE_PARTNER_BEGIN:
+            gPopupState = POPUP_STATE_ALREADY_HAVE_PARTNER_SHOW;
+            gPopupMenu->result = POPUP_RESULT_INVALID;
+            return 0;
+        case POPUP_STATE_ALREADY_HAVE_PARTNER_SHOW:
+            set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_HIDE);
+            set_window_update(WIN_POPUP_DESC, WINDOW_UPDATE_HIDE);
+            if (PopupNotBattle) {
+                set_window_update(WIN_POPUP_PROMPT, WINDOW_UPDATE_HIDE);
+            }
+            width = get_msg_width(MSG_Menus_006B, 0) + 32;
+            if (get_msg_lines(MSG_Menus_006B) == 1) {
+                posY = 76;
+            } else {
+                posY = 72;
+            }
+            set_window_properties(WIN_BTL_POPUP, 160 - (width / 2), posY, width, 40, WINDOW_PRIORITY_20, popup_draw_already_have_partner, nullptr, -1);
+            set_window_update(WIN_BTL_POPUP, WINDOW_UPDATE_SHOW);
+            PopupDelayTime = 60;
+            gPopupState = POPUP_STATE_ALREADY_HAVE_PARTNER_AWAIT;
+            return 0;
+        case POPUP_STATE_ALREADY_HAVE_PARTNER_AWAIT:
+            if (gGameStatusPtr->pressedButtons[0] & (BUTTON_A | BUTTON_B | BUTTON_C_RIGHT)) {
+                PopupDelayTime = 0;
+            }
+            if (PopupDelayTime != 0) {
+                PopupDelayTime--;
+                return 0;
+            }
+            set_window_update(WIN_BTL_POPUP, WINDOW_UPDATE_HIDE);
+            set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_SHOW);
+            set_window_update(WIN_POPUP_DESC, WINDOW_UPDATE_SHOW);
+            if (PopupNotBattle) {
+                set_window_update(WIN_POPUP_PROMPT, WINDOW_UPDATE_SHOW);
+            }
+            gPopupState = POPUP_STATE_CHOOSING;
+            gPopupMenu->result = POPUP_RESULT_CHOOSING;
+            break;
+        case POPUP_STATE_CANCEL_DIP:
+            hud_element_set_tint(PopupMenu_EmptybarHID, 160, 160, 160);
+            hud_element_set_tint(PopupMenu_EntryIconHID, 160, 160, 160);
+            hud_element_set_tint(PopupMenu_CursorHID, 160, 160, 160);
+            hud_element_set_tint(PopupMenu_UpArrowHID, 160, 160, 160);
+            hud_element_set_tint(PopupMenu_DownArrowHID, 160, 160, 160);
+            hud_element_set_script(PopupMenu_CursorHID, &HES_HandPointer);
+
+            if (gPopupMenu->popupType == POPUP_MENU_TRADE_FOR_BADGE) {
+                hud_element_set_tint(PopupMenu_TitleIconHID, 160, 160, 160);
+                hud_element_set_tint(PopupMenu_TimesHID, 160, 160, 160);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_UPGRADE_PARTNER) {
+                hud_element_set_tint(PopupMenu_TitleIconHID, 160, 160, 160);
+                hud_element_set_tint(PopupMenu_TimesHID, 160, 160, 160);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_SWITCH_PARTNER || gPopupMenu->popupType == POPUP_MENU_UPGRADE_PARTNER) {
+                hud_element_set_tint(PopupMenu_PartnerLevelHID, 160, 160, 160);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_SELL_ITEM) {
+                hud_element_set_tint(PopupMenu_TitleIconHID, 160, 160, 160);
+            }
+
+            switch (gPopupMenu->popupType) {
+                case POPUP_MENU_USE_ITEM:
+                case POPUP_MENU_THROW_AWAY_ITEM:
+                case POPUP_MENU_TRADE_FOR_BADGE:
+                case POPUP_MENU_SELL_ITEM:
+                case POPUP_MENU_CHECK_ITEM:
+                case POPUP_MENU_CLAIM_ITEM:
+                case POPUP_MENU_READ_LETTER:
+                case POPUP_MENU_TAKE_FROM_CHEST:
+                case POPUP_MENU_USEKEY:
+                    set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_HIDE);
+                    set_window_update(WIN_POPUP_DESC, WINDOW_UPDATE_HIDE);
+                    break;
+                case POPUP_MENU_SWITCH_PARTNER:
+                case POPUP_MENU_UPGRADE_PARTNER:
+                    set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_HIDE);
+                    set_window_update(WIN_POPUP_DESC, WINDOW_UPDATE_HIDE);
+                    break;
+                case POPUP_MENU_READ_DIARY_PAGE:
+                case POPUP_MENU_READ_POSTCARD:
+                case POPUP_MENU_POST_OFFICE:
+                    set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_HIDE);
+                    break;
+            }
+
+            D_8010D690 = MSG_PAL_0D;
+            if (PopupDipMode == 1) {
+                msgID = MSG_Menus_0068;
+            } else {
+                msgID = MSG_Menus_0069;
+            }
+            width = get_msg_width(msgID, 0) + 32;
+            if (get_msg_lines(msgID) == 1) {
+                height = 32;
+                posY = 76;
+            } else {
+                height = 40;
+                posY = 72;
+            }
+            set_window_properties(WIN_POPUP_PROMPT, 160 - (width / 2), posY, width, height, WINDOW_PRIORITY_19, popup_draw_dip_query_content, nullptr, -1);
+            set_window_update(WIN_POPUP_PROMPT, WINDOW_UPDATE_SHOW);
+            D_8010D6A0 = msg_get_printer_for_msg(MSG_Choice_001D, &D_8010D6A4);
+            msg_printer_set_origin_pos(D_8010D6A0, 160, 144);
+            gPopupState = POPUP_STATE_CANCEL_DIP_AWAIT_CHOICE;
+            break;
+        case POPUP_STATE_CANCEL_DIP_AWAIT_CHOICE:
+            if (D_8010D6A4 == 1) {
+                set_window_update(WIN_POPUP_PROMPT, WINDOW_UPDATE_HIDE);
+                switch (D_8010D6A0->curOption) {
+                    case 0:
+                        gPopupState = POPUP_STATE_CANCEL_DIP_ACCEPT;
+                        break;
+                    case 1:
+                        gPopupState = POPUP_STATE_CANCEL_DIP_DECLINE;
+                        break;
+                }
+            }
+            break;
+        case POPUP_STATE_CANCEL_DIP_ACCEPT:
+            gPopupState = POPUP_STATE_MINUS_3;
+            break;
+        case POPUP_STATE_CANCEL_DIP_DECLINE:
+            hud_element_set_tint(PopupMenu_EmptybarHID, 255, 255, 255);
+            hud_element_set_tint(PopupMenu_EntryIconHID, 255, 255, 255);
+            hud_element_set_tint(PopupMenu_CursorHID, 255, 255, 255);
+            hud_element_set_tint(PopupMenu_UpArrowHID, 255, 255, 255);
+            hud_element_set_tint(PopupMenu_DownArrowHID, 255, 255, 255);
+            if (gPopupMenu->popupType == POPUP_MENU_TRADE_FOR_BADGE) {
+                hud_element_set_tint(PopupMenu_TitleIconHID, 160, 160, 160);
+                hud_element_set_tint(PopupMenu_TimesHID, 160, 160, 160);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_UPGRADE_PARTNER) {
+                hud_element_set_tint(PopupMenu_TitleIconHID, 160, 160, 160);
+                hud_element_set_tint(PopupMenu_TimesHID, 160, 160, 160);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_SWITCH_PARTNER || gPopupMenu->popupType == POPUP_MENU_UPGRADE_PARTNER) {
+                hud_element_set_tint(PopupMenu_PartnerLevelHID, 160, 160, 160);
+            }
+            if (gPopupMenu->popupType == POPUP_MENU_SELL_ITEM) {
+                hud_element_set_tint(PopupMenu_TitleIconHID, 160, 160, 160);
+            }
+            hud_element_set_script(PopupMenu_CursorHID, &HES_HandPointer);
+
+            switch (gPopupMenu->popupType) {
+                case POPUP_MENU_USE_ITEM:
+                case POPUP_MENU_THROW_AWAY_ITEM:
+                case POPUP_MENU_TRADE_FOR_BADGE:
+                case POPUP_MENU_SELL_ITEM:
+                case POPUP_MENU_CHECK_ITEM:
+                case POPUP_MENU_CLAIM_ITEM:
+                case POPUP_MENU_READ_LETTER:
+                case POPUP_MENU_TAKE_FROM_CHEST:
+                case POPUP_MENU_USEKEY:
+                    set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_SHOW);
+                    set_window_update(WIN_POPUP_DESC, WINDOW_UPDATE_SHOW);
+                    break;
+                case POPUP_MENU_SWITCH_PARTNER:
+                case POPUP_MENU_UPGRADE_PARTNER:
+                    set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_SHOW);
+                    set_window_update(WIN_POPUP_DESC, WINDOW_UPDATE_SHOW);
+                    break;
+                case POPUP_MENU_READ_DIARY_PAGE:
+                case POPUP_MENU_READ_POSTCARD:
+                case POPUP_MENU_POST_OFFICE:
+                    set_window_update(WIN_POPUP_CONTENT, WINDOW_UPDATE_SHOW);
+                    break;
+            }
+            D_8010D690 = MSG_PAL_STANDARD;
+            gPopupState = POPUP_STATE_CHOOSING;
+            break;
+    }
+    gPopupMenu->result = POPUP_RESULT_CHOOSING;
+    return 0;
+}
 #else
 s32 popup_menu_update(void) {
     s32 posX;

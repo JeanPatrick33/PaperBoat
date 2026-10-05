@@ -102,3 +102,22 @@ This wouldn't have been possible without your amazing work:
 # AI Disclosure
 
 PaperBoat accepts pull requests that use AI, within policy guidelines. For more information please see the HarbourMasters [AI Policy](https://github.com/HarbourMasters/code-of-conduct/blob/main/AI_POLICY.md).
+
+## European (PAL) ROM support
+
+PaperBoat can be built for the European release (English / Deutsch / Français / Español):
+
+```
+cmake -B build -DPAPERBOAT_REGION=pal
+```
+
+* Accepted ROMs: the 64 MB image (SHA1 `2111d392…`) and the usual 48 MB No-Intro dump (padded automatically).
+  A US ROM given to a PAL build (or vice versa) is refused with a clear message.
+* Assets are described by `assets/yaml/pal` (generated from `ver/pal` of the decomp with `tools/pal/`),
+  including the per-language message banks, level-up/star point overlays, title menu and localized HUD images.
+* PAL-specific logic lives behind `VERSION_PAL`; heavily diverging sources have a flat `<name>.pal.c`
+  replacement that CMake swaps in for PAL builds only. The US build is unchanged.
+* The language is stored in the save globals and can be changed from the title screen ("Languages").
+
+Status: extraction and compilation checks are automated; in-game behaviour of the PAL build has not been
+playtested yet — please report issues.

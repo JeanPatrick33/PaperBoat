@@ -2,7 +2,17 @@
 #include "entity.h"
 #include "assets/misc/starpoint.h"
 
-#if !VERSION_PAL
+#if VERSION_PAL
+#include "assets/starpoint_pal.h"
+EntityModelScript EMS_starpoint_starpoint = STANDARD_ENTITY_MODEL_SCRIPT(starpoint_en_render_starpoint_top_gfx, RENDER_MODE_CLOUD_NO_ZCMP);
+EntityModelScript EMS_starpoint_starpoints = STANDARD_ENTITY_MODEL_SCRIPT(starpoint_en_render_starpoints_top_gfx, RENDER_MODE_CLOUD_NO_ZCMP);
+EntityModelScript EMS_starpoint_starpoint_de = STANDARD_ENTITY_MODEL_SCRIPT(starpoint_de_render_starpoint_top_gfx, RENDER_MODE_CLOUD_NO_ZCMP);
+EntityModelScript EMS_starpoint_starpoints_de = STANDARD_ENTITY_MODEL_SCRIPT(starpoint_de_render_starpoints_top_gfx, RENDER_MODE_CLOUD_NO_ZCMP);
+EntityModelScript EMS_starpoint_starpoint_fr = STANDARD_ENTITY_MODEL_SCRIPT(starpoint_fr_render_starpoint_top_gfx, RENDER_MODE_CLOUD_NO_ZCMP);
+EntityModelScript EMS_starpoint_starpoints_fr = STANDARD_ENTITY_MODEL_SCRIPT(starpoint_fr_render_starpoints_top_gfx, RENDER_MODE_CLOUD_NO_ZCMP);
+EntityModelScript EMS_starpoint_starpoint_es = STANDARD_ENTITY_MODEL_SCRIPT(starpoint_es_render_starpoint_top_gfx, RENDER_MODE_CLOUD_NO_ZCMP);
+EntityModelScript EMS_starpoint_starpoints_es = STANDARD_ENTITY_MODEL_SCRIPT(starpoint_es_render_starpoints_top_gfx, RENDER_MODE_CLOUD_NO_ZCMP);
+#else
 EntityModelScript EMS_starpoint_starpoint = STANDARD_ENTITY_MODEL_SCRIPT(D_802A2158_7A9AF8, RENDER_MODE_CLOUD_NO_ZCMP);
 EntityModelScript EMS_starpoint_starpoints = STANDARD_ENTITY_MODEL_SCRIPT(D_802A32D8_7AAC78, RENDER_MODE_CLOUD_NO_ZCMP);
 #endif

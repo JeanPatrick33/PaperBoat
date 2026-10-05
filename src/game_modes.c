@@ -88,6 +88,20 @@ const GameModeData GameModeTemplates[] = {
         .renderBackUI = state_drawUI_unpause,
         .renderFrontUI = nullptr,
     },
+#if VERSION_PAL
+    [GAME_MODE_LANGUAGE_SELECT] {
+        .init = state_init_language_select,
+        .step = state_step_language_select,
+        .renderBackUI = state_drawUI_language_select,
+        .renderFrontUI = nullptr,
+    },
+    [GAME_MODE_END_LANGUAGE_SELECT] {
+        .init = state_init_exit_language_select,
+        .step = state_step_exit_language_select,
+        .renderBackUI = state_drawUI_exit_language_select,
+        .renderFrontUI = nullptr,
+    },
+#endif
     [GAME_MODE_FILE_SELECT] {
         .init = state_init_file_select,
         .step = state_step_file_select,

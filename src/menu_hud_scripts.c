@@ -2,6 +2,9 @@
 #include "hud_element.h"
 #include "ld_addrs.h"
 #include "assets/ui.h"
+#if VERSION_PAL
+#include "assets/ui_langs_pal.h"
+#endif
 #include "assets/misc/pause.h"
 
 HudScript HES_UnusedBadge = HES_TEMPLATE_CI_ENUM_SIZE(ui_pause_unused_badge_points, 24, 24);

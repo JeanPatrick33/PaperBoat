@@ -1,0 +1,75 @@
+# PAL level-up letters (level_up_letters_fr): rom 0x7FEAD0 vram 0x802A6420
+
+:config:
+  virtual: [0x802A6420, 0x7FEAD0]
+
+lights:
+  { type: LIGHTS, offset: 0x7FEAD0, symbol: fr_level_up_lights_data }
+draw_NI:
+  { type: VTX, offset: 0x7FEAE8, count: 8, symbol: fr_level_up_draw_NI_vtx }
+draw_VE:
+  { type: VTX, offset: 0x7FEB68, count: 8, symbol: fr_level_up_draw_VE_vtx }
+draw_AU:
+  { type: VTX, offset: 0x7FEBE8, count: 8, symbol: fr_level_up_draw_AU_vtx }
+draw_SU:
+  { type: VTX, offset: 0x7FEC68, count: 8, symbol: fr_level_up_draw_SU_vtx }
+draw_PE:
+  { type: VTX, offset: 0x7FECE8, count: 8, symbol: fr_level_up_draw_PE_vtx }
+draw_RI:
+  { type: VTX, offset: 0x7FED68, count: 8, symbol: fr_level_up_draw_RI_vtx }
+draw_EU:
+  { type: VTX, offset: 0x7FEDE8, count: 8, symbol: fr_level_up_draw_EU_vtx }
+draw_R_exclamation_mark:
+  { type: VTX, offset: 0x7FEE68, count: 8, symbol: fr_level_up_draw_R_exclamation_mark_vtx }
+big_NI:
+  { type: TEXTURE, offset: 0x7FEEE8, format: IA8, width: 64, height: 54, symbol: fr_level_up_big_NI_png }
+big_VE:
+  { type: TEXTURE, offset: 0x7FFC68, format: IA8, width: 64, height: 52, symbol: fr_level_up_big_VE_png }
+big_AU:
+  { type: TEXTURE, offset: 0x800968, format: IA8, width: 64, height: 55, symbol: fr_level_up_big_AU_png }
+big_SU:
+  { type: TEXTURE, offset: 0x801728, format: IA8, width: 64, height: 55, symbol: fr_level_up_big_SU_png }
+big_RI:
+  { type: TEXTURE, offset: 0x8024E8, format: IA8, width: 64, height: 55, symbol: fr_level_up_big_RI_png }
+big_EU:
+  { type: TEXTURE, offset: 0x8032A8, format: IA8, width: 64, height: 55, symbol: fr_level_up_big_EU_png }
+big_R_exclamation_mark:
+  { type: TEXTURE, offset: 0x804068, format: IA8, width: 64, height: 56, symbol: fr_level_up_big_R_exclamation_mark_png }
+big_PE:
+  { type: TEXTURE, offset: 0x804E68, format: IA16, width: 64, height: 32, symbol: fr_level_up_big_PE_png }
+big_NI.gfx:
+  { type: GFX, offset: 0x805E68, symbol: fr_level_up_big_NI_gfx }
+big_VE.gfx:
+  { type: GFX, offset: 0x805EE0, symbol: fr_level_up_big_VE_gfx }
+big_AU.gfx:
+  { type: GFX, offset: 0x805F58, symbol: fr_level_up_big_AU_gfx }
+big_SU.gfx:
+  { type: GFX, offset: 0x805FD0, symbol: fr_level_up_big_SU_gfx }
+big_PE.gfx:
+  { type: GFX, offset: 0x806048, symbol: fr_level_up_big_PE_gfx }
+big_RI.gfx:
+  { type: GFX, offset: 0x8060C0, symbol: fr_level_up_big_RI_gfx }
+big_EU.gfx:
+  { type: GFX, offset: 0x806138, symbol: fr_level_up_big_EU_gfx }
+big_R_exclamation_mark.gfx:
+  { type: GFX, offset: 0x8061B0, symbol: fr_level_up_big_R_exclamation_mark_gfx }
+draw_NI.gfx:
+  { type: GFX, offset: 0x806228, symbol: fr_level_up_draw_NI_gfx }
+draw_VE.gfx:
+  { type: GFX, offset: 0x806290, symbol: fr_level_up_draw_VE_gfx }
+draw_AU.gfx:
+  { type: GFX, offset: 0x8062F8, symbol: fr_level_up_draw_AU_gfx }
+draw_SU.gfx:
+  { type: GFX, offset: 0x806360, symbol: fr_level_up_draw_SU_gfx }
+draw_PE.gfx:
+  { type: GFX, offset: 0x8063C8, symbol: fr_level_up_draw_PE_gfx }
+draw_RI.gfx:
+  { type: GFX, offset: 0x806430, symbol: fr_level_up_draw_RI_gfx }
+draw_EU.gfx:
+  { type: GFX, offset: 0x806498, symbol: fr_level_up_draw_EU_gfx }
+draw_R_exclamation_mark.gfx:
+  { type: GFX, offset: 0x806500, symbol: fr_level_up_draw_R_exclamation_mark_gfx }
+letters_chain.gfx:
+  { type: GFX, offset: 0x806568, symbol: fr_level_up_letters_chain_gfx }
+chain.gfx:
+  { type: GFX, offset: 0x8065C8, symbol: fr_level_up_chain_gfx }

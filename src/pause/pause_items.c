@@ -1,6 +1,11 @@
 #include "pause/pause_common.h"
 #include "message_ids.h"
 
+#if VERSION_PAL
+extern u8 D_PAL_80271B30[4];
+extern u8 D_PAL_80271B34[4];
+#endif
+
 void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width, s32 height, s32 opacity, s32 darkening);
 void pause_items_init(MenuPanel* panel);
 void pause_items_handle_input(MenuPanel* panel);
@@ -77,7 +82,16 @@ s32 pause_items_get_pos_x(s32 page, s32 itemIndex) {
 }
 
 s32 pause_items_get_pos_y(s32 page, s32 itemIndex) {
+#if VERSION_JP
+    s32 y = (page + 1) * 11;
+
+    y += gPauseItemsPages[page].listStart * 24;
+    y += itemIndex / gPauseItemsPages[page].numCols * 24;
+
+    return y;
+#else
     return ((page + 1) * 11) + (ITEM_MENU_PAGE(page)->listStart * 16) + ((itemIndex / ITEM_MENU_PAGE(page)->numCols) * 16);
+#endif
 }
 
 s32 pause_items_get_column(s32 page, s32 itemIdx) {
@@ -87,6 +101,14 @@ s32 pause_items_get_column(s32 page, s32 itemIdx) {
 s32 pause_items_get_row(s32 page, s32 itemIdx) {
     return ITEM_MENU_PAGE(page)->listStart + (itemIdx / ITEM_MENU_PAGE(page)->numCols);
 }
+
+#if VERSION_JP
+#define Y_VAR1 48
+#define Y_VAR2 120
+#else
+#define Y_VAR1 32
+#define Y_VAR2 128
+#endif
 
 s32 pause_items_is_visible(s32 y) {
     if (y < gPauseItemsCurrentScrollPos - 32) {
@@ -103,9 +125,38 @@ s32 pause_items_scroll_offset_x(s32 beforeX) {
     return beforeX;
 }
 
-#if VERSION_PAL
-INCLUDE_ASM(void, "pause/pause_items", pause_items_draw_contents);
+#if VERSION_JP
+#define X_VAR1 103
+#define X_VAR2 93
+#define X_VAR3 9
+#define X_VAR4 18
+#define X_VAR5 18
+#define X_VAR7 77
+#define Y_VAR3 23
+#define Y_VAR4 28
+#define Y_VAR5 96
+#define Y_VAR6 29
+#define W_VAR1 71
+#define W_VAR2 71
 #else
+#define X_VAR1 119
+#define X_VAR2 105
+#define X_VAR3 12
+#define X_VAR4 21
+#if VERSION_PAL
+#define X_VAR5 D_PAL_80271B34[gCurrentLanguage]
+#else
+#define X_VAR5 25
+#endif
+#define X_VAR7 85
+#define Y_VAR3 17
+#define Y_VAR4 23
+#define Y_VAR5 112
+#define Y_VAR6 23
+#define W_VAR1 91
+#define W_VAR2 91
+#endif
+
 void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width, s32 height, s32 opacity, s32 darkening) {
     s32 i, pageIndex, itemIndex;
     s32 totalItemIndex;
@@ -123,6 +174,9 @@ void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
     s32 isSelected, itemOffsetX, itemOffsetY;
     s32* iconIDs;
     s32 itemIcon;
+#if VERSION_PAL
+    s32 msg2;
+#endif
     intptr_t msg;
     s32 msgX, msgY, opacity1;
     s32 selectedPosX, selectedPosY;
@@ -299,6 +353,10 @@ void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
          91, 34, 255, gPauseItemsCurrentTab == 1 ? 128 : 0, 0, 0,
          0, 0, 0, 0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 
+#if VERSION_PAL
+    if (gCurrentLanguage == LANGUAGE_EN) {
+#endif
+
     msg = pause_get_menu_msg(PAUSE_MSG_KEY_ITEMS);
     msgX = baseX + 12;
     if (gPauseItemsCurrentTab == 0) {
@@ -310,6 +368,35 @@ void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
         opacity1 = 191;
     }
     draw_msg(msg, msgX, msgY, opacity1, MSG_PAL_WHITE, DRAW_MSG_STYLE_MENU);
+
+#if VERSION_PAL
+    } else {
+        msg = pause_get_menu_msg(PAUSE_MSG_KEY_ITEMS);
+        msgX = baseX + 12;
+        if (gPauseItemsCurrentTab == 0) {
+            msgX = baseX + 21;
+        }
+        opacity1 = 255;
+        msgY = baseY + 12;
+        if (gPauseItemsCurrentTab == 1) {
+            opacity1 = 191;
+        }
+
+        draw_msg(msg, msgX, msgY, opacity1, MSG_PAL_WHITE, DRAW_MSG_STYLE_MENU);
+        msg2 = pause_get_menu_msg(PAUSE_MSG_PAL_4B);
+        msgX = baseX + D_PAL_80271B30[gCurrentLanguage];
+        if (gPauseItemsCurrentTab == 0) {
+            msgX = baseX + D_PAL_80271B30[gCurrentLanguage] + 9;
+        }
+        opacity1 = 255;
+        msgY = baseY + 22;
+        if (gPauseItemsCurrentTab == 1) {
+            opacity1 = 191;
+        }
+
+        draw_msg(msg2, msgX, msgY, opacity1, MSG_PAL_WHITE, DRAW_MSG_STYLE_MENU);
+    }
+#endif
 
     draw_box(DRAW_FLAG_NO_CLIP, &gPauseWS_17, gPauseItemsCurrentTab == 1 ? baseX + 9 : baseX, baseY + 39, 0,
          91, 34, 255, gPauseItemsCurrentTab == 0 ? 128 : 0, 0, 0,
@@ -349,7 +436,15 @@ void pause_items_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width,
          }
     }
 }
+
+#if VERSION_JP
+#define ROWS_COUNT 5
+#define COLS_COUNT 2
+#else
+#define ROWS_COUNT 8
+#define COLS_COUNT 1
 #endif
+#define PAGE_COUNT (ROWS_COUNT * COLS_COUNT)
 
 void pause_items_load_items(s32 invItems) {
     PlayerData* playerData = &gPlayerData;
@@ -380,6 +475,16 @@ void pause_items_load_items(s32 invItems) {
     } else {
         pause_sort_item_list(gPauseItemsItemIDs, totalItems, pause_items_comparator);
     }
+
+#if VERSION_JP
+    if (totalItems % COLS_COUNT != 0) {
+        s32 remainingSlots = totalItems % COLS_COUNT;
+        for (i = 0; i < remainingSlots; i++) {
+            gPauseItemsItemIDs[totalItems] = ITEM_INVALID;
+            totalItems++;
+        }
+    }
+#endif
 
     gPauseItemsNumItems = totalItems;
 
@@ -563,6 +668,16 @@ void pause_items_handle_input(MenuPanel* panel) {
         }
     }
 }
+
+#if VERSION_JP
+#define R_VAR1 6
+#define R_VAR2 5
+#define I_VAR1 3
+#else
+#define R_VAR1 9
+#define R_VAR2 8
+#define I_VAR1 6
+#endif
 
 void pause_items_update(MenuPanel* panel) {
     PauseItemPage* page = &gPauseItemsPages[gPauseItemsCurrentPage];

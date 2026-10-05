@@ -1,0 +1,9 @@
+# kmr_20 map overlay - game records screen
+# VRAM: 0x80240000, ROM: 0x9581B0
+
+:config:
+  virtual: [0x80240000, 0x9581B0]
+
+# Records screen display list (render mode setup)
+records_screen:
+  { type: GFX, offset: 0x96AF00, size: 0x70, symbol: kmr_20_records_screen_gfx }

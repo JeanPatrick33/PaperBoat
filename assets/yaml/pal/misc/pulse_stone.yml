@@ -1,0 +1,14 @@
+# Pulse stone indicator icon overlay
+# ROM offsets from ver/us/splat.yaml
+
+:config:
+  virtual: [0x802B7000, 0xE8E880]
+
+texture:
+  { type: TEXTURE, format: CI4, offset: 0xE8EEC0, width: 56, height: 56, symbol: pulse_stone_icon_img }
+texture.pal:
+  { type: TEXTURE, format: TLUT, offset: 0xE8F4E0, colors: 16, symbol: pulse_stone_icon_1_pal }
+texture.flash.pal:
+  { type: TEXTURE, format: TLUT, offset: 0xE8F500, colors: 16, symbol: pulse_stone_icon_2_pal }
+gfx:
+  { type: GFX, offset: 0xE8F520, symbol: pulse_stone_icon_gfx }

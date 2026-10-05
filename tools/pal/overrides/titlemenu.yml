@@ -1,0 +1,337 @@
+# PAL-only: title menu (Start Game / Languages) in four languages + language flags (40 frames x 4 flags of 16x16)
+en/start_game:
+  { type: TEXTURE, format: IA8, offset: 0x2596E8, width: 96, height: 16, symbol: titlemenu_en_start_game_png }
+en/languages:
+  { type: TEXTURE, format: IA8, offset: 0x259CF0, width: 88, height: 16, symbol: titlemenu_en_languages_png }
+de/start_game:
+  { type: TEXTURE, format: IA8, offset: 0x25A278, width: 88, height: 16, symbol: titlemenu_de_start_game_png }
+de/languages:
+  { type: TEXTURE, format: IA8, offset: 0x25A800, width: 80, height: 16, symbol: titlemenu_de_languages_png }
+fr/start_game:
+  { type: TEXTURE, format: IA8, offset: 0x25AD08, width: 144, height: 16, symbol: titlemenu_fr_start_game_png }
+fr/languages:
+  { type: TEXTURE, format: IA8, offset: 0x25B610, width: 64, height: 16, symbol: titlemenu_fr_languages_png }
+es/start_game:
+  { type: TEXTURE, format: IA8, offset: 0x25BA18, width: 120, height: 16, symbol: titlemenu_es_start_game_png }
+es/languages:
+  { type: TEXTURE, format: IA8, offset: 0x25C1A0, width: 64, height: 16, symbol: titlemenu_es_languages_png }
+flags/f0_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x25C5A0, width: 16, height: 16, symbol: titlemenu_flag_0_0_png }
+flags/f0_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x25C7A0, width: 16, height: 16, symbol: titlemenu_flag_0_1_png }
+flags/f0_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x25C9A0, width: 16, height: 16, symbol: titlemenu_flag_0_2_png }
+flags/f0_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x25CBA0, width: 16, height: 16, symbol: titlemenu_flag_0_3_png }
+flags/f1_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x25CDA0, width: 16, height: 16, symbol: titlemenu_flag_1_0_png }
+flags/f1_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x25CFA0, width: 16, height: 16, symbol: titlemenu_flag_1_1_png }
+flags/f1_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x25D1A0, width: 16, height: 16, symbol: titlemenu_flag_1_2_png }
+flags/f1_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x25D3A0, width: 16, height: 16, symbol: titlemenu_flag_1_3_png }
+flags/f2_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x25D5A0, width: 16, height: 16, symbol: titlemenu_flag_2_0_png }
+flags/f2_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x25D7A0, width: 16, height: 16, symbol: titlemenu_flag_2_1_png }
+flags/f2_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x25D9A0, width: 16, height: 16, symbol: titlemenu_flag_2_2_png }
+flags/f2_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x25DBA0, width: 16, height: 16, symbol: titlemenu_flag_2_3_png }
+flags/f3_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x25DDA0, width: 16, height: 16, symbol: titlemenu_flag_3_0_png }
+flags/f3_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x25DFA0, width: 16, height: 16, symbol: titlemenu_flag_3_1_png }
+flags/f3_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x25E1A0, width: 16, height: 16, symbol: titlemenu_flag_3_2_png }
+flags/f3_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x25E3A0, width: 16, height: 16, symbol: titlemenu_flag_3_3_png }
+flags/f4_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x25E5A0, width: 16, height: 16, symbol: titlemenu_flag_4_0_png }
+flags/f4_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x25E7A0, width: 16, height: 16, symbol: titlemenu_flag_4_1_png }
+flags/f4_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x25E9A0, width: 16, height: 16, symbol: titlemenu_flag_4_2_png }
+flags/f4_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x25EBA0, width: 16, height: 16, symbol: titlemenu_flag_4_3_png }
+flags/f5_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x25EDA0, width: 16, height: 16, symbol: titlemenu_flag_5_0_png }
+flags/f5_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x25EFA0, width: 16, height: 16, symbol: titlemenu_flag_5_1_png }
+flags/f5_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x25F1A0, width: 16, height: 16, symbol: titlemenu_flag_5_2_png }
+flags/f5_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x25F3A0, width: 16, height: 16, symbol: titlemenu_flag_5_3_png }
+flags/f6_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x25F5A0, width: 16, height: 16, symbol: titlemenu_flag_6_0_png }
+flags/f6_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x25F7A0, width: 16, height: 16, symbol: titlemenu_flag_6_1_png }
+flags/f6_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x25F9A0, width: 16, height: 16, symbol: titlemenu_flag_6_2_png }
+flags/f6_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x25FBA0, width: 16, height: 16, symbol: titlemenu_flag_6_3_png }
+flags/f7_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x25FDA0, width: 16, height: 16, symbol: titlemenu_flag_7_0_png }
+flags/f7_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x25FFA0, width: 16, height: 16, symbol: titlemenu_flag_7_1_png }
+flags/f7_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2601A0, width: 16, height: 16, symbol: titlemenu_flag_7_2_png }
+flags/f7_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2603A0, width: 16, height: 16, symbol: titlemenu_flag_7_3_png }
+flags/f8_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x2605A0, width: 16, height: 16, symbol: titlemenu_flag_8_0_png }
+flags/f8_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2607A0, width: 16, height: 16, symbol: titlemenu_flag_8_1_png }
+flags/f8_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2609A0, width: 16, height: 16, symbol: titlemenu_flag_8_2_png }
+flags/f8_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x260BA0, width: 16, height: 16, symbol: titlemenu_flag_8_3_png }
+flags/f9_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x260DA0, width: 16, height: 16, symbol: titlemenu_flag_9_0_png }
+flags/f9_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x260FA0, width: 16, height: 16, symbol: titlemenu_flag_9_1_png }
+flags/f9_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2611A0, width: 16, height: 16, symbol: titlemenu_flag_9_2_png }
+flags/f9_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2613A0, width: 16, height: 16, symbol: titlemenu_flag_9_3_png }
+flags/f10_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x2615A0, width: 16, height: 16, symbol: titlemenu_flag_10_0_png }
+flags/f10_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2617A0, width: 16, height: 16, symbol: titlemenu_flag_10_1_png }
+flags/f10_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2619A0, width: 16, height: 16, symbol: titlemenu_flag_10_2_png }
+flags/f10_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x261BA0, width: 16, height: 16, symbol: titlemenu_flag_10_3_png }
+flags/f11_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x261DA0, width: 16, height: 16, symbol: titlemenu_flag_11_0_png }
+flags/f11_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x261FA0, width: 16, height: 16, symbol: titlemenu_flag_11_1_png }
+flags/f11_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2621A0, width: 16, height: 16, symbol: titlemenu_flag_11_2_png }
+flags/f11_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2623A0, width: 16, height: 16, symbol: titlemenu_flag_11_3_png }
+flags/f12_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x2625A0, width: 16, height: 16, symbol: titlemenu_flag_12_0_png }
+flags/f12_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2627A0, width: 16, height: 16, symbol: titlemenu_flag_12_1_png }
+flags/f12_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2629A0, width: 16, height: 16, symbol: titlemenu_flag_12_2_png }
+flags/f12_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x262BA0, width: 16, height: 16, symbol: titlemenu_flag_12_3_png }
+flags/f13_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x262DA0, width: 16, height: 16, symbol: titlemenu_flag_13_0_png }
+flags/f13_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x262FA0, width: 16, height: 16, symbol: titlemenu_flag_13_1_png }
+flags/f13_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2631A0, width: 16, height: 16, symbol: titlemenu_flag_13_2_png }
+flags/f13_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2633A0, width: 16, height: 16, symbol: titlemenu_flag_13_3_png }
+flags/f14_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x2635A0, width: 16, height: 16, symbol: titlemenu_flag_14_0_png }
+flags/f14_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2637A0, width: 16, height: 16, symbol: titlemenu_flag_14_1_png }
+flags/f14_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2639A0, width: 16, height: 16, symbol: titlemenu_flag_14_2_png }
+flags/f14_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x263BA0, width: 16, height: 16, symbol: titlemenu_flag_14_3_png }
+flags/f15_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x263DA0, width: 16, height: 16, symbol: titlemenu_flag_15_0_png }
+flags/f15_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x263FA0, width: 16, height: 16, symbol: titlemenu_flag_15_1_png }
+flags/f15_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2641A0, width: 16, height: 16, symbol: titlemenu_flag_15_2_png }
+flags/f15_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2643A0, width: 16, height: 16, symbol: titlemenu_flag_15_3_png }
+flags/f16_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x2645A0, width: 16, height: 16, symbol: titlemenu_flag_16_0_png }
+flags/f16_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2647A0, width: 16, height: 16, symbol: titlemenu_flag_16_1_png }
+flags/f16_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2649A0, width: 16, height: 16, symbol: titlemenu_flag_16_2_png }
+flags/f16_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x264BA0, width: 16, height: 16, symbol: titlemenu_flag_16_3_png }
+flags/f17_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x264DA0, width: 16, height: 16, symbol: titlemenu_flag_17_0_png }
+flags/f17_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x264FA0, width: 16, height: 16, symbol: titlemenu_flag_17_1_png }
+flags/f17_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2651A0, width: 16, height: 16, symbol: titlemenu_flag_17_2_png }
+flags/f17_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2653A0, width: 16, height: 16, symbol: titlemenu_flag_17_3_png }
+flags/f18_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x2655A0, width: 16, height: 16, symbol: titlemenu_flag_18_0_png }
+flags/f18_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2657A0, width: 16, height: 16, symbol: titlemenu_flag_18_1_png }
+flags/f18_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2659A0, width: 16, height: 16, symbol: titlemenu_flag_18_2_png }
+flags/f18_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x265BA0, width: 16, height: 16, symbol: titlemenu_flag_18_3_png }
+flags/f19_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x265DA0, width: 16, height: 16, symbol: titlemenu_flag_19_0_png }
+flags/f19_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x265FA0, width: 16, height: 16, symbol: titlemenu_flag_19_1_png }
+flags/f19_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2661A0, width: 16, height: 16, symbol: titlemenu_flag_19_2_png }
+flags/f19_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2663A0, width: 16, height: 16, symbol: titlemenu_flag_19_3_png }
+flags/f20_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x2665A0, width: 16, height: 16, symbol: titlemenu_flag_20_0_png }
+flags/f20_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2667A0, width: 16, height: 16, symbol: titlemenu_flag_20_1_png }
+flags/f20_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2669A0, width: 16, height: 16, symbol: titlemenu_flag_20_2_png }
+flags/f20_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x266BA0, width: 16, height: 16, symbol: titlemenu_flag_20_3_png }
+flags/f21_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x266DA0, width: 16, height: 16, symbol: titlemenu_flag_21_0_png }
+flags/f21_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x266FA0, width: 16, height: 16, symbol: titlemenu_flag_21_1_png }
+flags/f21_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2671A0, width: 16, height: 16, symbol: titlemenu_flag_21_2_png }
+flags/f21_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2673A0, width: 16, height: 16, symbol: titlemenu_flag_21_3_png }
+flags/f22_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x2675A0, width: 16, height: 16, symbol: titlemenu_flag_22_0_png }
+flags/f22_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2677A0, width: 16, height: 16, symbol: titlemenu_flag_22_1_png }
+flags/f22_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2679A0, width: 16, height: 16, symbol: titlemenu_flag_22_2_png }
+flags/f22_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x267BA0, width: 16, height: 16, symbol: titlemenu_flag_22_3_png }
+flags/f23_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x267DA0, width: 16, height: 16, symbol: titlemenu_flag_23_0_png }
+flags/f23_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x267FA0, width: 16, height: 16, symbol: titlemenu_flag_23_1_png }
+flags/f23_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2681A0, width: 16, height: 16, symbol: titlemenu_flag_23_2_png }
+flags/f23_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2683A0, width: 16, height: 16, symbol: titlemenu_flag_23_3_png }
+flags/f24_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x2685A0, width: 16, height: 16, symbol: titlemenu_flag_24_0_png }
+flags/f24_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2687A0, width: 16, height: 16, symbol: titlemenu_flag_24_1_png }
+flags/f24_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2689A0, width: 16, height: 16, symbol: titlemenu_flag_24_2_png }
+flags/f24_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x268BA0, width: 16, height: 16, symbol: titlemenu_flag_24_3_png }
+flags/f25_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x268DA0, width: 16, height: 16, symbol: titlemenu_flag_25_0_png }
+flags/f25_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x268FA0, width: 16, height: 16, symbol: titlemenu_flag_25_1_png }
+flags/f25_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2691A0, width: 16, height: 16, symbol: titlemenu_flag_25_2_png }
+flags/f25_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2693A0, width: 16, height: 16, symbol: titlemenu_flag_25_3_png }
+flags/f26_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x2695A0, width: 16, height: 16, symbol: titlemenu_flag_26_0_png }
+flags/f26_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2697A0, width: 16, height: 16, symbol: titlemenu_flag_26_1_png }
+flags/f26_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2699A0, width: 16, height: 16, symbol: titlemenu_flag_26_2_png }
+flags/f26_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x269BA0, width: 16, height: 16, symbol: titlemenu_flag_26_3_png }
+flags/f27_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x269DA0, width: 16, height: 16, symbol: titlemenu_flag_27_0_png }
+flags/f27_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x269FA0, width: 16, height: 16, symbol: titlemenu_flag_27_1_png }
+flags/f27_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26A1A0, width: 16, height: 16, symbol: titlemenu_flag_27_2_png }
+flags/f27_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26A3A0, width: 16, height: 16, symbol: titlemenu_flag_27_3_png }
+flags/f28_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26A5A0, width: 16, height: 16, symbol: titlemenu_flag_28_0_png }
+flags/f28_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26A7A0, width: 16, height: 16, symbol: titlemenu_flag_28_1_png }
+flags/f28_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26A9A0, width: 16, height: 16, symbol: titlemenu_flag_28_2_png }
+flags/f28_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26ABA0, width: 16, height: 16, symbol: titlemenu_flag_28_3_png }
+flags/f29_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26ADA0, width: 16, height: 16, symbol: titlemenu_flag_29_0_png }
+flags/f29_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26AFA0, width: 16, height: 16, symbol: titlemenu_flag_29_1_png }
+flags/f29_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26B1A0, width: 16, height: 16, symbol: titlemenu_flag_29_2_png }
+flags/f29_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26B3A0, width: 16, height: 16, symbol: titlemenu_flag_29_3_png }
+flags/f30_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26B5A0, width: 16, height: 16, symbol: titlemenu_flag_30_0_png }
+flags/f30_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26B7A0, width: 16, height: 16, symbol: titlemenu_flag_30_1_png }
+flags/f30_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26B9A0, width: 16, height: 16, symbol: titlemenu_flag_30_2_png }
+flags/f30_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26BBA0, width: 16, height: 16, symbol: titlemenu_flag_30_3_png }
+flags/f31_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26BDA0, width: 16, height: 16, symbol: titlemenu_flag_31_0_png }
+flags/f31_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26BFA0, width: 16, height: 16, symbol: titlemenu_flag_31_1_png }
+flags/f31_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26C1A0, width: 16, height: 16, symbol: titlemenu_flag_31_2_png }
+flags/f31_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26C3A0, width: 16, height: 16, symbol: titlemenu_flag_31_3_png }
+flags/f32_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26C5A0, width: 16, height: 16, symbol: titlemenu_flag_32_0_png }
+flags/f32_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26C7A0, width: 16, height: 16, symbol: titlemenu_flag_32_1_png }
+flags/f32_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26C9A0, width: 16, height: 16, symbol: titlemenu_flag_32_2_png }
+flags/f32_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26CBA0, width: 16, height: 16, symbol: titlemenu_flag_32_3_png }
+flags/f33_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26CDA0, width: 16, height: 16, symbol: titlemenu_flag_33_0_png }
+flags/f33_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26CFA0, width: 16, height: 16, symbol: titlemenu_flag_33_1_png }
+flags/f33_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26D1A0, width: 16, height: 16, symbol: titlemenu_flag_33_2_png }
+flags/f33_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26D3A0, width: 16, height: 16, symbol: titlemenu_flag_33_3_png }
+flags/f34_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26D5A0, width: 16, height: 16, symbol: titlemenu_flag_34_0_png }
+flags/f34_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26D7A0, width: 16, height: 16, symbol: titlemenu_flag_34_1_png }
+flags/f34_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26D9A0, width: 16, height: 16, symbol: titlemenu_flag_34_2_png }
+flags/f34_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26DBA0, width: 16, height: 16, symbol: titlemenu_flag_34_3_png }
+flags/f35_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26DDA0, width: 16, height: 16, symbol: titlemenu_flag_35_0_png }
+flags/f35_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26DFA0, width: 16, height: 16, symbol: titlemenu_flag_35_1_png }
+flags/f35_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26E1A0, width: 16, height: 16, symbol: titlemenu_flag_35_2_png }
+flags/f35_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26E3A0, width: 16, height: 16, symbol: titlemenu_flag_35_3_png }
+flags/f36_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26E5A0, width: 16, height: 16, symbol: titlemenu_flag_36_0_png }
+flags/f36_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26E7A0, width: 16, height: 16, symbol: titlemenu_flag_36_1_png }
+flags/f36_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26E9A0, width: 16, height: 16, symbol: titlemenu_flag_36_2_png }
+flags/f36_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26EBA0, width: 16, height: 16, symbol: titlemenu_flag_36_3_png }
+flags/f37_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26EDA0, width: 16, height: 16, symbol: titlemenu_flag_37_0_png }
+flags/f37_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26EFA0, width: 16, height: 16, symbol: titlemenu_flag_37_1_png }
+flags/f37_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26F1A0, width: 16, height: 16, symbol: titlemenu_flag_37_2_png }
+flags/f37_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26F3A0, width: 16, height: 16, symbol: titlemenu_flag_37_3_png }
+flags/f38_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26F5A0, width: 16, height: 16, symbol: titlemenu_flag_38_0_png }
+flags/f38_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26F7A0, width: 16, height: 16, symbol: titlemenu_flag_38_1_png }
+flags/f38_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x26F9A0, width: 16, height: 16, symbol: titlemenu_flag_38_2_png }
+flags/f38_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x26FBA0, width: 16, height: 16, symbol: titlemenu_flag_38_3_png }
+flags/f39_0:
+  { type: TEXTURE, format: RGBA16, offset: 0x26FDA0, width: 16, height: 16, symbol: titlemenu_flag_39_0_png }
+flags/f39_1:
+  { type: TEXTURE, format: RGBA16, offset: 0x26FFA0, width: 16, height: 16, symbol: titlemenu_flag_39_1_png }
+flags/f39_2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2701A0, width: 16, height: 16, symbol: titlemenu_flag_39_2_png }
+flags/f39_3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2703A0, width: 16, height: 16, symbol: titlemenu_flag_39_3_png }

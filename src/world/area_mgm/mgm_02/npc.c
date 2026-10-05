@@ -292,8 +292,131 @@ API_CALLABLE(N(OnHitBox)) {
 }
 
 #if VERSION_PAL
-API_CALLABLE(N(SetBoxContents));
-INCLUDE_ASM(ApiResult, "world/area_mgm/mgm_02/mgm_02_2_npc", mgm_02_SetBoxContents);
+API_CALLABLE(N(SetBoxContents)) {
+    s32 initialConfiguration;
+    s32 configuration[NUM_BOXES];
+    s32 indexA, indexB, temp;
+    s32 i, j;
+
+    Enemy* enemy;
+    Npc* npc;
+
+    SmashGameData* data;
+
+    N(pal_variable) = 1;
+    data = get_enemy(SCOREKEEPER_ENEMY_IDX)->varTablePtr[SMASH_DATA_VAR_IDX].p;
+    data->found = 0;
+    data->timeLeft = PLAY_TIME + 10;
+    data->curScore = 0;
+    data->mashProgress = 0;
+    data->stunFlags = 0;
+
+     // choose one of three initial configurations at random
+    initialConfiguration = rand_int(1000) % ARRAY_COUNT(N(InitialConfigurations));
+    for (i = 0; i < NUM_BOXES; i++) {
+        configuration[i] = N(InitialConfigurations[initialConfiguration][i]);
+    }
+
+    // randomly swap 10000 pairs
+    for (i = 0; i < 10000; i++) {
+        indexA = rand_int(1000) % NUM_BOXES;
+        indexB = rand_int(1000) % NUM_BOXES;
+
+        if (indexA != indexB) {
+            temp = configuration[indexB];
+            configuration[indexB] = configuration[indexA];
+            configuration[indexA] = temp;
+        }
+    }
+
+    for (i = 0; i < NUM_BOXES; i++) {
+        data->box[i].state = -1;
+        data->box[i].stateTimer = 0;
+        data->box[i].content = configuration[i];
+        data->box[i].modelID = N(BoxModelIDs[i]);
+        data->box[i].colliderID = N(BoxColliderIDs[i]);
+        data->box[i].npcID = -1;
+        data->box[i].peachPanelModelID = -1;
+    }
+
+    for (i = FUZZY_NPC_ID_BASE; i < FUZZY_NPC_ID_BASE + 5; i++) {
+        enemy = get_enemy(i);
+        enemy->varTable[0] = 0;
+    }
+
+    for (i = BOBOMB_NPC_ID_BASE; i < BOBOMB_NPC_ID_BASE + 5; i++) {
+        enemy = get_enemy(i);
+        enemy->varTable[0] = 0;
+    }
+
+    for (i = LUIGI_NPC_ID_BASE; i < LUIGI_NPC_ID_BASE + 10; i++) {
+        enemy = get_enemy(i);
+        enemy->varTable[0] = 0;
+    }
+
+    for (i = 0; i < ARRAY_COUNT(D_80248600); i++) {
+        D_80248600[i] = false;
+    }
+
+    for (i = 0; i < NUM_BOXES; i++) {
+        switch (data->box[i].content) {
+            case BOX_CONTENT_FUZZY:
+                data->box[i].state = BOX_STATE_FUZZY_INIT;
+                for (j = FUZZY_NPC_ID_BASE; j < FUZZY_NPC_ID_BASE + 5; j++) {
+                    enemy = get_enemy(j);
+                    if (enemy->varTable[0] == 0) {
+                        npc = get_npc_unsafe(enemy->npcID);
+                        enemy->varTable[0] = 1;
+                        data->box[i].npcID = j;
+                        disable_npc_shadow(npc);
+                        npc->flags |= NPC_FLAG_INVISIBLE;
+                        break;
+                    }
+                }
+                break;
+            case BOX_CONTENT_BOMB:
+                data->box[i].state = BOX_STATE_BOMB_INIT;
+                for (j = BOBOMB_NPC_ID_BASE; j < BOBOMB_NPC_ID_BASE + 5; j++) {
+                    enemy = get_enemy(j);
+                    if (enemy->varTable[0] == 0) {
+                        npc = get_npc_unsafe(enemy->npcID);
+                        enemy->varTable[0] = 1;
+                        data->box[i].npcID = j;
+                        disable_npc_shadow(npc);
+                        npc->flags |= NPC_FLAG_INVISIBLE;
+                        break;
+                    }
+                }
+                break;
+            case BOX_CONTENT_PEACH:
+                data->box[i].state = BOX_STATE_PEACH_INIT;
+                for (j = LUIGI_NPC_ID_BASE; j < LUIGI_NPC_ID_BASE + 10; j++) {
+                    enemy = get_enemy(j);
+                    if (enemy->varTable[0] == 0) {
+                        npc = get_npc_unsafe(enemy->npcID);
+                        enemy->varTable[0] = 1;
+                        data->box[i].npcID = j;
+                        disable_npc_shadow(npc);
+                        npc->flags |= NPC_FLAG_INVISIBLE;
+                        break;
+                    }
+                }
+                // ARRAY BOUNDS ERROR IN ORIGINAL CODE!
+                for (j = 0; j <= ARRAY_COUNT(D_80248600); j++) {
+                    if (!D_80248600[j]) {
+                        D_80248600[j] = true;
+                        data->box[i].peachPanelModelID = N(PanelModelIDs[j]);
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                data->box[i].state = BOX_STATE_EMPTY_INIT;
+                break;
+        }
+    }
+    return ApiStatus_DONE2;
+}
 #else
 API_CALLABLE(N(SetBoxContents)) {
     s32 initialConfiguration;
@@ -420,8 +543,433 @@ API_CALLABLE(N(SetBoxContents)) {
 #endif
 
 #if VERSION_PAL
-API_CALLABLE(N(RunMinigame));
-INCLUDE_ASM(ApiResult, "world/area_mgm/mgm_02/mgm_02_2_npc", mgm_02_RunMinigame);
+API_CALLABLE(N(RunMinigame)) {
+    SmashGameData* data;
+    Enemy* enemy;
+
+    Npc* npc;
+    EffectInstance* writeback;
+
+    Model* model;
+    Matrix4f mtx;
+    f32 centerX, centerY, centerZ;
+    f32 sizeX, sizeY, sizeZ;
+    s32 i;
+
+    s32 gameFinished;
+    s32 hittingPeachBlock;
+
+    gameFinished = false;
+    hittingPeachBlock = false;
+    data = get_enemy(SCOREKEEPER_ENEMY_IDX)->varTablePtr[SMASH_DATA_VAR_IDX].p;
+
+    for (i = 0; i < NUM_BOXES; i++) {
+        if (data->box[i].npcID != -1) {
+            enemy = get_enemy(data->box[i].npcID);
+            npc = get_npc_unsafe(enemy->npcID);
+            switch (data->box[i].state) {
+                case BOX_STATE_FUZZY_INIT:
+                    data->box[i].state = BOX_STATE_FUZZY_IDLE;
+                    data->box[i].stateTimer = rand_int(210);
+                    npc->pos.y = NPC_DISPOSE_POS_Y;
+                    npc->flags &= ~NPC_FLAG_INVISIBLE;
+                    disable_npc_shadow(npc);
+                    // fallthrough
+                case BOX_STATE_FUZZY_IDLE:
+                    data->box[i].stateTimer--;
+                    if (data->box[i].stateTimer <= 0) {
+                        npc->curAnim = ANIM_Fuzzy_Walk;
+                        data->box[i].state = BOX_STATE_FUZZY_POPUP;
+                        sfx_play_sound_at_position(enemy->varTable[8], SOUND_SPACE_DEFAULT | SOUND_PARAM_MOST_QUIET, npc->pos.x, npc->pos.y, npc->pos.z);
+                        get_model_center_and_size(data->box[i].modelID, &centerX, &centerY, &centerZ, &sizeX, &sizeY, &sizeZ);
+                        npc->jumpVel = 10.5f;
+                        npc->pos.x = centerX;
+                        npc->jumpScale = 1.5f;
+                        npc->pos.y = centerY - 12.5;
+                        npc->moveToPos.y = npc->pos.y;
+                        npc->pos.z = centerZ + 2.0;
+                        data->box[i].stateTimer = 0;
+                    }
+                    break;
+                case BOX_STATE_FUZZY_POPUP:
+                    data->box[i].stateTimer++;
+                    npc->pos.y += npc->jumpVel;
+                    npc->jumpVel -= npc->jumpScale;
+                    if ((npc->moveToPos.y + 20.0f) < npc->pos.y) {
+                        enable_npc_shadow(npc);
+                    } else {
+                        disable_npc_shadow(npc);
+                    }
+                    if ((npc->jumpVel < 0.0) && (npc->pos.y <= npc->moveToPos.y)) {
+                        data->box[i].state = BOX_STATE_FUZZY_IDLE;
+                        data->box[i].stateTimer = rand_int(330) + 90;
+                        npc->pos.y = NPC_DISPOSE_POS_Y;
+                        if (rand_int(100) < 50) {
+                            npc->yaw = 270.0f;
+                        } else {
+                            npc->yaw = 90.0f;
+                        }
+                        disable_npc_shadow(npc);
+                    }
+                    break;
+                case BOX_STATE_FUZZY_HIT:
+                    hud_element_set_script(data->buttonHID, &HES_AButton);
+                    hud_element_set_alpha(data->buttonHID, 160);
+                    hud_element_set_alpha(data->meterHID, 160);
+                    data->mashProgress = 0;
+                    data->stunFlags |= STUN_FLAG_GRABBED;
+                    enable_npc_shadow(npc);
+                    data->stunFlags |= (STUN_FLAG_STUNNED | STUN_FLAG_CHANGED);
+                    npc->duration = 8;
+                    sfx_play_sound(enemy->varTable[8]);
+                    data->box[i].state = BOX_STATE_FUZZY_ATTACH;
+                    gPlayerStatusPtr->anim = ANIM_Mario1_TiredStill;
+                    npc->curAnim = ANIM_Fuzzy_Run;
+                    get_model_center_and_size(data->box[i].modelID, &centerX, &centerY, &centerZ, &sizeX, &sizeY, &sizeZ);
+                    npc->pos.x = centerX;
+                    npc->pos.y = centerY;
+                    npc->pos.z = centerZ + 2.0;
+                    npc->moveToPos.y = gPlayerStatusPtr->pos.y + 35.0f;
+                    npc->jumpVel = 10.5f;
+                    npc->jumpScale = 1.5f;
+
+                    data->box[i].stateTimer = 0;
+                    fx_emote(EMOTE_EXCLAMATION, npc, 0.0f, npc->collisionHeight, 1.0f, 2.0f, 0.0f, 10, &writeback);
+                    enemy->varTable[1] = npc->pos.x * 10.0f;
+                    enemy->varTable[2] = npc->pos.y * 10.0f;
+                    enemy->varTable[3] = npc->pos.z * 10.0f;
+                    enemy->varTable[4] = gPlayerStatusPtr->pos.x * 10.0f;
+                    enemy->varTable[5] = (gPlayerStatusPtr->pos.y + 28.0f) * 10.0f;
+                    enemy->varTable[6] = (gPlayerStatusPtr->pos.z + 2.0f) * 10.0f;
+                    enemy->varTable[7] = 0;
+                    break;
+                case BOX_STATE_FUZZY_ATTACH:
+                    enemy->varTable[7]++;
+                    npc->pos.x = update_lerp(EASING_LINEAR, (f32)enemy->varTable[1] / 10.0, (f32)enemy->varTable[4] / 10.0, enemy->varTable[7], 8);
+                    npc->pos.y = update_lerp(EASING_LINEAR, (f32)enemy->varTable[2] / 10.0, (f32)enemy->varTable[5] / 10.0, enemy->varTable[7], 8);
+                    npc->pos.z = update_lerp(EASING_LINEAR, (f32)enemy->varTable[3] / 10.0, (f32)enemy->varTable[6] / 10.0, enemy->varTable[7], 8);
+                    gPlayerStatusPtr->anim = ANIM_Mario1_TiredStill;
+                    npc->duration--;
+                    if (npc->duration <= 0) {
+                        npc->curAnim = ANIM_Fuzzy_Stunned;
+                        gPlayerStatusPtr->anim = ANIM_Mario1_PanicRun;
+                        data->mashProgress = 0;
+                        npc->pos.x = gPlayerStatusPtr->pos.x;
+                        npc->pos.y = gPlayerStatusPtr->pos.y + 28.0;
+                        npc->pos.z = gPlayerStatusPtr->pos.z + 2.0;
+                        hud_element_set_script(data->buttonHID, &HES_MashAButton);
+                        hud_element_set_alpha(data->buttonHID, 255);
+                        hud_element_set_alpha(data->meterHID, 255);
+                        data->box[i].state = BOX_STATE_FUZZY_GRAB;
+                    }
+                    break;
+                case BOX_STATE_FUZZY_GRAB:
+                    gPlayerStatusPtr->anim = ANIM_Mario1_PanicRun;
+                    if (gGameStatusPtr->pressedButtons[0] & BUTTON_A) {
+                        data->mashProgress++;
+                    }
+                    if (data->mashProgress >= 12) {
+                        gPlayerStatusPtr->anim = ANIM_Mario1_Idle;
+                        data->stunFlags &= ~STUN_FLAG_STUNNED;
+                        data->stunFlags |= STUN_FLAG_CHANGED;
+                        data->box[i].state = BOX_STATE_FUZZY_DETACH;
+                        npc->duration = 10;
+                        hud_element_set_script(data->buttonHID, &HES_AButton);
+                        hud_element_set_alpha(data->buttonHID, 160);
+                        hud_element_set_alpha(data->meterHID, 160);
+                        npc->curAnim = ANIM_Fuzzy_Hurt;
+                        npc->pos.y += 3.0;
+                    }
+                    break;
+                case BOX_STATE_FUZZY_DETACH:
+                    npc->duration--;
+                    if (npc->duration == 8) {
+                        data->stunFlags &= ~STUN_FLAG_GRABBED;
+                    }
+                    if (npc->duration <= 0) {
+                        data->box[i].state = BOX_STATE_FUZZY_DONE;
+                        disable_npc_shadow(npc);
+                        npc->flags |= NPC_FLAG_INVISIBLE;
+                        fx_walking_dust(1, npc->pos.x, npc->pos.y + 10.0f, npc->pos.z + 1.0f, 0, 0);
+                    }
+                    break;
+                case BOX_STATE_FUZZY_DONE:
+                    break;
+
+                case BOX_STATE_BOMB_INIT:
+                    data->box[i].state = BOX_STATE_BOMB_IDLE;
+                    data->box[i].stateTimer = rand_int(210);
+                    npc->pos.y = NPC_DISPOSE_POS_Y;
+                    disable_npc_shadow(npc);
+                    npc->flags &= ~NPC_FLAG_INVISIBLE;
+                    // fallthrough
+                case BOX_STATE_BOMB_IDLE:
+                    data->box[i].stateTimer--;
+                    if (data->box[i].stateTimer <= 0) {
+                        data->box[i].state = BOX_STATE_BOMB_POPUP;
+                        sfx_play_sound_at_position(enemy->varTable[8], 0x100000, npc->pos.x, npc->pos.y, npc->pos.z);
+                        get_model_center_and_size(data->box[i].modelID, &centerX, &centerY, &centerZ, &sizeX, &sizeY, &sizeZ);
+                        npc->jumpVel = 10.5f;
+                        npc->pos.x = centerX;
+                        npc->jumpScale = 1.5f;
+                        npc->pos.y = centerY - 12.5;
+                        npc->moveToPos.y = npc->pos.y;
+                        npc->pos.z = centerZ + 2.0;
+                        data->box[i].stateTimer = 0;
+                    }
+                    break;
+                case BOX_STATE_BOMB_POPUP:
+                    data->box[i].stateTimer++;
+                    npc->pos.y += npc->jumpVel;
+                    npc->jumpVel -= npc->jumpScale;
+                    if ((npc->moveToPos.y + 20.0f) < npc->pos.y) {
+                        enable_npc_shadow(npc);
+                    } else {
+                        disable_npc_shadow(npc);
+                    }
+                    if ((npc->jumpVel < 0.0) && (npc->pos.y <= npc->moveToPos.y)) {
+                        data->box[i].state = BOX_STATE_BOMB_IDLE;
+                        data->box[i].stateTimer = rand_int(330) + 90;
+                        npc->pos.y = NPC_DISPOSE_POS_Y;
+                        if (rand_int(100) < 50) {
+                            npc->yaw = 270.0f;
+                        } else {
+                            npc->yaw = 90.0f;
+                        }
+                        disable_npc_shadow(npc);
+                    }
+                    break;
+                case BOX_STATE_BOMB_HIT:
+                    enable_npc_shadow(npc);
+                    npc->duration = 15;
+                    npc->curAnim = ANIM_Bobomb_WalkLit;
+                    data->stunFlags |= (STUN_FLAG_STUNNED | STUN_FLAG_CHANGED);
+                    data->box[i].state = BOX_STATE_BOMB_ATTACK;
+                    get_model_center_and_size(data->box[i].modelID, &centerX, &centerY, &centerZ, &sizeX, &sizeY, &sizeZ);
+                    npc->pos.x = centerX;
+                    npc->pos.y = centerY - 10.0f;
+                    npc->pos.z = centerZ + 8.0;
+                    fx_emote(EMOTE_EXCLAMATION, npc, 0.0f, npc->collisionHeight, 1.0f, 2.0f, 0.0f, 10, &writeback);
+                    if (npc->pos.x > gPlayerStatusPtr->pos.x) {
+                        npc->yaw = 270.0f;
+                        gPlayerStatusPtr->targetYaw = 95.0f;
+                    } else {
+                        npc->yaw = 90.0f;
+                        gPlayerStatusPtr->targetYaw = 265.0f;
+                    }
+                    // rest of case could simply use fallthough, but wouldnt match
+                    gPlayerStatusPtr->anim = ANIM_Mario1_TiredStill;
+                    npc->duration--;
+                    if (npc->duration <= 0) {
+                        fx_explosion(0, npc->pos.x, npc->pos.y, npc->pos.z + 1.0f);
+                        npc->duration = 30;
+                        npc->pos.y = NPC_DISPOSE_POS_Y;
+                        data->box[i].state = BOX_STATE_BOMB_STUN;
+                        sfx_play_sound(SOUND_BOMB_BLAST);
+                    }
+                    break;
+                case BOX_STATE_BOMB_ATTACK:
+                    gPlayerStatusPtr->anim = ANIM_Mario1_TiredStill;
+                    npc->duration--;
+                    if (npc->duration <= 0) {
+                        fx_explosion(0, npc->pos.x, npc->pos.y, npc->pos.z + 1.0f);
+                        npc->duration = 30;
+                        npc->pos.y = NPC_DISPOSE_POS_Y;
+                        data->box[i].state = BOX_STATE_BOMB_STUN;
+                        sfx_play_sound(SOUND_BOMB_BLAST);
+                    }
+                    break;
+                case BOX_STATE_BOMB_STUN:
+                    npc->duration--;
+                    if (npc->duration == 25) {
+                        gPlayerStatusPtr->anim = ANIM_Mario1_Burnt;
+                    }
+                    if (npc->duration <= 0) {
+                        gPlayerStatusPtr->anim = ANIM_Mario1_Idle;
+                        data->stunFlags &= ~STUN_FLAG_STUNNED;
+                        data->stunFlags |= STUN_FLAG_CHANGED;
+                        data->box[i].state = BOX_STATE_BOMB_DONE;
+                        disable_npc_shadow(npc);
+                        npc->flags |= NPC_FLAG_INVISIBLE;
+                    }
+                    break;
+                case BOX_STATE_BOMB_DONE:
+                    break;
+
+                case BOX_STATE_PEACH_INIT:
+                    get_model_center_and_size(data->box[i].modelID, &centerX, &centerY, &centerZ, &sizeX, &sizeY, &sizeZ);
+                    data->box[i].state = BOX_STATE_PEACH_IDLE;
+                    data->box[i].stateTimer = rand_int(210);
+                    npc->pos.x = centerX;
+                    npc->pos.y = centerY;
+                    npc->moveToPos.y = npc->pos.y;
+                    npc->pos.z = centerZ + 2.0;
+                    disable_npc_shadow(npc);
+                    // fallthrough
+                case BOX_STATE_PEACH_IDLE:
+                    data->box[i].stateTimer--;
+                    if (data->box[i].stateTimer <= 0) {
+                        get_model_center_and_size(data->box[i].modelID, &centerX, &centerY, &centerZ, &sizeX, &sizeY, &sizeZ);
+                        data->box[i].state = BOX_STATE_PEACH_POPUP;
+                        sfx_play_sound_at_position(SOUND_HEART_BOUNCE, SOUND_PARAM_MORE_QUIET | SOUND_SPACE_DEFAULT, npc->pos.x, npc->pos.y, npc->pos.z);
+                        get_model_center_and_size(data->box[i].modelID, &centerX, &centerY, &centerZ, &sizeX, &sizeY, &sizeZ);
+                        npc->jumpVel = 10.0f;
+                        npc->pos.y = npc->moveToPos.y;
+                        npc->jumpScale = 1.1f;
+                        data->box[i].stateTimer = 0;
+                        model = get_model_from_list_index(get_model_list_index_from_tree_index(data->box[i].peachPanelModelID));
+                        model->flags &= ~MODEL_FLAG_HIDDEN;
+                        if (!(model->flags & MODEL_FLAG_HAS_TRANSFORM)) {
+                            guTranslateF(model->userTransformMtx, npc->pos.x, npc->pos.y, npc->pos.z);
+                            model->flags |= MODEL_FLAG_MATRIX_DIRTY | MODEL_FLAG_HAS_TRANSFORM;
+                        }
+                        else {
+                            guTranslateF(mtx, npc->pos.x, npc->pos.y, npc->pos.z);
+                            guMtxCatF(mtx, model->userTransformMtx, model->userTransformMtx);
+                        }
+                    }
+                    break;
+                case BOX_STATE_PEACH_POPUP:
+                    data->box[i].stateTimer++;
+                    npc->pos.y += npc->jumpVel;
+                    npc->jumpVel -= npc->jumpScale;
+                    model = get_model_from_list_index(get_model_list_index_from_tree_index(data->box[i].peachPanelModelID));
+                    if (!(model->flags & MODEL_FLAG_HAS_TRANSFORM)) {
+                        guTranslateF(model->userTransformMtx, npc->pos.x, npc->pos.y, npc->pos.z);
+                        model->flags |= MODEL_FLAG_MATRIX_DIRTY | MODEL_FLAG_HAS_TRANSFORM;
+                    } else {
+                        guTranslateF(mtx, npc->pos.x, npc->pos.y, npc->pos.z);
+                        guMtxCatF(mtx, model->userTransformMtx, model->userTransformMtx);
+                    }
+                    if ((npc->moveToPos.y + 20.0f) < npc->pos.y) {
+                        enable_npc_shadow(npc);
+                    } else {
+                        disable_npc_shadow(npc);
+                    }
+                    if ((npc->jumpVel < 0.0) && (npc->pos.y <= npc->moveToPos.y)) {
+                        data->box[i].state = BOX_STATE_PEACH_IDLE;
+                        data->box[i].stateTimer = rand_int(330) + 90;
+                        disable_npc_shadow(npc);
+                        model->flags |= MODEL_FLAG_HIDDEN;
+                    }
+                    break;
+                case BOX_STATE_PEACH_HIT:
+                    sfx_play_sound(SOUND_APPROVE);
+                    model = get_model_from_list_index(get_model_list_index_from_tree_index(data->box[i].peachPanelModelID));
+                    enable_npc_shadow(npc);
+                    npc->duration = 0;
+                    data->box[i].state = BOX_STATE_PEACH_EMERGE;
+                    model->flags &= ~MODEL_FLAG_HIDDEN;
+                    // fallthrough
+                case BOX_STATE_PEACH_EMERGE:
+                    hittingPeachBlock = true;
+                    model = get_model_from_list_index(get_model_list_index_from_tree_index(data->box[i].peachPanelModelID));
+                    centerY = update_lerp(EASING_QUADRATIC_OUT, npc->moveToPos.y, npc->moveToPos.y + 30.0, npc->duration, 30);
+                    if (!(model->flags & MODEL_FLAG_HAS_TRANSFORM)) {
+                        guTranslateF(model->userTransformMtx, npc->pos.x, centerY, npc->pos.z);
+                        model->flags |= MODEL_FLAG_MATRIX_DIRTY | MODEL_FLAG_HAS_TRANSFORM;
+                    } else {
+                        guTranslateF(mtx, npc->pos.x, centerY, npc->pos.z);
+                        guMtxCatF(mtx, model->userTransformMtx, model->userTransformMtx);
+                    }
+                    npc->duration++;
+                    if (npc->duration >= 30) {
+                        data->box[i].state = BOX_STATE_PEACH_DONE;
+                        disable_npc_shadow(npc);
+                        model->flags |= MODEL_FLAG_HIDDEN;
+                    }
+                    break;
+                case BOX_STATE_PEACH_DONE:
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            if (data->box[i].state == BOX_STATE_EMPTY_INIT) {
+                data->box[i].state = BOX_STATE_EMPTY_IDLE;
+                data->box[i].stateTimer = 0;
+            }
+        }
+    }
+
+    if (data->timeLeft > 0) {
+        if (data->found < NUM_PANELS) {
+            data->timeLeft--;
+            if (data->timeLeft == 750) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_1);
+            } else if (data->timeLeft == 600) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_1);
+            } else if (data->timeLeft == 450) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_1);
+            } else if (data->timeLeft == 300) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_2);
+            } else if (data->timeLeft == 270) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_2);
+            } else if (data->timeLeft == 240) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_2);
+            } else if (data->timeLeft == 210) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_2);
+            } else if (data->timeLeft == 180) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_2);
+            } else if (data->timeLeft == 150) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_3);
+            } else if (data->timeLeft == 120) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_3);
+            } else if (data->timeLeft == 90) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_3);
+            } else if (data->timeLeft == 60) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_3);
+            } else if (data->timeLeft == 30) {
+                sfx_play_sound(SOUND_OMO_BOX_CHIME_3);
+            }
+        }
+        if ((data->timeLeft > 0) && (data->found == NUM_PANELS)) {
+            if (!(data->stunFlags & STUN_FLAG_STUNNED)) {
+                data->stunFlags |= (STUN_FLAG_STUNNED | STUN_FLAG_CHANGED);
+            }
+        }
+    }
+    if ((data->timeLeft == 0) && hittingPeachBlock) {
+        if (!(data->stunFlags & STUN_FLAG_STUNNED)) {
+            data->stunFlags |= (STUN_FLAG_STUNNED | STUN_FLAG_CHANGED);
+        }
+    }
+    if (data->stunFlags & STUN_FLAG_CHANGED) {
+        data->stunFlags &= ~STUN_FLAG_CHANGED;
+        if (data->stunFlags & STUN_FLAG_STUNNED) {
+            disable_player_input();
+            partner_disable_input();
+        } else {
+            enable_player_input();
+            partner_enable_input();
+        }
+    }
+    if (!hittingPeachBlock && ((data->found == 10) || ((data->timeLeft == 0)
+        && (gPlayerStatusPtr->actionState != ACTION_STATE_HAMMER)))) {
+        gameFinished = true;
+    }
+    if (gameFinished) {
+        N(pal_variable) = 0;
+        if (data->stunFlags & STUN_FLAG_STUNNED) {
+            enable_player_input();
+            partner_enable_input();
+        }
+        data->stunFlags = 0;
+
+        gPlayerStatusPtr->targetYaw = 180.0;
+        if (data->timeLeft == 0) {
+            sfx_play_sound(SOUND_MENU_ERROR);
+            gPlayerStatusPtr->anim = ANIM_Mario1_Idle;
+        } else {
+            sfx_play_sound(SOUND_JINGLE_WON_BATTLE);
+            gPlayerStatusPtr->anim = ANIM_Mario1_Idle;
+        }
+
+        return ApiStatus_DONE2;
+    }
+
+    return ApiStatus_BLOCK;
+}
 #else
 API_CALLABLE(N(RunMinigame)) {
     SmashGameData* data;

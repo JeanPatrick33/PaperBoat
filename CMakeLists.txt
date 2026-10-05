@@ -260,11 +260,42 @@ list(APPEND GAME_SOURCES ${NUSYS_SOURCES})
 list(FILTER GAME_SOURCES EXCLUDE REGEX "/src/effects/gfx/")
 list(FILTER GAME_SOURCES EXCLUDE REGEX "unused_gfx\\.c$")
 
-# Exclude region-specific files (for building VERSION_US)
-list(FILTER GAME_SOURCES EXCLUDE REGEX "/[^/]*_(jp|fr|es|de|en|en_de|pal|ique)\\.c$")
+# Region selection: -DPAPERBOAT_REGION=us (default, NTSC-U) or pal (European: EN/DE/FR/ES)
+set(PAPERBOAT_REGION "us" CACHE STRING "Paper Mario region to build: us or pal")
+set_property(CACHE PAPERBOAT_REGION PROPERTY STRINGS us pal)
+string(TOLOWER "${PAPERBOAT_REGION}" PAPERBOAT_REGION)
+if(PAPERBOAT_REGION STREQUAL "us")
+    set(PAPERBOAT_VERSION_DEF VERSION_US)
+    set(PAPERBOAT_EXPECTED_ROM "pm64")
+    set(PAPERBOAT_REGION_LABEL "US")
+elseif(PAPERBOAT_REGION STREQUAL "pal")
+    set(PAPERBOAT_VERSION_DEF VERSION_PAL)
+    set(PAPERBOAT_EXPECTED_ROM "pm64-pal")
+    set(PAPERBOAT_REGION_LABEL "PAL")
+else()
+    message(FATAL_ERROR "PAPERBOAT_REGION must be 'us' or 'pal' (got '${PAPERBOAT_REGION}')")
+endif()
+message(STATUS "Paper Mario region: ${PAPERBOAT_REGION}")
 
-# Exclude language selection (PAL-only feature)
-list(FILTER GAME_SOURCES EXCLUDE REGEX "/filemenu_selectlanguage\\.c$")
+if(PAPERBOAT_REGION STREQUAL "us")
+    # Exclude region-specific files (for building VERSION_US)
+    list(FILTER GAME_SOURCES EXCLUDE REGEX "/[^/]*_(jp|fr|es|de|en|en_de|pal|ique)\\.c$")
+    # Exclude language selection (PAL-only feature)
+    list(FILTER GAME_SOURCES EXCLUDE REGEX "/filemenu_selectlanguage\\.c$")
+    # <name>.pal.c are flat PAL replacements of <name>.c
+    list(FILTER GAME_SOURCES EXCLUDE REGEX "\\.pal\\.c$")
+else()
+    # PAL keeps the per-language files (_en/_de/_fr/_es/_en_de/_pal) and the language menu;
+    # only the JP and iQue variants are left out.
+    list(FILTER GAME_SOURCES EXCLUDE REGEX "/[^/]*_(jp|ique)\\.c$")
+    # <name>.pal.c replaces <name>.c in PAL builds
+    set(_pal_overrides ${GAME_SOURCES})
+    list(FILTER _pal_overrides INCLUDE REGEX "\\.pal\\.c$")
+    foreach(_pal ${_pal_overrides})
+        string(REGEX REPLACE "\\.pal\\.c$" ".c" _base "${_pal}")
+        list(REMOVE_ITEM GAME_SOURCES "${_base}")
+    endforeach()
+endif()
 
 # Exclude .c files that are #included in npc.c files (not compiled separately)
 list(FILTER GAME_SOURCES EXCLUDE REGEX "/(npc_composer|npc_hint_dryite_companion|npc_hint_dryite|npc_merlee|npc_moustafa|npc_shop_owner)\\.c$")
@@ -397,8 +428,10 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
     $<$<NOT:$<BOOL:${PAPERBOAT_PER_FILE_LANGUAGE_DEFS}>>:$<$<COMPILE_LANGUAGE:CXX>:_LANGUAGE_C_PLUS_PLUS>>
     PORT
     MODERN_COMPILER
-    VERSION=us
-    VERSION_US
+    VERSION=${PAPERBOAT_REGION}
+    ${PAPERBOAT_VERSION_DEF}
+    PAPERBOAT_EXPECTED_ROM="${PAPERBOAT_EXPECTED_ROM}"
+    PAPERBOAT_REGION_LABEL="${PAPERBOAT_REGION_LABEL}"
     F3DEX_GBI_2
     __CTX__
     SPDLOG_ACTIVE_LEVEL=0
@@ -406,8 +439,8 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
 
 # Compute YAML asset files count for proper progress tracking
 file(GLOB_RECURSE PAPERBOAT_ASSET_YAMLS CONFIGURE_DEPENDS
-    ${CMAKE_SOURCE_DIR}/assets/yaml/us/*.yaml
-    ${CMAKE_SOURCE_DIR}/assets/yaml/us/*.yml
+    ${CMAKE_SOURCE_DIR}/assets/yaml/${PAPERBOAT_REGION}/*.yaml
+    ${CMAKE_SOURCE_DIR}/assets/yaml/${PAPERBOAT_REGION}/*.yml
 )
 list(FILTER PAPERBOAT_ASSET_YAMLS EXCLUDE REGEX "/(config\\.yml|hashes\\.yaml)$")
 list(LENGTH PAPERBOAT_ASSET_YAMLS PAPERBOAT_ASSET_YAML_COUNT)

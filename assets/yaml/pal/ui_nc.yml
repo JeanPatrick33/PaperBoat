@@ -1,0 +1,6 @@
+no_controller_de:
+  { type: TEXTURE, format: IA8, offset: 0x33CDD0, width: 128, height: 32, symbol: ui_no_controller_de_png }
+no_controller_fr:
+  { type: TEXTURE, format: IA8, offset: 0x33DDD0, width: 128, height: 32, symbol: ui_no_controller_fr_png }
+no_controller_es:
+  { type: TEXTURE, format: IA8, offset: 0x33EDD0, width: 128, height: 32, symbol: ui_no_controller_es_png }

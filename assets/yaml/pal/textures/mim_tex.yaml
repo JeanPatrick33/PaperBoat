@@ -1,0 +1,194 @@
+:config:
+  segments:
+    - [0x02, 0x02000000]
+
+mim_bedtif:
+  { type: TEXTURE, format: CI8, offset: 0x2E83ABE, width: 8, height: 16, tlut: 0x2E83B3E, symbol: mim_bedtif }
+mim_bedtif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E83B3E, colors: 256, symbol: mim_bedtif_tlut }
+mim_berosaidetif:
+  { type: TEXTURE, format: CI4, offset: 0x2E83D6E, width: 16, height: 16, tlut: 0x2E83DEE, symbol: mim_berosaidetif }
+mim_berosaidetif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E83DEE, colors: 16, symbol: mim_berosaidetif_tlut }
+mim_danrotif:
+  { type: TEXTURE, format: CI4, offset: 0x2E83E3E, width: 16, height: 32, tlut: 0x2E83F3E, symbol: mim_danrotif }
+mim_danrotif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E83F3E, colors: 16, symbol: mim_danrotif_tlut }
+mim_dark_berotif:
+  { type: TEXTURE, format: CI8, offset: 0x2E83F8E, width: 32, height: 32, tlut: 0x2E8438E, symbol: mim_dark_berotif }
+mim_dark_berotif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8438E, colors: 256, symbol: mim_dark_berotif_tlut }
+mim_dark_bushtif:
+  { type: TEXTURE, format: CI4, offset: 0x2E845BE, width: 64, height: 32, tlut: 0x2E849BE, symbol: mim_dark_bushtif }
+mim_dark_bushtif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E849BE, colors: 16, symbol: mim_dark_bushtif_tlut }
+mim_dark_eye444tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E84A0E, width: 32, height: 64, tlut: 0x2E84E0E, symbol: mim_dark_eye444tif }
+mim_dark_eye444tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E84E0E, colors: 16, symbol: mim_dark_eye444tif_tlut }
+mim_dark_hana1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E84E5E, width: 32, height: 32, tlut: 0x2E8505E, symbol: mim_dark_hana1tif }
+mim_dark_hana1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8505E, colors: 16, symbol: mim_dark_hana1tif_tlut }
+mim_dark_hana3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E850AE, width: 32, height: 32, tlut: 0x2E852AE, symbol: mim_dark_hana3tif }
+mim_dark_hana3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E852AE, colors: 16, symbol: mim_dark_hana3tif_tlut }
+mim_dark_kinoko2tif:
+  { type: TEXTURE, format: CI8, offset: 0x2E852FE, width: 32, height: 64, tlut: 0x2E85AFE, symbol: mim_dark_kinoko2tif }
+mim_dark_kinoko2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E85AFE, colors: 256, symbol: mim_dark_kinoko2tif_tlut }
+mim_dark_kinokotif:
+  { type: TEXTURE, format: CI4, offset: 0x2E85D2E, width: 64, height: 32, tlut: 0x2E8612E, symbol: mim_dark_kinokotif }
+mim_dark_kinokotif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8612E, colors: 16, symbol: mim_dark_kinokotif_tlut }
+mim_dark_mitikusatif:
+  { type: TEXTURE, format: CI4, offset: 0x2E8617E, width: 128, height: 32, tlut: 0x2E8697E, symbol: mim_dark_mitikusatif }
+mim_dark_mitikusatif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8697E, colors: 16, symbol: mim_dark_mitikusatif_tlut }
+mim_dark_mouse2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E869CE, width: 32, height: 128, tlut: 0x2E871CE, symbol: mim_dark_mouse2tif }
+mim_dark_mouse2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E871CE, colors: 16, symbol: mim_dark_mouse2tif_tlut }
+mim_dark_mouse3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E8721E, width: 32, height: 128, tlut: 0x2E87A1E, symbol: mim_dark_mouse3tif }
+mim_dark_mouse3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E87A1E, colors: 16, symbol: mim_dark_mouse3tif_tlut }
+mim_dark_redeyetif:
+  { type: TEXTURE, format: CI4, offset: 0x2E87A6E, width: 16, height: 32, tlut: 0x2E87B6E, symbol: mim_dark_redeyetif }
+mim_dark_redeyetif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E87B6E, colors: 16, symbol: mim_dark_redeyetif_tlut }
+mim_dark_reeftif:
+  { type: TEXTURE, format: CI4, offset: 0x2E87BBE, width: 128, height: 32, tlut: 0x2E883BE, symbol: mim_dark_reeftif }
+mim_dark_reeftif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E883BE, colors: 16, symbol: mim_dark_reeftif_tlut }
+mim_dark_roadtif:
+  { type: TEXTURE, format: CI8, offset: 0x2E8840E, width: 32, height: 32, tlut: 0x2E8880E, symbol: mim_dark_roadtif }
+mim_dark_roadtif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8880E, colors: 256, symbol: mim_dark_roadtif_tlut }
+mim_dark_rocktif:
+  { type: TEXTURE, format: CI4, offset: 0x2E88A3E, width: 32, height: 64, tlut: 0x2E88E3E, symbol: mim_dark_rocktif }
+mim_dark_rocktif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E88E3E, colors: 16, symbol: mim_dark_rocktif_tlut }
+mim_darkgreen2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E88E8E, width: 32, height: 64, tlut: 0x2E8928E, symbol: mim_darkgreen2tif }
+mim_darkgreen2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8928E, colors: 16, symbol: mim_darkgreen2tif_tlut }
+mim_darkgreen2tif_aux:
+  { type: TEXTURE, format: CI4, offset: 0x2E8908E, width: 32, height: 32, symbol: mim_darkgreen2tif_aux }
+mim_darkwoodtif:
+  { type: TEXTURE, format: I4, offset: 0x2E892DE, width: 64, height: 128, symbol: mim_darkwoodtif }
+mim_doortif:
+  { type: TEXTURE, format: IA4, offset: 0x2E8A30E, width: 64, height: 64, symbol: mim_doortif }
+mim_grayframetif:
+  { type: TEXTURE, format: I4, offset: 0x2E8AB3E, width: 64, height: 64, symbol: mim_grayframetif }
+mim_h_greentif:
+  { type: TEXTURE, format: CI4, offset: 0x2E8B36E, width: 32, height: 32, tlut: 0x2E8B56E, symbol: mim_h_greentif }
+mim_h_greentif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8B56E, colors: 16, symbol: mim_h_greentif_tlut }
+mim_h_kabe2tif:
+  { type: TEXTURE, format: CI8, offset: 0x2E8B5BE, width: 32, height: 32, tlut: 0x2E8B9BE, symbol: mim_h_kabe2tif }
+mim_h_kabe2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8B9BE, colors: 256, symbol: mim_h_kabe2tif_tlut }
+mim_h_kabetif:
+  { type: TEXTURE, format: CI8, offset: 0x2E8BBEE, width: 64, height: 16, tlut: 0x2E8BFEE, symbol: mim_h_kabetif }
+mim_h_kabetif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8BFEE, colors: 256, symbol: mim_h_kabetif_tlut }
+mim_h_kazaritif:
+  { type: TEXTURE, format: CI8, offset: 0x2E8C21E, width: 32, height: 32, tlut: 0x2E8C61E, symbol: mim_h_kazaritif }
+mim_h_kazaritif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8C61E, colors: 256, symbol: mim_h_kazaritif_tlut }
+mim_h_sakutif:
+  { type: TEXTURE, format: CI8, offset: 0x2E8C84E, width: 32, height: 32, tlut: 0x2E8CC4E, symbol: mim_h_sakutif }
+mim_h_sakutif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8CC4E, colors: 256, symbol: mim_h_sakutif_tlut }
+mim_h_yane1tif:
+  { type: TEXTURE, format: CI8, offset: 0x2E8CE7E, width: 32, height: 64, tlut: 0x2E8D67E, symbol: mim_h_yane1tif }
+mim_h_yane1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8D67E, colors: 256, symbol: mim_h_yane1tif_tlut }
+mim_hachinosutif:
+  { type: TEXTURE, format: CI4, offset: 0x2E8D8AE, width: 32, height: 32, tlut: 0x2E8DAAE, symbol: mim_hachinosutif }
+mim_hachinosutif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8DAAE, colors: 16, symbol: mim_hachinosutif_tlut }
+mim_hanatif:
+  { type: TEXTURE, format: CI4, offset: 0x2E8DAFE, width: 64, height: 32, tlut: 0x2E8DEFE, symbol: mim_hanatif }
+mim_hanatif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8DEFE, colors: 16, symbol: mim_hanatif_tlut }
+mim_hashira_atif:
+  { type: TEXTURE, format: I4, offset: 0x2E8DF4E, width: 64, height: 128, symbol: mim_hashira_atif }
+mim_hashiratif:
+  { type: TEXTURE, format: CI4, offset: 0x2E8EF7E, width: 32, height: 64, tlut: 0x2E8F37E, symbol: mim_hashiratif }
+mim_hashiratif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8F37E, colors: 16, symbol: mim_hashiratif_tlut }
+mim_hilltif:
+  { type: TEXTURE, format: CI4, offset: 0x2E8F3CE, width: 64, height: 32, tlut: 0x2E8F7CE, symbol: mim_hilltif }
+mim_hilltif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E8F7CE, colors: 16, symbol: mim_hilltif_tlut }
+mim_iwa_2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E8F81E, width: 64, height: 64, tlut: 0x2E9001E, symbol: mim_iwa_2tif }
+mim_iwa_2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E9001E, colors: 16, symbol: mim_iwa_2tif_tlut }
+mim_kabebe_mtif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2E9006E, width: 32, height: 32, symbol: mim_kabebe_mtif }
+mim_kabebe_mtif_mm1:
+  { type: TEXTURE, format: RGBA16, offset: 0x2E9086E, width: 16, height: 16, symbol: mim_kabebe_mtif_mm1 }
+mim_kabebe_mtif_mm2:
+  { type: TEXTURE, format: RGBA16, offset: 0x2E90A6E, width: 8, height: 8, symbol: mim_kabebe_mtif_mm2 }
+mim_kabebe_mtif_mm3:
+  { type: TEXTURE, format: RGBA16, offset: 0x2E90AEE, width: 4, height: 4, symbol: mim_kabebe_mtif_mm3 }
+mim_kaidan_5tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E90B3E, width: 32, height: 32, tlut: 0x2E90D3E, symbol: mim_kaidan_5tif }
+mim_kaidan_5tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E90D3E, colors: 16, symbol: mim_kaidan_5tif_tlut }
+mim_kare_edatif:
+  { type: TEXTURE, format: I4, offset: 0x2E90D8E, width: 128, height: 64, symbol: mim_kare_edatif }
+mim_kusa1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E91DBE, width: 32, height: 32, tlut: 0x2E91FBE, symbol: mim_kusa1tif }
+mim_kusa1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E91FBE, colors: 16, symbol: mim_kusa1tif_tlut }
+mim_kusaritif:
+  { type: TEXTURE, format: CI4, offset: 0x2E9200E, width: 16, height: 32, tlut: 0x2E9210E, symbol: mim_kusaritif }
+mim_kusaritif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E9210E, colors: 16, symbol: mim_kusaritif_tlut }
+mim_kusatif:
+  { type: TEXTURE, format: CI4, offset: 0x2E9215E, width: 32, height: 64, tlut: 0x2E9255E, symbol: mim_kusatif }
+mim_kusatif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E9255E, colors: 16, symbol: mim_kusatif_tlut }
+mim_mac_britshcuttif:
+  { type: TEXTURE, format: CI4, offset: 0x2E925AE, width: 64, height: 64, tlut: 0x2E92DAE, symbol: mim_mac_britshcuttif }
+mim_mac_britshcuttif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E92DAE, colors: 16, symbol: mim_mac_britshcuttif_tlut }
+mim_mac_britshtreetif:
+  { type: TEXTURE, format: CI4, offset: 0x2E92DFE, width: 32, height: 64, tlut: 0x2E931FE, symbol: mim_mac_britshtreetif }
+mim_mac_britshtreetif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E931FE, colors: 16, symbol: mim_mac_britshtreetif_tlut }
+mim_mac_edgetif:
+  { type: TEXTURE, format: CI4, offset: 0x2E9324E, width: 16, height: 16, tlut: 0x2E932CE, symbol: mim_mac_edgetif }
+mim_mac_edgetif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E932CE, colors: 16, symbol: mim_mac_edgetif_tlut }
+mim_mac_sakutif:
+  { type: TEXTURE, format: CI4, offset: 0x2E9331E, width: 32, height: 32, tlut: 0x2E9351E, symbol: mim_mac_sakutif }
+mim_mac_sakutif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E9351E, colors: 16, symbol: mim_mac_sakutif_tlut }
+mim_mado_2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E9356E, width: 64, height: 64, tlut: 0x2E93D6E, symbol: mim_mado_2tif }
+mim_mado_2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E93D6E, colors: 16, symbol: mim_mado_2tif_tlut }
+mim_wood_floor_ctif:
+  { type: TEXTURE, format: CI4, offset: 0x2E93DBE, width: 32, height: 32, tlut: 0x2E93FBE, symbol: mim_wood_floor_ctif }
+mim_wood_floor_ctif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E93FBE, colors: 16, symbol: mim_wood_floor_ctif_tlut }
+mim_yuka_t1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E9400E, width: 32, height: 32, tlut: 0x2E9428E, symbol: mim_yuka_t1tif }
+mim_yuka_t1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E9428E, colors: 16, symbol: mim_yuka_t1tif_tlut }
+mim_yuka_t1tif_mm1:
+  { type: TEXTURE, format: CI4, offset: 0x2E9420E, width: 16, height: 16, symbol: mim_yuka_t1tif_mm1 }
+mim_yuka_tairu3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E942DE, width: 32, height: 32, tlut: 0x2E944DE, symbol: mim_yuka_tairu3tif }
+mim_yuka_tairu3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E944DE, colors: 16, symbol: mim_yuka_tairu3tif_tlut }
+mim_zimen2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2E9452E, width: 32, height: 64, tlut: 0x2E9492E, symbol: mim_zimen2tif }
+mim_zimen2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2E9492E, colors: 16, symbol: mim_zimen2tif_tlut }

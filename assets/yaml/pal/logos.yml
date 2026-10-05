@@ -1,0 +1,9 @@
+
+LOGO_1:
+  { type: TEXTURE, format: RGBA16, width: 128, height: 112, offset: 0x0020C080, symbol: LOGO_1 }
+
+LOGO_2:
+  { type: TEXTURE, format: RGBA16, width: 256, height: 48, offset: 0x00221080, symbol: LOGO_2 }
+
+LOGO_3:
+  { type: TEXTURE, format: RGBA16, width: 256, height: 112, offset: 0x00213080, symbol: LOGO_3 }

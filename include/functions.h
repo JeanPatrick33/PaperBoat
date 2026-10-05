@@ -658,6 +658,14 @@ void state_drawUI_pause(void);
 void state_init_unpause(void);
 void state_step_unpause(void);
 void state_drawUI_unpause(void);
+#if VERSION_PAL
+void state_init_language_select(void);
+void state_step_language_select(void);
+void state_drawUI_language_select(void);
+void state_init_exit_language_select(void);
+void state_step_exit_language_select(void);
+void state_drawUI_exit_language_select(void);
+#endif
 void state_init_file_select(void);
 void state_step_file_select(void);
 void state_drawUI_file_select(void);

@@ -1,0 +1,74 @@
+:config:
+  segments:
+    - [0, 0]
+  virtual: [0x800718F0, 0x4CCF0]
+
+# --- Textures ---
+theater_walls:
+  { type: TEXTURE, format: I4, offset: 0x4CCF0, width: 16, height: 32, symbol: theater_walls }
+
+theater_curtains:
+  { type: TEXTURE, format: RGBA32, offset: 0x4CE40, width: 32, height: 32, symbol: theater_curtains }
+
+theater_floor_pal:
+  { type: TEXTURE, format: TLUT, offset: 0x4DF90, colors: 16, symbol: theater_floor_pal }
+
+theater_floor:
+  { type: TEXTURE, format: CI4, offset: 0x4DE90, width: 32, height: 16, tlut: 0x4DF90, symbol: theater_floor }
+
+ui_no_controller:
+  { type: TEXTURE, format: IA8, offset: 0x33BDD0, width: 128, height: 32, symbol: ui_no_controller }
+
+# --- Texture Setup DLs ---
+walls_tex_setup_gfx:
+  { type: GFX, offset: 0x4CDF0, symbol: walls_tex_setup_gfx }
+
+curtains_tex_setup_gfx:
+  { type: GFX, offset: 0x4DE40, symbol: curtains_tex_setup_gfx }
+
+floor_tex_setup_gfx:
+  { type: GFX, offset: 0x4DFB0, symbol: floor_tex_setup_gfx }
+
+# --- Vertices ---
+theater_left_wall_vtx:
+  { type: VTX, offset: 0x4E030, count: 6, symbol: theater_left_wall_vtx }
+
+theater_right_wall_vtx:
+  { type: VTX, offset: 0x4E090, count: 6, symbol: theater_right_wall_vtx }
+
+theater_floor_vtx:
+  { type: VTX, offset: 0x4E0F0, count: 25, symbol: theater_floor_vtx }
+
+theater_left_inset_shadow_vtx:
+  { type: VTX, offset: 0x4E280, count: 4, symbol: theater_left_inset_shadow_vtx }
+
+theater_right_inset_shadow_vtx:
+  { type: VTX, offset: 0x4E2C0, count: 4, symbol: theater_right_inset_shadow_vtx }
+
+theater_curtain_vtx:
+  { type: VTX, offset: 0x4E300, count: 31, symbol: theater_curtain_vtx }
+
+theater_wall_shadows_vtx:
+  { type: VTX, offset: 0x4E4F0, count: 8, symbol: theater_wall_shadows_vtx }
+
+# --- Scene DLs ---
+theater_wall_shadows_gfx:
+  { type: GFX, offset: 0x4E570, symbol: theater_wall_shadows_gfx }
+
+theater_curtain_gfx:
+  { type: GFX, offset: 0x4E5B0, symbol: theater_curtain_gfx }
+
+theater_inset_shadows_gfx:
+  { type: GFX, offset: 0x4E630, symbol: theater_inset_shadows_gfx }
+
+theater_floor_gfx:
+  { type: GFX, offset: 0x4E678, symbol: theater_floor_gfx }
+
+theater_right_wall_gfx:
+  { type: GFX, offset: 0x4E708, symbol: theater_right_wall_gfx }
+
+theater_left_wall_gfx:
+  { type: GFX, offset: 0x4E748, symbol: theater_left_wall_gfx }
+
+theater_gfx:
+  { type: GFX, offset: 0x4E788, symbol: theater_gfx }

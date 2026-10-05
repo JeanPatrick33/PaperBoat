@@ -193,8 +193,13 @@ void draw_message_window(MessagePrintState* printer) {
 #endif
 
 #if VERSION_PAL
-INCLUDE_ASM(s32, "msg_draw", appendGfx_message);
+#define MSG_FADE_IN_DURATION 6
+#define MSG_FADE_OUT_DURATION 4
 #else
+#define MSG_FADE_IN_DURATION 7
+#define MSG_FADE_OUT_DURATION 5
+#endif
+
 void appendGfx_message(MessagePrintState* printer, s16 posX, s16 posY, u16 additionalOffsetX, u16 additionalOffsetY,
                        u16 flag, u8 alpha) {
     SpriteRasterInfo sprRasterInfo;
@@ -594,7 +599,11 @@ void appendGfx_message(MessagePrintState* printer, s16 posX, s16 posY, u16 addit
                             if (printer->fadeOutCounter >= 5) {
                                 printer->stateFlags |= MSG_STATE_FLAG_1;
                             }
+#if VERSION_PAL
+                            frameAlpha = -(printer->fadeOutCounter * 57) - 1;
+#else
                             frameAlpha = -(printer->fadeOutCounter * 46) - 1;
+#endif
                             sp8E = ((u8)frameAlpha) * 0.6;
                             frameFading = 1;
                             if (sp8E >= 32) {
@@ -1294,17 +1303,34 @@ void appendGfx_message(MessagePrintState* printer, s16 posX, s16 posY, u16 addit
                         charPosY += rand_int(10000) % 2;
                     }
                     if (msg_drawState->effectFlags & MSG_FX_FLAG_WAVE) {
-                        temp_f2_3 = msg_drawState->msgScale.x - 1.0;
-                        temp_s0_7 = (printer->effectFrameCounter * (s32)(20.0 - (temp_f2_3 * 5.0))) - (msg_drawState->visiblePrintedCount *
-                                    (s32)(45.0 - (temp_f2_3 * 15.0)));
-                        charPosX += cosine(temp_s0_7) * ((msg_drawState->msgScale.x - 1.0) + 1.6);
-                        charPosY += cosine((temp_s0_7 + 180.0 + 90.0)) * (msg_drawState->msgScale.y - 1.0 + 1.6);
+#if VERSION_PAL
+                        f32 waveFreqX = 20.0 - (msg_drawState->msgScale.x - 1.0) * 5.0;
+                        f32 waveFreqY = 45.0 - (msg_drawState->msgScale.x - 1.0) * 15.0;
+                        f32 wavePhaseX = printer->effectFrameCounter * waveFreqX * 1.2f;
+                        f32 charOffset = (u32) msg_drawState->visiblePrintedCount * waveFreqY;
+#else
+                        s32 waveFreqX = 20.0 - (msg_drawState->msgScale.x - 1.0) * 5.0;
+                        s32 waveFreqY = 45.0 - (msg_drawState->msgScale.x - 1.0) * 15.0;
+                        s32 wavePhaseX = printer->effectFrameCounter * waveFreqX;
+                        s32 charOffset = msg_drawState->visiblePrintedCount * waveFreqY;
+#endif
+
+                        charPosX += cosine(wavePhaseX - charOffset) * (msg_drawState->msgScale.x - 1.0 + 1.6);
+                        charPosY += cosine(wavePhaseX - charOffset + 180.0 + 90.0) * (msg_drawState->msgScale.y - 1.0 + 1.6);
                     }
                     if (msg_drawState->effectFlags & MSG_FX_FLAG_GLOBAL_WAVE) {
-                        temp_s0_8 = (gMsgGlobalWaveCounter * (s32)(20.0 - ((msg_drawState->msgScale.x - 1.0) * 5.0))) -
-                                    (msg_drawState->visiblePrintedCount * 45);
-                        charPosX += cosine(temp_s0_8) * ((msg_drawState->msgScale.x - 1.0) + 1.6);
-                        charPosY += cosine((temp_s0_8 + 180.0 + 90.0)) * ((msg_drawState->msgScale.y - 1.0) + 1.6);
+#if VERSION_PAL
+                        f32 waveFreqX = 20.0 - (msg_drawState->msgScale.x - 1.0) * 5.0;
+                        f32 wavePhaseX = gMsgGlobalWaveCounter * waveFreqX * 1.2f;
+                        f32 charOffset = (u32) msg_drawState->visiblePrintedCount * 45;
+#else
+                        s32 waveFreqX = 20.0 - (msg_drawState->msgScale.x - 1.0) * 5.0;
+                        s32 wavePhaseX = gMsgGlobalWaveCounter * waveFreqX;
+                        s32 charOffset = msg_drawState->visiblePrintedCount * 45;
+#endif
+
+                        charPosX += cosine(wavePhaseX - charOffset) * (msg_drawState->msgScale.x - 1.0 + 1.6);
+                        charPosY += cosine(wavePhaseX - charOffset + 180.0 + 90.0) * (msg_drawState->msgScale.y - 1.0 + 1.6);
                     }
                     if (msg_drawState->effectFlags & MSG_FX_FLAG_RAINBOW) {
                         palette = abs(msg_drawState->visiblePrintedCount - (u16)(printer->effectFrameCounter / 3)) % 10;
@@ -1622,7 +1648,6 @@ void appendGfx_message(MessagePrintState* printer, s16 posX, s16 posY, u16 addit
     gDPPipeSync(gMainGfxPos++);
     D_80151338 = gMainGfxPos;
 }
-#endif
 
 void msg_reset_gfx_state(void) {
     gDPPipeSync(gMainGfxPos++);

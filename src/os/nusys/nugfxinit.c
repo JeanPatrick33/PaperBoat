@@ -63,6 +63,9 @@ void nuGfxInitEX2(void) {
     nuGfxSetCfb(FrameBuf, NU_GFX_FRAMEBUFFER_NUM);
     nuGfxSetZBuffer((u16*) NU_GFX_ZBUFFER_ADDR);
     nuGfxSwapCfbFuncSet(nuGfxSwapCfb);
+#if VERSION_PAL
+    nuGfxSetUcodeFifo(D_800B91D0, NU_GFX_RDP_OUTPUTBUFF_SIZE);
+#endif
     nuGfxUcode = &nugfx_ucode;
     nuGfxTaskMgrInit();
 

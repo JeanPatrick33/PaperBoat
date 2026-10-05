@@ -1,0 +1,166 @@
+:config:
+  segments:
+    - [0x02, 0x02000000]
+
+dgb_berosaidetif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB005E, width: 16, height: 16, tlut: 0x2EB00DE, symbol: dgb_berosaidetif }
+dgb_berosaidetif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB00DE, colors: 16, symbol: dgb_berosaidetif_tlut }
+dgb_ciock3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB012E, width: 32, height: 64, tlut: 0x2EB052E, symbol: dgb_ciock3tif }
+dgb_ciock3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB052E, colors: 16, symbol: dgb_ciock3tif_tlut }
+dgb_d_ana04tif:
+  { type: TEXTURE, format: IA8, offset: 0x2EB057E, width: 32, height: 32, symbol: dgb_d_ana04tif }
+dgb_d_anatif:
+  { type: TEXTURE, format: IA8, offset: 0x2EB09AE, width: 32, height: 64, symbol: dgb_d_anatif }
+dgb_d_chear2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB11DE, width: 16, height: 16, tlut: 0x2EB125E, symbol: dgb_d_chear2tif }
+dgb_d_chear2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB125E, colors: 16, symbol: dgb_d_chear2tif_tlut }
+dgb_doatif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB12AE, width: 32, height: 64, tlut: 0x2EB16AE, symbol: dgb_doatif }
+dgb_doatif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB16AE, colors: 16, symbol: dgb_doatif_tlut }
+dgb_frametif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB16FE, width: 64, height: 64, tlut: 0x2EB1EFE, symbol: dgb_frametif }
+dgb_frametif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB1EFE, colors: 16, symbol: dgb_frametif_tlut }
+dgb_hasira1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB1F4E, width: 32, height: 64, tlut: 0x2EB234E, symbol: dgb_hasira1tif }
+dgb_hasira1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB234E, colors: 16, symbol: dgb_hasira1tif_tlut }
+dgb_hibi1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB239E, width: 32, height: 64, tlut: 0x2EB279E, symbol: dgb_hibi1tif }
+dgb_hibi1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB279E, colors: 16, symbol: dgb_hibi1tif_tlut }
+dgb_hibi3tif:
+  { type: TEXTURE, format: IA16, offset: 0x2EB27EE, width: 32, height: 64, symbol: dgb_hibi3tif }
+dgb_hikaritif:
+  { type: TEXTURE, format: IA16, offset: 0x2EB381E, width: 16, height: 32, symbol: dgb_hikaritif }
+dgb_hokori1tif:
+  { type: TEXTURE, format: IA8, offset: 0x2EB3C4E, width: 64, height: 32, symbol: dgb_hokori1tif }
+dgb_isuasi1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB447E, width: 32, height: 64, tlut: 0x2EB487E, symbol: dgb_isuasi1tif }
+dgb_isuasi1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB487E, colors: 16, symbol: dgb_isuasi1tif_tlut }
+dgb_iwa_4tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB48CE, width: 64, height: 32, tlut: 0x2EB4CCE, symbol: dgb_iwa_4tif }
+dgb_iwa_4tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB4CCE, colors: 16, symbol: dgb_iwa_4tif_tlut }
+dgb_jimen_edgetif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB4D1E, width: 32, height: 64, tlut: 0x2EB511E, symbol: dgb_jimen_edgetif }
+dgb_jimen_edgetif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB511E, colors: 16, symbol: dgb_jimen_edgetif_tlut }
+dgb_jimenbtif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB516E, width: 32, height: 64, tlut: 0x2EB556E, symbol: dgb_jimenbtif }
+dgb_jimenbtif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB556E, colors: 16, symbol: dgb_jimenbtif_tlut }
+dgb_jimenbtif_aux:
+  { type: TEXTURE, format: CI4, offset: 0x2EB558E, width: 32, height: 32, tlut: 0x2EB578E, symbol: dgb_jimenbtif_aux }
+dgb_jimenbtif_aux_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB578E, colors: 16, symbol: dgb_jimenbtif_aux_tlut }
+dgb_jimenctif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB57DE, width: 32, height: 64, tlut: 0x2EB5BDE, symbol: dgb_jimenctif }
+dgb_jimenctif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB5BDE, colors: 16, symbol: dgb_jimenctif_tlut }
+dgb_jimenctif_aux:
+  { type: TEXTURE, format: CI4, offset: 0x2EB5BFE, width: 32, height: 32, tlut: 0x2EB5DFE, symbol: dgb_jimenctif_aux }
+dgb_jimenctif_aux_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB5DFE, colors: 16, symbol: dgb_jimenctif_aux_tlut }
+dgb_kabe10tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB5E4E, width: 64, height: 16, tlut: 0x2EB604E, symbol: dgb_kabe10tif }
+dgb_kabe10tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB604E, colors: 16, symbol: dgb_kabe10tif_tlut }
+dgb_kabe1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB609E, width: 32, height: 128, tlut: 0x2EB689E, symbol: dgb_kabe1tif }
+dgb_kabe1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB689E, colors: 16, symbol: dgb_kabe1tif_tlut }
+dgb_kabe2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB68EE, width: 32, height: 128, tlut: 0x2EB70EE, symbol: dgb_kabe2tif }
+dgb_kabe2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB70EE, colors: 16, symbol: dgb_kabe2tif_tlut }
+dgb_kabe3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB713E, width: 32, height: 128, tlut: 0x2EB793E, symbol: dgb_kabe3tif }
+dgb_kabe3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB793E, colors: 16, symbol: dgb_kabe3tif_tlut }
+dgb_kabe6tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB798E, width: 32, height: 64, tlut: 0x2EB7D8E, symbol: dgb_kabe6tif }
+dgb_kabe6tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB7D8E, colors: 16, symbol: dgb_kabe6tif_tlut }
+dgb_katen1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB7DDE, width: 32, height: 64, tlut: 0x2EB81DE, symbol: dgb_katen1tif }
+dgb_katen1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB81DE, colors: 16, symbol: dgb_katen1tif_tlut }
+dgb_katen3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB822E, width: 32, height: 32, tlut: 0x2EB842E, symbol: dgb_katen3tif }
+dgb_katen3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB842E, colors: 16, symbol: dgb_katen3tif_tlut }
+dgb_kazari3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB847E, width: 16, height: 16, tlut: 0x2EB84FE, symbol: dgb_kazari3tif }
+dgb_kazari3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB84FE, colors: 16, symbol: dgb_kazari3tif_tlut }
+dgb_ki5tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB854E, width: 64, height: 64, tlut: 0x2EB8D4E, symbol: dgb_ki5tif }
+dgb_ki5tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB8D4E, colors: 16, symbol: dgb_ki5tif_tlut }
+dgb_mado1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB8D9E, width: 32, height: 128, tlut: 0x2EB959E, symbol: dgb_mado1tif }
+dgb_mado1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB959E, colors: 16, symbol: dgb_mado1tif_tlut }
+dgb_mado2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB95EE, width: 32, height: 128, tlut: 0x2EB9DEE, symbol: dgb_mado2tif }
+dgb_mado2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EB9DEE, colors: 16, symbol: dgb_mado2tif_tlut }
+dgb_moyou1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EB9E3E, width: 32, height: 32, tlut: 0x2EBA03E, symbol: dgb_moyou1tif }
+dgb_moyou1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBA03E, colors: 16, symbol: dgb_moyou1tif_tlut }
+dgb_moyou2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBA08E, width: 64, height: 32, tlut: 0x2EBA48E, symbol: dgb_moyou2tif }
+dgb_moyou2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBA48E, colors: 16, symbol: dgb_moyou2tif_tlut }
+dgb_moyou3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBA4DE, width: 64, height: 32, tlut: 0x2EBA8DE, symbol: dgb_moyou3tif }
+dgb_moyou3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBA8DE, colors: 16, symbol: dgb_moyou3tif_tlut }
+dgb_syokudaitif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBA92E, width: 32, height: 64, tlut: 0x2EBAD2E, symbol: dgb_syokudaitif }
+dgb_syokudaitif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBAD2E, colors: 16, symbol: dgb_syokudaitif_tlut }
+dgb_tenjo2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBAD7E, width: 32, height: 32, tlut: 0x2EBAF7E, symbol: dgb_tenjo2tif }
+dgb_tenjo2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBAF7E, colors: 16, symbol: dgb_tenjo2tif_tlut }
+dgb_tesuri1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBAFCE, width: 16, height: 32, tlut: 0x2EBB0CE, symbol: dgb_tesuri1tif }
+dgb_tesuri1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBB0CE, colors: 16, symbol: dgb_tesuri1tif_tlut }
+dgb_tesuri2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBB11E, width: 16, height: 32, tlut: 0x2EBB21E, symbol: dgb_tesuri2tif }
+dgb_tesuri2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBB21E, colors: 16, symbol: dgb_tesuri2tif_tlut }
+dgb_tesuri3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBB26E, width: 16, height: 32, tlut: 0x2EBB36E, symbol: dgb_tesuri3tif }
+dgb_tesuri3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBB36E, colors: 16, symbol: dgb_tesuri3tif_tlut }
+dgb_togetif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBB3BE, width: 32, height: 32, tlut: 0x2EBB5BE, symbol: dgb_togetif }
+dgb_togetif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBB5BE, colors: 16, symbol: dgb_togetif_tlut }
+dgb_yuka1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBB60E, width: 32, height: 32, tlut: 0x2EBB80E, symbol: dgb_yuka1tif }
+dgb_yuka1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBB80E, colors: 16, symbol: dgb_yuka1tif_tlut }
+dgb_zassoutif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBB85E, width: 32, height: 64, tlut: 0x2EBBC5E, symbol: dgb_zassoutif }
+dgb_zassoutif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBBC5E, colors: 16, symbol: dgb_zassoutif_tlut }
+dgb_zyu1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBBCAE, width: 32, height: 32, tlut: 0x2EBBEAE, symbol: dgb_zyu1tif }
+dgb_zyu1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBBEAE, colors: 16, symbol: dgb_zyu1tif_tlut }
+dgb_zyu2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EBBEFE, width: 32, height: 32, tlut: 0x2EBC0FE, symbol: dgb_zyu2tif }
+dgb_zyu2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EBC0FE, colors: 16, symbol: dgb_zyu2tif_tlut }
