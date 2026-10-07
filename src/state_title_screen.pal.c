@@ -123,6 +123,8 @@ BSS s16 TitleScreen_TimeLeft;
 BSS s32 StartGame_Alpha;
 BSS s32 Languages_Alpha;
 
+// Empty in the original game as well (called once per title state change).
+static void draw_title_screen_NOP(void) {}
 void appendGfx_title_screen(void);
 void title_screen_draw_images(f32, f32);
 void title_screen_draw_logo(f32);

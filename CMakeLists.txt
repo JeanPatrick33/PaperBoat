@@ -288,6 +288,9 @@ else()
     # PAL keeps the per-language files (_en/_de/_fr/_es/_en_de/_pal) and the language menu;
     # only the JP and iQue variants are left out.
     list(FILTER GAME_SOURCES EXCLUDE REGEX "/[^/]*_(jp|ique)\\.c$")
+    # pause_gfx_en.c only incbin's the original's texture files; the port loads them through OTR
+    # (see pause_gfx.c / assets/misc/pause.h), exactly like the US build.
+    list(FILTER GAME_SOURCES EXCLUDE REGEX "/pause/pause_gfx_en\\.c$")
     # <name>.pal.c replaces <name>.c in PAL builds
     set(_pal_overrides ${GAME_SOURCES})
     list(FILTER _pal_overrides INCLUDE REGEX "\\.pal\\.c$")
