@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
 """Generate the PAL message assets from a PAL (Europe) Paper Mario ROM.
 
+The PAL ROM has four message banks (en/de/fr/es) of 8 092 messages each. Exporting every message
+as its own archive entry would put ~32 000 extra files in pm64.o2r, past the 65 535-entry limit of the
+archive writer used by Torch. So each bank is exported as ONE blob (the raw bank, exactly as laid out
+in the ROM) and the game indexes it at runtime the same way the original game does
+(section table -> message table -> message), see load_msg_asset() in src/msg.c.
+
 Outputs (relative to the repository root):
-  assets/yaml/pal/messages.yml        English bank  -> __OTR__messages/MSG_*
-  assets/yaml/pal/messages_de.yml     German bank   -> __OTR__messages_de/MSG_*
-  assets/yaml/pal/messages_fr.yml     French bank   -> __OTR__messages_fr/MSG_*
-  assets/yaml/pal/messages_es.yml     Spanish bank  -> __OTR__messages_es/MSG_*
-  include/assets/messages_pal.h       path tables, indexed [language][section][index]
+  assets/yaml/pal/messages.yml        English bank  -> __OTR__messages/bank
+  assets/yaml/pal/messages_de.yml     German bank   -> __OTR__messages_de/bank
+  assets/yaml/pal/messages_fr.yml     French bank   -> __OTR__messages_fr/bank
+  assets/yaml/pal/messages_es.yml     Spanish bank  -> __OTR__messages_es/bank
+  include/assets/messages_pal.h       bank paths, indexed by language
   include/message_ids_pal.h           MSG_* ids for the PAL numbering
 
 Usage: gen_pal_messages.py <pal rom .z64>
-The ROM is only used to read the bank layout (section / message offsets); message
-text is never copied into the repository.
+The ROM is only used to read the bank layout; message text is never copied into the repository.
 """
 import struct
 import sys
@@ -49,7 +54,12 @@ def parse_bank(rom, base):
     for si, j, off in msgs:
         end = data.index(0xFD, off)
         out.append((si, j, off, (end + 1 - off + 3) & ~3))
-    return len(secs), out
+    # the message tables themselves (incl. the terminating self-offset entry) must be inside the blob too
+    tables_end = 0
+    for si, so in enumerate(secs):
+        n = sum(1 for s_, _, _, _ in out if s_ == si)
+        tables_end = max(tables_end, so + (n + 1) * 4)
+    return len(secs), out, tables_end
 
 
 def main():
@@ -61,20 +71,30 @@ def main():
     layout = None
     all_sections = None
     for lang, suffix, base in BANKS:
-        nsec, msgs = parse_bank(rom, base)
+        nsec, msgs, tables_end = parse_bank(rom, base)
         key = [(s, i) for s, i, _, _ in msgs]
         if layout is None:
             layout, all_sections = key, nsec
         elif key != layout:
             sys.exit(f"bank {lang} has a different message layout than the English bank")
-        lines = [":config:", "  segments:", f"    - [1, 0x{base:X}]", "  no_compression: true", ""]
-        for s, i, off, size in msgs:
-            n = names.get((s, i)) or f"Unnamed_{s:02X}_{i:04X}"
-            lines += [f"MSG_{n}:", f"  {{ type: BLOB, offset: 0x{off:X}, size: 0x{size:X} }}"]
+        bank_size = max(max(off + size for _, _, off, size in msgs), tables_end)
+        bank_size = (bank_size + 3) & ~3
+        # Torch reads offsets relative to the file's segment base (same convention as the US messages.yml).
+        lines = [
+            f"# PAL message bank ({lang}): {len(msgs)} messages in {nsec} sections.",
+            "# Exported as a single blob (see tools/pal/gen_pal_messages.py for why).",
+            ":config:",
+            "  segments:",
+            f"    - [1, 0x{base:X}]",
+            "  no_compression: true",
+            "",
+            "bank:",
+            f"  {{ type: BLOB, offset: 0x0, size: 0x{bank_size:X}, symbol: gMsgPalBank_{lang} }}",
+        ]
         out = ROOT / "assets/yaml/pal" / f"messages{suffix}.yml"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text("\n".join(lines) + "\n")
-        print(f"{out.relative_to(ROOT)}: {len(msgs)} messages")
+        print(f"{out.relative_to(ROOT)}: {len(msgs)} messages, bank blob 0x{bank_size:X} bytes")
 
     def mname(s, i):
         return names.get((s, i)) or f"Unnamed_{s:02X}_{i:04X}"
@@ -87,24 +107,12 @@ def main():
     (ROOT / "include/message_ids_pal.h").write_text("\n".join(ids))
 
     # ---- include/assets/messages_pal.h
-    h = ["#pragma once", "", '#include "alignment.h"', "", "#define PAL_NUM_LANGUAGES 4", ""]
-    sections = {}
-    for s, i in layout:
-        sections.setdefault(s, []).append(i)
+    h = ["#pragma once", "", '#include "alignment.h"', "", "#define PAL_NUM_LANGUAGES 4", "",
+         "// One blob per language; index order matches gCurrentLanguage (LANGUAGE_EN/DE/FR/ES)."]
     for lang, suffix, _ in BANKS:
-        h.append(f"// ---- {lang} ----")
-        for s, i in layout:
-            n = mname(s, i)
-            h.append(f'static const ALIGN_ASSET(2) char gMsgPal_{lang}_{n}[] = "__OTR__messages{suffix}/MSG_{n}";')
-        for s in sorted(sections):
-            h.append(f"static const char* const gMsgPalPaths_{lang}_sec{s:02X}[] = {{")
-            h += [f"    gMsgPal_{lang}_{mname(s, i)}," for i in sections[s]]
-            h.append("};")
-        h.append(f"static const char* const* const gMsgPalSectionPaths_{lang}[] = {{")
-        h += [f"    gMsgPalPaths_{lang}_sec{s:02X}," for s in sorted(sections)]
-        h += ["};", ""]
-    h.append("static const char* const* const* const gMsgPalSectionPaths[PAL_NUM_LANGUAGES] = {")
-    h += [f"    gMsgPalSectionPaths_{lang}," for lang, _, _ in BANKS]
+        h.append(f'static const ALIGN_ASSET(2) char gMsgPalBank_{lang}[] = "__OTR__messages{suffix}/bank";')
+    h.append("static const char* const gMsgPalBankPaths[PAL_NUM_LANGUAGES] = {")
+    h += [f"    gMsgPalBank_{lang}," for lang, _, _ in BANKS]
     h += ["};", ""]
     (ROOT / "include/assets/messages_pal.h").write_text("\n".join(h))
     print("headers written;", all_sections, "sections,", len(layout), "messages per language")
