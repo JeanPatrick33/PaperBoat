@@ -76,7 +76,7 @@ void boot_main(void* data) {
     crash_screen_init();
 #endif
 
-#if !VERSION_IQUE
+#if !VERSION_IQUE && !VERSION_PAL // PAL has no IS-Viewer init
     is_debug_init();
 #endif
     nuGfxInit();
