@@ -99,7 +99,11 @@ jobs:
           cmake --preset ninja-release -DPAPERBOAT_REGION=pal \
             -DCMAKE_C_COMPILER=gcc-14 -DCMAKE_CXX_COMPILER=g++-14 \
             -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
-          cmake --build build/ninja-release --parallel $(nproc)
+          cmake --build build/ninja-release --parallel $(nproc) -- -k 0 2>&1 | tee build.log || {
+            grep -nE "error|undefined reference|FAILED|CMake Error" build.log | grep -v "Werror\|-Wno-error" | head -40 | cut -c1-300 | sed 's/%/%25/g' | awk '{printf "%s%%0A",$0}' > errs.txt
+            echo "::error title=Build errors::$(cat errs.txt)"
+            exit 1
+          }
 
       - name: Read build name
         id: build-name
