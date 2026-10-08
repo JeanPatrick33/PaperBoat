@@ -40,6 +40,8 @@
 #include <fast/resource/factory/VertexFactory.h>
 #include <filesystem>
 #include <fstream>
+#include <mutex>
+#include <unordered_set>
 #include <imgui.h>
 #include <chrono>
 #include <libultraship.h>
@@ -946,6 +948,25 @@ static void ApplyDPadAsLeftStick(bool enabled) {
 }
 
 void GameEngine::StartFrame() const {
+    // Hitch log: a frame far longer than the previous ones is the stutter players feel. Record
+    // when and how long (first seconds skipped: startup/map loads are expected to be slow), so a
+    // log can be matched with what was happening on screen. Capped to keep the log readable.
+    {
+        using HitchClock = std::chrono::steady_clock;
+        static HitchClock::time_point sLast {};
+        static uint32_t sFrames = 0;
+        static uint32_t sLogged = 0;
+        const auto now = HitchClock::now();
+        if (sLast.time_since_epoch().count() != 0) {
+            const double ms = std::chrono::duration<double, std::milli>(now - sLast).count();
+            if (++sFrames > 300 && ms > 45.0 && sLogged < 200) {
+                sLogged++;
+                SPDLOG_WARN("Frame hitch: {:.1f} ms (frame {})", ms, sFrames);
+            }
+        }
+        sLast = now;
+    }
+
     Ship::Context::GetRawInstance()->GetWindow()->HandleEvents();
 
     const bool altAssets = CVarGetInteger("gEnhancements.Mods.AlternateAssets", 0) != 0;
@@ -1169,7 +1190,18 @@ extern "C" void* GameEngine_GetDataExact(const char* name) {
     }
     auto resourceMgr = Ship::Context::GetRawInstance()->GetResourceManager();
     auto res = resourceMgr->LoadResource(path, /*loadExact=*/true);
-    return res != nullptr ? resourceMgr->GetResourceRawPointer(res) : nullptr;
+    if (res == nullptr) {
+        // Log each missing resource once: a texture/model that silently fails to load otherwise
+        // leaves no trace at all (invisible geometry, blank signs).
+        static std::mutex sMissingMutex;
+        static std::unordered_set<std::string> sMissing;
+        std::lock_guard<std::mutex> lock(sMissingMutex);
+        if (sMissing.insert(path).second) {
+            SPDLOG_WARN("Missing resource: {}", path);
+        }
+        return nullptr;
+    }
+    return resourceMgr->GetResourceRawPointer(res);
 }
 
 // Size counterpart of GameEngine_GetDataExact.

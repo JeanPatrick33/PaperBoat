@@ -682,7 +682,12 @@ static const MapTexMeta
         { "iwa_popo_4rtif", iwa_popo_4rtif, NULL, 16, 16, 2, 0, 2, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "iwa_popo_5tif", iwa_popo_5tif, NULL, 16, 16, 2, 0, 2, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "iwa_reef_ltif", iwa_reef_ltif, NULL, 64, 32, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+        /* PAL re-authored this texture: intensity format, no wrap/filter flags */
+        { "iwa_roadtif", iwa_roadtif, NULL, 16, 16, 4, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#else
         { "iwa_roadtif", iwa_roadtif, NULL, 16, 16, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#endif
         { "iwa_rock_edge_atif", iwa_rock_edge_atif, NULL, 64, 32, 2, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "iwa_rock_edge_stif", iwa_rock_edge_stif, NULL, 32, 32, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "iwa_rock_edgetif", iwa_rock_edgetif, NULL, 128, 32, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
