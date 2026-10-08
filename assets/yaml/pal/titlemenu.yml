@@ -1,4 +1,4 @@
-# PAL-only: title menu (Start Game / Languages) in four languages + language flags (40 frames x 4 flags of 16x16)
+# PAL-only: title menu text images (raw IA8 BLOBs, read as bytes like title_press_start) in four languages + language flags (40 frames x 4 flags of 16x16)
 en/start_game:
   { type: BLOB, offset: 0x2596E8, size: 0x600, symbol: titlemenu_en_start_game_png }
 en/languages:

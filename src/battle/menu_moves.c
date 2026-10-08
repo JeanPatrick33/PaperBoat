@@ -39,6 +39,104 @@ extern HudScript HES_StatusFlower;
 extern HudScript HES_NotEnoughFP;
 extern HudScript HES_NotEnoughPOW;
 
+#if VERSION_PAL
+extern HudScript HES_FPCost_de;
+extern HudScript HES_FPCost_fr;
+extern HudScript HES_FPCost_es;
+extern HudScript HES_FPCostReduced_de;
+extern HudScript HES_FPCostReduced_fr;
+extern HudScript HES_FPCostReduced_es;
+extern HudScript HES_FPCostReducedTwice_de;
+extern HudScript HES_FPCostReducedTwice_fr;
+extern HudScript HES_FPCostReducedTwice_es;
+extern HudScript HES_POWCost_de;
+extern HudScript HES_POWCost_fr;
+extern HudScript HES_POWCost_es;
+extern HudScript HES_POWCostReduced_de;
+extern HudScript HES_POWCostReduced_fr;
+extern HudScript HES_POWCostReduced_es;
+extern HudScript HES_POWCostReducedTwice_de;
+extern HudScript HES_POWCostReducedTwice_fr;
+extern HudScript HES_POWCostReducedTwice_es;
+extern HudScript HES_NotEnoughFP_de;
+extern HudScript HES_NotEnoughFP_fr;
+extern HudScript HES_NotEnoughFP_es;
+extern HudScript HES_NotEnoughPOW_de;
+extern HudScript HES_NotEnoughPOW_fr;
+extern HudScript HES_NotEnoughPOW_es;
+
+// Per-language layout of the battle menus, indexed by gCurrentLanguage (en, de, fr, es).
+u8 D_PAL_802AB4C8[] = { 144, 158, 148, 144 }; // strategies menu width
+u8 D_PAL_802AB4CC[] = { 144, 160, 160, 160 }; // star spirits menu width
+u8 D_PAL_802AB4D0[] = { 0, 20, 20, 20 };      // SP cost x offset
+u8 D_PAL_802AB4D4[] = { 0, 16, 16, 16 };      // star spirits icon x offset
+u8 D_PAL_802AB4D8[] = { 8, 24, 8, 16 };       // star spirits title x
+u8 D_PAL_802AB4DC[] = { 100, 81, 116, 98 };   // star spirits title width
+u8 D_PAL_802AB4E0[] = { 5, 16, 8, 16 };       // star spirits text x
+u8 D_PAL_802AB4E4[] = { 156, 158, 158, 158 }; // moves menu width
+u8 D_PAL_802AB4E8[] = { 4, 6, 6, 6 };         // FP cost x offset
+u8 D_PAL_802AB4EC[] = { 18, 14, 18, 14 };     // moves title x
+u8 D_PAL_802AB4F0[] = { 89, 101, 90, 101 };   // moves title width
+u8 D_PAL_802AB4F4[] = { 16, 10, 14, 10 };     // abilities text x
+u8 D_PAL_802AB4F8[] = { 0, 2, 2, 2 };         // moves icon x offset
+
+HudScript* D_PAL_802AB4FC[][4] = {
+    { &HES_FPCost, &HES_FPCost_de, &HES_FPCost_fr, &HES_FPCost_es },
+    { &HES_FPCostReduced, &HES_FPCostReduced_de, &HES_FPCostReduced_fr, &HES_FPCostReduced_es },
+    { &HES_FPCostReducedTwice, &HES_FPCostReducedTwice_de, &HES_FPCostReducedTwice_fr, &HES_FPCostReducedTwice_es },
+};
+
+HudScript* D_PAL_802AB52C[] = { &HES_NotEnoughFP, &HES_NotEnoughFP_de, &HES_NotEnoughFP_fr, &HES_NotEnoughFP_es };
+
+HudScript* D_PAL_802AB53C[][4] = {
+    { &HES_POWCost, &HES_POWCost_de, &HES_POWCost_fr, &HES_POWCost_es },
+    { &HES_POWCostReduced, &HES_POWCostReduced_de, &HES_POWCostReduced_fr, &HES_POWCostReduced_es },
+    { &HES_POWCostReducedTwice, &HES_POWCostReducedTwice_de, &HES_POWCostReducedTwice_fr, &HES_POWCostReducedTwice_es },
+};
+
+HudScript* D_PAL_802AB56C[] = { &HES_NotEnoughPOW, &HES_NotEnoughPOW_de, &HES_NotEnoughPOW_fr, &HES_NotEnoughPOW_es };
+
+#define MOVES_OPTIONS_W D_PAL_802AB4E4[gCurrentLanguage]
+#define MOVES_TITLE_X D_PAL_802AB4EC[gCurrentLanguage]
+#define MOVES_TITLE_W D_PAL_802AB4F0[gCurrentLanguage]
+#define MOVES_ICON_X (120 + D_PAL_802AB4F8[gCurrentLanguage])
+#define STAR_SPIRITS_OPTIONS_W D_PAL_802AB4CC[gCurrentLanguage]
+#define STAR_SPIRITS_TITLE_X D_PAL_802AB4D8[gCurrentLanguage]
+#define STAR_SPIRITS_TITLE_W D_PAL_802AB4DC[gCurrentLanguage]
+#define STAR_SPIRITS_ICON_X (110 + D_PAL_802AB4D4[gCurrentLanguage])
+#define HES_FP_COST(n) D_PAL_802AB4FC[n][gCurrentLanguage]
+#define HES_POW_COST(n) D_PAL_802AB53C[n][gCurrentLanguage]
+#define HUD_NOT_ENOUGH_FP D_PAL_802AB52C[gCurrentLanguage]
+#define HUD_NOT_ENOUGH_POW D_PAL_802AB56C[gCurrentLanguage]
+#define FP_COST_X (108 + D_PAL_802AB4E8[gCurrentLanguage])
+#define SP_COST_X (93 + D_PAL_802AB4D0[gCurrentLanguage])
+#define HUD_FP_COST_X (116 + D_PAL_802AB4E8[gCurrentLanguage])
+#define HUD_SP_COST_X (102 + D_PAL_802AB4D0[gCurrentLanguage])
+#define MOVES_SCISSOR_X2 169
+#define TEXT_ABILITIES_X D_PAL_802AB4F4[gCurrentLanguage]
+#define TEXT_STAR_SPIRITS_X D_PAL_802AB4E0[gCurrentLanguage]
+#else
+#define MOVES_OPTIONS_W 150
+#define MOVES_TITLE_X 16
+#define MOVES_TITLE_W 90
+#define MOVES_ICON_X 114
+#define STAR_SPIRITS_OPTIONS_W 144
+#define STAR_SPIRITS_TITLE_X 10
+#define STAR_SPIRITS_TITLE_W 100
+#define STAR_SPIRITS_ICON_X 110
+#define HES_FP_COST(n) ((n) == 0 ? &HES_FPCost : (n) == 1 ? &HES_FPCostReduced : &HES_FPCostReducedTwice)
+#define HES_POW_COST(n) ((n) == 0 ? &HES_POWCost : (n) == 1 ? &HES_POWCostReduced : &HES_POWCostReducedTwice)
+#define HUD_NOT_ENOUGH_FP (&HES_NotEnoughFP)
+#define HUD_NOT_ENOUGH_POW (&HES_NotEnoughPOW)
+#define FP_COST_X 108
+#define SP_COST_X 93
+#define HUD_FP_COST_X 116
+#define HUD_SP_COST_X 102
+#define MOVES_SCISSOR_X2 153
+#define TEXT_ABILITIES_X 16
+#define TEXT_STAR_SPIRITS_X 6
+#endif
+
 BSS s16 MovesMenuPosX;
 BSS s16 MovesMenuPosY;
 
@@ -336,30 +434,30 @@ s32 btl_submenu_moves_update(void) {
                 if (!UsingSpiritsSubmenu) {
                     switch (MovesOptionDiscountColors[i]) {
                         case 0:
-                            hid = hud_element_create(&HES_FPCost);
+                            hid = hud_element_create(HES_FP_COST(0));
                             MovesOptionCostHIDs[i] = hid;
                             break;
                         case 1:
-                            hid = hud_element_create(&HES_FPCostReduced);
+                            hid = hud_element_create(HES_FP_COST(1));
                             MovesOptionCostHIDs[i] = hid;
                             break;
                         default:
-                            hid = hud_element_create(&HES_FPCostReducedTwice);
+                            hid = hud_element_create(HES_FP_COST(2));
                             MovesOptionCostHIDs[i] = hid;
                             break;
                     }
                 } else {
                     switch (MovesOptionDiscountColors[i]) {
                         case 0:
-                            hid = hud_element_create(&HES_POWCost);
+                            hid = hud_element_create(HES_POW_COST(0));
                             MovesOptionCostHIDs[i] = hid;
                             break;
                         case 1:
-                            hid = hud_element_create(&HES_POWCostReduced);
+                            hid = hud_element_create(HES_POW_COST(1));
                             MovesOptionCostHIDs[i] = hid;
                             break;
                         default:
-                            hid = hud_element_create(&HES_POWCostReducedTwice);
+                            hid = hud_element_create(HES_POW_COST(2));
                             MovesOptionCostHIDs[i] = hid;
                             break;
                     }
@@ -372,13 +470,13 @@ s32 btl_submenu_moves_update(void) {
             x = MovesMenuPosX;
             y = MovesMenuPosY;
             if (!UsingSpiritsSubmenu) {
-                set_window_properties(WIN_BTL_MOVES_MENU, x, y, 150, (MovesMenuLines * MENU_LINE_HEIGHT) + 28, 0, btl_menu_moves_draw_content, nullptr, -1);
-                set_window_properties(WIN_BTL_MOVES_TITLE, x + 16, y - 6, 90, 16, 1, btl_menu_moves_show_title, nullptr, -1);
-                set_window_properties(WIN_BTL_MOVES_ICON, x + 114, y - 12, 32, 32, 1, btl_menu_moves_show_icon, nullptr, -1);
+                set_window_properties(WIN_BTL_MOVES_MENU, x, y, MOVES_OPTIONS_W, (MovesMenuLines * MENU_LINE_HEIGHT) + 28, 0, btl_menu_moves_draw_content, nullptr, -1);
+                set_window_properties(WIN_BTL_MOVES_TITLE, x + MOVES_TITLE_X, y - 6, MOVES_TITLE_W, 16, 1, btl_menu_moves_show_title, nullptr, -1);
+                set_window_properties(WIN_BTL_MOVES_ICON, x + MOVES_ICON_X, y - 12, 32, 32, 1, btl_menu_moves_show_icon, nullptr, -1);
             } else {
-                set_window_properties(WIN_BTL_MOVES_MENU, x, y, 144, (MovesMenuLines * MENU_LINE_HEIGHT) + 28, 0, btl_menu_moves_draw_content, nullptr, -1);
-                set_window_properties(WIN_BTL_SPIRITS_TITLE, x + 10, y - 6, 100, 16, 1, btl_menu_moves_show_title, 0, -1);
-                set_window_properties(WIN_BTL_SPIRITS_ICON, x + 110, y - 12, 32, 35, 1, btl_menu_moves_show_icon, 0, -1);
+                set_window_properties(WIN_BTL_MOVES_MENU, x, y, STAR_SPIRITS_OPTIONS_W, (MovesMenuLines * MENU_LINE_HEIGHT) + 28, 0, btl_menu_moves_draw_content, nullptr, -1);
+                set_window_properties(WIN_BTL_SPIRITS_TITLE, x + STAR_SPIRITS_TITLE_X, y - 6, STAR_SPIRITS_TITLE_W, 16, 1, btl_menu_moves_show_title, 0, -1);
+                set_window_properties(WIN_BTL_SPIRITS_ICON, x + STAR_SPIRITS_ICON_X, y - 12, 32, 35, 1, btl_menu_moves_show_icon, 0, -1);
             }
 
             set_window_properties(WIN_BTL_DESC_BOX, 20, 186, 280, 32, WINDOW_PRIORITY_20, btl_menu_moves_show_desc, nullptr, -1);
@@ -628,8 +726,8 @@ s32 btl_submenu_moves_update(void) {
 #define X_VAR2 89
 #else
 #define Y_VAR1 0
-#define X_VAR1 108
-#define X_VAR2 93
+#define X_VAR1 FP_COST_X
+#define X_VAR2 SP_COST_X
 #endif
 
 void btl_menu_moves_draw_content(void* data, s32 x, s32 y) {
@@ -657,7 +755,7 @@ void btl_menu_moves_draw_content(void* data, s32 x, s32 y) {
             MovesScrollOffset = (delta != 0) ? cur + delta : target;
 
             x1 = x + 2;
-            x2 = x + 153;
+            x2 = x + MOVES_SCISSOR_X2;
             y1 = y + 18;
             y2 = y + 19 + (MovesMenuLines * MENU_LINE_HEIGHT);
             gDPSetScissor(gMainGfxPos++, G_SC_NON_INTERLACE, x1, y1, x2, y2);
@@ -732,18 +830,18 @@ void btl_menu_moves_draw_content(void* data, s32 x, s32 y) {
                                 DRAW_NUMBER_STYLE_MONOSPACE | DRAW_NUMBER_STYLE_ALIGN_RIGHT
                             );
                             if (MovesOptionEnabled[index] <= 0) {
-                                hud_element_set_script(hid, &HES_NotEnoughPOW);
+                                hud_element_set_script(hid, HUD_NOT_ENOUGH_POW);
                             }
-                            hud_element_set_render_pos(hid, xPos + 102, yPos + 7);
+                            hud_element_set_render_pos(hid, xPos + HUD_SP_COST_X, yPos + 7);
                         } else {
                             draw_number(
                                 cost, xPos + X_VAR1, yPos, DRAW_NUMBER_CHARSET_THIN, palette, MovesTextAlpha,
                                 DRAW_NUMBER_STYLE_MONOSPACE | DRAW_NUMBER_STYLE_ALIGN_RIGHT
                             );
                             if (MovesOptionEnabled[index] <= 0) {
-                                hud_element_set_script(hid, &HES_NotEnoughFP);
+                                hud_element_set_script(hid, HUD_NOT_ENOUGH_FP);
                             }
-                            hud_element_set_render_pos(hid, xPos + 116, yPos + 7);
+                            hud_element_set_render_pos(hid, xPos + HUD_FP_COST_X, yPos + 7);
                         }
                         hud_element_set_alpha(hid, MovesTextAlpha);
                         hud_element_draw_without_clipping(hid);
@@ -819,13 +917,13 @@ void btl_menu_moves_show_title(void* data, s32 x, s32 y) {
 
     if (!UsingSpiritsSubmenu) {
         msgID = MSG_Menus_Abilities;
-        posX = x + 16;
+        posX = x + TEXT_ABILITIES_X;
         posY = y + 2;
         opacity = MovesTextAlpha;
         palette = MSG_PAL_30;
     } else {
         msgID = MSG_Menus_StarSpirits;
-        posX = x + 6;
+        posX = x + TEXT_STAR_SPIRITS_X;
         posY = y + 2;
         opacity = MovesTextAlpha;
         palette = MSG_PAL_31;
