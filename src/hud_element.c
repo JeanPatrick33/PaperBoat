@@ -2003,6 +2003,10 @@ HudElement* get_hud_element(s32 id) {
 }
 
 void hud_element_free(s32 id) {
+    // The original console tolerates freeing an already-freed element (null slot); a PC would crash.
+    if ((*gHudElements)[id & ~HUD_ELEMENT_BATTLE_ID_MASK] == nullptr) {
+        return;
+    }
     if ((*gHudElements)[id & ~HUD_ELEMENT_BATTLE_ID_MASK]->flags & HUD_ELEMENT_FLAG_TRANSFORM) {
         hud_element_free_transform(id & ~HUD_ELEMENT_BATTLE_ID_MASK);
     }

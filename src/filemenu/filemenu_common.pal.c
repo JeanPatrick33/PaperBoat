@@ -1093,6 +1093,7 @@ void filemenu_cleanup(void) {
             if (menu->fpCleanup != nullptr) {
                 menu->fpCleanup(menu);
             }
+            menu->initialized = false; // otherwise a later cleanup (e.g. the language menu) frees twice
         }
     }
 

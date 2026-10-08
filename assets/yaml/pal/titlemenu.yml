@@ -1,20 +1,20 @@
 # PAL-only: title menu (Start Game / Languages) in four languages + language flags (40 frames x 4 flags of 16x16)
 en/start_game:
-  { type: TEXTURE, format: IA8, offset: 0x2596E8, width: 96, height: 16, symbol: titlemenu_en_start_game_png }
+  { type: BLOB, offset: 0x2596E8, size: 0x600, symbol: titlemenu_en_start_game_png }
 en/languages:
-  { type: TEXTURE, format: IA8, offset: 0x259CF0, width: 88, height: 16, symbol: titlemenu_en_languages_png }
+  { type: BLOB, offset: 0x259CF0, size: 0x580, symbol: titlemenu_en_languages_png }
 de/start_game:
-  { type: TEXTURE, format: IA8, offset: 0x25A278, width: 88, height: 16, symbol: titlemenu_de_start_game_png }
+  { type: BLOB, offset: 0x25A278, size: 0x580, symbol: titlemenu_de_start_game_png }
 de/languages:
-  { type: TEXTURE, format: IA8, offset: 0x25A800, width: 80, height: 16, symbol: titlemenu_de_languages_png }
+  { type: BLOB, offset: 0x25A800, size: 0x500, symbol: titlemenu_de_languages_png }
 fr/start_game:
-  { type: TEXTURE, format: IA8, offset: 0x25AD08, width: 144, height: 16, symbol: titlemenu_fr_start_game_png }
+  { type: BLOB, offset: 0x25AD08, size: 0x900, symbol: titlemenu_fr_start_game_png }
 fr/languages:
-  { type: TEXTURE, format: IA8, offset: 0x25B610, width: 64, height: 16, symbol: titlemenu_fr_languages_png }
+  { type: BLOB, offset: 0x25B610, size: 0x400, symbol: titlemenu_fr_languages_png }
 es/start_game:
-  { type: TEXTURE, format: IA8, offset: 0x25BA18, width: 120, height: 16, symbol: titlemenu_es_start_game_png }
+  { type: BLOB, offset: 0x25BA18, size: 0x780, symbol: titlemenu_es_start_game_png }
 es/languages:
-  { type: TEXTURE, format: IA8, offset: 0x25C1A0, width: 64, height: 16, symbol: titlemenu_es_languages_png }
+  { type: BLOB, offset: 0x25C1A0, size: 0x400, symbol: titlemenu_es_languages_png }
 flags/f0_0:
   { type: TEXTURE, format: RGBA16, offset: 0x25C5A0, width: 16, height: 16, symbol: titlemenu_flag_0_0_png }
 flags/f0_1:
