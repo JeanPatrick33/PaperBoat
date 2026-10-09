@@ -326,3 +326,9 @@ jan_yougantif:
   { type: TEXTURE, format: RGBA16, offset: 0x2E82A8E, width: 32, height: 64, symbol: jan_yougantif }
 jan_yougantif_aux:
   { type: TEXTURE, format: RGBA16, offset: 0x2E8328E, width: 32, height: 32, symbol: jan_yougantif_aux }
+jan_kanbanP1tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2E74BDE, width: 64, height: 32, symbol: jan_kanbanP1tif }
+jan_kanbanP2tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2E75C0E, width: 64, height: 32, symbol: jan_kanbanP2tif }
+jan_kanbanP3tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2E76C3E, width: 64, height: 32, symbol: jan_kanbanP3tif }

@@ -356,3 +356,23 @@ omo_yuka_block4tif_tlut:
   { type: TEXTURE, format: TLUT, offset: 0x2F1924E, colors: 16, symbol: omo_yuka_block4tif_tlut }
 omo_yuka_block4tif_mm1:
   { type: TEXTURE, format: CI4, offset: 0x2F1914E, width: 16, height: 32, symbol: omo_yuka_block4tif_mm1 }
+omo_a_2P1tif:
+  { type: TEXTURE, format: I4, offset: 0x2F0890E, width: 32, height: 32, symbol: omo_a_2P1tif }
+omo_i_2P1tif:
+  { type: TEXTURE, format: I4, offset: 0x2F0C2AE, width: 32, height: 32, symbol: omo_i_2P1tif }
+omo_n_2P1tif:
+  { type: TEXTURE, format: I4, offset: 0x2F1022E, width: 32, height: 32, symbol: omo_n_2P1tif }
+omo_o_2P1tif:
+  { type: TEXTURE, format: I4, offset: 0x2F1177E, width: 32, height: 32, symbol: omo_o_2P1tif }
+omo_s_2P1tif:
+  { type: TEXTURE, format: I4, offset: 0x2F12D2E, width: 32, height: 32, symbol: omo_s_2P1tif }
+omo_start1P1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2F150AE, width: 64, height: 32, tlut: 0x2F154AE, symbol: omo_start1P1tif }
+omo_start1P1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F154AE, colors: 16, symbol: omo_start1P1tif_tlut }
+omo_start1P2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2F154FE, width: 64, height: 32, tlut: 0x2F158FE, symbol: omo_start1P2tif }
+omo_start1P2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F158FE, colors: 16, symbol: omo_start1P2tif_tlut }
+omo_t_2P1tif:
+  { type: TEXTURE, format: I4, offset: 0x2F15B7E, width: 32, height: 32, symbol: omo_t_2P1tif }

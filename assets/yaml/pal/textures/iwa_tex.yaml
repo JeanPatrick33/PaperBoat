@@ -212,3 +212,9 @@ iwa_temae1tif_tlut:
   { type: TEXTURE, format: TLUT, offset: 0x2D9296E, colors: 16, symbol: iwa_temae1tif_tlut }
 iwa_wood_pole_b_btif:
   { type: TEXTURE, format: I4, offset: 0x2D929BE, width: 128, height: 64, symbol: iwa_wood_pole_b_btif }
+iwa_wood_pole_b_bP1tif:
+  { type: TEXTURE, format: I4, offset: 0x2D939EE, width: 128, height: 64, symbol: iwa_wood_pole_b_bP1tif }
+iwa_wood_pole_b_bP2tif:
+  { type: TEXTURE, format: I4, offset: 0x2D94A1E, width: 128, height: 64, symbol: iwa_wood_pole_b_bP2tif }
+iwa_wood_pole_b_bP3tif:
+  { type: TEXTURE, format: I4, offset: 0x2D95A4E, width: 128, height: 64, symbol: iwa_wood_pole_b_bP3tif }

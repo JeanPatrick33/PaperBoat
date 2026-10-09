@@ -339,12 +339,33 @@ static const MapTexMeta
 
 static const MapTexMeta k_gv__tex[] = {
     { "gv__atif", gv__atif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "gv__dtif", gv__dtif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#endif
     { "gv__entif", gv__entif, NULL, 64, 32, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "gv__etif", gv__etif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "gv__ftif", gv__ftif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#endif
     { "gv__gtif", gv__gtif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "gv__itif", gv__itif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "gv__jtif", gv__jtif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "gv__ltif", gv__ltif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#endif
+#endif
+#endif
     { "gv__mtif", gv__mtif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "gv__ntif", gv__ntif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#endif
     { "gv__otif", gv__otif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "gv__rtif", gv__rtif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "gv__utif", gv__utif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#endif
     { "gv__vtif", gv__vtif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -703,6 +724,15 @@ static const MapTexMeta
         { "iwa_t_taki1tif", iwa_t_taki1tif, iwa_t_taki1tif_aux, 32, 64, 3, 2, 0, 0, 2, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "iwa_temae1tif", iwa_temae1tif, NULL, 64, 64, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "iwa_wood_pole_b_btif", iwa_wood_pole_b_btif, NULL, 128, 64, 4, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "iwa_wood_pole_b_bP1tif", iwa_wood_pole_b_bP1tif, NULL, 128, 64, 4, 0, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "iwa_wood_pole_b_bP2tif", iwa_wood_pole_b_bP2tif, NULL, 128, 64, 4, 0, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "iwa_wood_pole_b_bP3tif", iwa_wood_pole_b_bP3tif, NULL, 128, 64, 4, 0, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
+#endif
+#endif
     };
 
 static const MapTexMeta
@@ -816,6 +846,15 @@ static const MapTexMeta
         { "jan_jb_moyou3tif", jan_jb_moyou3tif, NULL, 16, 16, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "jan_kagotif", jan_kagotif, NULL, 16, 16, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "jan_kanbantif", jan_kanbantif, NULL, 64, 32, 3, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "jan_kanbanP1tif", jan_kanbanP1tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "jan_kanbanP2tif", jan_kanbanP2tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "jan_kanbanP3tif", jan_kanbanP3tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
+#endif
+#endif
         { "jan_kassya2tif", jan_kassya2tif, NULL, 32, 64, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "jan_kassyatif", jan_kassyatif, NULL, 32, 32, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "jan_kinoha5tif", jan_kinoha5tif, NULL, 64, 32, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -1375,8 +1414,26 @@ static const MapTexMeta k_mac_tex[] = {
     { "mac_hontif", mac_hontif, NULL, 64, 32, 2, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "mac_hoppetif", mac_hoppetif, NULL, 32, 16, 3, 1, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "mac_kanban_ekitif", mac_kanban_ekitif, NULL, 64, 32, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "mac_kanban_ekiP1tif", mac_kanban_ekiP1tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "mac_kanban_ekiP2tif", mac_kanban_ekiP2tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "mac_kanban_ekiP3tif", mac_kanban_ekiP3tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
+#endif
+#endif
     { "mac_kinoitatif", mac_kinoitatif, NULL, 64, 64, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "mac_kinoko_town_ustif", mac_kinoko_town_ustif, NULL, 64, 32, 2, 1, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "mac_kinoko_town_usP1tif", mac_kinoko_town_usP1tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "mac_kinoko_town_usP2tif", mac_kinoko_town_usP2tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "mac_kinoko_town_usP3tif", mac_kinoko_town_usP3tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
+#endif
+#endif
     { "mac_kinokodoutif", mac_kinokodoutif, NULL, 64, 32, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "mac_kinopiotif", mac_kinopiotif, NULL, 16, 32, 2, 0, 1, 1, 2, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1 },
     { "mac_kitchentif", mac_kitchentif, NULL, 32, 32, 2, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -1442,6 +1499,15 @@ static const MapTexMeta k_mac_tex[] = {
     { "mac_popo_4stif", mac_popo_4stif, NULL, 16, 16, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "mac_popo_5tif", mac_popo_5tif, NULL, 16, 16, 2, 0, 2, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "mac_post_kanbantif", mac_post_kanbantif, NULL, 64, 32, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "mac_post_kanbanP1tif", mac_post_kanbanP1tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "mac_post_kanbanP2tif", mac_post_kanbanP2tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "mac_post_kanbanP3tif", mac_post_kanbanP3tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
+#endif
+#endif
     { "mac_rakugakitif", mac_rakugakitif, NULL, 32, 32, 4, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "mac_relieftif", mac_relieftif, NULL, 32, 64, 2, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "mac_road_signtif", mac_road_signtif, NULL, 32, 16, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -1607,6 +1673,15 @@ static const MapTexMeta
         { "nok_kabetif", nok_kabetif, NULL, 64, 32, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "nok_kanban4tif", nok_kanban4tif, NULL, 64, 64, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { "nok_kanban6tif", nok_kanban6tif, NULL, 64, 32, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "nok_kanban6P1tif", nok_kanban6P1tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "nok_kanban6P2tif", nok_kanban6P2tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "nok_kanban6P3tif", nok_kanban6P3tif, NULL, 64, 32, 0, 2, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
+#endif
+#endif
         { "nok_kinopiotif", nok_kinopiotif, NULL, 16, 32, 2, 0, 1, 1, 2, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1 },
         { "nok_kirakiratif",
           nok_kirakiratif,
@@ -1758,6 +1833,9 @@ static const MapTexMeta k_omo_tex[] = {
     { "omo_4tif", omo_4tif, NULL, 32, 32, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_5tif", omo_5tif, NULL, 32, 32, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_a_2tif", omo_a_2tif, NULL, 32, 32, 3, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "omo_a_2P1tif", omo_a_2P1tif, NULL, 32, 32, 4, 0, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
     { "omo_amiami2tif", omo_amiami2tif, NULL, 32, 32, 4, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_ana_2tif", omo_ana_2tif, NULL, 32, 32, 0, 2, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_berosaidetif", omo_berosaidetif, NULL, 16, 16, 2, 0, 1, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -1783,6 +1861,9 @@ static const MapTexMeta k_omo_tex[] = {
     { "omo_frametif", omo_frametif, NULL, 64, 64, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_humitif", omo_humitif, NULL, 16, 16, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_i_2tif", omo_i_2tif, NULL, 32, 32, 3, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "omo_i_2P1tif", omo_i_2P1tif, NULL, 32, 32, 4, 0, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
     { "omo_jamp2tif", omo_jamp2tif, NULL, 16, 16, 2, 1, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_kabe_2tif", omo_kabe_2tif, NULL, 32, 16, 2, 0, 1, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_kabe2tif", omo_kabe2tif, NULL, 16, 16, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -1802,18 +1883,27 @@ static const MapTexMeta k_omo_tex[] = {
     { "omo_mado_3_1tif", omo_mado_3_1tif, NULL, 16, 64, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_madotif", omo_madotif, NULL, 32, 64, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_n_2tif", omo_n_2tif, NULL, 32, 32, 3, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "omo_n_2P1tif", omo_n_2P1tif, NULL, 32, 32, 4, 0, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
     { "omo_nezi2tif", omo_nezi2tif, NULL, 16, 16, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_nor_1btif", omo_nor_1btif, NULL, 64, 64, 4, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_nor_3ctif", omo_nor_3ctif, NULL, 64, 32, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_nor_nejitif", omo_nor_nejitif, NULL, 16, 32, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_nor_syarintif", omo_nor_syarintif, NULL, 32, 32, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_o_2tif", omo_o_2tif, NULL, 32, 32, 3, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "omo_o_2P1tif", omo_o_2P1tif, NULL, 32, 32, 4, 0, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
     { "omo_omo_2_3tif", omo_omo_2_3tif, NULL, 64, 64, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_omo_3tif", omo_omo_3tif, NULL, 16, 32, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_omo_hibitif", omo_omo_hibitif, NULL, 32, 32, 2, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_po_2tif", omo_po_2tif, NULL, 8, 16, 2, 1, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_potif", omo_potif, NULL, 8, 16, 2, 1, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_s_2tif", omo_s_2tif, NULL, 32, 32, 4, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "omo_s_2P1tif", omo_s_2P1tif, NULL, 32, 32, 4, 0, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
     { "omo_senro_2tif", omo_senro_2tif, NULL, 16, 16, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_senrotif", omo_senrotif, NULL, 32, 16, 2, 0, 0, 0, 2, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1 },
     { "omo_shirotif", omo_shirotif, NULL, 16, 16, 2, 0, 0, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -1829,7 +1919,16 @@ static const MapTexMeta k_omo_tex[] = {
     { "omo_slot_startif", omo_slot_startif, NULL, 16, 16, 2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_slottif", omo_slottif, NULL, 64, 32, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_start1tif", omo_start1tif, NULL, 64, 32, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "omo_start1P1tif", omo_start1P1tif, NULL, 64, 32, 2, 0, 0, 0, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "omo_start1P2tif", omo_start1P2tif, NULL, 64, 32, 2, 0, 0, 0, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
+#endif
     { "omo_t_2tif", omo_t_2tif, NULL, 32, 32, 3, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+#if VERSION_PAL
+    { "omo_t_2P1tif", omo_t_2P1tif, NULL, 32, 32, 4, 0, 1, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+#endif
     { "omo_tokeitif", omo_tokeitif, NULL, 64, 64, 2, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_tumiki_1tif", omo_tumiki_1tif, NULL, 32, 32, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     { "omo_tumiki_2_1tif", omo_tumiki_2_1tif, NULL, 32, 32, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -2372,16 +2471,16 @@ static const MapTexMeta k_tst_tex[] = {
 };
 
 static const MapTexArchive gMapTexArchives[] = {
-    { "arn_tex", k_arn_tex, 33 },  { "dgb_tex", k_dgb_tex, 41 }, { "dro_tex", k_dro_tex, 35 },
-    { "end_tex", k_end_tex, 59 },  { "flo_tex", k_flo_tex, 87 }, { "gv__tex", k_gv__tex, 8 },
-    { "hos_tex", k_hos_tex, 95 },  { "isk_tex", k_isk_tex, 33 }, { "iwa_tex", k_iwa_tex, 53 },
-    { "jan_tex", k_jan_tex, 84 },  { "kgr_tex", k_kgr_tex, 10 }, { "kkj_tex", k_kkj_tex, 103 },
-    { "kmr_tex", k_kmr_tex, 107 }, { "kpa_tex", k_kpa_tex, 92 }, { "kzn_tex", k_kzn_tex, 33 },
-    { "mac_tex", k_mac_tex, 104 }, { "mgm_tex", k_mgm_tex, 15 }, { "mim_tex", k_mim_tex, 48 },
-    { "nok_tex", k_nok_tex, 80 },  { "obk_tex", k_obk_tex, 55 }, { "omo_tex", k_omo_tex, 97 },
-    { "osr_tex", k_osr_tex, 69 },  { "pra_tex", k_pra_tex, 32 }, { "sam_tex", k_sam_tex, 78 },
-    { "sbk_tex", k_sbk_tex, 44 },  { "tik_tex", k_tik_tex, 28 }, { "trd_tex", k_trd_tex, 45 },
-    { "tst_tex", k_tst_tex, 60 },
+    { "arn_tex", k_arn_tex, ARRAY_COUNT(k_arn_tex) },  { "dgb_tex", k_dgb_tex, ARRAY_COUNT(k_dgb_tex) }, { "dro_tex", k_dro_tex, ARRAY_COUNT(k_dro_tex) },
+    { "end_tex", k_end_tex, ARRAY_COUNT(k_end_tex) },  { "flo_tex", k_flo_tex, ARRAY_COUNT(k_flo_tex) }, { "gv__tex", k_gv__tex, ARRAY_COUNT(k_gv__tex) },
+    { "hos_tex", k_hos_tex, ARRAY_COUNT(k_hos_tex) },  { "isk_tex", k_isk_tex, ARRAY_COUNT(k_isk_tex) }, { "iwa_tex", k_iwa_tex, ARRAY_COUNT(k_iwa_tex) },
+    { "jan_tex", k_jan_tex, ARRAY_COUNT(k_jan_tex) },  { "kgr_tex", k_kgr_tex, ARRAY_COUNT(k_kgr_tex) }, { "kkj_tex", k_kkj_tex, ARRAY_COUNT(k_kkj_tex) },
+    { "kmr_tex", k_kmr_tex, ARRAY_COUNT(k_kmr_tex) }, { "kpa_tex", k_kpa_tex, ARRAY_COUNT(k_kpa_tex) }, { "kzn_tex", k_kzn_tex, ARRAY_COUNT(k_kzn_tex) },
+    { "mac_tex", k_mac_tex, ARRAY_COUNT(k_mac_tex) }, { "mgm_tex", k_mgm_tex, ARRAY_COUNT(k_mgm_tex) }, { "mim_tex", k_mim_tex, ARRAY_COUNT(k_mim_tex) },
+    { "nok_tex", k_nok_tex, ARRAY_COUNT(k_nok_tex) },  { "obk_tex", k_obk_tex, ARRAY_COUNT(k_obk_tex) }, { "omo_tex", k_omo_tex, ARRAY_COUNT(k_omo_tex) },
+    { "osr_tex", k_osr_tex, ARRAY_COUNT(k_osr_tex) },  { "pra_tex", k_pra_tex, ARRAY_COUNT(k_pra_tex) }, { "sam_tex", k_sam_tex, ARRAY_COUNT(k_sam_tex) },
+    { "sbk_tex", k_sbk_tex, ARRAY_COUNT(k_sbk_tex) },  { "tik_tex", k_tik_tex, ARRAY_COUNT(k_tik_tex) }, { "trd_tex", k_trd_tex, ARRAY_COUNT(k_trd_tex) },
+    { "tst_tex", k_tst_tex, ARRAY_COUNT(k_tst_tex) },
 };
 
 #define gMapTexArchiveCount ((u32) (sizeof(gMapTexArchives) / sizeof(gMapTexArchives[0])))

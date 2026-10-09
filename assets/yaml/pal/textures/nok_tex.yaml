@@ -320,3 +320,9 @@ nok_yuka7tif_tlut:
   { type: TEXTURE, format: TLUT, offset: 0x2DD919E, colors: 256, symbol: nok_yuka7tif_tlut }
 nok_yukatif:
   { type: TEXTURE, format: I4, offset: 0x2DD93CE, width: 32, height: 32, symbol: nok_yukatif }
+nok_kanban6P1tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2DCBF2E, width: 64, height: 32, symbol: nok_kanban6P1tif }
+nok_kanban6P2tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2DCCF5E, width: 64, height: 32, symbol: nok_kanban6P2tif }
+nok_kanban6P3tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2DCDF8E, width: 64, height: 32, symbol: nok_kanban6P3tif }

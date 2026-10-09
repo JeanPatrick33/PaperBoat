@@ -408,3 +408,21 @@ mac_wood_pole_btif:
   { type: TEXTURE, format: CI4, offset: 0x2D54ADE, width: 128, height: 32, tlut: 0x2D552DE, symbol: mac_wood_pole_btif }
 mac_wood_pole_btif_tlut:
   { type: TEXTURE, format: TLUT, offset: 0x2D552DE, colors: 16, symbol: mac_wood_pole_btif_tlut }
+mac_kanban_ekiP1tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2D3CB0E, width: 64, height: 32, symbol: mac_kanban_ekiP1tif }
+mac_kanban_ekiP2tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2D3DB3E, width: 64, height: 32, symbol: mac_kanban_ekiP2tif }
+mac_kanban_ekiP3tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2D3EB6E, width: 64, height: 32, symbol: mac_kanban_ekiP3tif }
+mac_kinoko_town_usP1tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2D40E1E, width: 64, height: 32, symbol: mac_kinoko_town_usP1tif }
+mac_kinoko_town_usP2tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2D41E4E, width: 64, height: 32, symbol: mac_kinoko_town_usP2tif }
+mac_kinoko_town_usP3tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2D42E7E, width: 64, height: 32, symbol: mac_kinoko_town_usP3tif }
+mac_post_kanbanP1tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2D4F69E, width: 64, height: 32, symbol: mac_post_kanbanP1tif }
+mac_post_kanbanP2tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2D506CE, width: 64, height: 32, symbol: mac_post_kanbanP2tif }
+mac_post_kanbanP3tif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2D516FE, width: 64, height: 32, symbol: mac_post_kanbanP3tif }
