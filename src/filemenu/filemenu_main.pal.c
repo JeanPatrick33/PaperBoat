@@ -861,7 +861,7 @@ void filemenu_main_handle_input(MenuPanel* menu) {
                     gWindows[WIN_FILES_CONFIRM_OPTIONS].pos.x = CENTER_WINDOW_X(WIN_FILES_CONFIRM_OPTIONS);
 
                     gWindows[WIN_FILES_CONFIRM_PROMPT].pos.y = -29;
-                    gWindows[WIN_FILES_CONFIRM_PROMPT].width = 192;
+                    gWindows[WIN_FILES_CONFIRM_PROMPT].width = SELECT_CONFIRM_PROMPT_WIDTH;
                     gWindows[WIN_FILES_CONFIRM_PROMPT].height = 25;
                     gWindows[WIN_FILES_CONFIRM_PROMPT].pos.x = CENTER_WINDOW_X(WIN_FILES_CONFIRM_PROMPT);
 
@@ -897,7 +897,7 @@ void filemenu_main_handle_input(MenuPanel* menu) {
                         gWindows[WIN_FILES_CONFIRM_OPTIONS].pos.x = CENTER_WINDOW_X(WIN_FILES_CONFIRM_OPTIONS);
 
                         gWindows[WIN_FILES_CONFIRM_PROMPT].pos.y = -29;
-                        gWindows[WIN_FILES_CONFIRM_PROMPT].width = 118;
+                        gWindows[WIN_FILES_CONFIRM_PROMPT].width = DELETE_CONFIRM_PROMPT_WIDTH;
                         gWindows[WIN_FILES_CONFIRM_PROMPT].height = 25;
                         gWindows[WIN_FILES_CONFIRM_PROMPT].pos.x = CENTER_WINDOW_X(WIN_FILES_CONFIRM_PROMPT);
 
@@ -946,7 +946,7 @@ void filemenu_main_handle_input(MenuPanel* menu) {
                             sfx_play_sound(SOUND_MENU_NEXT);
                             filemenu_currentMenu = FILE_MENU_MESSAGE;
                             filemenu_menus[FILE_MENU_MESSAGE]->state = FM_MESSAGE_COPIED;
-                            gWindows[WIN_FILES_MESSAGE].width = 154;
+                            gWindows[WIN_FILES_MESSAGE].width = FILE_COPIED_MESSAGE_WIDTH;
                             gWindows[WIN_FILES_MESSAGE].height = 39;
                             gWindows[WIN_FILES_MESSAGE].pos.x = CENTER_WINDOW_X(WIN_FILES_MESSAGE);
                             gWindows[WIN_FILES_MESSAGE].pos.y = CENTER_WINDOW_Y(WIN_FILES_MESSAGE);
@@ -966,7 +966,7 @@ void filemenu_main_handle_input(MenuPanel* menu) {
                             gWindows[WIN_FILES_CONFIRM_OPTIONS].pos.x = CENTER_WINDOW_X(WIN_FILES_CONFIRM_OPTIONS);
 
                             gWindows[WIN_FILES_CONFIRM_PROMPT].pos.y = -43;
-                            gWindows[WIN_FILES_CONFIRM_PROMPT].width = 182;
+                            gWindows[WIN_FILES_CONFIRM_PROMPT].width = COPY_CONFIRM_PROMPT_WIDTH;
                             gWindows[WIN_FILES_CONFIRM_PROMPT].height = 39;
                             gWindows[WIN_FILES_CONFIRM_PROMPT].pos.x = CENTER_WINDOW_X(WIN_FILES_CONFIRM_PROMPT);
 

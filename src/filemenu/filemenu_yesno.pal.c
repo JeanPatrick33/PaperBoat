@@ -155,10 +155,15 @@ void filemenu_yesno_draw_prompt_contents(
 
     switch (menu->state) {
         case FM_CONFIRM_DELETE:
-            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_DELETE), baseX + DELETE_FILE_DELETE_X, baseY + 4, 0xFF, 0, 0);
-            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_FILE_22), baseX + DELETE_FILE_FILE_X, baseY + 4, 0xFF, 0, 0);
-            draw_number(filemenu_menus[FILE_MENU_MAIN]->selected + 1, baseX + DELETE_FILE_NUMBER_X, baseY + 6 + NUMBER_OFFSET_Y, DRAW_NUMBER_CHARSET_NORMAL, MSG_PAL_WHITE, 0xFF, DRAW_NUMBER_STYLE_MONOSPACE | DRAW_NUMBER_STYLE_ALIGN_RIGHT);
-            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_QUESTION), baseX + DELETE_FILE_QMARK_X, baseY + 4, 0xFF, 0, 0);            break;
+            xOffset = DELETE_FILE_DELETE_X;
+            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_DELETE), baseX + xOffset, baseY + 4, 0xFF, 0, 0);
+            xOffset = DELETE_FILE_FILE_X;
+            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_FILE_22), baseX + xOffset, baseY + 4, 0xFF, 0, 0);
+            xOffset += DELETE_FILE_NUMBER_X;
+            draw_number(filemenu_menus[FILE_MENU_MAIN]->selected + 1, baseX + xOffset, baseY + 6 + NUMBER_OFFSET_Y, DRAW_NUMBER_CHARSET_NORMAL, MSG_PAL_WHITE, 0xFF, DRAW_NUMBER_STYLE_MONOSPACE | DRAW_NUMBER_STYLE_ALIGN_RIGHT);
+            xOffset += DELETE_FILE_QMARK_X;
+            filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_QUESTION), baseX + xOffset, baseY + 4, 0xFF, 0, 0);
+            break;
         case FM_CONFIRM_COPY:
             xOffset = 10;
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_28), baseX + xOffset, baseY + 4, 0xFF, 0, 0);
@@ -179,7 +184,7 @@ void filemenu_yesno_draw_prompt_contents(
                 }
             }
 
-            xOffset = (147 - (i * 11)) / 2;
+            xOffset = ((CREATE_FILE_FILE_X - 17) - (i * 11)) / 2;
             filemenu_draw_file_name(filemenu_filename, i + 1, baseX + xOffset, baseY + 22, 0xFF, 0, 8, 0xB);
             xOffset += (i + 1) * 11;
             filemenu_draw_message(filemenu_get_menu_message(FILE_MESSAGE_PERIOD_20), baseX + xOffset, baseY + 22, 0xFF, 0, 0);
@@ -258,7 +263,7 @@ void filemenu_yesno_handle_input(MenuPanel* menu) {
                     case FM_CONFIRM_DELETE:
                         filemenu_currentMenu = FILE_MENU_MESSAGE;
                         filemenu_menus[FILE_MENU_MESSAGE]->state = FM_MESSAGE_DELETED;
-                        gWindows[WIN_FILES_MESSAGE].width = 182;
+                        gWindows[WIN_FILES_MESSAGE].width = DELETE_FILE_MESSAGE_WIDTH;
                         gWindows[WIN_FILES_MESSAGE].height = 25;
                         gWindows[WIN_FILES_MESSAGE].pos.x = CENTER_WINDOW_X(WIN_FILES_MESSAGE);
                         gWindows[WIN_FILES_MESSAGE].pos.y = CENTER_WINDOW_Y(WIN_FILES_MESSAGE);
@@ -279,7 +284,7 @@ void filemenu_yesno_handle_input(MenuPanel* menu) {
                     case FM_CONFIRM_COPY:
                         filemenu_currentMenu = FILE_MENU_MESSAGE;
                         filemenu_menus[FILE_MENU_MESSAGE]->state = FM_MESSAGE_COPIED;
-                        gWindows[WIN_FILES_MESSAGE].width = 154;
+                        gWindows[WIN_FILES_MESSAGE].width = COPY_FILE_MESSAGE_WIDTH;
                         gWindows[WIN_FILES_MESSAGE].height = 39;
                         gWindows[WIN_FILES_MESSAGE].pos.x = CENTER_WINDOW_X(WIN_FILES_MESSAGE);
                         gWindows[WIN_FILES_MESSAGE].pos.y = CENTER_WINDOW_Y(WIN_FILES_MESSAGE);
@@ -322,7 +327,7 @@ void filemenu_yesno_handle_input(MenuPanel* menu) {
                         set_window_update(WIN_FILES_CONFIRM_OPTIONS, (intptr_t)filemenu_update_hidden_name_confirm);
                         filemenu_currentMenu = FILE_MENU_MESSAGE;
                         filemenu_menus[FILE_MENU_MESSAGE]->state = FM_MESSAGE_CREATED;
-                        gWindows[WIN_FILES_MESSAGE].width = 184;
+                        gWindows[WIN_FILES_MESSAGE].width = CREATE_FILE_MESSAGE_WIDTH;
                         gWindows[WIN_FILES_MESSAGE].height = 25;
                         gWindows[WIN_FILES_MESSAGE].pos.x = CENTER_WINDOW_X(WIN_FILES_MESSAGE);
                         gWindows[WIN_FILES_MESSAGE].pos.y = CENTER_WINDOW_Y(WIN_FILES_MESSAGE);
