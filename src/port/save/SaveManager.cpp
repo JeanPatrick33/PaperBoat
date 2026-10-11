@@ -486,6 +486,7 @@ static void WriteGlobals(const SaveGlobals* globals) {
     ordered_json j = ordered_json::object();
     j["useMonoSound"] = globals->useMonoSound;
     j["lastFileSelected"] = globals->lastFileSelected;
+    j["language"] = globals->language;
 
     std::string dir = Ship::Context::GetPathRelativeToAppDirectory("saves/", "pm64");
     if (!fs::exists(dir)) {
@@ -518,6 +519,8 @@ void SaveManager_Init() {
             in >> j;
             globals->useMonoSound = j.value("useMonoSound", 0);
             globals->lastFileSelected = j.value("lastFileSelected", 0u);
+            // Game language (PAL: 0=EN 1=DE 2=FR 3=ES). Out-of-range values fall back to the default at startup.
+            globals->language = j.value("language", 0u);
             StampGlobals(globals);
         }
     })

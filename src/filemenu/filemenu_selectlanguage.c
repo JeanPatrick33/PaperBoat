@@ -1,5 +1,6 @@
 #include "common.h"
 #include "filemenu.h"
+#include "fio.h"
 #include "message_ids.h"
 #include "hud_element.h"
 #include "ld_addrs.h"
@@ -325,6 +326,13 @@ void filemenu_selectlanguage_handle_input(MenuPanel* menu) {
         } else {
             sfx_play_sound(SOUND_FILE_MENU_OUT);
         }
+#if VERSION_PAL
+        // Remember the chosen language right away so it survives a restart even if no file is started.
+        if (gSaveGlobals.language != (u32) gCurrentLanguage) {
+            gSaveGlobals.language = gCurrentLanguage;
+            fio_save_globals();
+        }
+#endif
         set_game_mode(GAME_MODE_END_LANGUAGE_SELECT);
     }
 }
