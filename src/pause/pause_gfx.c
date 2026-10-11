@@ -506,6 +506,10 @@ Gfx* PauseGfxLabels[] = {
     [PAUSE_LBL_ABILITIES] PauseGfxCheckAbilities,
 };
 
+#if VERSION_PAL
+#include "pause/pause_gfx_pal_labels.inc.c"
+#endif
+
 intptr_t pause_get_menu_msg(s32 index) {
     return gPauseMessages[index];
 }
@@ -529,7 +533,11 @@ void pause_draw_menu_label(s32 index, s32 x, s32 y) {
         xOffset = 160;
     }
 
+#if VERSION_PAL
+    gSPDisplayList(gMainGfxPos++, PauseGfxLabelsPal[gCurrentLanguage][index]);
+#else
     gSPDisplayList(gMainGfxPos++, PauseGfxLabels[index]);
+#endif
     pause_draw_rect(x * 4, y * 4, (x + xOffset) * 4, (y + 16) * 4, 0, 0, 0, 0x400, 0x400);
 
 #if VERSION_PAL

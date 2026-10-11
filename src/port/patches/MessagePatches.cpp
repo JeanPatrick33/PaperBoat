@@ -21,12 +21,17 @@ typedef struct GlyphSheet {
     u32 count;
 } GlyphSheet;
 
-static char* sStandardPaths[0x5100 / 128];
+#if VERSION_PAL
+#define STD_SHEET_SIZE 0x5300
+#else
+#define STD_SHEET_SIZE 0x5100
+#endif
+static char* sStandardPaths[STD_SHEET_SIZE / 128];
 static char* sTitlePaths[0xF60 / 96];
 static char* sSubtitlePaths[0xB88 / 72];
 
 static GlyphSheet sSheets[] = {
-    { (const u8*) MsgCharImgNormal, 0x5100, 128, "__OTR__charset/charset_standard_", sStandardPaths,
+    { (const u8*) MsgCharImgNormal, STD_SHEET_SIZE, 128, "__OTR__charset/charset_standard_", sStandardPaths,
       ARRAY_COUNT(sStandardPaths) },
     { (const u8*) MsgCharImgTitle, 0xF60, 96, "__OTR__charset/charset_title_", sTitlePaths, ARRAY_COUNT(sTitlePaths) },
     { (const u8*) MsgCharImgSubtitle, 0xB88, 72, "__OTR__charset/charset_subtitle_", sSubtitlePaths,

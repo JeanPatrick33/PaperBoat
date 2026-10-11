@@ -212,7 +212,11 @@ void load_font(s32 font) {
 // #else
             // memcpy needed: MsgCharImgNormal is an array (address used as compile-time
             // initializer in gMsgNumbers), so we can't reassign it — copy OTR data in
+            #if VERSION_PAL
+            memcpy(MsgCharImgNormal, LOAD_ASSET(CHARSET_STANDARD), 0x5300);
+#else
             memcpy(MsgCharImgNormal, LOAD_ASSET(CHARSET_STANDARD), 0x5100);
+#endif
 // #endif
             // memcpy needed: D_802F4560 is a 2D array (PAL_BIN[80][8]) indexed by palette number,
             // so we copy OTR data into it rather than reassigning
