@@ -214,6 +214,7 @@ API_CALLABLE(GiveRefund) {
         get_screen_coords(gCurrentCameraID, posX, posY, posZ, &iconPosX, &iconPosY, &iconPosZ);
 #if VERSION_PAL
         switch (gCurrentLanguage) {
+            default:
             case LANGUAGE_EN:
                 HID_Refund = hud_element_create(&HES_Refund);
                 break;
@@ -514,6 +515,7 @@ API_CALLABLE(SpawnTurnEndFX) {
     if (script->varTable[10] > 0) {
 #if VERSION_PAL
         switch (gCurrentLanguage) {
+            default:
             case LANGUAGE_EN:
                 HID_HPDrain = hud_element_create(&HES_HPDrain);
                 break;
@@ -537,6 +539,7 @@ API_CALLABLE(SpawnTurnEndFX) {
     if (script->varTable[11] > 0 || script->varTable[12] > 0) {
 #if VERSION_PAL
         switch (gCurrentLanguage) {
+            default:
             case LANGUAGE_EN:
                 HID_Happy = hud_element_create(&HES_Happy);
                 break;

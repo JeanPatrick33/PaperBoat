@@ -1307,6 +1307,7 @@ void create_status_icon_peril(s32 iconID) {
         statusIcon->peril.active = true;
 #if VERSION_PAL
         switch (gCurrentLanguage) {
+            default:
             case LANGUAGE_EN:
                 hid = hud_element_create(&HES_Peril);
                 break;
@@ -1353,6 +1354,7 @@ void create_status_icon_danger(s32 iconID) {
         statusIcon->danger.active = true;
 #if VERSION_PAL
         switch (gCurrentLanguage) {
+            default:
             case LANGUAGE_EN:
                 hid = hud_element_create(&HES_Danger);
                 break;

@@ -269,6 +269,29 @@ void GameEngine::FinishInit() {
     }
     UpdateModFiles(true);
 
+#if VERSION_PAL
+    // Diagnostic: confirm the localized HUD/UI images made it into the archive. A miss here explains
+    // invisible language-specific icons (PC/PF, battle status banners) without having to guess.
+    {
+        static const char* const kLangs[] = { "de", "fr", "es" };
+        static const char* const kImages[] = { "ui/status/text_hp", "ui/status/text_fp", "ui/fp_cost",
+                                               "ui/battle/status/happy", "ui/battle/status/danger" };
+        int missing = 0;
+        for (const char* lang : kLangs) {
+            for (const char* img : kImages) {
+                const std::string path = std::string("__OTR__ui_langs/") + lang + "/" + img;
+                if (GameEngine_GetDataExact(path.c_str()) == nullptr) {
+                    SPDLOG_WARN("Missing localized UI image: {}", path);
+                    missing++;
+                }
+            }
+        }
+        if (missing == 0) {
+            SPDLOG_INFO("Localized UI images present (de/fr/es).");
+        }
+    }
+#endif
+
 #ifdef _DEBUG
     spdlog::set_level(spdlog::level::trace);
     spdlog::flush_on(spdlog::level::trace);
