@@ -1,4 +1,5 @@
 #include "Notification.h"
+#include "MenuI18n.h"
 #include "PaperboatInputEditorWindow.h"
 #include "PaperboatMenu.h"
 #include "PaperboatModals.h"
@@ -31,6 +32,13 @@ static std::unordered_map<int32_t, const char*> imguiScaleOptions = {
     { 1, "Normal" },
     { 2, "Large" },
     { 3, "X-Large" },
+};
+
+static const std::unordered_map<int32_t, const char*> menuLanguageOptions = {
+    { 0, "English" },
+    { 1, "Deutsch" },
+    { 2, "Français" },
+    { 3, "Español" },
 };
 
 static const std::unordered_map<int32_t, const char*> menuThemeOptions = {
@@ -73,6 +81,18 @@ void PaperboatMenu::AddMenuSettings() {
 
     // Settings > General
     AddWidget(path, "Menu Settings", WIDGET_SEPARATOR_TEXT);
+    AddWidget(path, "Menu Language", WIDGET_CVAR_COMBOBOX)
+        .CVar(CVAR_MENU_LANGUAGE)
+        .RaceDisable(false)
+        .Options(
+            ComboboxOptions()
+                .Tooltip(
+                    "Changes the language of this menu. Uses the same languages as the European (PAL) version of the "
+                    "game."
+                )
+                .ComboMap(menuLanguageOptions)
+                .DefaultIndex(0)
+        );
     AddWidget(path, "Menu Theme", WIDGET_CVAR_COMBOBOX)
         .CVar(CVAR_SETTING("Menu.Theme"))
         .RaceDisable(false)
