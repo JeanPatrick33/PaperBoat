@@ -17,7 +17,9 @@ namespace {
 
 using Clock = std::chrono::steady_clock;
 
-constexpr std::chrono::nanoseconds kVi(16666667); // NTSC 60Hz
+// Retrace period: NTSC 60 Hz by default, 50 Hz when the PAL build runs with authentic PAL timing.
+// Set once in osCreateViManager before the ticker thread starts.
+std::chrono::nanoseconds kVi(16666667);
 constexpr double kSlaveTolerance = 0.12;
 constexpr double kPresentGrace = 0.4;
 
@@ -101,10 +103,16 @@ void TickerMain() {
 
 } // namespace
 
+extern "C" int GameEngine_GetNativeViHz(void);
+
 extern "C" void osCreateViManager(OSPri pri) {
     (void) pri;
     if (sTickerRun.exchange(true)) {
         return;
+    }
+    {
+        const int hz = GameEngine_GetNativeViHz();
+        kVi = std::chrono::nanoseconds(1000000000LL / (hz > 0 ? hz : 60));
     }
     sTicker = std::thread(TickerMain);
 }

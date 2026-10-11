@@ -419,8 +419,11 @@ void PaperboatMenu::AddMenuSettings() {
                 .DefaultValue(1)
         );
 #endif
+    // With PAL timing the "original" frame rate is 25; the slider's minimum (30) stands for it.
+    const bool palTiming = GameEngine_GetNativeViHz() == 50;
+    const char* originalFpsFormat = palTiming ? "Original (25)" : "Original (%d)";
     auto fps = CVarGetInteger(CVAR_SETTING("InterpolationFPS"), 30);
-    const char* fpsFormat = fps == 30 ? "Original (%d)" : "%d";
+    const char* fpsFormat = fps <= 30 ? originalFpsFormat : "%d";
     AddWidget(path, "Current FPS", WIDGET_CVAR_SLIDER_INT)
         .CVar(CVAR_SETTING("InterpolationFPS"))
         .RaceDisable(false)
@@ -428,7 +431,7 @@ void PaperboatMenu::AddMenuSettings() {
             auto options = std::static_pointer_cast<IntSliderOptions>(info.options);
             int32_t defaultValue = options->defaultValue;
             if (CVarGetInteger(info.cVar, defaultValue) == defaultValue) {
-                options->format = "Original (%d)";
+                options->format = GameEngine_GetNativeViHz() == 50 ? "Original (25)" : "Original (%d)";
             } else {
                 options->format = "%d";
             }
@@ -438,6 +441,21 @@ void PaperboatMenu::AddMenuSettings() {
                 info.activeDisables.push_back(DISABLE_FOR_MATCH_REFRESH_RATE_ON);
         })
         .Options(IntSliderOptions().Tooltip(tooltip).Min(30).Max(maxFps).DefaultValue(30).Format(fpsFormat));
+#if VERSION_PAL
+    AddWidget(path, "Authentic PAL Timing (Needs reload)", WIDGET_CVAR_CHECKBOX)
+        .CVar(CVAR_SETTING("PalTiming"))
+        .RaceDisable(false)
+        .Options(
+            CheckboxOptions()
+                .DefaultValue(true)
+                .Tooltip(
+                    "Runs the game at the European console's native 50 Hz (25 logic frames per second), "
+                    "exactly like the original PAL cartridge. The PAL game's speeds, timers and music "
+                    "were written for that rate. Turn this off to run the PAL game at 60 Hz instead "
+                    "(faster, NTSC-like pacing). Requires a restart."
+                )
+        );
+#endif
     AddWidget(path, "Match Refresh Rate", WIDGET_CVAR_CHECKBOX)
         .CVar(CVAR_SETTING("MatchRefreshRate"))
         .RaceDisable(false)

@@ -483,7 +483,7 @@ void title_screen_draw_logo(f32 moveAlpha) {
 
     gSPDisplayList(gMainGfxPos++, TitleSetupGfx);
     gDPPipeSync(gMainGfxPos++);
-    yOffset = -100 * moveAlpha;
+    yOffset = TITLE_LOGO_YOFFSET * moveAlpha;
 
     for (i = 0; i < TITLE_NUM_TILES; i++) {
         // Load a tile from the logo texture

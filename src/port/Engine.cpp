@@ -1047,6 +1047,26 @@ void GameEngine::StartFrame() const {
     }
 }
 
+// Native retrace rate of the emulated console. The PAL game was written for 50 Hz (logic at 25 fps, with its
+// speeds and durations compensated for that), so by default the PAL build ticks at 50 Hz; this also keeps the
+// audio frame size (640 samples per retrace) in step with the 32 kHz output. Decided once per session.
+extern "C" int GameEngine_GetNativeViHz(void) {
+    static const int hz = [] {
+#if VERSION_PAL
+        return CVarGetInteger(CVAR_SETTING("PalTiming"), 1) ? 50 : 60;
+#else
+        return 60;
+#endif
+    }();
+    return hz;
+}
+
+// In PAL-timing mode the "original" frame rate is 25, which the settings slider represents with its minimum (30).
+static uint32_t NormalizeInterpolationFPS(uint32_t fps) {
+    const uint32_t original = (uint32_t) GameEngine_GetNativeViHz() / 2;
+    return (fps <= 30 && original < 30) ? original : fps;
+}
+
 uint32_t GameEngine::GetInterpolationFPS() {
     if (CVarGetInteger(CVAR_SETTING("MatchRefreshRate"), 0)) {
         return Ship::Context::GetRawInstance()->GetWindow()->GetCurrentRefreshRate();
@@ -1057,10 +1077,10 @@ uint32_t GameEngine::GetInterpolationFPS() {
     {
         return std::min<uint32_t>(
             Ship::Context::GetRawInstance()->GetWindow()->GetCurrentRefreshRate(),
-            CVarGetInteger(CVAR_SETTING("InterpolationFPS"), 30)
+            NormalizeInterpolationFPS(CVarGetInteger(CVAR_SETTING("InterpolationFPS"), 30))
         );
     }
-    return CVarGetInteger(CVAR_SETTING("InterpolationFPS"), 30);
+    return NormalizeInterpolationFPS(CVarGetInteger(CVAR_SETTING("InterpolationFPS"), 30));
 }
 
 // Audio
@@ -1148,9 +1168,9 @@ void GameEngine::ProcessGfxCommands(Gfx* commands) {
     static int last_fps;
     static int time;
     int fps = target_fps;
-    int original_fps = 60 / 2;
+    int original_fps = GameEngine_GetNativeViHz() / 2;
 
-    if (target_fps == 30 || original_fps > target_fps) {
+    if (target_fps == original_fps || original_fps > target_fps) {
         fps = original_fps;
     }
 

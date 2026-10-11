@@ -21,6 +21,8 @@ void* GameEngine_GetDataExact(const char* name);
 size_t GameEngine_GetSizeExact(const char* name);
 uint16_t GameEngine_GetTexWidthExact(const char* name);
 uint16_t GameEngine_GetTexHeightExact(const char* name);
+// Native retrace rate: 60 (NTSC) or 50 (PAL build with authentic PAL timing). Fixed for the whole session.
+int GameEngine_GetNativeViHz(void);
 
 // --- Widescreen helpers ---
 float GameEngine_GetAspectRatio(void);
