@@ -75,7 +75,14 @@ static void ModsPostDragAndDrop() {
 static void ModsHandleDragAndDrop(int targetIndex, const std::string& itemName) {
     if (ImGui::BeginDragDropSource(ImGuiDragDropFlags_SourceAllowNullID)) {
         ImGui::SetDragDropPayload("DragMove", &targetIndex, sizeof(uint32_t));
-        ImGui::Text("Move %s", itemName.c_str());
+        {
+            std::string moveText = Tr("Move %s");
+            const size_t at = moveText.find("%s");
+            if (at != std::string::npos) {
+                moveText.replace(at, 2, itemName);
+            }
+            ImGui::TextUnformatted(moveText.c_str());
+        }
         ImGui::EndDragDropSource();
     }
 
@@ -294,17 +301,17 @@ static void DrawModManager() {
     auto editOpts = UIWidgets::ButtonOptions().Size(UIWidgets::Sizes::Inline).Color(THEME_COLOR);
     editOpts.Disabled(editing);
     editOpts.DisabledTooltip("Already editing...");
-    if (UIWidgets::Button("Edit", editOpts)) {
+    if (UIWidgets::Button(Tr("Edit"), editOpts)) {
         editing = true;
     }
     if (editing) {
         ImGui::SameLine();
-        if (UIWidgets::Button("Cancel", UIWidgets::ButtonOptions().Size(UIWidgets::Sizes::Inline))) {
+        if (UIWidgets::Button(Tr("Cancel"), UIWidgets::ButtonOptions().Size(UIWidgets::Sizes::Inline))) {
             editing = false;
             UpdateModFiles(false, true);
         }
         ImGui::SameLine();
-        if (UIWidgets::Button("Clear List", UIWidgets::ButtonOptions().Size(UIWidgets::Sizes::Inline))) {
+        if (UIWidgets::Button(Tr("Clear List"), UIWidgets::ButtonOptions().Size(UIWidgets::Sizes::Inline))) {
             PaperboatGui::RegisterPopup(
                 "Clear List", "Disable every mod in the list.\nClick Apply to save this change.", "Clear", "Cancel",
                 []() {
@@ -319,7 +326,7 @@ static void DrawModManager() {
         ImGui::SameLine();
         const bool restarts = GameEngine::CanRelaunch();
         if (UIWidgets::Button(
-                restarts ? "Apply & Restart" : "Apply",
+                Tr(restarts ? "Apply & Restart" : "Apply"),
                 UIWidgets::ButtonOptions().Size(UIWidgets::Sizes::Inline).Color(THEME_COLOR)
             ))
         {
@@ -342,8 +349,8 @@ static void DrawModManager() {
     }
     ImGui::BeginDisabled(!editing);
     if (ImGui::BeginTable("tableMods", 2, ImGuiTableFlags_BordersH | ImGuiTableFlags_BordersV)) {
-        ImGui::TableSetupColumn("Enabled Mods", ImGuiTableColumnFlags_WidthStretch, 200.0f);
-        ImGui::TableSetupColumn("Disabled Mods", ImGuiTableColumnFlags_WidthStretch, 200.0f);
+        ImGui::TableSetupColumn(Tr("Enabled Mods"), ImGuiTableColumnFlags_WidthStretch, 200.0f);
+        ImGui::TableSetupColumn(Tr("Disabled Mods"), ImGuiTableColumnFlags_WidthStretch, 200.0f);
         ImGui::PushItemFlag(ImGuiItemFlags_Disabled, true);
         ImGui::TableHeadersRow();
         ImGui::PopItemFlag();
@@ -371,10 +378,10 @@ void PaperboatModMenuWindow::DrawElement() {
     PaperboatGui::mPaperboatMenu->MenuDrawItem(autoMipmapsWidget, 200, PaperboatGui::GetMenuThemeColor());
 
     ImGui::TextColored(
-        UIWidgets::ColorValues.at(UIWidgets::Colors::Yellow),
-        "Mods are not reloaded at runtime, so applying changes restarts Paperboat.\n"
-        "Priority runs top to bottom: a mod overrides everything listed below it.\n"
-        "Drag an entry or use the arrows to reorder the enabled list."
+        UIWidgets::ColorValues.at(UIWidgets::Colors::Yellow), "%s",
+        Tr("Mods are not reloaded at runtime, so applying changes restarts Paperboat.\n"
+           "Priority runs top to bottom: a mod overrides everything listed below it.\n"
+           "Drag an entry or use the arrows to reorder the enabled list.")
     );
 
     DrawModManager();

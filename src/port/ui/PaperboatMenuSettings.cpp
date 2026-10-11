@@ -447,11 +447,11 @@ void PaperboatMenu::AddMenuSettings() {
         .RaceDisable(false)
         .Options(
             CheckboxOptions()
-                .DefaultValue(true)
+                .DefaultValue(false)
                 .Tooltip(
                     "Runs the game at the European console's native 50 Hz (25 logic frames per second), "
                     "exactly like the original PAL cartridge. The PAL game's speeds, timers and music "
-                    "were written for that rate. Turn this off to run the PAL game at 60 Hz instead "
+                    "were written for that rate. Off by default: the game then runs at 60 Hz "
                     "(faster, NTSC-like pacing). Requires a restart."
                 )
         );

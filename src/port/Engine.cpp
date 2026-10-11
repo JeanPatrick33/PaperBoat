@@ -1048,12 +1048,13 @@ void GameEngine::StartFrame() const {
 }
 
 // Native retrace rate of the emulated console. The PAL game was written for 50 Hz (logic at 25 fps, with its
-// speeds and durations compensated for that), so by default the PAL build ticks at 50 Hz; this also keeps the
-// audio frame size (640 samples per retrace) in step with the 32 kHz output. Decided once per session.
+// speeds and durations compensated for that). The "Authentic PAL Timing" option (off by default) makes the PAL build
+// tick at 50 Hz, which also keeps the audio frame size (640 samples per retrace) in step with the 32 kHz output.
+// Decided once per session.
 extern "C" int GameEngine_GetNativeViHz(void) {
     static const int hz = [] {
 #if VERSION_PAL
-        return CVarGetInteger(CVAR_SETTING("PalTiming"), 1) ? 50 : 60;
+        return CVarGetInteger(CVAR_SETTING("PalTiming"), 0) ? 50 : 60;
 #else
         return 60;
 #endif
