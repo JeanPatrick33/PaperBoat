@@ -307,6 +307,65 @@ std::unordered_map<uint32_t, disabledInfo>& Menu::GetDisabledMap() {
     return disabledMap;
 }
 
+namespace {
+// Translated labels (notably French and German) are often 20-40% longer than the English ones the
+// layout was designed around. These helpers keep them inside their column: checkbox labels wrap by
+// pixel width, and labels of single-line widgets shrink the text slightly (never below 70%).
+std::string WrapLabelToWidth(const char* label, float maxPx) {
+    std::string out(label);
+    if (maxPx <= 0.0f) {
+        return out;
+    }
+    size_t lineStart = 0;
+    size_t lastSpace = std::string::npos;
+    for (size_t i = 0; i < out.size(); i++) {
+        if (out[i] == '\n') {
+            lineStart = i + 1;
+            lastSpace = std::string::npos;
+            continue;
+        }
+        if (out[i] == ' ') {
+            lastSpace = i;
+        }
+        const float w = ImGui::CalcTextSize(out.c_str() + lineStart, out.c_str() + i + 1).x;
+        if (w > maxPx && lastSpace != std::string::npos && lastSpace >= lineStart) {
+            out[lastSpace] = '\n';
+            lineStart = lastSpace + 1;
+            lastSpace = std::string::npos;
+        }
+    }
+    return out;
+}
+
+// Restores the window font scale when it goes out of scope (MenuDrawItem has early returns).
+struct ScopedLabelFit {
+    ImGuiWindow* window = nullptr;
+    float saved = 1.0f;
+    ScopedLabelFit(const char* label, float budgetPx) {
+        if (MenuI18n::GetLanguage() == 0 || budgetPx <= 1.0f) {
+            return;
+        }
+        window = ImGui::GetCurrentWindow();
+        saved = window->FontWindowScale;
+        const float labelPx = ImGui::CalcTextSize(label).x;
+        if (labelPx > budgetPx) {
+            float s = budgetPx / labelPx;
+            if (s < 0.7f) {
+                s = 0.7f;
+            }
+            ImGui::SetWindowFontScale(saved * s);
+        } else {
+            window = nullptr;
+        }
+    }
+    ~ScopedLabelFit() {
+        if (window != nullptr) {
+            ImGui::SetWindowFontScale(saved);
+        }
+    }
+};
+} // namespace
+
 void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors menuThemeIndex) {
     disabledTempTooltip = Tr("This setting is disabled because: \n");
     disabledValue = false;
@@ -336,6 +395,27 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
         ImGui::SameLine();
     }
 
+    float fitBudget = 0.0f;
+    switch (widget.type) {
+        case WIDGET_COMBOBOX:
+        case WIDGET_CVAR_COMBOBOX:
+        case WIDGET_SLIDER_INT:
+        case WIDGET_CVAR_SLIDER_INT:
+        case WIDGET_SLIDER_FLOAT:
+        case WIDGET_CVAR_SLIDER_FLOAT:
+            fitBudget = ImGui::GetContentRegionAvail().x * 0.5f;
+            break;
+        case WIDGET_BUTTON:
+        case WIDGET_WINDOW_BUTTON:
+        case WIDGET_SEPARATOR_TEXT:
+            fitBudget = ImGui::GetContentRegionAvail().x - ImGui::GetStyle().FramePadding.x * 4.0f;
+            break;
+        default:
+            break;
+    }
+    ScopedLabelFit labelFit(Tr(widget.name.c_str()), fitBudget);
+    const float checkboxLabelPx = ImGui::GetContentRegionAvail().x - ImGui::GetFrameHeight() * 1.5f;
+
     try {
         switch (widget.type) {
             case WIDGET_CHECKBOX: {
@@ -347,7 +427,12 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 }
                 auto options = std::static_pointer_cast<UIWidgets::CheckboxOptions>(widget.options);
                 options->color = menuThemeIndex;
-                if (UIWidgets::Checkbox(UIWidgets::WrappedText(Tr(widget.name.c_str()), width).c_str(), pointer, *options))
+                if (UIWidgets::Checkbox(
+                        (MenuI18n::GetLanguage() == 0 ? UIWidgets::WrappedText(Tr(widget.name.c_str()), width)
+                                                       : WrapLabelToWidth(Tr(widget.name.c_str()), checkboxLabelPx))
+                            .c_str(),
+                        pointer, *options
+                    ))
                 {
                     if (widget.callback != nullptr) {
                         widget.callback(widget);
@@ -358,7 +443,10 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 auto options = std::static_pointer_cast<UIWidgets::CheckboxOptions>(widget.options);
                 options->color = menuThemeIndex;
                 if (UIWidgets::CVarCheckbox(
-                        UIWidgets::WrappedText(Tr(widget.name.c_str()), width).c_str(), widget.cVar, *options
+                        (MenuI18n::GetLanguage() == 0 ? UIWidgets::WrappedText(Tr(widget.name.c_str()), width)
+                                                       : WrapLabelToWidth(Tr(widget.name.c_str()), checkboxLabelPx))
+                            .c_str(),
+                        widget.cVar, *options
                     ))
                 {
                     if (widget.callback != nullptr) {
@@ -705,7 +793,7 @@ void Menu::DrawElement() {
         headerWidth += 200.0f + style.ItemSpacing.x + style.FramePadding.x;
     }
     for (auto& label : menuOrder) {
-        ImVec2 size = ImGui::CalcTextSize(label.c_str());
+        ImVec2 size = ImGui::CalcTextSize(Tr(label.c_str()));
         headerSizes.push_back(size);
         headerWidth += size.x + style.FramePadding.x * 2;
         if (label == headerIndex) {
@@ -890,6 +978,17 @@ void Menu::DrawElement() {
     float sidebarWidth = 200 - style.ItemSpacing.x;
     if (menuSize.x > 1600) {
         sidebarWidth = menuSize.x * 0.15f;
+    }
+    {
+        // Translated sidebar labels can be wider than the default column; widen it to fit (capped).
+        float widest = 0.0f;
+        for (auto& sidebarLabel : menuEntries.at(headerIndex).sidebarOrder) {
+            widest = std::fmaxf(widest, ImGui::CalcTextSize(Tr(sidebarLabel.c_str())).x);
+        }
+        const float needed = widest + style.FramePadding.x * 2 + style.ItemSpacing.x * 2;
+        if (needed > sidebarWidth) {
+            sidebarWidth = std::fminf(needed, menuSize.x * 0.3f);
+        }
     }
 
     const char* sidebarCvar = menuEntries.at(headerIndex).sidebarCvar;
