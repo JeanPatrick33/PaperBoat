@@ -1,6 +1,7 @@
 #include "ActorBlueprintEditor.h"
 #include "port/ui/UIWidgets.hpp"
 #include "port/ui/Notification.h"
+#include "port/ui/MenuI18n.h"
 #include "port/ui/cvar_prefixes.h"
 #include "port/ActorTypeNames.h"
 #include "port/FilePicker.h"
@@ -412,9 +413,9 @@ static void NotifyResult(const char* prefix, bool ok, const std::string& message
 
 static void ExportPresetWithPicker() {
     Ship::FileBrowserRequest request;
-    request.Title = "Export actor blueprint preset";
+    request.Title = Tr("Export actor blueprint preset");
     request.StartDir = Ship::Context::GetAppDirectoryPath();
-    request.Filters = { { "Blueprint Preset", { "*.json" } } };
+    request.Filters = { { Tr("Blueprint Preset"), { "*.json" } } };
     request.Save = true;
     request.DefaultName = "actor_blueprints.json";
     Paperboat::PickFile(std::move(request), [](std::optional<std::filesystem::path> path) {
@@ -423,22 +424,22 @@ static void ExportPresetWithPicker() {
         }
         std::string error;
         bool ok = ExportPreset(*path, &error);
-        NotifyResult("Blueprint Editor", ok, ok ? "Exported " + path->filename().string() : error);
+        NotifyResult(Tr("Blueprint Editor"), ok, ok ? std::string(Tr("Exported ")) + path->filename().string() : std::string(Tr(error.c_str())));
     });
 }
 
 static void ImportPresetWithPicker() {
     Ship::FileBrowserRequest request;
-    request.Title = "Import actor blueprint preset";
+    request.Title = Tr("Import actor blueprint preset");
     request.StartDir = Ship::Context::GetAppDirectoryPath();
-    request.Filters = { { "Blueprint Preset", { "*.json" } }, { "All Files", { "*" } } };
+    request.Filters = { { Tr("Blueprint Preset"), { "*.json" } }, { Tr("All Files"), { "*" } } };
     Paperboat::PickFile(std::move(request), [](std::optional<std::filesystem::path> path) {
         if (!path) {
             return;
         }
         std::string error;
         bool ok = ImportPreset(*path, &error);
-        NotifyResult("Blueprint Editor", ok, ok ? "Imported " + path->filename().string() : error);
+        NotifyResult(Tr("Blueprint Editor"), ok, ok ? std::string(Tr("Imported ")) + path->filename().string() : std::string(Tr(error.c_str())));
     });
 }
 
@@ -456,18 +457,18 @@ static bool PassesFilters(const CatalogEntry& entry, int32_t tab) {
 
 static void DrawToolbar() {
     bool enabled = IsEnabled();
-    if (UIWidgets::Checkbox("Apply blueprint overrides", &enabled, UIWidgets::CheckboxOptions().Color(WIDGET_COLOR))) {
+    if (UIWidgets::Checkbox(Tr("Apply blueprint overrides"), &enabled, UIWidgets::CheckboxOptions().Color(WIDGET_COLOR))) {
         SetEnabled(enabled);
     }
     UIWidgets::Tooltip("When off, every enemy uses its vanilla stats. Edits are kept either way.");
 
     ImGui::SameLine();
-    ImGui::TextColored(sDimColor, "%d modified", CountModifiedActors());
+    ImGui::TextColored(sDimColor, Tr("%d modified"), CountModifiedActors());
 
     float buttonWidth = 90.0f;
     ImGui::SameLine(ImGui::GetContentRegionMax().x - buttonWidth * 3 - ImGui::GetStyle().ItemSpacing.x * 2);
     if (UIWidgets::Button(
-            "Import",
+            Tr("Import"),
             UIWidgets::ButtonOptions()
                 .Size(ImVec2(buttonWidth, 0))
                 .Color(WIDGET_COLOR)
@@ -478,7 +479,7 @@ static void DrawToolbar() {
     }
     ImGui::SameLine();
     if (UIWidgets::Button(
-            "Export",
+            Tr("Export"),
             UIWidgets::ButtonOptions().Size(ImVec2(buttonWidth, 0)).Color(WIDGET_COLOR).Tooltip("Save edits as JSON.")
         ))
     {
@@ -486,7 +487,7 @@ static void DrawToolbar() {
     }
     ImGui::SameLine();
     if (UIWidgets::Button(
-            "Reset All",
+            Tr("Reset All"),
             UIWidgets::ButtonOptions()
                 .Size(ImVec2(buttonWidth, 0))
                 .Color(UIWidgets::Colors::Red)
@@ -497,9 +498,9 @@ static void DrawToolbar() {
     }
 
     ImGui::SetNextItemWidth(ImGui::GetContentRegionAvail().x * 0.5f);
-    ImGui::InputTextWithHint("##actorFilter", "Filter by name...", sFilter, sizeof(sFilter));
+    ImGui::InputTextWithHint("##actorFilter", Tr("Filter by name..."), sFilter, sizeof(sFilter));
     ImGui::SameLine();
-    UIWidgets::Checkbox("Modified only", &sModifiedOnly, UIWidgets::CheckboxOptions().Color(WIDGET_COLOR));
+    UIWidgets::Checkbox(Tr("Modified only"), &sModifiedOnly, UIWidgets::CheckboxOptions().Color(WIDGET_COLOR));
 }
 
 static void DrawActorList(const std::vector<CatalogEntry>& catalog, int32_t tab) {
@@ -546,25 +547,25 @@ static const s32* GetMainDefenseTable(const ActorBlueprint* blueprint) {
 
 static void DrawDefenseSection(const CatalogEntry& entry, const Override& ov) {
     ImGui::TextColored(
-        sDimColor,
-        "Defense is subtracted from each hit; a negative value is a weakness (extra damage).\n"
-        "Saved as a change from vanilla, so defenses a battle script swaps in (a flipped\n"
-        "Koopa, a new boss form) shift by the same amount. Elements an enemy doesn't\n"
-        "list use its Normal defense."
+        sDimColor, "%s",
+        Tr("Defense is subtracted from each hit; a negative value is a weakness (extra damage).\n"
+           "Saved as a change from vanilla, so defenses a battle script swaps in (a flipped\n"
+           "Koopa, a new boss form) shift by the same amount. Elements an enemy doesn't\n"
+           "list use its Normal defense.")
     );
     const s32* table = GetMainDefenseTable(entry.blueprint);
     if (table == nullptr) {
-        ImGui::TextColored(sDimColor, "No defense data.");
+        ImGui::TextColored(sDimColor, "%s", Tr("No defense data."));
         return;
     }
 
     if (!ImGui::BeginTable("DefenseTable", 4, ImGuiTableFlags_SizingStretchProp)) {
         return;
     }
-    ImGui::TableSetupColumn("Element", ImGuiTableColumnFlags_WidthFixed, 80.0f);
-    ImGui::TableSetupColumn("Vanilla", ImGuiTableColumnFlags_WidthFixed, 70.0f);
-    ImGui::TableSetupColumn("Value", ImGuiTableColumnFlags_WidthStretch);
-    ImGui::TableSetupColumn("Reset", ImGuiTableColumnFlags_WidthFixed, 64.0f);
+    ImGui::TableSetupColumn(Tr("Element"), ImGuiTableColumnFlags_WidthFixed, 80.0f);
+    ImGui::TableSetupColumn(Tr("Vanilla"), ImGuiTableColumnFlags_WidthFixed, 70.0f);
+    ImGui::TableSetupColumn(Tr("Value"), ImGuiTableColumnFlags_WidthStretch);
+    ImGui::TableSetupColumn(Tr("Reset"), ImGuiTableColumnFlags_WidthFixed, 64.0f);
 
     for (int32_t i = 0; i < DEFENSE_ELEMENT_COUNT; i++) {
         DefenseElement element = (DefenseElement) i;
@@ -581,21 +582,21 @@ static void DrawDefenseSection(const CatalogEntry& entry, const Override& ov) {
         ImGui::TableNextColumn();
         ImGui::AlignTextToFramePadding();
         if (ov.defenseSet[i]) {
-            ImGui::TextColored(sModifiedColor, "%s", info.label);
+            ImGui::TextColored(sModifiedColor, "%s", Tr(info.label));
         } else {
-            ImGui::TextUnformatted(info.label);
+            ImGui::TextUnformatted(Tr(info.label));
         }
         ImGui::TableNextColumn();
         ImGui::AlignTextToFramePadding();
         if (vanilla >= DEFENSE_IMMUNE) {
-            ImGui::TextColored(sDimColor, "Immune");
+            ImGui::TextColored(sDimColor, "%s", Tr("Immune"));
         } else {
-            ImGui::TextColored(sDimColor, vanilla < 0 ? "%d (weak)" : "%d", vanilla);
+            ImGui::TextColored(sDimColor, vanilla < 0 ? Tr("%d (weak)") : "%d", vanilla);
         }
         ImGui::TableNextColumn();
         if (vanilla >= DEFENSE_IMMUNE) {
             ImGui::AlignTextToFramePadding();
-            ImGui::TextColored(sDimColor, "Immune");
+            ImGui::TextColored(sDimColor, "%s", Tr("Immune"));
         } else if (UIWidgets::SliderInt(
                        info.label, &value,
                        UIWidgets::IntSliderOptions()
@@ -615,7 +616,7 @@ static void DrawDefenseSection(const CatalogEntry& entry, const Override& ov) {
         }
         ImGui::TableNextColumn();
         if (ov.defenseSet[i]
-            && UIWidgets::Button("Reset", UIWidgets::ButtonOptions().Size(ImVec2(60.0f, 0)).Color(WIDGET_COLOR)))
+            && UIWidgets::Button(Tr("Reset"), UIWidgets::ButtonOptions().Size(ImVec2(60.0f, 0)).Color(WIDGET_COLOR)))
         {
             ClearDefenseDelta(entry.actorType, element);
         }
@@ -635,15 +636,15 @@ static void DrawField(const CatalogEntry& entry, const Override& ov, Field field
 
     ImGui::PushID(field);
     if (ov.isSet[field]) {
-        ImGui::TextColored(sModifiedColor, "%s", info.label);
+        ImGui::TextColored(sModifiedColor, "%s", Tr(info.label));
     } else {
-        ImGui::TextUnformatted(info.label);
+        ImGui::TextUnformatted(Tr(info.label));
     }
     ImGui::SameLine();
-    ImGui::TextColored(sDimColor, "(vanilla %d)", defaultValue);
+    ImGui::TextColored(sDimColor, Tr("(vanilla %d)"), defaultValue);
     if (ov.isSet[field]) {
         ImGui::SameLine(ImGui::GetContentRegionMax().x - 60.0f);
-        if (UIWidgets::Button("Reset", UIWidgets::ButtonOptions().Size(ImVec2(60.0f, 0)).Color(WIDGET_COLOR))) {
+        if (UIWidgets::Button(Tr("Reset"), UIWidgets::ButtonOptions().Size(ImVec2(60.0f, 0)).Color(WIDGET_COLOR))) {
             ClearOverride(entry.actorType, field);
         }
     }
@@ -680,13 +681,13 @@ static void DrawActorDetails(const CatalogEntry& entry) {
     ImGui::SetWindowFontScale(1.3f);
     ImGui::TextUnformatted(GetActorName(entry.actorType).c_str());
     ImGui::SetWindowFontScale(1.0f);
-    ImGui::TextColored(sDimColor, "Type 0x%02X  -  %s", entry.actorType, GetChapterName(entry.chapter));
+    ImGui::TextColored(sDimColor, Tr("Type 0x%02X  -  %s"), entry.actorType, Tr(GetChapterName(entry.chapter)));
     if (entry.variantCount > 1) {
-        ImGui::TextColored(sDimColor, "%d blueprint variants share this type; edits apply to all.", entry.variantCount);
+        ImGui::TextColored(sDimColor, Tr("%d blueprint variants share this type; edits apply to all."), entry.variantCount);
     }
     if (ov.Any()) {
         if (UIWidgets::Button(
-                "Reset Enemy", UIWidgets::ButtonOptions().Size(ImVec2(130.0f, 0)).Color(UIWidgets::Colors::Red)
+                Tr("Reset Enemy"), UIWidgets::ButtonOptions().Size(ImVec2(130.0f, 0)).Color(UIWidgets::Colors::Red)
             ))
         {
             ClearActor(entry.actorType);
@@ -700,7 +701,7 @@ static void DrawActorDetails(const CatalogEntry& entry) {
         return std::any_of(fields.begin(), fields.end(), [&](Field field) { return ov.isSet[field]; });
     };
     auto tabLabel = [](const char* name, bool modified) {
-        return fmt::format("{}{}###{}", name, modified ? " *" : "", name);
+        return fmt::format("{}{}###{}", Tr(name), modified ? " *" : "", name);
     };
     bool defenseModified =
         std::any_of(std::begin(ov.defenseSet), std::end(ov.defenseSet), [](bool set) { return set; });
@@ -718,10 +719,11 @@ static void DrawActorDetails(const CatalogEntry& entry) {
             ImGui::Spacing();
             ImGui::TextColored(
                 sDimColor,
-                isPartner ? "Applies to every move this partner uses, at any rank. Rank and\n"
-                            "upgrades come from your save; change them in the Save Editor."
-                          : "Move choice odds live in each enemy's script and aren't editable\n"
-                            "here yet."
+                "%s",
+                isPartner ? Tr("Applies to every move this partner uses, at any rank. Rank and\n"
+                               "upgrades come from your save; change them in the Save Editor.")
+                          : Tr("Move choice odds live in each enemy's script and aren't editable\n"
+                               "here yet.")
             );
             ImGui::EndTabItem();
         }
@@ -751,7 +753,7 @@ static void DrawActorDetails(const CatalogEntry& entry) {
     UIWidgets::PopStyleTabs();
 
     ImGui::Spacing();
-    ImGui::TextColored(sDimColor, "Changes apply from the next battle.");
+    ImGui::TextColored(sDimColor, "%s", Tr("Changes apply from the next battle."));
 }
 
 static void DrawTabContents(const std::vector<CatalogEntry>& catalog, int32_t tab) {
@@ -774,7 +776,7 @@ static void DrawTabContents(const std::vector<CatalogEntry>& catalog, int32_t ta
         if (selected != nullptr) {
             DrawActorDetails(*selected);
         } else {
-            ImGui::TextColored(sDimColor, "Select an enemy to edit its blueprint.");
+            ImGui::TextColored(sDimColor, "%s", Tr("Select an enemy to edit its blueprint."));
         }
     }
     ImGui::EndChild();
@@ -786,7 +788,7 @@ static void DrawEditor() {
     DrawToolbar();
     UIWidgets::PushStyleTabs(WIDGET_COLOR);
     if (ImGui::BeginTabBar("ActorBlueprintTabs", ImGuiTabBarFlags_FittingPolicyScroll)) {
-        if (ImGui::BeginTabItem("All")) {
+        if (ImGui::BeginTabItem((std::string(Tr("All")) + "###All").c_str())) {
             DrawTabContents(catalog, ALL_TAB);
             ImGui::EndTabItem();
         }
@@ -797,7 +799,9 @@ static void DrawEditor() {
             if (!hasEnemies) {
                 continue;
             }
-            if (ImGui::BeginTabItem(GetChapterName((Chapter) chapter))) {
+            if (ImGui::BeginTabItem(
+                    (std::string(Tr(GetChapterName((Chapter) chapter))) + "###ch" + std::to_string(chapter)).c_str()
+                )) {
                 DrawTabContents(catalog, chapter);
                 ImGui::EndTabItem();
             }
@@ -826,7 +830,7 @@ void ActorBlueprintEditorWindow::Draw() {
     ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 8.0f);
     ImGui::SetNextWindowSize(ImVec2(820.0f, 560.0f), ImGuiCond_FirstUseEver);
 
-    if (ImGui::Begin("Blueprint Editor", nullptr, sWindowFlags)) {
+    if (ImGui::Begin((std::string(Tr("Blueprint Editor")) + "###Blueprint Editor").c_str(), nullptr, sWindowFlags)) {
         DrawEditor();
     }
     ImGui::End();

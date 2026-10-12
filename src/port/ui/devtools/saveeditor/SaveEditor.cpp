@@ -1,6 +1,7 @@
 #include "SaveEditor.h"
 #include "port/ui/UIWidgets.hpp"
 #include "port/ActorTypeNames.h"
+#include "port/ui/MenuI18n.h"
 #include <string>
 #include <spdlog/fmt/fmt.h>
 #include <imgui.h>
@@ -469,13 +470,13 @@ LetterState NextLetterState(LetterState state) {
 const char* LetterStateName(LetterState state) {
     switch (state) {
         case LETTER_WITH_PARAKARRY:
-            return "With Parakarry";
+            return Tr("With Parakarry");
         case LETTER_IN_ITEMS:
-            return "In Items";
+            return Tr("In Items");
         case LETTER_DELIVERED:
-            return "Delivered";
+            return Tr("Delivered");
         default:
-            return "Not Found";
+            return Tr("Not Found");
     }
 }
 
@@ -680,8 +681,8 @@ void SaveEditor_DrawPlayerMenu() {
                 int32_t curHealth = gPlayerData.curHP;
                 int32_t maxHealth = gPlayerData.hardMaxHP;
                 std::string maxHealthFormat = gPlayerData.curMaxHP != gPlayerData.hardMaxHP
-                    ? fmt::format("Max HP: %i ({} with badges)", gPlayerData.curMaxHP)
-                    : "Max HP: %i";
+                    ? fmt::format(fmt::runtime(Tr("Max HP: %i ({} with badges)")), gPlayerData.curMaxHP)
+                    : Tr("Max HP: %i");
                 if (UIWidgets::SliderInt(
                         "##pCurHP", &curHealth,
                         UIWidgets::IntSliderOptions()
@@ -716,8 +717,8 @@ void SaveEditor_DrawPlayerMenu() {
                 int32_t curFlower = gPlayerData.curFP;
                 int32_t maxFlower = gPlayerData.hardMaxFP;
                 std::string maxFlowerFormat = gPlayerData.curMaxFP != gPlayerData.hardMaxFP
-                    ? fmt::format("Max FP: %i ({} with badges)", gPlayerData.curMaxFP)
-                    : "Max FP: %i";
+                    ? fmt::format(fmt::runtime(Tr("Max FP: %i ({} with badges)")), gPlayerData.curMaxFP)
+                    : Tr("Max FP: %i");
                 if (UIWidgets::SliderInt(
                         "##pCurFP", &curFlower,
                         UIWidgets::IntSliderOptions()
@@ -1077,12 +1078,12 @@ bool SaveEditor_DrawLetterCell(
     ImGui::SetCursorPos(
         ImVec2(textCellPos.x, textCellPos.y + std::max<float>(0.0f, (imageSize.y - textHeight) * 0.5f))
     );
-    ImGui::Text("%s", letter.name);
+    ImGui::Text("%s", Tr(letter.name));
     ImGui::TextColored(stateColor, "%s", LetterStateName(state));
 
     if (hovered) {
         ImGui::SetMouseCursor(ImGuiMouseCursor_Hand);
-        ImGui::SetTooltip("Click to mark as %s", LetterStateName(NextLetterState(state)));
+        ImGui::SetTooltip(Tr("Click to mark as %s"), LetterStateName(NextLetterState(state)));
     }
     storage->SetBool(cardID, hovered);
     return clicked;
@@ -1110,12 +1111,12 @@ void SaveEditor_DrawLettersMenu() {
         int32_t totalLetters = (int32_t) (letterList.size() + chainLetterList.size());
 
         ImGui::Text(
-            "Delivered: %d / %d     In Items: %d     Key item slots used: %d / %d", delivered, totalLetters, inItems,
+            Tr("Delivered: %d / %d     In Items: %d     Key item slots used: %d / %d"), delivered, totalLetters, inItems,
             CountUsedKeyItemSlots(), MAX_KEY_ITEM_SIZE
         );
-        ImGui::TextWrapped("Click a letter to cycle it between Not Found, In Items and Delivered.");
+        ImGui::TextWrapped("%s", Tr("Click a letter to cycle it between Not Found, In Items and Delivered."));
 
-        if (UIWidgets::Button("Collect All", UIWidgets::ButtonOptions().Color(WIDGET_COLOR))) {
+        if (UIWidgets::Button(Tr("Collect All"), UIWidgets::ButtonOptions().Color(WIDGET_COLOR))) {
             for (auto& letter : letterList) {
                 LetterState state = GetLetterState(letter);
                 if (state == LETTER_NOT_FOUND || state == LETTER_WITH_PARAKARRY) {
@@ -1128,29 +1129,29 @@ void SaveEditor_DrawLettersMenu() {
         }
         if (ImGui::IsItemHovered()) {
             ImGui::SetTooltip(
-                "Puts every letter that hasn't been delivered yet in key items.\n"
-                "Letters share the 32 key item slots, so this stops once they are full."
+                "%s", Tr("Puts every letter that hasn't been delivered yet in key items.\n"
+                         "Letters share the 32 key item slots, so this stops once they are full.")
             );
         }
         ImGui::SameLine();
-        if (UIWidgets::Button("Deliver All", UIWidgets::ButtonOptions().Color(WIDGET_COLOR))) {
+        if (UIWidgets::Button(Tr("Deliver All"), UIWidgets::ButtonOptions().Color(WIDGET_COLOR))) {
             for (auto& letter : letterList) {
                 SetLetterState(letter, LETTER_DELIVERED);
             }
             SetChainLetterProgress((int32_t) chainLetterList.size() + 1);
         }
         if (ImGui::IsItemHovered()) {
-            ImGui::SetTooltip("Marks every letter delivered. Delivery rewards are not granted.");
+            ImGui::SetTooltip("%s", Tr("Marks every letter delivered. Delivery rewards are not granted."));
         }
         ImGui::SameLine();
-        if (UIWidgets::Button("Clear All", UIWidgets::ButtonOptions().Color(WIDGET_COLOR))) {
+        if (UIWidgets::Button(Tr("Clear All"), UIWidgets::ButtonOptions().Color(WIDGET_COLOR))) {
             for (auto& letter : letterList) {
                 SetLetterState(letter, LETTER_NOT_FOUND);
             }
             SetChainLetterProgress(0);
         }
 
-        ImGui::SeparatorText("Letters");
+        ImGui::SeparatorText(Tr("Letters"));
         if (ImGui::BeginTable("LettersTable", 4, ImGuiTableFlags_SizingStretchSame)) {
             SaveEditor_SetupLetterTable(padding, statImageSize);
             for (int i = 0; i < (int) letterList.size(); i++) {
@@ -1168,10 +1169,10 @@ void SaveEditor_DrawLettersMenu() {
             ImGui::EndTable();
         }
 
-        ImGui::SeparatorText("Chain Letters");
+        ImGui::SeparatorText(Tr("Chain Letters"));
         ImGui::TextWrapped(
-            "Delivering a chain letter hands over the next one, so marking a letter here "
-            "also updates the rest of the chain."
+            "%s", Tr("Delivering a chain letter hands over the next one, so marking a letter here "
+                     "also updates the rest of the chain.")
         );
         if (ImGui::BeginTable("ChainLettersTable", 4, ImGuiTableFlags_SizingStretchSame)) {
             SaveEditor_SetupLetterTable(padding, statImageSize);
@@ -1452,7 +1453,7 @@ void SaveEditor_DrawTabBar() {
             SaveEditor_DrawPartyMenu();
             ImGui::EndTabItem();
         }
-        if (ImGui::BeginTabItem("Letters")) {
+        if (ImGui::BeginTabItem(Tr("Letters"))) {
             SaveEditor_DrawLettersMenu();
             ImGui::EndTabItem();
         }
