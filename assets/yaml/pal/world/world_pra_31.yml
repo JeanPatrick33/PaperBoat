@@ -1,0 +1,129 @@
+# pra_31 map overlay - crystal palace stairs
+# VRAM: 0x80240000, ROM: 0xDEAD50
+
+:config:
+  virtual: [0x80240000, 0xDEAD50]
+
+# --- Texture 1 (CI4 64x64) ---
+texture_1:
+  { type: TEXTURE, format: CI4, offset: 0xDEE260, width: 64, height: 64, symbol: pra_31_texture_1_img }
+texture_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0xDEEA60, colors: 16, symbol: pra_31_texture_1_pal }
+texture_1.gfx:
+  { type: GFX, offset: 0xDEEA80, symbol: pra_31_texture_1_gfx }
+
+# --- Texture 2 (CI4 64x64) ---
+texture_2:
+  { type: TEXTURE, format: CI4, offset: 0xDEEB40, width: 64, height: 64, symbol: pra_31_texture_2_img }
+texture_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0xDEF340, colors: 16, symbol: pra_31_texture_2_pal }
+texture_2.gfx:
+  { type: GFX, offset: 0xDEF360, symbol: pra_31_texture_2_gfx }
+
+# --- Texture 3 (RGBA16 32x32) ---
+texture_3:
+  { type: TEXTURE, format: RGBA16, offset: 0xDEF410, width: 32, height: 32, symbol: pra_31_texture_3_img }
+texture_3.gfx:
+  { type: GFX, offset: 0xDEFC10, symbol: pra_31_texture_3_gfx }
+
+# --- Stairs skeleton display lists (34 DLs) ---
+unk_01.gfx:
+  { type: GFX, offset: 0xDEFCA0, symbol: pra_31_unk_01_gfx }
+unk_02.gfx:
+  { type: GFX, offset: 0xDEFD18, symbol: pra_31_unk_02_gfx }
+unk_03.gfx:
+  { type: GFX, offset: 0xDEFD50, symbol: pra_31_unk_03_gfx }
+unk_04.gfx:
+  { type: GFX, offset: 0xDEFDB8, symbol: pra_31_unk_04_gfx }
+unk_05.gfx:
+  { type: GFX, offset: 0xDEFDF0, symbol: pra_31_unk_05_gfx }
+unk_06.gfx:
+  { type: GFX, offset: 0xDEFE68, symbol: pra_31_unk_06_gfx }
+unk_07.gfx:
+  { type: GFX, offset: 0xDEFEA0, symbol: pra_31_unk_07_gfx }
+unk_08.gfx:
+  { type: GFX, offset: 0xDEFF18, symbol: pra_31_unk_08_gfx }
+unk_09.gfx:
+  { type: GFX, offset: 0xDEFF50, symbol: pra_31_unk_09_gfx }
+unk_10.gfx:
+  { type: GFX, offset: 0xDEFFB8, symbol: pra_31_unk_10_gfx }
+unk_11.gfx:
+  { type: GFX, offset: 0xDEFFF0, symbol: pra_31_unk_11_gfx }
+unk_12.gfx:
+  { type: GFX, offset: 0xDF0068, symbol: pra_31_unk_12_gfx }
+unk_13.gfx:
+  { type: GFX, offset: 0xDF00A0, symbol: pra_31_unk_13_gfx }
+unk_14.gfx:
+  { type: GFX, offset: 0xDF0118, symbol: pra_31_unk_14_gfx }
+unk_15.gfx:
+  { type: GFX, offset: 0xDF0150, symbol: pra_31_unk_15_gfx }
+unk_16.gfx:
+  { type: GFX, offset: 0xDF01B8, symbol: pra_31_unk_16_gfx }
+unk_17.gfx:
+  { type: GFX, offset: 0xDF01F0, symbol: pra_31_unk_17_gfx }
+unk_18.gfx:
+  { type: GFX, offset: 0xDF0268, symbol: pra_31_unk_18_gfx }
+unk_19.gfx:
+  { type: GFX, offset: 0xDF02A0, symbol: pra_31_unk_19_gfx }
+unk_20.gfx:
+  { type: GFX, offset: 0xDF0318, symbol: pra_31_unk_20_gfx }
+unk_21.gfx:
+  { type: GFX, offset: 0xDF0350, symbol: pra_31_unk_21_gfx }
+unk_22.gfx:
+  { type: GFX, offset: 0xDF03B8, symbol: pra_31_unk_22_gfx }
+unk_23.gfx:
+  { type: GFX, offset: 0xDF03F0, symbol: pra_31_unk_23_gfx }
+unk_24.gfx:
+  { type: GFX, offset: 0xDF0468, symbol: pra_31_unk_24_gfx }
+pra_31_dl_5750:
+  { type: GFX, offset: 0xDF04A0, symbol: pra_31_dl_5750 }
+unk_25.gfx:
+  { type: GFX, offset: 0xDF0518, symbol: pra_31_unk_25_gfx }
+unk_26.gfx:
+  { type: GFX, offset: 0xDF0550, symbol: pra_31_unk_26_gfx }
+unk_27.gfx:
+  { type: GFX, offset: 0xDF05B8, symbol: pra_31_unk_27_gfx }
+unk_28.gfx:
+  { type: GFX, offset: 0xDF0618, symbol: pra_31_unk_28_gfx }
+unk_29.gfx:
+  { type: GFX, offset: 0xDF0680, symbol: pra_31_unk_29_gfx }
+unk_30.gfx:
+  { type: GFX, offset: 0xDF06C8, symbol: pra_31_unk_30_gfx }
+unk_31.gfx:
+  { type: GFX, offset: 0xDF0758, symbol: pra_31_unk_31_gfx }
+unk_32.gfx:
+  { type: GFX, offset: 0xDF0780, symbol: pra_31_unk_32_gfx }
+unk_33.gfx:
+  { type: GFX, offset: 0xDF07A8, symbol: pra_31_unk_33_gfx }
+pra_31_unk_30_mtx:
+  { type: MTX, offset: 0xDF2490, symbol: pra_31_unk_30_mtx }
+pra_31_unk_26_mtx:
+  { type: MTX, offset: 0xDF24D0, symbol: pra_31_unk_26_mtx }
+pra_31_unk_24_mtx:
+  { type: MTX, offset: 0xDF2510, symbol: pra_31_unk_24_mtx }
+pra_31_unk_22_mtx:
+  { type: MTX, offset: 0xDF2550, symbol: pra_31_unk_22_mtx }
+pra_31_unk_20_mtx:
+  { type: MTX, offset: 0xDF2590, symbol: pra_31_unk_20_mtx }
+pra_31_unk_18_mtx:
+  { type: MTX, offset: 0xDF25D0, symbol: pra_31_unk_18_mtx }
+pra_31_unk_16_mtx:
+  { type: MTX, offset: 0xDF2610, symbol: pra_31_unk_16_mtx }
+pra_31_unk_14_mtx:
+  { type: MTX, offset: 0xDF2650, symbol: pra_31_unk_14_mtx }
+pra_31_unk_12_mtx:
+  { type: MTX, offset: 0xDF2690, symbol: pra_31_unk_12_mtx }
+pra_31_unk_10_mtx:
+  { type: MTX, offset: 0xDF26D0, symbol: pra_31_unk_10_mtx }
+pra_31_unk_08_mtx:
+  { type: MTX, offset: 0xDF2710, symbol: pra_31_unk_08_mtx }
+pra_31_unk_06_mtx:
+  { type: MTX, offset: 0xDF2750, symbol: pra_31_unk_06_mtx }
+pra_31_unk_04_mtx:
+  { type: MTX, offset: 0xDF2790, symbol: pra_31_unk_04_mtx }
+pra_31_unk_02_mtx:
+  { type: MTX, offset: 0xDF27D0, symbol: pra_31_unk_02_mtx }
+
+# --- Stairs vertices (28 verts) ---
+pra_31_stairs_vtx:
+  { type: VTX, offset: 0xDF2810, count: 28, symbol: pra_31_stairs_vtx }

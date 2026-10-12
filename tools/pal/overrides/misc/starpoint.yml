@@ -1,0 +1,127 @@
+# PAL starpoint digits (rom 0x80E070 vram 0x802A1000)
+
+:config:
+  virtual: [0x802A1000, 0x80E070]
+
+digit_0:
+  { type: TEXTURE, offset: 0x80E0B0, format: IA8, width: 64, height: 64, symbol: starpoint_digit_0_png }
+digit_0.vtx:
+  { type: VTX, offset: 0x80E070, count: 4, symbol: starpoint_digit_0_vtx }
+load_digit_0.gfx:
+  { type: GFX, offset: 0x80F0B0, symbol: starpoint_load_digit_0_gfx }
+__render_digit_0.gfx:
+  { type: GFX, offset: 0x80F128, symbol: starpoint___render_digit_0_gfx }
+_render_digit_0.gfx:
+  { type: GFX, offset: 0x80F170, symbol: starpoint__render_digit_0_gfx }
+render_digit_0.gfx:
+  { type: GFX, offset: 0x80F180, symbol: starpoint_render_digit_0_gfx }
+digit_1:
+  { type: TEXTURE, offset: 0x80F1D0, format: IA8, width: 64, height: 64, symbol: starpoint_digit_1_png }
+digit_1.vtx:
+  { type: VTX, offset: 0x80F190, count: 4, symbol: starpoint_digit_1_vtx }
+load_digit_1.gfx:
+  { type: GFX, offset: 0x8101D0, symbol: starpoint_load_digit_1_gfx }
+__render_digit_1.gfx:
+  { type: GFX, offset: 0x810248, symbol: starpoint___render_digit_1_gfx }
+_render_digit_1.gfx:
+  { type: GFX, offset: 0x810290, symbol: starpoint__render_digit_1_gfx }
+render_digit_1.gfx:
+  { type: GFX, offset: 0x8102A0, symbol: starpoint_render_digit_1_gfx }
+digit_2:
+  { type: TEXTURE, offset: 0x8102F0, format: IA8, width: 64, height: 64, symbol: starpoint_digit_2_png }
+digit_2.vtx:
+  { type: VTX, offset: 0x8102B0, count: 4, symbol: starpoint_digit_2_vtx }
+load_digit_2.gfx:
+  { type: GFX, offset: 0x8112F0, symbol: starpoint_load_digit_2_gfx }
+__render_digit_2.gfx:
+  { type: GFX, offset: 0x811368, symbol: starpoint___render_digit_2_gfx }
+_render_digit_2.gfx:
+  { type: GFX, offset: 0x8113B0, symbol: starpoint__render_digit_2_gfx }
+render_digit_2.gfx:
+  { type: GFX, offset: 0x8113C0, symbol: starpoint_render_digit_2_gfx }
+digit_3:
+  { type: TEXTURE, offset: 0x811410, format: IA8, width: 64, height: 64, symbol: starpoint_digit_3_png }
+digit_3.vtx:
+  { type: VTX, offset: 0x8113D0, count: 4, symbol: starpoint_digit_3_vtx }
+load_digit_3.gfx:
+  { type: GFX, offset: 0x812410, symbol: starpoint_load_digit_3_gfx }
+__render_digit_3.gfx:
+  { type: GFX, offset: 0x812488, symbol: starpoint___render_digit_3_gfx }
+_render_digit_3.gfx:
+  { type: GFX, offset: 0x8124D0, symbol: starpoint__render_digit_3_gfx }
+render_digit_3.gfx:
+  { type: GFX, offset: 0x8124E0, symbol: starpoint_render_digit_3_gfx }
+digit_4:
+  { type: TEXTURE, offset: 0x812530, format: IA8, width: 64, height: 64, symbol: starpoint_digit_4_png }
+digit_4.vtx:
+  { type: VTX, offset: 0x8124F0, count: 4, symbol: starpoint_digit_4_vtx }
+load_digit_4.gfx:
+  { type: GFX, offset: 0x813530, symbol: starpoint_load_digit_4_gfx }
+__render_digit_4.gfx:
+  { type: GFX, offset: 0x8135A8, symbol: starpoint___render_digit_4_gfx }
+_render_digit_4.gfx:
+  { type: GFX, offset: 0x8135F0, symbol: starpoint__render_digit_4_gfx }
+render_digit_4.gfx:
+  { type: GFX, offset: 0x813600, symbol: starpoint_render_digit_4_gfx }
+digit_5:
+  { type: TEXTURE, offset: 0x813650, format: IA8, width: 64, height: 64, symbol: starpoint_digit_5_png }
+digit_5.vtx:
+  { type: VTX, offset: 0x813610, count: 4, symbol: starpoint_digit_5_vtx }
+load_digit_5.gfx:
+  { type: GFX, offset: 0x814650, symbol: starpoint_load_digit_5_gfx }
+__render_digit_5.gfx:
+  { type: GFX, offset: 0x8146C8, symbol: starpoint___render_digit_5_gfx }
+_render_digit_5.gfx:
+  { type: GFX, offset: 0x814710, symbol: starpoint__render_digit_5_gfx }
+render_digit_5.gfx:
+  { type: GFX, offset: 0x814720, symbol: starpoint_render_digit_5_gfx }
+digit_6:
+  { type: TEXTURE, offset: 0x814770, format: IA8, width: 64, height: 64, symbol: starpoint_digit_6_png }
+digit_6.vtx:
+  { type: VTX, offset: 0x814730, count: 4, symbol: starpoint_digit_6_vtx }
+load_digit_6.gfx:
+  { type: GFX, offset: 0x815770, symbol: starpoint_load_digit_6_gfx }
+__render_digit_6.gfx:
+  { type: GFX, offset: 0x8157E8, symbol: starpoint___render_digit_6_gfx }
+_render_digit_6.gfx:
+  { type: GFX, offset: 0x815830, symbol: starpoint__render_digit_6_gfx }
+render_digit_6.gfx:
+  { type: GFX, offset: 0x815840, symbol: starpoint_render_digit_6_gfx }
+digit_7:
+  { type: TEXTURE, offset: 0x815890, format: IA8, width: 64, height: 64, symbol: starpoint_digit_7_png }
+digit_7.vtx:
+  { type: VTX, offset: 0x815850, count: 4, symbol: starpoint_digit_7_vtx }
+load_digit_7.gfx:
+  { type: GFX, offset: 0x816890, symbol: starpoint_load_digit_7_gfx }
+__render_digit_7.gfx:
+  { type: GFX, offset: 0x816908, symbol: starpoint___render_digit_7_gfx }
+_render_digit_7.gfx:
+  { type: GFX, offset: 0x816950, symbol: starpoint__render_digit_7_gfx }
+render_digit_7.gfx:
+  { type: GFX, offset: 0x816960, symbol: starpoint_render_digit_7_gfx }
+digit_8:
+  { type: TEXTURE, offset: 0x8169B0, format: IA8, width: 64, height: 64, symbol: starpoint_digit_8_png }
+digit_8.vtx:
+  { type: VTX, offset: 0x816970, count: 4, symbol: starpoint_digit_8_vtx }
+load_digit_8.gfx:
+  { type: GFX, offset: 0x8179B0, symbol: starpoint_load_digit_8_gfx }
+__render_digit_8.gfx:
+  { type: GFX, offset: 0x817A28, symbol: starpoint___render_digit_8_gfx }
+_render_digit_8.gfx:
+  { type: GFX, offset: 0x817A70, symbol: starpoint__render_digit_8_gfx }
+render_digit_8.gfx:
+  { type: GFX, offset: 0x817A80, symbol: starpoint_render_digit_8_gfx }
+digit_9:
+  { type: TEXTURE, offset: 0x817AD0, format: IA8, width: 64, height: 64, symbol: starpoint_digit_9_png }
+digit_9.vtx:
+  { type: VTX, offset: 0x817A90, count: 4, symbol: starpoint_digit_9_vtx }
+load_digit_9.gfx:
+  { type: GFX, offset: 0x818AD0, symbol: starpoint_load_digit_9_gfx }
+__render_digit_9.gfx:
+  { type: GFX, offset: 0x818B48, symbol: starpoint___render_digit_9_gfx }
+_render_digit_9.gfx:
+  { type: GFX, offset: 0x818B90, symbol: starpoint__render_digit_9_gfx }
+render_digit_9.gfx:
+  { type: GFX, offset: 0x818BA0, symbol: starpoint_render_digit_9_gfx }
+dummy_end.gfx:
+  { type: GFX, offset: 0x818CC8, symbol: starpoint_dummy_end_gfx }

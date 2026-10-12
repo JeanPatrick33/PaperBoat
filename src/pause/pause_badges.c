@@ -353,6 +353,9 @@ void pause_badges_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width
     s32 orbColorR1, orbColorG1, orbColorB1;
     s32 badgeIconElement;
     intptr_t msg;
+#if VERSION_PAL
+    intptr_t msg2;
+#endif
     s32 msgX, msgY;
     s32 msgOpacity;
     s32 maxBP;
@@ -548,7 +551,7 @@ void pause_badges_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width
                             gDPSetPrimColor(gMainGfxPos++, 0, 0, 227, 227, 227, 255);
                             orbX = baseX + 235 + pause_badges_scroll_offset_x(posX) + 1 + (j % 5) * 6;
                             orbY = baseY + 17 + pause_badges_scroll_offset_y(posY) + orbOffsetY;
-                            if (numOrbs > 5) {
+                            if (numOrbs >= 5) {
                                 orbY += j / 5 * 6 - 3;
                             }
                             pause_badges_draw_bp_orbs(0, orbX, orbY);
@@ -562,7 +565,7 @@ void pause_badges_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width
                             if (j < bpAvailable) {
                                 orbX = baseX + 235 + pause_badges_scroll_offset_x(posX) + 1 + (j % 5) * 6;
                                 orbY = baseY + 17 + pause_badges_scroll_offset_y(posY) + orbOffsetY;
-                                if (numOrbs > 5) {
+                                if (numOrbs >= 5) {
                                     orbY += j / 5 * 6 - 3;
                                 }
                                 pause_badges_draw_bp_orbs(1, orbX, orbY);
@@ -573,7 +576,7 @@ void pause_badges_draw_contents(MenuPanel* menu, s32 baseX, s32 baseY, s32 width
                         for (j = 0; j < numOrbs; j++) {
                             orbX = baseX + 235 + pause_badges_scroll_offset_x(posX) + 1 + (j % 5) * 6;
                             orbY = baseY + 17 + pause_badges_scroll_offset_y(posY) + orbOffsetY;
-                            if (numOrbs > 5) {
+                            if (numOrbs >= 5) {
                                 orbY += j / 5 * 6 - 3;
                             }
                             pause_badges_draw_bp_orbs(2, orbX, orbY);

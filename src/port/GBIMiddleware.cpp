@@ -4,6 +4,9 @@
 
 #include "Engine.h"
 #include <libultraship.h>
+#include <string>
+#include <unordered_map>
+#include <cstring>
 
 // G_SETTIMG_OTR_FILEPATH opcode for OTR texture paths (from libultraship gbi.h)
 #define G_SETTIMG_OTR_FILEPATH 0x25
@@ -48,9 +51,48 @@ extern "C" void gbi_resolve_vtx_in_static_dl(Gfx* dl) {
     }
 }
 
+// PAL: a few effects ship one graphics bank per language (the console DMAs the matching one in
+// effects.c). Their OTR resources are extracted per language as <family>_de/_fr/_es, so redirect
+// the (language-neutral) static path to the bank of the current language.
+#if defined(VERSION_PAL) && VERSION_PAL
+extern "C" int32_t gCurrentLanguage;
+
+static const char* ResolveLocalizedEffectPath(const char* path) {
+    static const char* const kSuffix[] = { "", "_de", "_fr", "_es" };
+    static const char* const kFamilies[] = {
+        "__OTR__effects/effect_gfx_attack_result_text/",
+        "__OTR__effects/effect_gfx_chapter_change/",
+    };
+    static std::unordered_map<const char*, std::string> cache[4];
+
+    int32_t lang = gCurrentLanguage;
+    if (lang <= 0 || lang > 3 || strncmp(path, "__OTR__effects/effect_gfx_", 26) != 0) {
+        return path;
+    }
+    auto& c = cache[lang];
+    auto it = c.find(path);
+    if (it != c.end()) {
+        return it->second.c_str();
+    }
+    std::string out = path;
+    for (const char* fam : kFamilies) {
+        size_t n = strlen(fam);
+        if (strncmp(path, fam, n) == 0) {
+            out = std::string(fam, n - 1) + kSuffix[lang] + (path + n - 1);
+            break;
+        }
+    }
+    return c.emplace(path, std::move(out)).first->second.c_str();
+}
+#else
+static inline const char* ResolveLocalizedEffectPath(const char* path) {
+    return path;
+}
+#endif
+
 extern "C" void gSPDisplayListOTR(Gfx* pkt, const void* dl) {
     if (dl != NULL && GameEngine_OTRSigCheck((const char*) dl)) {
-        void* data = ResourceGetDataByName((const char*) dl);
+        void* data = ResourceGetDataByName(ResolveLocalizedEffectPath((const char*) dl));
         if (data != NULL) {
             dl = data;
         }

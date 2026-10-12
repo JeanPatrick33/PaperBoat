@@ -1,6 +1,13 @@
 #include "battle/battle.h"
 #include "hud_element.h"
 
+// defined in menu_moves.c
+extern s16 ErrorMessageHeight[];
+extern s16 ErrorMessageAdjustY[];
+#if VERSION_PAL
+extern u8 D_PAL_802AB4C8[]; // strategies menu width per language
+#endif
+
 #define MENU_CAPACITY 6
 #define MENU_LINE_HEIGHT 13
 #define MENU_MAX_VISIBLE 6
@@ -209,8 +216,16 @@ s32 btl_submenu_strats_update(void) {
             StratsTextColor = MSG_PAL_STANDARD;
             x = StratsMenuPosX;
             y = StratsMenuPosY;
+#if VERSION_PAL
+            width = get_msg_width(MSG_Menus_Strategies, 0) + 32;
+            set_window_properties(WIN_BTL_STRATS_MENU, x, y, D_PAL_802AB4C8[gCurrentLanguage], (StratsMenuLines * MENU_LINE_HEIGHT) + 26,
+                0, btl_menu_strats_draw_content, nullptr, -1);
+            set_window_properties(WIN_BTL_STRATS_TITLE, x + (D_PAL_802AB4C8[gCurrentLanguage] - width) / 2, y - 6, width, 16,
+                1, btl_menu_strats_show_title, nullptr, -1);
+#else
             set_window_properties(WIN_BTL_STRATS_MENU, x, y, 144, (StratsMenuLines * MENU_LINE_HEIGHT) + 26, 0, btl_menu_strats_draw_content, nullptr, -1);
             set_window_properties(WIN_BTL_STRATS_TITLE, x + 18, y - 6, 108, 16, 1, btl_menu_strats_show_title, nullptr, -1);
+#endif
             x = 20;
             y = 186;
             set_window_properties(WIN_BTL_DESC_BOX, x, y, 280, 32, WINDOW_PRIORITY_20, btl_menu_strats_show_desc, nullptr, -1);
@@ -334,7 +349,12 @@ s32 btl_submenu_strats_update(void) {
                     break;
             }
             width = get_msg_width(msgID, 0) + 23;
+#if VERSION_PAL
+            set_window_properties(WIN_BTL_POPUP, (SCREEN_WIDTH / 2) - (width / 2), 80, width, ErrorMessageHeight[get_msg_lines(msgID) - 1],
+                20, btl_menu_strats_show_error, nullptr, -1);
+#else
             set_window_properties(WIN_BTL_POPUP, (SCREEN_WIDTH / 2) - (width / 2), 80, width, 28, 20, btl_menu_strats_show_error, nullptr, -1);
+#endif
             set_window_update(WIN_BTL_POPUP, WINDOW_UPDATE_SHOW);
             StratsErrorTimer = 60;
             StratsMenuState = BTL_SUBMENU_STATE_ERROR_DONE;
@@ -379,7 +399,11 @@ void btl_menu_strats_draw_content(void* data, s32 x, s32 y) {
             StratsScrollOffset = (delta != 0) ? cur + delta : target;
 
             x1 = x + 4;
+#if VERSION_PAL
+            x2 = x + 182;
+#else
             x2 = x + 142;
+#endif
             y1 = y + 18;
             y2 = y + 19 + (StratsMenuLines * MENU_LINE_HEIGHT);
             gDPSetScissor(gMainGfxPos++, G_SC_NON_INTERLACE, x1, y1, x2, y2);
@@ -483,5 +507,8 @@ void btl_menu_strats_show_error(void* data, s32 x, s32 y) {
             msgID = MSG_Menus_Battle_CantRunAway;
             break;
     }
+#if VERSION_PAL
+    y += ErrorMessageAdjustY[get_msg_lines(msgID) - 1];
+#endif
     draw_msg(msgID, x, y, 255, MSG_PAL_0F, 0);
 }

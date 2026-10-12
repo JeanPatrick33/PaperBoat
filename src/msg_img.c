@@ -15,7 +15,11 @@ BSS IMG_BIN MsgCharImgLatin[0xBD0] ALIGNED(16);
 BSS IMG_BIN MsgCharImgTitle[0x34F0] ALIGNED(16);
 #else
 BSS IMG_BIN MsgCharImgTitle[0xF60];
+#if VERSION_PAL
+BSS IMG_BIN MsgCharImgNormal[0x5300];
+#else
 BSS IMG_BIN MsgCharImgNormal[0x5100];
+#endif
 BSS IMG_BIN MsgCharImgSubtitle[0xB88];
 BSS PAL_BIN D_802F4560[80][8] ALIGNED(16);
 #endif

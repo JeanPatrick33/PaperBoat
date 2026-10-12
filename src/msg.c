@@ -7,7 +7,11 @@
 #include "port/Engine.h"
 #include "port/patches/Patches.h"
 #include "assets/charset.h"
+#if VERSION_PAL
+#include "assets/messages_pal.h"
+#else
 #include "assets/messages.h"
+#endif
 #include "assets/ui.h"
 
 enum RewindArrowStates {
@@ -46,12 +50,6 @@ u8 MessageSingular[] = { MSG_CHAR_READ_ENDL, MSG_CHAR_READ_END };
 #if VERSION_PAL
 s32 gCurrentLanguage = 0;
 
-void* D_PAL_8014AE50[] = {
-    [LANGUAGE_EN] = msg_pal_en_ROM_START,
-    [LANGUAGE_DE] = msg_pal_de_ROM_START,
-    [LANGUAGE_FR] = msg_pal_fr_ROM_START,
-    [LANGUAGE_ES] = msg_pal_es_ROM_START,
-};
 #endif
 
 // s16 gNextMessageBuffer = 0; // no longer needed — messages loaded directly from OTR
@@ -214,7 +212,11 @@ void load_font(s32 font) {
 // #else
             // memcpy needed: MsgCharImgNormal is an array (address used as compile-time
             // initializer in gMsgNumbers), so we can't reassign it — copy OTR data in
+            #if VERSION_PAL
+            memcpy(MsgCharImgNormal, LOAD_ASSET(CHARSET_STANDARD), 0x5300);
+#else
             memcpy(MsgCharImgNormal, LOAD_ASSET(CHARSET_STANDARD), 0x5100);
+#endif
 // #endif
             // memcpy needed: D_802F4560 is a 2D array (PAL_BIN[80][8]) indexed by palette number,
             // so we copy OTR data into it rather than reassigning
@@ -633,9 +635,6 @@ extern intptr_t gItemIconPaletteOffsets[];
 // MsgLetterRasterOffsets/MsgLetterPaletteOffsets removed — letter content loaded from OTR
 extern MsgVoice MsgVoices[];
 
-#if VERSION_PAL
-INCLUDE_ASM(s32, "msg", msg_copy_to_print_buffer);
-#else
 void msg_copy_to_print_buffer(MessagePrintState* printer, s32 arg1, s32 arg2) {
     u8 arg;
     u8 argQ;
@@ -771,6 +770,11 @@ void msg_copy_to_print_buffer(MessagePrintState* printer, s32 arg1, s32 arg2) {
                         printer->windowBasePos.y = *srcBuf++;
                         printer->windowSize.x = *srcBuf++;
                         printer->windowSize.y = *srcBuf++;
+#if VERSION_PAL
+                        if (printer->windowSize.x == 255) {
+                            printer->windowSize.x = 276;
+                        }
+#endif
                         sfx_play_sound_with_params(SOUND_APPROVE, 0, 0, 0);
                         printer->windowState = MSG_WINDOW_STATE_OPENING;
                         printer->delayFlags |= MSG_DELAY_FLAG_1;
@@ -1296,7 +1300,6 @@ void msg_copy_to_print_buffer(MessagePrintState* printer, s32 arg1, s32 arg2) {
     printer->srcBufferPos = (u16)(srcBuf - printer->srcBuffer);
     *printBuf = MSG_CHAR_PRINT_END;
 }
-#endif
 
 void initialize_printer(MessagePrintState* printer, s32 arg1, s32 arg2) {
     s32 i;
@@ -1373,10 +1376,31 @@ void initialize_printer(MessagePrintState* printer, s32 arg1, s32 arg2) {
     printer->sizeScale = 1.0f;
 }
 
+#if VERSION_PAL
+#define PAL_MAX_MSG_SECTIONS 0x2F
+#define PAL_MSG_READ_U32(p) (((u32)(p)[0] << 24) | ((u32)(p)[1] << 16) | ((u32)(p)[2] << 8) | (u32)(p)[3])
+#endif
+
 static u8* load_msg_asset(u32 msgID) {
     u32 section = msgID >> 16;
     u32 index = msgID & 0xFFFF;
+#if VERSION_PAL
+    // One message bank per language (en/de/fr/es), selected by the current language. The bank is a
+    // single blob laid out as in the ROM (big-endian): u32 section offsets (0-terminated), and at each
+    // section offset a table of u32 message offsets. Offsets are relative to the start of the bank.
+    const u8* bank = (const u8*)LOAD_ASSET(gMsgPalBankPaths[gCurrentLanguage]);
+    if (bank == NULL) {
+        return NULL;
+    }
+    const u8* sections = bank + section * 4;
+    if (section >= PAL_MAX_MSG_SECTIONS || (sections[0] | sections[1] | sections[2] | sections[3]) == 0) {
+        return NULL;
+    }
+    const u8* table = bank + PAL_MSG_READ_U32(sections) + index * 4;
+    return (u8*)bank + PAL_MSG_READ_U32(table);
+#else
     return (u8*)LOAD_ASSET(gMsgSectionPaths[section][index]);
+#endif
 }
 
 s8* load_message_to_buffer(s32 msgID) {

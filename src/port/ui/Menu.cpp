@@ -158,7 +158,8 @@ bool ModernMenuSidebarEntry(std::string label) {
     ImGuiStyle& style = ImGui::GetStyle();
     ImVec2 pos = window->DC.CursorPos;
     const ImGuiID sidebarId = window->GetID(std::string(label + "##Sidebar").c_str());
-    ImVec2 labelSize = ImGui::CalcTextSize(label.c_str(), ImGui::FindRenderedTextEnd(label.c_str()), true);
+    const std::string shownLabel = Tr(label.c_str());
+    ImVec2 labelSize = ImGui::CalcTextSize(shownLabel.c_str(), ImGui::FindRenderedTextEnd(shownLabel.c_str()), true);
     pos.y += style.FramePadding.y;
     pos.x = window->WorkRect.GetCenter().x - labelSize.x / 2;
     ImRect bb = { pos - style.FramePadding, pos + labelSize + style.FramePadding };
@@ -178,7 +179,7 @@ bool ModernMenuSidebarEntry(std::string label) {
         ),
         3.0f
     );
-    UIWidgets::RenderText(pos, label.c_str(), ImGui::FindRenderedTextEnd(label.c_str()), true);
+    UIWidgets::RenderText(pos, shownLabel.c_str(), ImGui::FindRenderedTextEnd(shownLabel.c_str()), true);
     return pressed;
 }
 
@@ -188,7 +189,8 @@ bool ModernMenuHeaderEntry(std::string label) {
     ImGuiStyle& style = ImGui::GetStyle();
     ImVec2 pos = window->DC.CursorPos;
     const ImGuiID headerId = window->GetID(std::string(label + "##Header").c_str());
-    ImVec2 labelSize = ImGui::CalcTextSize(label.c_str(), ImGui::FindRenderedTextEnd(label.c_str()), true);
+    const std::string shownLabel = Tr(label.c_str());
+    ImVec2 labelSize = ImGui::CalcTextSize(shownLabel.c_str(), ImGui::FindRenderedTextEnd(shownLabel.c_str()), true);
     ImRect bb = { pos, pos + labelSize + style.FramePadding * 2 };
     ImGui::ItemSize(bb, style.FramePadding.y);
     ImGui::ItemAdd(bb, headerId);
@@ -204,7 +206,7 @@ bool ModernMenuHeaderEntry(std::string label) {
         3.0f
     );
     pos += style.FramePadding;
-    UIWidgets::RenderText(pos, label.c_str(), ImGui::FindRenderedTextEnd(label.c_str()), true);
+    UIWidgets::RenderText(pos, shownLabel.c_str(), ImGui::FindRenderedTextEnd(shownLabel.c_str()), true);
     return pressed;
 }
 
@@ -305,8 +307,67 @@ std::unordered_map<uint32_t, disabledInfo>& Menu::GetDisabledMap() {
     return disabledMap;
 }
 
+namespace {
+// Translated labels (notably French and German) are often 20-40% longer than the English ones the
+// layout was designed around. These helpers keep them inside their column: checkbox labels wrap by
+// pixel width, and labels of single-line widgets shrink the text slightly (never below 70%).
+std::string WrapLabelToWidth(const char* label, float maxPx) {
+    std::string out(label);
+    if (maxPx <= 0.0f) {
+        return out;
+    }
+    size_t lineStart = 0;
+    size_t lastSpace = std::string::npos;
+    for (size_t i = 0; i < out.size(); i++) {
+        if (out[i] == '\n') {
+            lineStart = i + 1;
+            lastSpace = std::string::npos;
+            continue;
+        }
+        if (out[i] == ' ') {
+            lastSpace = i;
+        }
+        const float w = ImGui::CalcTextSize(out.c_str() + lineStart, out.c_str() + i + 1).x;
+        if (w > maxPx && lastSpace != std::string::npos && lastSpace >= lineStart) {
+            out[lastSpace] = '\n';
+            lineStart = lastSpace + 1;
+            lastSpace = std::string::npos;
+        }
+    }
+    return out;
+}
+
+// Restores the window font scale when it goes out of scope (MenuDrawItem has early returns).
+struct ScopedLabelFit {
+    ImGuiWindow* window = nullptr;
+    float saved = 1.0f;
+    ScopedLabelFit(const char* label, float budgetPx) {
+        if (MenuI18n::GetLanguage() == 0 || budgetPx <= 1.0f) {
+            return;
+        }
+        window = ImGui::GetCurrentWindow();
+        saved = window->FontWindowScale;
+        const float labelPx = ImGui::CalcTextSize(label).x;
+        if (labelPx > budgetPx) {
+            float s = budgetPx / labelPx;
+            if (s < 0.7f) {
+                s = 0.7f;
+            }
+            ImGui::SetWindowFontScale(saved * s);
+        } else {
+            window = nullptr;
+        }
+    }
+    ~ScopedLabelFit() {
+        if (window != nullptr) {
+            ImGui::SetWindowFontScale(saved);
+        }
+    }
+};
+} // namespace
+
 void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors menuThemeIndex) {
-    disabledTempTooltip = "This setting is disabled because: \n";
+    disabledTempTooltip = Tr("This setting is disabled because: \n");
     disabledValue = false;
     disabledTooltip = " ";
 
@@ -319,20 +380,41 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
         if (!widget.activeDisables.empty()) {
             widget.options->disabled = true;
             for (auto option : widget.activeDisables) {
-                disabledTempTooltip += std::string("\n- ") + disabledMap.at(option).reason;
+                disabledTempTooltip += std::string("\n- ") + Tr(disabledMap.at(option).reason);
             }
             widget.options->disabledTooltip = disabledTempTooltip.c_str();
         }
     }
     if (widget.raceDisable && raceDisableActive) {
         widget.options->disabled = true;
-        disabledTempTooltip += std::string("\n- Race Lockout Active");
+        disabledTempTooltip += std::string("\n- ") + Tr("Race Lockout Active");
         widget.options->disabledTooltip = disabledTempTooltip.c_str();
     }
 
     if (widget.sameLine) {
         ImGui::SameLine();
     }
+
+    float fitBudget = 0.0f;
+    switch (widget.type) {
+        case WIDGET_COMBOBOX:
+        case WIDGET_CVAR_COMBOBOX:
+        case WIDGET_SLIDER_INT:
+        case WIDGET_CVAR_SLIDER_INT:
+        case WIDGET_SLIDER_FLOAT:
+        case WIDGET_CVAR_SLIDER_FLOAT:
+            fitBudget = ImGui::GetContentRegionAvail().x * 0.5f;
+            break;
+        case WIDGET_BUTTON:
+        case WIDGET_WINDOW_BUTTON:
+        case WIDGET_SEPARATOR_TEXT:
+            fitBudget = ImGui::GetContentRegionAvail().x - ImGui::GetStyle().FramePadding.x * 4.0f;
+            break;
+        default:
+            break;
+    }
+    ScopedLabelFit labelFit(Tr(widget.name.c_str()), fitBudget);
+    const float checkboxLabelPx = ImGui::GetContentRegionAvail().x - ImGui::GetFrameHeight() * 1.5f;
 
     try {
         switch (widget.type) {
@@ -345,7 +427,12 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 }
                 auto options = std::static_pointer_cast<UIWidgets::CheckboxOptions>(widget.options);
                 options->color = menuThemeIndex;
-                if (UIWidgets::Checkbox(UIWidgets::WrappedText(widget.name.c_str(), width).c_str(), pointer, *options))
+                if (UIWidgets::Checkbox(
+                        (MenuI18n::GetLanguage() == 0 ? UIWidgets::WrappedText(Tr(widget.name.c_str()), width)
+                                                       : WrapLabelToWidth(Tr(widget.name.c_str()), checkboxLabelPx))
+                            .c_str(),
+                        pointer, *options
+                    ))
                 {
                     if (widget.callback != nullptr) {
                         widget.callback(widget);
@@ -356,7 +443,10 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 auto options = std::static_pointer_cast<UIWidgets::CheckboxOptions>(widget.options);
                 options->color = menuThemeIndex;
                 if (UIWidgets::CVarCheckbox(
-                        UIWidgets::WrappedText(widget.name.c_str(), width).c_str(), widget.cVar, *options
+                        (MenuI18n::GetLanguage() == 0 ? UIWidgets::WrappedText(Tr(widget.name.c_str()), width)
+                                                       : WrapLabelToWidth(Tr(widget.name.c_str()), checkboxLabelPx))
+                            .c_str(),
+                        widget.cVar, *options
                     ))
                 {
                     if (widget.callback != nullptr) {
@@ -415,7 +505,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 if (options->color != UIWidgets::Colors::NoColor) {
                     ImGui::PushStyleColor(ImGuiCol_Text, UIWidgets::ColorValues.at(options->color));
                 }
-                ImGui::SeparatorText(widget.name.c_str());
+                ImGui::SeparatorText(Tr(widget.name.c_str()));
                 if (options->color != UIWidgets::Colors::NoColor) {
                     ImGui::PopStyleColor();
                 }
@@ -426,7 +516,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                     ImGui::PushStyleColor(ImGuiCol_Text, UIWidgets::ColorValues.at(options->color));
                 }
                 ImGui::AlignTextToFramePadding();
-                ImGui::TextWrapped("%s", widget.name.c_str());
+                ImGui::TextWrapped("%s", Tr(widget.name.c_str()));
                 if (options->color != UIWidgets::Colors::NoColor) {
                     ImGui::PopStyleColor();
                 }
@@ -440,7 +530,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 }
                 auto options = std::static_pointer_cast<UIWidgets::ComboboxOptions>(widget.options);
                 options->color = menuThemeIndex;
-                if (UIWidgets::Combobox(widget.name.c_str(), pointer, options->comboMap, *options)) {
+                if (UIWidgets::Combobox(Tr(widget.name.c_str()), pointer, options->comboMap, *options)) {
                     if (widget.callback != nullptr) {
                         widget.callback(widget);
                     }
@@ -449,7 +539,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
             case WIDGET_CVAR_COMBOBOX: {
                 auto options = std::static_pointer_cast<UIWidgets::ComboboxOptions>(widget.options);
                 options->color = menuThemeIndex;
-                if (UIWidgets::CVarCombobox(widget.name.c_str(), widget.cVar, options->comboMap, *options)) {
+                if (UIWidgets::CVarCombobox(Tr(widget.name.c_str()), widget.cVar, options->comboMap, *options)) {
                     if (widget.callback != nullptr) {
                         widget.callback(widget);
                     }
@@ -464,7 +554,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 }
                 auto options = std::static_pointer_cast<UIWidgets::IntSliderOptions>(widget.options);
                 options->color = menuThemeIndex;
-                if (UIWidgets::SliderInt(widget.name.c_str(), pointer, *options)) {
+                if (UIWidgets::SliderInt(Tr(widget.name.c_str()), pointer, *options)) {
                     if (widget.callback != nullptr) {
                         widget.callback(widget);
                     }
@@ -473,7 +563,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
             case WIDGET_CVAR_SLIDER_INT: {
                 auto options = std::static_pointer_cast<UIWidgets::IntSliderOptions>(widget.options);
                 options->color = menuThemeIndex;
-                if (UIWidgets::CVarSliderInt(widget.name.c_str(), widget.cVar, *options)) {
+                if (UIWidgets::CVarSliderInt(Tr(widget.name.c_str()), widget.cVar, *options)) {
                     if (widget.callback != nullptr) {
                         widget.callback(widget);
                     }
@@ -489,7 +579,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 }
                 auto options = std::static_pointer_cast<UIWidgets::FloatSliderOptions>(widget.options);
                 options->color = menuThemeIndex;
-                if (UIWidgets::SliderFloat(widget.name.c_str(), pointer, *options)) {
+                if (UIWidgets::SliderFloat(Tr(widget.name.c_str()), pointer, *options)) {
                     if (widget.callback != nullptr) {
                         widget.callback(widget);
                     }
@@ -498,7 +588,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
             case WIDGET_CVAR_SLIDER_FLOAT: {
                 auto options = std::static_pointer_cast<UIWidgets::FloatSliderOptions>(widget.options);
                 options->color = menuThemeIndex;
-                if (UIWidgets::CVarSliderFloat(widget.name.c_str(), widget.cVar, *options)) {
+                if (UIWidgets::CVarSliderFloat(Tr(widget.name.c_str()), widget.cVar, *options)) {
                     if (widget.callback != nullptr) {
                         widget.callback(widget);
                     }
@@ -507,7 +597,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
             case WIDGET_BUTTON: {
                 auto options = std::static_pointer_cast<UIWidgets::ButtonOptions>(widget.options);
                 options->color = menuThemeIndex;
-                if (UIWidgets::Button(widget.name.c_str(), *options)) {
+                if (UIWidgets::Button(Tr(widget.name.c_str()), *options)) {
                     if (widget.callback != nullptr) {
                         widget.callback(widget);
                     }
@@ -535,7 +625,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 auto options = std::static_pointer_cast<UIWidgets::WindowButtonOptions>(widget.options);
                 options->color = menuThemeIndex;
                 if (options->showButton) {
-                    UIWidgets::WindowButton(widget.name.c_str(), widget.cVar, window, *options);
+                    UIWidgets::WindowButton(Tr(widget.name.c_str()), widget.cVar, window, *options);
                 }
                 if (!window->IsVisible() && options->embedWindow) {
                     window->DrawElement();
@@ -553,7 +643,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 if (options->showRainbow)
                     modifiers |= UIWidgets::ColorPickerRainbowCheck;
                 UIWidgets::CVarColorPicker(
-                    widget.name.c_str(), widget.cVar, options->defaultValue, options->useAlpha, modifiers,
+                    Tr(widget.name.c_str()), widget.cVar, options->defaultValue, options->useAlpha, modifiers,
                     options->color
                 );
             } break;
@@ -578,7 +668,7 @@ void Menu::MenuDrawItem(WidgetInfo& widget, uint32_t width, UIWidgets::Colors me
                 std::string menuSearchText(menuSearch.InputBuf);
 
                 if (menuSearchText == "") {
-                    ImGui::Text("Start typing to see results.");
+                    ImGui::Text("%s", Tr("Start typing to see results."));
                     return;
                 }
                 DrawSearchResults(menuSearchText);
@@ -708,7 +798,7 @@ void Menu::DrawElement() {
         headerWidth += 200.0f + style.ItemSpacing.x + style.FramePadding.x;
     }
     for (auto& label : menuOrder) {
-        ImVec2 size = ImGui::CalcTextSize(label.c_str());
+        ImVec2 size = ImGui::CalcTextSize(Tr(label.c_str()));
         headerSizes.push_back(size);
         headerWidth += size.x + style.FramePadding.x * 2;
         if (label == headerIndex) {
@@ -800,7 +890,7 @@ void Menu::DrawElement() {
         menuSearchText.erase(std::remove(menuSearchText.begin(), menuSearchText.end(), ' '), menuSearchText.end());
         if (menuSearchText.length() < 1) {
             ImGui::SameLine(headerWidth - 200.0f + style.ItemSpacing.x);
-            ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 0.4f), "Search...");
+            ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 0.4f), "%s", Tr("Search..."));
         }
         ImGui::PopStyleVar();
         ImGui::PopStyleColor();
@@ -894,6 +984,17 @@ void Menu::DrawElement() {
     if (menuSize.x > 1600) {
         sidebarWidth = menuSize.x * 0.15f;
     }
+    {
+        // Translated sidebar labels can be wider than the default column; widen it to fit (capped).
+        float widest = 0.0f;
+        for (auto& sidebarLabel : menuEntries.at(headerIndex).sidebarOrder) {
+            widest = std::fmaxf(widest, ImGui::CalcTextSize(Tr(sidebarLabel.c_str())).x);
+        }
+        const float needed = widest + style.FramePadding.x * 2 + style.ItemSpacing.x * 2;
+        if (needed > sidebarWidth) {
+            sidebarWidth = std::fminf(needed, menuSize.x * 0.3f);
+        }
+    }
 
     const char* sidebarCvar = menuEntries.at(headerIndex).sidebarCvar;
 
@@ -962,12 +1063,12 @@ void Menu::DrawElement() {
     if (headerSearch && menuSearchText.length() > 0) {
         ImGui::AlignTextToFramePadding();
         ImGui::PushFont(GameEngine::Instance->fontMonoLargest);
-        ImGui::Text("Search Results");
+        ImGui::Text("%s", Tr("Search Results"));
         ImGui::PopFont();
         ImGui::SameLine();
         UIWidgets::ButtonOptions clearBtnOpts = {};
         clearBtnOpts.size = UIWidgets::Sizes::Inline;
-        if (UIWidgets::Button("Clear Search", clearBtnOpts)) {
+        if (UIWidgets::Button(Tr("Clear Search"), clearBtnOpts)) {
             menuSearch.Clear();
         }
         ImGui::BeginChild(
@@ -978,9 +1079,9 @@ void Menu::DrawElement() {
         ImGui::EndChild();
         uint32_t searchCount = DrawSearchResults(menuSearchText);
         if (searchCount == 0) {
-            ImGui::SetCursorPosX((ImGui::GetWindowWidth() - ImGui::CalcTextSize("No results found").x) / 2);
+            ImGui::SetCursorPosX((ImGui::GetWindowWidth() - ImGui::CalcTextSize(Tr("No results found")).x) / 2);
             ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10.0f);
-            ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 0.4f), "No results found");
+            ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 0.4f), "%s", Tr("No results found"));
         }
     } else {
         std::string menuLabel = menuEntries.at(headerIndex).label;

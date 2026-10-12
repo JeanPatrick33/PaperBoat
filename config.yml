@@ -13,3 +13,18 @@
       binary: pm64.o2r
       headers: include
       code: code
+
+# Paper Mario (Europe) - English / German / French / Spanish. Accepts the 64 MB image
+# (SHA1 below) and the usual 48 MB No-Intro dump, which GameExtractor pads to 64 MB.
+2111d39265a317414d359e35a7d971c4dfa5f9e1:
+  name: pm64-pal
+  path: ./assets/yaml/pal
+  config:
+    gbi: F3DEX2_PM64
+    gbi_floats: false
+    sort: OFFSET
+    logging: WARN
+    output:
+      binary: pm64.o2r
+      headers: include
+      code: code

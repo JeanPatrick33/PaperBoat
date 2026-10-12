@@ -1,0 +1,17 @@
+Entity_Shadow_TexSquare:
+  { type: TEXTURE, format: I4, offset: 0x10C4F0, width: 16, height: 16, symbol: Entity_Shadow_TexSquare }
+
+Entity_Shadow_TexCircle:
+  { type: TEXTURE, format: I4, offset: 0x10C570, width: 16, height: 16, symbol: Entity_Shadow_TexCircle }
+
+Entity_Shadow_VtxCircular:
+  { type: VTX, offset: 0x10C5F0, count: 4, symbol: Entity_Shadow_VtxCircular }
+
+Entity_Shadow_VtxSquare:
+  { type: VTX, offset: 0x10C630, count: 4, symbol: Entity_Shadow_VtxSquare }
+
+Entity_Shadow_TexSquareBig:
+  { type: TEXTURE, format: I4, offset: 0x10C670, width: 32, height: 32, symbol: Entity_Shadow_TexSquareBig }
+
+Entity_Shadow_TexCircleBig:
+  { type: TEXTURE, format: I4, offset: 0x10C870, width: 32, height: 32, symbol: Entity_Shadow_TexCircleBig }

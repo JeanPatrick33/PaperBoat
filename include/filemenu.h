@@ -19,22 +19,35 @@ enum {
     FILE_MENU_CONFIRM       = 1, // confirmation prompt is open
     FILE_MENU_MESSAGE       = 2, // message is displayed, e.g. "File X has been deleted."
     FILE_MENU_INPUT_NAME    = 3, // "Enter a file name!" screen
+#if VERSION_PAL
+    FILE_MENU_SELECT_LANG   = 4, // PAL only
+#endif
 };
 
 enum {
     FM_MAIN_SELECT_FILE         = 0, // choose which file to load
-    FM_MAIN_SELECT_DELETE       = 1, // choose which file to delete
-    FM_MAIN_SELECT_COPY_FROM    = 2,
-    FM_MAIN_SELECT_COPY_TO      = 3,
+    FM_MAIN_SELECT_DELETE, // choose which file to delete
+#if !VERSION_PAL
+    FM_MAIN_SELECT_LANG_DUMMY, // non-PAL versions have an unimplemented dummy language select
+#endif
+    FM_MAIN_SELECT_COPY_FROM,
+    FM_MAIN_SELECT_COPY_TO,
+    FM_MAIN_SELECT_LANG_PAL,
 
     FM_CONFIRM_DELETE           = 0,
-    FM_CONFIRM_CREATE           = 1,
-    FM_CONFIRM_COPY             = 2, // unused
-    FM_CONFIRM_START            = 3,
+#if !VERSION_PAL
+    FM_CONFIRM_DUMMY,
+#endif
+    FM_CONFIRM_CREATE,
+    FM_CONFIRM_COPY, // unused
+    FM_CONFIRM_START,
 
     FM_MESSAGE_DELETED          = 0,
-    FM_MESSAGE_COPIED           = 1,
-    FM_MESSAGE_CREATED          = 2,
+#if !VERSION_PAL
+    FM_MESSAGE_DUMMY,
+#endif
+    FM_MESSAGE_COPIED,
+    FM_MESSAGE_CREATED,
 
     FM_INPUT_CHARSET_A          = 0,
     FM_INPUT_CHARSET_B          = 1,
@@ -53,6 +66,7 @@ enum {
 extern MenuPanel* filemenu_menus[];
 
 extern s32 filemenu_CopyToFileIdx;
+#define filemenu_iterFileIdx filemenu_CopyToFileIdx // name used by the decomp (PAL sources)
 extern s32 filemenu_pressedButtons;
 extern HudElemID filemenu_cursorHID;
 extern s32 filemenu_heldButtons;
@@ -104,6 +118,10 @@ WINDOW_UPDATE_FUNC(filemenu_update_hidden_name_confirm);
 WINDOW_UPDATE_FUNC(main_menu_window_update);
 
 WINDOW_UPDATE_FUNC(filemenu_update_show_title);
+
+#if VERSION_PAL
+WINDOW_UPDATE_FUNC(filemenu_selectlanguage_80248018);
+#endif
 
 void filemenu_draw_file_name(u8*, s32, s32, s32, s32, s32, s32, s32);
 void filemenu_draw_contents_title(MenuPanel*, s32, s32, s32, s32, s32, s32);

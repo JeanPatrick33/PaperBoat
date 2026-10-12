@@ -1,6 +1,7 @@
 #include "PaperboatModals.h"
 #include "PaperboatGui.hpp"
 #include "UIWidgets.hpp"
+#include "MenuI18n.h"
 #include <imgui.h>
 #include <string>
 #include <vector>
@@ -29,6 +30,10 @@ void PaperboatModalWindow::Draw() {
 void PaperboatModalWindow::DrawElement() {
     if (modals.size() > 0) {
         PaperboatModal curModal = modals.at(0);
+        // Popup identity (title) stays in English so ImGui IDs are stable; only the displayed text is translated.
+        const std::string shownMessage = Tr(curModal.message_.c_str());
+        const std::string shownButton1 = Tr(curModal.button1_.c_str());
+        const std::string shownButton2 = Tr(curModal.button2_.c_str());
         if (!ImGui::IsPopupOpen(curModal.title_.c_str())) {
             ImGui::OpenPopup(curModal.title_.c_str());
         }
@@ -43,9 +48,9 @@ void PaperboatModalWindow::DrawElement() {
                     | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoSavedSettings
             ))
         {
-            ImGui::Text("%s", curModal.message_.c_str());
+            ImGui::Text("%s", shownMessage.c_str());
             UIWidgets::PushStyleButton(THEME_COLOR);
-            if (ImGui::Button(curModal.button1_.c_str())) {
+            if (ImGui::Button((shownButton1 + "##b1").c_str())) {
                 if (curModal.button1callback_ != nullptr) {
                     curModal.button1callback_();
                 }
@@ -56,7 +61,7 @@ void PaperboatModalWindow::DrawElement() {
             if (curModal.button2_ != "") {
                 ImGui::SameLine();
                 UIWidgets::PushStyleButton(THEME_COLOR);
-                if (ImGui::Button(curModal.button2_.c_str())) {
+                if (ImGui::Button((shownButton2 + "##b2").c_str())) {
                     if (curModal.button2callback_ != nullptr) {
                         curModal.button2callback_();
                     }

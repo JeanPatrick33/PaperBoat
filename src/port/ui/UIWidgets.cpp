@@ -23,7 +23,7 @@ namespace UIWidgets {
 // the line length If line is midword when it hits the limit, text should break
 // at the last encountered space
 std::string WrappedText(const char* text, unsigned int charactersPerLine) {
-    std::string newText(text);
+    std::string newText(Tr(text));
     const size_t tipLength = newText.length();
     int lastSpace = -1;
     int currentLineLength = 0;

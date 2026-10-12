@@ -1,0 +1,67 @@
+# PAL level-up letters (level_up_letters_es): rom 0x806610 vram 0x802A6420
+
+:config:
+  virtual: [0x802A6420, 0x806610]
+
+lights:
+  { type: LIGHTS, offset: 0x806610, symbol: es_level_up_lights_data }
+draw_UB:
+  { type: VTX, offset: 0x806628, count: 8, symbol: es_level_up_draw_UB_vtx }
+draw_ES:
+  { type: VTX, offset: 0x8066A8, count: 8, symbol: es_level_up_draw_ES_vtx }
+draw_UN:
+  { type: VTX, offset: 0x806728, count: 8, symbol: es_level_up_draw_UN_vtx }
+draw_inverted_excl_mark_S:
+  { type: VTX, offset: 0x8067A8, count: 8, symbol: es_level_up_draw_inverted_excl_mark_S_vtx }
+draw_NI:
+  { type: VTX, offset: 0x806828, count: 8, symbol: es_level_up_draw_NI_vtx }
+draw_L_exclamation_mark:
+  { type: VTX, offset: 0x8068A8, count: 8, symbol: es_level_up_draw_L_exclamation_mark_vtx }
+draw_VE:
+  { type: VTX, offset: 0x806928, count: 8, symbol: es_level_up_draw_VE_vtx }
+big_inverted_excl_mark_S:
+  { type: TEXTURE, offset: 0x8069A8, format: IA8, width: 64, height: 64, symbol: es_level_up_big_inverted_excl_mark_S_png }
+big_UB:
+  { type: TEXTURE, offset: 0x807A20, format: IA8, width: 64, height: 64, symbol: es_level_up_big_UB_png }
+big_ES:
+  { type: TEXTURE, offset: 0x808A98, format: IA8, width: 64, height: 64, symbol: es_level_up_big_ES_png }
+big_UN:
+  { type: TEXTURE, offset: 0x809B10, format: IA8, width: 64, height: 64, symbol: es_level_up_big_UN_png }
+big_NI:
+  { type: TEXTURE, offset: 0x80AB88, format: IA8, width: 64, height: 64, symbol: es_level_up_big_NI_png }
+big_L_exclamation_mark:
+  { type: TEXTURE, offset: 0x80BC00, format: IA8, width: 64, height: 64, symbol: es_level_up_big_L_exclamation_mark_png }
+big_VE:
+  { type: TEXTURE, offset: 0x80CC78, format: IA8, width: 64, height: 64, symbol: es_level_up_big_VE_png }
+big_inverted_excl_mark_S.gfx:
+  { type: GFX, offset: 0x8079A8, symbol: es_level_up_big_inverted_excl_mark_S_gfx }
+big_UB.gfx:
+  { type: GFX, offset: 0x808A20, symbol: es_level_up_big_UB_gfx }
+big_ES.gfx:
+  { type: GFX, offset: 0x809A98, symbol: es_level_up_big_ES_gfx }
+big_UN.gfx:
+  { type: GFX, offset: 0x80AB10, symbol: es_level_up_big_UN_gfx }
+big_NI.gfx:
+  { type: GFX, offset: 0x80BB88, symbol: es_level_up_big_NI_gfx }
+big_L_exclamation_mark.gfx:
+  { type: GFX, offset: 0x80CC00, symbol: es_level_up_big_L_exclamation_mark_gfx }
+big_VE.gfx:
+  { type: GFX, offset: 0x80DC78, symbol: es_level_up_big_VE_gfx }
+draw_inverted_excl_mark_S.gfx:
+  { type: GFX, offset: 0x80DCF0, symbol: es_level_up_draw_inverted_excl_mark_S_gfx }
+draw_UB.gfx:
+  { type: GFX, offset: 0x80DD58, symbol: es_level_up_draw_UB_gfx }
+draw_ES.gfx:
+  { type: GFX, offset: 0x80DDC0, symbol: es_level_up_draw_ES_gfx }
+draw_UN.gfx:
+  { type: GFX, offset: 0x80DE28, symbol: es_level_up_draw_UN_gfx }
+draw_NI.gfx:
+  { type: GFX, offset: 0x80DE90, symbol: es_level_up_draw_NI_gfx }
+draw_L_exclamation_mark.gfx:
+  { type: GFX, offset: 0x80DEF8, symbol: es_level_up_draw_L_exclamation_mark_gfx }
+draw_VE.gfx:
+  { type: GFX, offset: 0x80DF60, symbol: es_level_up_draw_VE_gfx }
+letters_chain.gfx:
+  { type: GFX, offset: 0x80DFC8, symbol: es_level_up_letters_chain_gfx }
+chain.gfx:
+  { type: GFX, offset: 0x80E020, symbol: es_level_up_chain_gfx }

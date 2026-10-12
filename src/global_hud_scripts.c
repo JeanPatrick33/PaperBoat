@@ -2,6 +2,9 @@
 #include "hud_element.h"
 #include "sparkle_script.h"
 #include "assets/ui.h"
+#if VERSION_PAL
+#include "assets/ui_langs_pal.h"
+#endif
 
 Gfx D_801041A0[] = {
     gsSPEndDisplayList(),

@@ -1,0 +1,114 @@
+:config:
+  segments:
+    - [0x02, 0x02000000]
+
+isk_TG2tif:
+  { type: TEXTURE, format: IA16, offset: 0x2DAC02E, width: 32, height: 32, symbol: isk_TG2tif }
+isk_ana_ctif:
+  { type: TEXTURE, format: CI4, offset: 0x2DAC85E, width: 32, height: 32, tlut: 0x2DACA5E, symbol: isk_ana_ctif }
+isk_ana_ctif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DACA5E, colors: 16, symbol: isk_ana_ctif_tlut }
+isk_block_ctif:
+  { type: TEXTURE, format: CI4, offset: 0x2DACAAE, width: 16, height: 16, tlut: 0x2DACB2E, symbol: isk_block_ctif }
+isk_block_ctif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DACB2E, colors: 16, symbol: isk_block_ctif_tlut }
+isk_blocktif:
+  { type: TEXTURE, format: CI4, offset: 0x2DACB7E, width: 16, height: 16, tlut: 0x2DACBFE, symbol: isk_blocktif }
+isk_blocktif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DACBFE, colors: 16, symbol: isk_blocktif_tlut }
+isk_coin_walltif:
+  { type: TEXTURE, format: CI4, offset: 0x2DACC4E, width: 64, height: 32, tlut: 0x2DAD04E, symbol: isk_coin_walltif }
+isk_coin_walltif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DAD04E, colors: 16, symbol: isk_coin_walltif_tlut }
+isk_en_2tif:
+  { type: TEXTURE, format: IA8, offset: 0x2DAD09E, width: 16, height: 16, symbol: isk_en_2tif }
+isk_grayframetif:
+  { type: TEXTURE, format: I4, offset: 0x2DAD1CE, width: 64, height: 64, symbol: isk_grayframetif }
+isk_hatenatif:
+  { type: TEXTURE, format: IA4, offset: 0x2DAD9FE, width: 16, height: 32, symbol: isk_hatenatif }
+isk_hekiga12tif:
+  { type: TEXTURE, format: CI4, offset: 0x2DADB2E, width: 64, height: 64, tlut: 0x2DAE32E, symbol: isk_hekiga12tif }
+isk_hekiga12tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DAE32E, colors: 16, symbol: isk_hekiga12tif_tlut }
+isk_hekiga3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2DAE37E, width: 64, height: 32, tlut: 0x2DAE77E, symbol: isk_hekiga3tif }
+isk_hekiga3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DAE77E, colors: 16, symbol: isk_hekiga3tif_tlut }
+isk_hekiga7tif:
+  { type: TEXTURE, format: CI4, offset: 0x2DAE7CE, width: 64, height: 64, tlut: 0x2DAEFCE, symbol: isk_hekiga7tif }
+isk_hekiga7tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DAEFCE, colors: 16, symbol: isk_hekiga7tif_tlut }
+isk_hekiga8tif:
+  { type: TEXTURE, format: RGBA32, offset: 0x2DAF01E, width: 32, height: 32, symbol: isk_hekiga8tif }
+isk_hekiga9tif:
+  { type: TEXTURE, format: RGBA32, offset: 0x2DB004E, width: 32, height: 32, symbol: isk_hekiga9tif }
+isk_hikaritif:
+  { type: TEXTURE, format: IA16, offset: 0x2DB107E, width: 16, height: 32, symbol: isk_hikaritif }
+isk_hitugi3tif:
+  { type: TEXTURE, format: IA16, offset: 0x2DB14AE, width: 64, height: 32, symbol: isk_hitugi3tif }
+isk_isk_block02btif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB24DE, width: 16, height: 16, tlut: 0x2DB255E, symbol: isk_isk_block02btif }
+isk_isk_block02btif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB255E, colors: 16, symbol: isk_isk_block02btif_tlut }
+isk_isk_block03btif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB25AE, width: 16, height: 16, tlut: 0x2DB262E, symbol: isk_isk_block03btif }
+isk_isk_block03btif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB262E, colors: 16, symbol: isk_isk_block03btif_tlut }
+isk_isk_block04btif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB267E, width: 16, height: 16, tlut: 0x2DB26FE, symbol: isk_isk_block04btif }
+isk_isk_block04btif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB26FE, colors: 16, symbol: isk_isk_block04btif_tlut }
+isk_isk_yuka1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB274E, width: 16, height: 16, tlut: 0x2DB27CE, symbol: isk_isk_yuka1tif }
+isk_isk_yuka1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB27CE, colors: 16, symbol: isk_isk_yuka1tif_tlut }
+isk_kabe_htif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB281E, width: 64, height: 32, tlut: 0x2DB2C1E, symbol: isk_kabe_htif }
+isk_kabe_htif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB2C1E, colors: 16, symbol: isk_kabe_htif_tlut }
+isk_mark2tif:
+  { type: TEXTURE, format: IA8, offset: 0x2DB2C6E, width: 32, height: 32, symbol: isk_mark2tif }
+isk_oreme_btif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB309E, width: 32, height: 32, tlut: 0x2DB329E, symbol: isk_oreme_btif }
+isk_oreme_btif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB329E, colors: 16, symbol: isk_oreme_btif_tlut }
+isk_sabaku_btif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB32EE, width: 64, height: 32, tlut: 0x2DB36EE, symbol: isk_sabaku_btif }
+isk_sabaku_btif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB36EE, colors: 16, symbol: isk_sabaku_btif_tlut }
+isk_sakutif:
+  { type: TEXTURE, format: IA4, offset: 0x2DB373E, width: 16, height: 32, symbol: isk_sakutif }
+isk_sikaku_2tif:
+  { type: TEXTURE, format: IA8, offset: 0x2DB386E, width: 16, height: 16, symbol: isk_sikaku_2tif }
+isk_suna_4tif:
+  { type: TEXTURE, format: IA16, offset: 0x2DB399E, width: 32, height: 64, symbol: isk_suna_4tif }
+isk_suna_4tif_aux:
+  { type: TEXTURE, format: IA16, offset: 0x2DB419E, width: 32, height: 32, symbol: isk_suna_4tif_aux }
+isk_suna3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB49CE, width: 64, height: 32, tlut: 0x2DB4DCE, symbol: isk_suna3tif }
+isk_suna3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB4DCE, colors: 16, symbol: isk_suna3tif_tlut }
+isk_tizu5tif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB4E1E, width: 64, height: 64, tlut: 0x2DB561E, symbol: isk_tizu5tif }
+isk_tizu5tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB561E, colors: 16, symbol: isk_tizu5tif_tlut }
+isk_tizu6tif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB566E, width: 64, height: 64, tlut: 0x2DB5E6E, symbol: isk_tizu6tif }
+isk_tizu6tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB5E6E, colors: 16, symbol: isk_tizu6tif_tlut }
+isk_wang1tif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB5EBE, width: 16, height: 16, tlut: 0x2DB5F3E, symbol: isk_wang1tif }
+isk_wang1tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB5F3E, colors: 16, symbol: isk_wang1tif_tlut }
+isk_wang2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB5F8E, width: 16, height: 16, tlut: 0x2DB600E, symbol: isk_wang2tif }
+isk_wang2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB600E, colors: 16, symbol: isk_wang2tif_tlut }
+isk_wang3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB605E, width: 32, height: 16, tlut: 0x2DB615E, symbol: isk_wang3tif }
+isk_wang3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB615E, colors: 16, symbol: isk_wang3tif_tlut }
+isk_yuka_ctif:
+  { type: TEXTURE, format: CI4, offset: 0x2DB61AE, width: 16, height: 16, tlut: 0x2DB622E, symbol: isk_yuka_ctif }
+isk_yuka_ctif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2DB622E, colors: 16, symbol: isk_yuka_ctif_tlut }

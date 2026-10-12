@@ -58,7 +58,33 @@ std::optional<YAML::Node> GetSupportedRomNode(const std::vector<uint8_t>& romDat
         return std::nullopt;
     }
 
-    return config[hash];
+    YAML::Node node = config[hash];
+#ifdef PAPERBOAT_EXPECTED_ROM
+    // A build only understands one region: its headers, strings and asset paths are
+    // compiled for it. Refuse the other region's ROM with an explicit message.
+    const std::string name = node["name"] ? node["name"].as<std::string>() : std::string();
+    if (name != PAPERBOAT_EXPECTED_ROM) {
+        GameExtractor::sLastError = "This build of PaperBoat is for the " PAPERBOAT_REGION_LABEL
+                                    " version of Paper Mario; the selected ROM is a different version (" + name + ").";
+        SPDLOG_ERROR("{}", GameExtractor::sLastError);
+        return std::nullopt;
+    }
+#endif
+    return node;
+}
+
+// The European (PAL) release is commonly dumped as a 48 MB image, while the decomp (and
+// config.yml) describe the 64 MB image whose last 16 MB repeat bytes 0x2000000-0x2FFFFFF.
+// Rebuild that image so both dumps hash to the same, single recipe.
+void NormalizePalDump(std::vector<uint8_t>& data) {
+    constexpr size_t kShortSize = 0x3000000;
+    constexpr size_t kFullSize = 0x4000000;
+    constexpr size_t kCopyFrom = 0x2000000;
+    if (data.size() != kShortSize) {
+        return;
+    }
+    data.resize(kFullSize);
+    std::copy(data.begin() + kCopyFrom, data.begin() + kShortSize, data.begin() + kShortSize);
 }
 
 std::vector<uint8_t> ReadWholeFile(const std::filesystem::path& path) {
@@ -66,7 +92,9 @@ std::vector<uint8_t> ReadWholeFile(const std::filesystem::path& path) {
     if (!inFile.is_open()) {
         return {};
     }
-    return std::vector<uint8_t>(std::istreambuf_iterator<char>(inFile), {});
+    std::vector<uint8_t> data(std::istreambuf_iterator<char>(inFile), {});
+    NormalizePalDump(data);
+    return data;
 }
 } // namespace
 

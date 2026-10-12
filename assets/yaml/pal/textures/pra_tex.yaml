@@ -1,0 +1,104 @@
+:config:
+  segments:
+    - [0x02, 0x02000000]
+
+pra_batutif:
+  { type: TEXTURE, format: IA4, offset: 0x2EFC50E, width: 32, height: 32, symbol: pra_batutif }
+pra_gabonn_1tif:
+  { type: TEXTURE, format: I4, offset: 0x2EFC73E, width: 64, height: 64, symbol: pra_gabonn_1tif }
+pra_gabonn_2tif:
+  { type: TEXTURE, format: I4, offset: 0x2EFCF6E, width: 32, height: 64, symbol: pra_gabonn_2tif }
+pra_grayframetif:
+  { type: TEXTURE, format: I4, offset: 0x2EFD39E, width: 64, height: 64, symbol: pra_grayframetif }
+pra_hansya3tif:
+  { type: TEXTURE, format: IA4, offset: 0x2EFDBCE, width: 16, height: 16, symbol: pra_hansya3tif }
+pra_hatenatif:
+  { type: TEXTURE, format: IA4, offset: 0x2EFDC7E, width: 16, height: 32, symbol: pra_hatenatif }
+pra_ice_dossuntif:
+  { type: TEXTURE, format: CI4, offset: 0x2EFDDAE, width: 32, height: 64, tlut: 0x2EFE1AE, symbol: pra_ice_dossuntif }
+pra_ice_dossuntif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EFE1AE, colors: 16, symbol: pra_ice_dossuntif_tlut }
+pra_odo_iwahashi3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EFE1FE, width: 64, height: 64, tlut: 0x2EFE9FE, symbol: pra_odo_iwahashi3tif }
+pra_odo_iwahashi3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EFE9FE, colors: 16, symbol: pra_odo_iwahashi3tif_tlut }
+pra_odo_iwatif:
+  { type: TEXTURE, format: CI4, offset: 0x2EFEA4E, width: 64, height: 64, tlut: 0x2EFF24E, symbol: pra_odo_iwatif }
+pra_odo_iwatif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EFF24E, colors: 16, symbol: pra_odo_iwatif_tlut }
+pra_pen_snow2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2EFF29E, width: 64, height: 32, tlut: 0x2EFF69E, symbol: pra_pen_snow2tif }
+pra_pen_snow2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EFF69E, colors: 16, symbol: pra_pen_snow2tif_tlut }
+pra_pen_snowtif:
+  { type: TEXTURE, format: CI4, offset: 0x2EFF6EE, width: 64, height: 64, tlut: 0x2EFFEEE, symbol: pra_pen_snowtif }
+pra_pen_snowtif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2EFFEEE, colors: 16, symbol: pra_pen_snowtif_tlut }
+pra_pra_ana_atif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2EFFF3E, width: 32, height: 32, symbol: pra_pra_ana_atif }
+pra_pra_daitif:
+  { type: TEXTURE, format: I4, offset: 0x2F0076E, width: 16, height: 32, symbol: pra_pra_daitif }
+pra_pra_doortif:
+  { type: TEXTURE, format: CI4, offset: 0x2F0089E, width: 32, height: 64, tlut: 0x2F00C9E, symbol: pra_pra_doortif }
+pra_pra_doortif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F00C9E, colors: 16, symbol: pra_pra_doortif_tlut }
+pra_pra_field3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2F00CEE, width: 64, height: 64, tlut: 0x2F014EE, symbol: pra_pra_field3tif }
+pra_pra_field3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F014EE, colors: 16, symbol: pra_pra_field3tif_tlut }
+pra_pra_hari_btif:
+  { type: TEXTURE, format: CI4, offset: 0x2F0153E, width: 64, height: 64, tlut: 0x2F01D3E, symbol: pra_pra_hari_btif }
+pra_pra_hari_btif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F01D3E, colors: 16, symbol: pra_pra_hari_btif_tlut }
+pra_pra_hashi1_itif:
+  { type: TEXTURE, format: CI4, offset: 0x2F01D8E, width: 64, height: 64, tlut: 0x2F0258E, symbol: pra_pra_hashi1_itif }
+pra_pra_hashi1_itif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F0258E, colors: 16, symbol: pra_pra_hashi1_itif_tlut }
+pra_pra_hashi2_atif:
+  { type: TEXTURE, format: CI4, offset: 0x2F025DE, width: 32, height: 32, tlut: 0x2F027DE, symbol: pra_pra_hashi2_atif }
+pra_pra_hashi2_atif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F027DE, colors: 16, symbol: pra_pra_hashi2_atif_tlut }
+pra_pra_hashira_btif:
+  { type: TEXTURE, format: RGBA16, offset: 0x2F0282E, width: 32, height: 32, symbol: pra_pra_hashira_btif }
+pra_pra_hashira3_btif:
+  { type: TEXTURE, format: CI4, offset: 0x2F0305E, width: 32, height: 32, tlut: 0x2F0325E, symbol: pra_pra_hashira3_btif }
+pra_pra_hashira3_btif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F0325E, colors: 16, symbol: pra_pra_hashira3_btif_tlut }
+pra_pra_hashira5tif:
+  { type: TEXTURE, format: CI4, offset: 0x2F032AE, width: 64, height: 64, tlut: 0x2F03AAE, symbol: pra_pra_hashira5tif }
+pra_pra_hashira5tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F03AAE, colors: 16, symbol: pra_pra_hashira5tif_tlut }
+pra_pra_hashiratif:
+  { type: TEXTURE, format: CI4, offset: 0x2F03AFE, width: 32, height: 32, tlut: 0x2F03CFE, symbol: pra_pra_hashiratif }
+pra_pra_hashiratif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F03CFE, colors: 16, symbol: pra_pra_hashiratif_tlut }
+pra_pra_icetif:
+  { type: TEXTURE, format: IA8, offset: 0x2F03D4E, width: 64, height: 32, symbol: pra_pra_icetif }
+pra_pra_rennga02tif:
+  { type: TEXTURE, format: CI4, offset: 0x2F0457E, width: 64, height: 32, tlut: 0x2F0497E, symbol: pra_pra_rennga02tif }
+pra_pra_rennga02tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F0497E, colors: 16, symbol: pra_pra_rennga02tif_tlut }
+pra_pra_tenjou2tif:
+  { type: TEXTURE, format: CI4, offset: 0x2F049CE, width: 64, height: 64, tlut: 0x2F051CE, symbol: pra_pra_tenjou2tif }
+pra_pra_tenjou2tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F051CE, colors: 16, symbol: pra_pra_tenjou2tif_tlut }
+pra_pra_walltif:
+  { type: TEXTURE, format: IA8, offset: 0x2F0521E, width: 64, height: 64, symbol: pra_pra_walltif }
+pra_pra_zoumetif:
+  { type: TEXTURE, format: CI4, offset: 0x2F0624E, width: 16, height: 16, tlut: 0x2F062CE, symbol: pra_pra_zoumetif }
+pra_pra_zoumetif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F062CE, colors: 16, symbol: pra_pra_zoumetif_tlut }
+pra_pra_zoushitatif:
+  { type: TEXTURE, format: I8, offset: 0x2F0631E, width: 32, height: 16, symbol: pra_pra_zoushitatif }
+pra_pra_zoutogetif:
+  { type: TEXTURE, format: CI4, offset: 0x2F0654E, width: 16, height: 16, tlut: 0x2F065CE, symbol: pra_pra_zoutogetif }
+pra_pra_zoutogetif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F065CE, colors: 16, symbol: pra_pra_zoutogetif_tlut }
+pra_pra_zouuetif:
+  { type: TEXTURE, format: I4, offset: 0x2F0661E, width: 16, height: 16, symbol: pra_pra_zouuetif }
+pra_s_yama1tif:
+  { type: TEXTURE, format: IA8, offset: 0x2F066CE, width: 64, height: 64, symbol: pra_s_yama1tif }
+pra_s_yama3tif:
+  { type: TEXTURE, format: CI4, offset: 0x2F076FE, width: 32, height: 64, tlut: 0x2F07AFE, symbol: pra_s_yama3tif }
+pra_s_yama3tif_tlut:
+  { type: TEXTURE, format: TLUT, offset: 0x2F07AFE, colors: 16, symbol: pra_s_yama3tif_tlut }

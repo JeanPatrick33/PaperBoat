@@ -2,6 +2,7 @@
 #include "port/ui/cvar_prefixes.h"
 
 #include <algorithm>
+#include <cstdio>
 #include <map>
 
 #include <libultraship/libultraship.h>
@@ -18,6 +19,17 @@ static std::map<uint32_t, float> notificationHeights = {}; // Cache actual heigh
 
 void Window::Draw() {
     auto vp = ImGui::GetMainViewport();
+
+    // Optional FPS / frame-time counter (Settings > Graphics > Show FPS Counter).
+    if (CVarGetInteger(CVAR_SETTING("ShowFPSCounter"), 0)) {
+        const float fps = ImGui::GetIO().Framerate;
+        char fpsText[48];
+        snprintf(fpsText, sizeof(fpsText), "%.0f FPS (%.1f ms)", fps, fps > 0.0f ? 1000.0f / fps : 0.0f);
+        ImDrawList* drawList = ImGui::GetForegroundDrawList(vp);
+        const ImVec2 textPos(vp->Pos.x + 12.0f, vp->Pos.y + 10.0f);
+        drawList->AddText(ImVec2(textPos.x + 1.0f, textPos.y + 1.0f), IM_COL32(0, 0, 0, 220), fpsText);
+        drawList->AddText(textPos, IM_COL32(255, 255, 255, 255), fpsText);
+    }
 
     const float margin = 30.0f;
     const float padding = 10.0f;

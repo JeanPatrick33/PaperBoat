@@ -1,0 +1,40 @@
+# battle/move/hammer/hammer_throw overlay
+# VRAM base: 0x802A1000, ROM start: 0x752450
+
+:config:
+  virtual: [0x802A1000, 0x7A60F0]
+
+# Textures (CI4 32x32 + 16-color palettes)
+dusty_hammer:
+  { type: TEXTURE, format: CI4, offset: 0x7A8138, width: 32, height: 32, symbol: battle_move_hammer_throw_dusty_hammer_png }
+dusty_hammer.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x7A8338, colors: 16, symbol: battle_move_hammer_throw_dusty_hammer_pal }
+
+basic_hammer:
+  { type: TEXTURE, format: CI4, offset: 0x7A8358, width: 32, height: 32, symbol: battle_move_hammer_throw_basic_hammer_png }
+basic_hammer.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x7A8558, colors: 16, symbol: battle_move_hammer_throw_basic_hammer_pal }
+
+super_hammer:
+  { type: TEXTURE, format: CI4, offset: 0x7A8578, width: 32, height: 32, symbol: battle_move_hammer_throw_super_hammer_png }
+super_hammer.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x7A8778, colors: 16, symbol: battle_move_hammer_throw_super_hammer_pal }
+
+ultra_hammer:
+  { type: TEXTURE, format: CI4, offset: 0x7A8798, width: 32, height: 32, symbol: battle_move_hammer_throw_ultra_hammer_png }
+ultra_hammer.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x7A8998, colors: 16, symbol: battle_move_hammer_throw_ultra_hammer_pal }
+
+# Vertex (4 vertices for textured quad)
+hammer_throw_vtx:
+  { type: VTX, offset: 0x7A89B8, count: 4, symbol: battle_move_hammer_throw_vtx }
+
+# Display Lists (each loads a texture + draws the quad)
+dusty_hammer_gfx:
+  { type: GFX, offset: 0x7A89F8, symbol: battle_move_hammer_throw_dusty_hammer_gfx }
+basic_hammer_gfx:
+  { type: GFX, offset: 0x7A8AE8, symbol: battle_move_hammer_throw_basic_hammer_gfx }
+super_hammer_gfx:
+  { type: GFX, offset: 0x7A8BD8, symbol: battle_move_hammer_throw_super_hammer_gfx }
+ultra_hammer_gfx:
+  { type: GFX, offset: 0x7A8CC8, symbol: battle_move_hammer_throw_ultra_hammer_gfx }

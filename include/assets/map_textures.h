@@ -1776,3 +1776,102 @@ static const ALIGN_ASSET(2) char tst_yougan_sidetif[] = "__OTR__textures/tst_tex
 static const ALIGN_ASSET(2) char tst_yougantif[] = "__OTR__textures/tst_tex/tst_yougantif";
 static const ALIGN_ASSET(2) char tst_yougantif_aux[] = "__OTR__textures/tst_tex/tst_yougantif_aux";
 static const ALIGN_ASSET(2) char tst_yuka2tif[] = "__OTR__textures/tst_tex/tst_yuka2tif";
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char mac_kanban_ekiP1tif[] = "__OTR__textures/mac_tex/mac_kanban_ekiP1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char mac_kanban_ekiP2tif[] = "__OTR__textures/mac_tex/mac_kanban_ekiP2tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char mac_kanban_ekiP3tif[] = "__OTR__textures/mac_tex/mac_kanban_ekiP3tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char mac_kinoko_town_usP1tif[] = "__OTR__textures/mac_tex/mac_kinoko_town_usP1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char mac_kinoko_town_usP2tif[] = "__OTR__textures/mac_tex/mac_kinoko_town_usP2tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char mac_kinoko_town_usP3tif[] = "__OTR__textures/mac_tex/mac_kinoko_town_usP3tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char mac_post_kanbanP1tif[] = "__OTR__textures/mac_tex/mac_post_kanbanP1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char mac_post_kanbanP2tif[] = "__OTR__textures/mac_tex/mac_post_kanbanP2tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char mac_post_kanbanP3tif[] = "__OTR__textures/mac_tex/mac_post_kanbanP3tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char iwa_wood_pole_b_bP1tif[] = "__OTR__textures/iwa_tex/iwa_wood_pole_b_bP1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char iwa_wood_pole_b_bP2tif[] = "__OTR__textures/iwa_tex/iwa_wood_pole_b_bP2tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char iwa_wood_pole_b_bP3tif[] = "__OTR__textures/iwa_tex/iwa_wood_pole_b_bP3tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char nok_kanban6P1tif[] = "__OTR__textures/nok_tex/nok_kanban6P1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char nok_kanban6P2tif[] = "__OTR__textures/nok_tex/nok_kanban6P2tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char nok_kanban6P3tif[] = "__OTR__textures/nok_tex/nok_kanban6P3tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char jan_kanbanP1tif[] = "__OTR__textures/jan_tex/jan_kanbanP1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char jan_kanbanP2tif[] = "__OTR__textures/jan_tex/jan_kanbanP2tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char jan_kanbanP3tif[] = "__OTR__textures/jan_tex/jan_kanbanP3tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char omo_a_2P1tif[] = "__OTR__textures/omo_tex/omo_a_2P1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char omo_i_2P1tif[] = "__OTR__textures/omo_tex/omo_i_2P1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char omo_n_2P1tif[] = "__OTR__textures/omo_tex/omo_n_2P1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char omo_o_2P1tif[] = "__OTR__textures/omo_tex/omo_o_2P1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char omo_s_2P1tif[] = "__OTR__textures/omo_tex/omo_s_2P1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char omo_start1P1tif[] = "__OTR__textures/omo_tex/omo_start1P1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char omo_start1P2tif[] = "__OTR__textures/omo_tex/omo_start1P2tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char omo_t_2P1tif[] = "__OTR__textures/omo_tex/omo_t_2P1tif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char gv__dtif[] = "__OTR__textures/gv__tex/gv__dtif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char gv__ftif[] = "__OTR__textures/gv__tex/gv__ftif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char gv__itif[] = "__OTR__textures/gv__tex/gv__itif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char gv__jtif[] = "__OTR__textures/gv__tex/gv__jtif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char gv__ltif[] = "__OTR__textures/gv__tex/gv__ltif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char gv__ntif[] = "__OTR__textures/gv__tex/gv__ntif";
+#endif
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char gv__utif[] = "__OTR__textures/gv__tex/gv__utif";
+#endif

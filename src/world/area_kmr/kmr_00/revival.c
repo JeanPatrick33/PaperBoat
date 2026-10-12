@@ -115,6 +115,9 @@ API_CALLABLE(N(func_802405F0_8AC580)) {
     Bytecode* args = script->ptrReadPos;
     ApiStatus retVal = ApiStatus_BLOCK;
     Npc* npc;
+#if VERSION_PAL
+    s32 var;
+#endif
 
     if (isInitialCall) {
         script->functionTemp[1] = evt_get_variable(script, *args++);

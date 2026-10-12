@@ -13,7 +13,8 @@ typedef struct SaveGlobals {
     /* 0x34 */ s32 crc2;
     /* 0x38 */ s32 useMonoSound;
     /* 0x3C */ u32 lastFileSelected;
-    /* 0x40 */ s8 reserved[64]; // unused
+    /* 0x40 */ u32 language; // only used for PAL builds (LANGUAGE_EN/DE/FR/ES), always 0 on US
+    /* 0x44 */ s8 reserved[60]; // unused
 } SaveGlobals; // size = 0x80
 
 typedef struct VanillaSaveFileSummary {

@@ -1,0 +1,583 @@
+:config:
+  output: dgb_smash_bridges
+
+vtx_C20F40.vtx:
+  { type: VTX, offset: 0xC8CE40, count: 32, symbol: vtx_C20F40 }
+vtx_C21100.vtx:
+  { type: VTX, offset: 0xC8D000, count: 3, symbol: vtx_C21100 }
+vtx_C21130.vtx:
+  { type: VTX, offset: 0xC8D030, count: 11, symbol: vtx_C21130 }
+vtx_C211E0.vtx:
+  { type: VTX, offset: 0xC8D0E0, count: 6, symbol: vtx_C211E0 }
+vtx_C211F0.vtx:
+  { type: VTX, offset: 0xC8D0F0, count: 5, symbol: vtx_C211F0 }
+vtx_C21240.vtx:
+  { type: VTX, offset: 0xC8D140, count: 18, symbol: vtx_C21240 }
+vtx_C21360.vtx:
+  { type: VTX, offset: 0xC8D260, count: 6, symbol: vtx_C21360 }
+vtx_C213C0.vtx:
+  { type: VTX, offset: 0xC8D2C0, count: 30, symbol: vtx_C213C0 }
+vtx_C215A0.vtx:
+  { type: VTX, offset: 0xC8D4A0, count: 22, symbol: vtx_C215A0 }
+vtx_C21700.vtx:
+  { type: VTX, offset: 0xC8D600, count: 7, symbol: vtx_C21700 }
+vtx_C21770.vtx:
+  { type: VTX, offset: 0xC8D670, count: 10, symbol: vtx_C21770 }
+vtx_C21810.vtx:
+  { type: VTX, offset: 0xC8D710, count: 18, symbol: vtx_C21810 }
+vtx_C21930.vtx:
+  { type: VTX, offset: 0xC8D830, count: 31, symbol: vtx_C21930 }
+vtx_C21AE0.vtx:
+  { type: VTX, offset: 0xC8D9E0, count: 4, symbol: vtx_C21AE0 }
+vtx_C21B20.vtx:
+  { type: VTX, offset: 0xC8DA20, count: 11, symbol: vtx_C21B20 }
+vtx_C21BD0.vtx:
+  { type: VTX, offset: 0xC8DAD0, count: 12, symbol: vtx_C21BD0 }
+vtx_C21C90.vtx:
+  { type: VTX, offset: 0xC8DB90, count: 10, symbol: vtx_C21C90 }
+vtx_C21D30.vtx:
+  { type: VTX, offset: 0xC8DC30, count: 12, symbol: vtx_C21D30 }
+vtx_C21DD0.vtx:
+  { type: VTX, offset: 0xC8DCD0, count: 3, symbol: vtx_C21DD0 }
+vtx_C21E00.vtx:
+  { type: VTX, offset: 0xC8DD00, count: 19, symbol: vtx_C21E00 }
+vtx_C21F30.vtx:
+  { type: VTX, offset: 0xC8DE30, count: 18, symbol: vtx_C21F30 }
+vtx_C22050.vtx:
+  { type: VTX, offset: 0xC8DF50, count: 20, symbol: vtx_C22050 }
+vtx_C22190.vtx:
+  { type: VTX, offset: 0xC8E090, count: 20, symbol: vtx_C22190 }
+vtx_C222D0.vtx:
+  { type: VTX, offset: 0xC8E1D0, count: 6, symbol: vtx_C222D0 }
+vtx_C22330.vtx:
+  { type: VTX, offset: 0xC8E230, count: 30, symbol: vtx_C22330 }
+vtx_C224A0.vtx:
+  { type: VTX, offset: 0xC8E3A0, count: 4, symbol: vtx_C224A0 }
+vtx_C224E0.vtx:
+  { type: VTX, offset: 0xC8E3E0, count: 20, symbol: vtx_C224E0 }
+vtx_C22510.vtx:
+  { type: VTX, offset: 0xC8E410, count: 17, symbol: vtx_C22510 }
+vtx_C22620.vtx:
+  { type: VTX, offset: 0xC8E520, count: 22, symbol: vtx_C22620 }
+vtx_C22780.vtx:
+  { type: VTX, offset: 0xC8E680, count: 9, symbol: vtx_C22780 }
+vtx_C22810.vtx:
+  { type: VTX, offset: 0xC8E710, count: 6, symbol: vtx_C22810 }
+vtx_C22870.vtx:
+  { type: VTX, offset: 0xC8E770, count: 8, symbol: vtx_C22870 }
+vtx_C228F0.vtx:
+  { type: VTX, offset: 0xC8E7F0, count: 6, symbol: vtx_C228F0 }
+vtx_C22950.vtx:
+  { type: VTX, offset: 0xC8E850, count: 10, symbol: vtx_C22950 }
+vtx_C229F0.vtx:
+  { type: VTX, offset: 0xC8E8F0, count: 17, symbol: vtx_C229F0 }
+vtx_C22B00.vtx:
+  { type: VTX, offset: 0xC8EA00, count: 16, symbol: vtx_C22B00 }
+vtx_C22C00.vtx:
+  { type: VTX, offset: 0xC8EB00, count: 32, symbol: vtx_C22C00 }
+vtx_C22E00.vtx:
+  { type: VTX, offset: 0xC8ED00, count: 12, symbol: vtx_C22E00 }
+vtx_C22EC0.vtx:
+  { type: VTX, offset: 0xC8EDC0, count: 30, symbol: vtx_C22EC0 }
+vtx_C230A0.vtx:
+  { type: VTX, offset: 0xC8EFA0, count: 32, symbol: vtx_C230A0 }
+vtx_C23240.vtx:
+  { type: VTX, offset: 0xC8F140, count: 2, symbol: vtx_C23240 }
+vtx_C23260.vtx:
+  { type: VTX, offset: 0xC8F160, count: 4, symbol: vtx_C23260 }
+vtx_C232A0.vtx:
+  { type: VTX, offset: 0xC8F1A0, count: 12, symbol: vtx_C232A0 }
+vtx_C23330.vtx:
+  { type: VTX, offset: 0xC8F230, count: 13, symbol: vtx_C23330 }
+vtx_C233D0.vtx:
+  { type: VTX, offset: 0xC8F2D0, count: 12, symbol: vtx_C233D0 }
+vtx_C23480.vtx:
+  { type: VTX, offset: 0xC8F380, count: 3, symbol: vtx_C23480 }
+vtx_C234B0.vtx:
+  { type: VTX, offset: 0xC8F3B0, count: 17, symbol: vtx_C234B0 }
+vtx_C235C0.vtx:
+  { type: VTX, offset: 0xC8F4C0, count: 19, symbol: vtx_C235C0 }
+vtx_C236E0.vtx:
+  { type: VTX, offset: 0xC8F5E0, count: 20, symbol: vtx_C236E0 }
+vtx_C23810.vtx:
+  { type: VTX, offset: 0xC8F710, count: 10, symbol: vtx_C23810 }
+vtx_C238B0.vtx:
+  { type: VTX, offset: 0xC8F7B0, count: 31, symbol: vtx_C238B0 }
+vtx_C239D0.vtx:
+  { type: VTX, offset: 0xC8F8D0, count: 10, symbol: vtx_C239D0 }
+vtx_C23A70.vtx:
+  { type: VTX, offset: 0xC8F970, count: 20, symbol: vtx_C23A70 }
+vtx_C23B70.vtx:
+  { type: VTX, offset: 0xC8FA70, count: 3, symbol: vtx_C23B70 }
+vtx_C23BA0.vtx:
+  { type: VTX, offset: 0xC8FAA0, count: 17, symbol: vtx_C23BA0 }
+vtx_C23C70.vtx:
+  { type: VTX, offset: 0xC8FB70, count: 2, symbol: vtx_C23C70 }
+vtx_C23C90.vtx:
+  { type: VTX, offset: 0xC8FB90, count: 5, symbol: vtx_C23C90 }
+vtx_C23CE0.vtx:
+  { type: VTX, offset: 0xC8FBE0, count: 8, symbol: vtx_C23CE0 }
+vtx_C23D20.vtx:
+  { type: VTX, offset: 0xC8FC20, count: 4, symbol: vtx_C23D20 }
+vtx_C23D60.vtx:
+  { type: VTX, offset: 0xC8FC60, count: 13, symbol: vtx_C23D60 }
+vtx_C23DD0.vtx:
+  { type: VTX, offset: 0xC8FCD0, count: 3, symbol: vtx_C23DD0 }
+vtx_C23E00.vtx:
+  { type: VTX, offset: 0xC8FD00, count: 2, symbol: vtx_C23E00 }
+vtx_C23E20.vtx:
+  { type: VTX, offset: 0xC8FD20, count: 3, symbol: vtx_C23E20 }
+vtx_C23E50.vtx:
+  { type: VTX, offset: 0xC8FD50, count: 12, symbol: vtx_C23E50 }
+vtx_C23F10.vtx:
+  { type: VTX, offset: 0xC8FE10, count: 12, symbol: vtx_C23F10 }
+vtx_C23FD0.vtx:
+  { type: VTX, offset: 0xC8FED0, count: 16, symbol: vtx_C23FD0 }
+vtx_C240D0.vtx:
+  { type: VTX, offset: 0xC8FFD0, count: 16, symbol: vtx_C240D0 }
+vtx_C241D0.vtx:
+  { type: VTX, offset: 0xC900D0, count: 24, symbol: vtx_C241D0 }
+vtx_C24350.vtx:
+  { type: VTX, offset: 0xC90250, count: 32, symbol: vtx_C24350 }
+vtx_C24510.vtx:
+  { type: VTX, offset: 0xC90410, count: 3, symbol: vtx_C24510 }
+vtx_C24540.vtx:
+  { type: VTX, offset: 0xC90440, count: 12, symbol: vtx_C24540 }
+vtx_C24600.vtx:
+  { type: VTX, offset: 0xC90500, count: 10, symbol: vtx_C24600 }
+vtx_C24690.vtx:
+  { type: VTX, offset: 0xC90590, count: 10, symbol: vtx_C24690 }
+vtx_C24720.vtx:
+  { type: VTX, offset: 0xC90620, count: 1, symbol: vtx_C24720 }
+vtx_C24730.vtx:
+  { type: VTX, offset: 0xC90630, count: 17, symbol: vtx_C24730 }
+vtx_C24840.vtx:
+  { type: VTX, offset: 0xC90740, count: 20, symbol: vtx_C24840 }
+vtx_C24960.vtx:
+  { type: VTX, offset: 0xC90860, count: 2, symbol: vtx_C24960 }
+vtx_C24980.vtx:
+  { type: VTX, offset: 0xC90880, count: 21, symbol: vtx_C24980 }
+vtx_C24AD0.vtx:
+  { type: VTX, offset: 0xC909D0, count: 2, symbol: vtx_C24AD0 }
+vtx_C24AF0.vtx:
+  { type: VTX, offset: 0xC909F0, count: 30, symbol: vtx_C24AF0 }
+vtx_C24CD0.vtx:
+  { type: VTX, offset: 0xC90BD0, count: 30, symbol: vtx_C24CD0 }
+vtx_C24EB0.vtx:
+  { type: VTX, offset: 0xC90DB0, count: 8, symbol: vtx_C24EB0 }
+vtx_C24F30.vtx:
+  { type: VTX, offset: 0xC90E30, count: 8, symbol: vtx_C24F30 }
+vtx_C24FB0.vtx:
+  { type: VTX, offset: 0xC90EB0, count: 10, symbol: vtx_C24FB0 }
+vtx_C25050.vtx:
+  { type: VTX, offset: 0xC90F50, count: 32, symbol: vtx_C25050 }
+vtx_C25250.vtx:
+  { type: VTX, offset: 0xC91150, count: 12, symbol: vtx_C25250 }
+vtx_C25310.vtx:
+  { type: VTX, offset: 0xC91210, count: 4, symbol: vtx_C25310 }
+vtx_C25350.vtx:
+  { type: VTX, offset: 0xC91250, count: 32, symbol: vtx_C25350 }
+vtx_C25500.vtx:
+  { type: VTX, offset: 0xC91400, count: 17, symbol: vtx_C25500 }
+vtx_C25600.vtx:
+  { type: VTX, offset: 0xC91500, count: 13, symbol: vtx_C25600 }
+vtx_C256D0.vtx:
+  { type: VTX, offset: 0xC915D0, count: 4, symbol: vtx_C256D0 }
+vtx_C25710.vtx:
+  { type: VTX, offset: 0xC91610, count: 14, symbol: vtx_C25710 }
+vtx_C257D0.vtx:
+  { type: VTX, offset: 0xC916D0, count: 2, symbol: vtx_C257D0 }
+vtx_C257F0.vtx:
+  { type: VTX, offset: 0xC916F0, count: 17, symbol: vtx_C257F0 }
+vtx_C25900.vtx:
+  { type: VTX, offset: 0xC91800, count: 5, symbol: vtx_C25900 }
+vtx_C25950.vtx:
+  { type: VTX, offset: 0xC91850, count: 30, symbol: vtx_C25950 }
+vtx_C25A30.vtx:
+  { type: VTX, offset: 0xC91930, count: 8, symbol: vtx_C25A30 }
+vtx_C25AB0.vtx:
+  { type: VTX, offset: 0xC919B0, count: 8, symbol: vtx_C25AB0 }
+vtx_C25B30.vtx:
+  { type: VTX, offset: 0xC91A30, count: 11, symbol: vtx_C25B30 }
+vtx_C25BD0.vtx:
+  { type: VTX, offset: 0xC91AD0, count: 13, symbol: vtx_C25BD0 }
+vtx_C25C00.vtx:
+  { type: VTX, offset: 0xC91B00, count: 2, symbol: vtx_C25C00 }
+vtx_C25C20.vtx:
+  { type: VTX, offset: 0xC91B20, count: 6, symbol: vtx_C25C20 }
+vtx_C25C80.vtx:
+  { type: VTX, offset: 0xC91B80, count: 12, symbol: vtx_C25C80 }
+vtx_C25CF0.vtx:
+  { type: VTX, offset: 0xC91BF0, count: 4, symbol: vtx_C25CF0 }
+vtx_C25D30.vtx:
+  { type: VTX, offset: 0xC91C30, count: 7, symbol: vtx_C25D30 }
+vtx_C25DA0.vtx:
+  { type: VTX, offset: 0xC91CA0, count: 17, symbol: vtx_C25DA0 }
+vtx_C25DD0.vtx:
+  { type: VTX, offset: 0xC91CD0, count: 13, symbol: vtx_C25DD0 }
+vtx_C25EA0.vtx:
+  { type: VTX, offset: 0xC91DA0, count: 16, symbol: vtx_C25EA0 }
+vtx_C25F00.vtx:
+  { type: VTX, offset: 0xC91E00, count: 9, symbol: vtx_C25F00 }
+vtx_C25F90.vtx:
+  { type: VTX, offset: 0xC91E90, count: 17, symbol: vtx_C25F90 }
+vtx_C26040.vtx:
+  { type: VTX, offset: 0xC91F40, count: 5, symbol: vtx_C26040 }
+vtx_C26090.vtx:
+  { type: VTX, offset: 0xC91F90, count: 10, symbol: vtx_C26090 }
+vtx_C26130.vtx:
+  { type: VTX, offset: 0xC92030, count: 18, symbol: vtx_C26130 }
+vtx_C26250.vtx:
+  { type: VTX, offset: 0xC92150, count: 4, symbol: vtx_C26250 }
+vtx_C26290.vtx:
+  { type: VTX, offset: 0xC92190, count: 4, symbol: vtx_C26290 }
+vtx_C262D0.vtx:
+  { type: VTX, offset: 0xC921D0, count: 4, symbol: vtx_C262D0 }
+vtx_C26310.vtx:
+  { type: VTX, offset: 0xC92210, count: 4, symbol: vtx_C26310 }
+vtx_C26350.vtx:
+  { type: VTX, offset: 0xC92250, count: 4, symbol: vtx_C26350 }
+vtx_C26390.vtx:
+  { type: VTX, offset: 0xC92290, count: 4, symbol: vtx_C26390 }
+vtx_C263D0.vtx:
+  { type: VTX, offset: 0xC922D0, count: 4, symbol: vtx_C263D0 }
+vtx_C26410.vtx:
+  { type: VTX, offset: 0xC92310, count: 4, symbol: vtx_C26410 }
+vtx_C26450.vtx:
+  { type: VTX, offset: 0xC92350, count: 4, symbol: vtx_C26450 }
+vtx_C26490.vtx:
+  { type: VTX, offset: 0xC92390, count: 4, symbol: vtx_C26490 }
+vtx_C264D0.vtx:
+  { type: VTX, offset: 0xC923D0, count: 4, symbol: vtx_C264D0 }
+vtx_C26510.vtx:
+  { type: VTX, offset: 0xC92410, count: 4, symbol: vtx_C26510 }
+vtx_C26550.vtx:
+  { type: VTX, offset: 0xC92450, count: 4, symbol: vtx_C26550 }
+vtx_C26590.vtx:
+  { type: VTX, offset: 0xC92490, count: 4, symbol: vtx_C26590 }
+vtx_C265D0.vtx:
+  { type: VTX, offset: 0xC924D0, count: 4, symbol: vtx_C265D0 }
+vtx_C26610.vtx:
+  { type: VTX, offset: 0xC92510, count: 4, symbol: vtx_C26610 }
+vtx_C26650.vtx:
+  { type: VTX, offset: 0xC92550, count: 4, symbol: vtx_C26650 }
+vtx_C26690.vtx:
+  { type: VTX, offset: 0xC92590, count: 4, symbol: vtx_C26690 }
+vtx_C266D0.vtx:
+  { type: VTX, offset: 0xC925D0, count: 4, symbol: vtx_C266D0 }
+vtx_C26710.vtx:
+  { type: VTX, offset: 0xC92610, count: 4, symbol: vtx_C26710 }
+vtx_C26750.vtx:
+  { type: VTX, offset: 0xC92650, count: 20, symbol: vtx_C26750 }
+vtx_C26890.vtx:
+  { type: VTX, offset: 0xC92790, count: 32, symbol: vtx_C26890 }
+vtx_C26A60.vtx:
+  { type: VTX, offset: 0xC92960, count: 8, symbol: vtx_C26A60 }
+vtx_C26AE0.vtx:
+  { type: VTX, offset: 0xC929E0, count: 30, symbol: vtx_C26AE0 }
+vtx_C26CC0.vtx:
+  { type: VTX, offset: 0xC92BC0, count: 31, symbol: vtx_C26CC0 }
+vtx_C26EB0.vtx:
+  { type: VTX, offset: 0xC92DB0, count: 9, symbol: vtx_C26EB0 }
+vtx_C26F40.vtx:
+  { type: VTX, offset: 0xC92E40, count: 7, symbol: vtx_C26F40 }
+vtx_C26FB0.vtx:
+  { type: VTX, offset: 0xC92EB0, count: 22, symbol: vtx_C26FB0 }
+vtx_C27110.vtx:
+  { type: VTX, offset: 0xC93010, count: 7, symbol: vtx_C27110 }
+vtx_C27180.vtx:
+  { type: VTX, offset: 0xC93080, count: 10, symbol: vtx_C27180 }
+vtx_C27220.vtx:
+  { type: VTX, offset: 0xC93120, count: 14, symbol: vtx_C27220 }
+vtx_C27300.vtx:
+  { type: VTX, offset: 0xC93200, count: 10, symbol: vtx_C27300 }
+vtx_C273A0.vtx:
+  { type: VTX, offset: 0xC932A0, count: 12, symbol: vtx_C273A0 }
+vtx_C27460.vtx:
+  { type: VTX, offset: 0xC93360, count: 18, symbol: vtx_C27460 }
+vtx_C27580.vtx:
+  { type: VTX, offset: 0xC93480, count: 31, symbol: vtx_C27580 }
+vtx_C27740.vtx:
+  { type: VTX, offset: 0xC93640, count: 3, symbol: vtx_C27740 }
+vtx_C27770.vtx:
+  { type: VTX, offset: 0xC93670, count: 17, symbol: vtx_C27770 }
+vtx_C27880.vtx:
+  { type: VTX, offset: 0xC93780, count: 31, symbol: vtx_C27880 }
+vtx_C27A40.vtx:
+  { type: VTX, offset: 0xC93940, count: 3, symbol: vtx_C27A40 }
+vtx_C27A70.vtx:
+  { type: VTX, offset: 0xC93970, count: 17, symbol: vtx_C27A70 }
+vtx_C27B80.vtx:
+  { type: VTX, offset: 0xC93A80, count: 30, symbol: vtx_C27B80 }
+vtx_C27D60.vtx:
+  { type: VTX, offset: 0xC93C60, count: 31, symbol: vtx_C27D60 }
+vtx_C27F20.vtx:
+  { type: VTX, offset: 0xC93E20, count: 13, symbol: vtx_C27F20 }
+vtx_C27FC0.vtx:
+  { type: VTX, offset: 0xC93EC0, count: 2, symbol: vtx_C27FC0 }
+vtx_C27FE0.vtx:
+  { type: VTX, offset: 0xC93EE0, count: 10, symbol: vtx_C27FE0 }
+vtx_C28080.vtx:
+  { type: VTX, offset: 0xC93F80, count: 10, symbol: vtx_C28080 }
+vtx_C28110.vtx:
+  { type: VTX, offset: 0xC94010, count: 10, symbol: vtx_C28110 }
+vtx_C28190.vtx:
+  { type: VTX, offset: 0xC94090, count: 2, symbol: vtx_C28190 }
+vtx_C281B0.vtx:
+  { type: VTX, offset: 0xC940B0, count: 3, symbol: vtx_C281B0 }
+vtx_C281E0.vtx:
+  { type: VTX, offset: 0xC940E0, count: 19, symbol: vtx_C281E0 }
+vtx_C282D0.vtx:
+  { type: VTX, offset: 0xC941D0, count: 2, symbol: vtx_C282D0 }
+vtx_C282F0.vtx:
+  { type: VTX, offset: 0xC941F0, count: 2, symbol: vtx_C282F0 }
+vtx_C28310.vtx:
+  { type: VTX, offset: 0xC94210, count: 17, symbol: vtx_C28310 }
+vtx_C28420.vtx:
+  { type: VTX, offset: 0xC94320, count: 21, symbol: vtx_C28420 }
+vtx_C284F0.vtx:
+  { type: VTX, offset: 0xC943F0, count: 6, symbol: vtx_C284F0 }
+vtx_C28550.vtx:
+  { type: VTX, offset: 0xC94450, count: 20, symbol: vtx_C28550 }
+vtx_C28690.vtx:
+  { type: VTX, offset: 0xC94590, count: 9, symbol: vtx_C28690 }
+vtx_C28720.vtx:
+  { type: VTX, offset: 0xC94620, count: 8, symbol: vtx_C28720 }
+vtx_C287A0.vtx:
+  { type: VTX, offset: 0xC946A0, count: 15, symbol: vtx_C287A0 }
+vtx_C28890.vtx:
+  { type: VTX, offset: 0xC94790, count: 14, symbol: vtx_C28890 }
+vtx_C28970.vtx:
+  { type: VTX, offset: 0xC94870, count: 16, symbol: vtx_C28970 }
+vtx_C28A70.vtx:
+  { type: VTX, offset: 0xC94970, count: 20, symbol: vtx_C28A70 }
+vtx_C28BB0.vtx:
+  { type: VTX, offset: 0xC94AB0, count: 30, symbol: vtx_C28BB0 }
+vtx_C28D90.vtx:
+  { type: VTX, offset: 0xC94C90, count: 30, symbol: vtx_C28D90 }
+vtx_C28F70.vtx:
+  { type: VTX, offset: 0xC94E70, count: 30, symbol: vtx_C28F70 }
+vtx_C29150.vtx:
+  { type: VTX, offset: 0xC95050, count: 30, symbol: vtx_C29150 }
+vtx_C29330.vtx:
+  { type: VTX, offset: 0xC95230, count: 30, symbol: vtx_C29330 }
+vtx_C29470.vtx:
+  { type: VTX, offset: 0xC95370, count: 3, symbol: vtx_C29470 }
+vtx_C294A0.vtx:
+  { type: VTX, offset: 0xC953A0, count: 5, symbol: vtx_C294A0 }
+vtx_C294F0.vtx:
+  { type: VTX, offset: 0xC953F0, count: 13, symbol: vtx_C294F0 }
+vtx_C29540.vtx:
+  { type: VTX, offset: 0xC95440, count: 3, symbol: vtx_C29540 }
+vtx_C29570.vtx:
+  { type: VTX, offset: 0xC95470, count: 4, symbol: vtx_C29570 }
+vtx_C295B0.vtx:
+  { type: VTX, offset: 0xC954B0, count: 8, symbol: vtx_C295B0 }
+vtx_C29630.vtx:
+  { type: VTX, offset: 0xC95530, count: 9, symbol: vtx_C29630 }
+vtx_C29650.vtx:
+  { type: VTX, offset: 0xC95550, count: 7, symbol: vtx_C29650 }
+vtx_C296C0.vtx:
+  { type: VTX, offset: 0xC955C0, count: 10, symbol: vtx_C296C0 }
+vtx_C29750.vtx:
+  { type: VTX, offset: 0xC95650, count: 10, symbol: vtx_C29750 }
+vtx_C297F0.vtx:
+  { type: VTX, offset: 0xC956F0, count: 16, symbol: vtx_C297F0 }
+vtx_C298E0.vtx:
+  { type: VTX, offset: 0xC957E0, count: 22, symbol: vtx_C298E0 }
+vtx_C29A40.vtx:
+  { type: VTX, offset: 0xC95940, count: 23, symbol: vtx_C29A40 }
+vtx_C29AB0.vtx:
+  { type: VTX, offset: 0xC959B0, count: 16, symbol: vtx_C29AB0 }
+vtx_C29BB0.vtx:
+  { type: VTX, offset: 0xC95AB0, count: 19, symbol: vtx_C29BB0 }
+vtx_C29CD0.vtx:
+  { type: VTX, offset: 0xC95BD0, count: 19, symbol: vtx_C29CD0 }
+vtx_C29E00.vtx:
+  { type: VTX, offset: 0xC95D00, count: 21, symbol: vtx_C29E00 }
+vtx_C29F50.vtx:
+  { type: VTX, offset: 0xC95E50, count: 19, symbol: vtx_C29F50 }
+vtx_C2A080.vtx:
+  { type: VTX, offset: 0xC95F80, count: 16, symbol: vtx_C2A080 }
+vtx_C2A180.vtx:
+  { type: VTX, offset: 0xC96080, count: 20, symbol: vtx_C2A180 }
+vtx_C2A2C0.vtx:
+  { type: VTX, offset: 0xC961C0, count: 16, symbol: vtx_C2A2C0 }
+vtx_C2A3C0.vtx:
+  { type: VTX, offset: 0xC962C0, count: 24, symbol: vtx_C2A3C0 }
+vtx_C2A540.vtx:
+  { type: VTX, offset: 0xC96440, count: 32, symbol: vtx_C2A540 }
+vtx_C2A700.vtx:
+  { type: VTX, offset: 0xC96600, count: 4, symbol: vtx_C2A700 }
+vtx_C2A740.vtx:
+  { type: VTX, offset: 0xC96640, count: 5, symbol: vtx_C2A740 }
+vtx_C2A790.vtx:
+  { type: VTX, offset: 0xC96690, count: 20, symbol: vtx_C2A790 }
+vtx_C2A8D0.vtx:
+  { type: VTX, offset: 0xC967D0, count: 30, symbol: vtx_C2A8D0 }
+vtx_C2AAB0.vtx:
+  { type: VTX, offset: 0xC969B0, count: 30, symbol: vtx_C2AAB0 }
+vtx_C2AC90.vtx:
+  { type: VTX, offset: 0xC96B90, count: 17, symbol: vtx_C2AC90 }
+vtx_C2AD20.vtx:
+  { type: VTX, offset: 0xC96C20, count: 5, symbol: vtx_C2AD20 }
+vtx_C2AD70.vtx:
+  { type: VTX, offset: 0xC96C70, count: 17, symbol: vtx_C2AD70 }
+vtx_C2AE50.vtx:
+  { type: VTX, offset: 0xC96D50, count: 2, symbol: vtx_C2AE50 }
+vtx_C2AE70.vtx:
+  { type: VTX, offset: 0xC96D70, count: 4, symbol: vtx_C2AE70 }
+vtx_C2AEB0.vtx:
+  { type: VTX, offset: 0xC96DB0, count: 15, symbol: vtx_C2AEB0 }
+vtx_C2AF60.vtx:
+  { type: VTX, offset: 0xC96E60, count: 2, symbol: vtx_C2AF60 }
+vtx_C2AF80.vtx:
+  { type: VTX, offset: 0xC96E80, count: 10, symbol: vtx_C2AF80 }
+vtx_C2B010.vtx:
+  { type: VTX, offset: 0xC96F10, count: 4, symbol: vtx_C2B010 }
+vtx_C2B050.vtx:
+  { type: VTX, offset: 0xC96F50, count: 32, symbol: vtx_C2B050 }
+vtx_C2B220.vtx:
+  { type: VTX, offset: 0xC97120, count: 3, symbol: vtx_C2B220 }
+vtx_C2B250.vtx:
+  { type: VTX, offset: 0xC97150, count: 8, symbol: vtx_C2B250 }
+vtx_C2B2D0.vtx:
+  { type: VTX, offset: 0xC971D0, count: 8, symbol: vtx_C2B2D0 }
+vtx_C2B340.vtx:
+  { type: VTX, offset: 0xC97240, count: 11, symbol: vtx_C2B340 }
+vtx_C2B3C0.vtx:
+  { type: VTX, offset: 0xC972C0, count: 2, symbol: vtx_C2B3C0 }
+vtx_C2B3E0.vtx:
+  { type: VTX, offset: 0xC972E0, count: 3, symbol: vtx_C2B3E0 }
+vtx_C2B410.vtx:
+  { type: VTX, offset: 0xC97310, count: 21, symbol: vtx_C2B410 }
+vtx_C2B560.vtx:
+  { type: VTX, offset: 0xC97460, count: 23, symbol: vtx_C2B560 }
+vtx_C2B6D0.vtx:
+  { type: VTX, offset: 0xC975D0, count: 21, symbol: vtx_C2B6D0 }
+vtx_C2B800.vtx:
+  { type: VTX, offset: 0xC97700, count: 5, symbol: vtx_C2B800 }
+vtx_C2B850.vtx:
+  { type: VTX, offset: 0xC97750, count: 9, symbol: vtx_C2B850 }
+vtx_C2B8E0.vtx:
+  { type: VTX, offset: 0xC977E0, count: 13, symbol: vtx_C2B8E0 }
+vtx_C2B9B0.vtx:
+  { type: VTX, offset: 0xC978B0, count: 10, symbol: vtx_C2B9B0 }
+vtx_C2BA50.vtx:
+  { type: VTX, offset: 0xC97950, count: 16, symbol: vtx_C2BA50 }
+vtx_C2BB50.vtx:
+  { type: VTX, offset: 0xC97A50, count: 32, symbol: vtx_C2BB50 }
+vtx_C2BD50.vtx:
+  { type: VTX, offset: 0xC97C50, count: 16, symbol: vtx_C2BD50 }
+vtx_C2BE50.vtx:
+  { type: VTX, offset: 0xC97D50, count: 16, symbol: vtx_C2BE50 }
+vtx_C2BF50.vtx:
+  { type: VTX, offset: 0xC97E50, count: 30, symbol: vtx_C2BF50 }
+vtx_C2BF60.vtx:
+  { type: VTX, offset: 0xC97E60, count: 7, symbol: vtx_C2BF60 }
+vtx_C2BFD0.vtx:
+  { type: VTX, offset: 0xC97ED0, count: 11, symbol: vtx_C2BFD0 }
+vtx_C2C080.vtx:
+  { type: VTX, offset: 0xC97F80, count: 3, symbol: vtx_C2C080 }
+vtx_C2C0B0.vtx:
+  { type: VTX, offset: 0xC97FB0, count: 4, symbol: vtx_C2C0B0 }
+vtx_C2C0F0.vtx:
+  { type: VTX, offset: 0xC97FF0, count: 4, symbol: vtx_C2C0F0 }
+vtx_C2C130.vtx:
+  { type: VTX, offset: 0xC98030, count: 9, symbol: vtx_C2C130 }
+vtx_C2C1C0.vtx:
+  { type: VTX, offset: 0xC980C0, count: 20, symbol: vtx_C2C1C0 }
+vtx_C2C300.vtx:
+  { type: VTX, offset: 0xC98200, count: 30, symbol: vtx_C2C300 }
+vtx_C2C4E0.vtx:
+  { type: VTX, offset: 0xC983E0, count: 30, symbol: vtx_C2C4E0 }
+vtx_C2C6C0.vtx:
+  { type: VTX, offset: 0xC985C0, count: 30, symbol: vtx_C2C6C0 }
+vtx_C2C8A0.vtx:
+  { type: VTX, offset: 0xC987A0, count: 24, symbol: vtx_C2C8A0 }
+vtx_C2CA20.vtx:
+  { type: VTX, offset: 0xC98920, count: 24, symbol: vtx_C2CA20 }
+vtx_C2CBA0.vtx:
+  { type: VTX, offset: 0xC98AA0, count: 24, symbol: vtx_C2CBA0 }
+vtx_C2CD20.vtx:
+  { type: VTX, offset: 0xC98C20, count: 30, symbol: vtx_C2CD20 }
+vtx_C2CEA0.vtx:
+  { type: VTX, offset: 0xC98DA0, count: 3, symbol: vtx_C2CEA0 }
+vtx_C2CED0.vtx:
+  { type: VTX, offset: 0xC98DD0, count: 3, symbol: vtx_C2CED0 }
+vtx_C2CF00.vtx:
+  { type: VTX, offset: 0xC98E00, count: 12, symbol: vtx_C2CF00 }
+vtx_C2CFC0.vtx:
+  { type: VTX, offset: 0xC98EC0, count: 30, symbol: vtx_C2CFC0 }
+vtx_C2D140.vtx:
+  { type: VTX, offset: 0xC99040, count: 3, symbol: vtx_C2D140 }
+vtx_C2D170.vtx:
+  { type: VTX, offset: 0xC99070, count: 3, symbol: vtx_C2D170 }
+vtx_C2D1A0.vtx:
+  { type: VTX, offset: 0xC990A0, count: 12, symbol: vtx_C2D1A0 }
+vtx_C2D260.vtx:
+  { type: VTX, offset: 0xC99160, count: 30, symbol: vtx_C2D260 }
+vtx_C2D3E0.vtx:
+  { type: VTX, offset: 0xC992E0, count: 3, symbol: vtx_C2D3E0 }
+vtx_C2D410.vtx:
+  { type: VTX, offset: 0xC99310, count: 3, symbol: vtx_C2D410 }
+vtx_C2D440.vtx:
+  { type: VTX, offset: 0xC99340, count: 12, symbol: vtx_C2D440 }
+vtx_C2D500.vtx:
+  { type: VTX, offset: 0xC99400, count: 6, symbol: vtx_C2D500 }
+vtx_C2D560.vtx:
+  { type: VTX, offset: 0xC99460, count: 6, symbol: vtx_C2D560 }
+vtx_C2D5C0.vtx:
+  { type: VTX, offset: 0xC994C0, count: 6, symbol: vtx_C2D5C0 }
+vtx_C2D620.vtx:
+  { type: VTX, offset: 0xC99520, count: 4, symbol: vtx_C2D620 }
+vtx_C2D660.vtx:
+  { type: VTX, offset: 0xC99560, count: 4, symbol: vtx_C2D660 }
+vtx_C2D6A0.vtx:
+  { type: VTX, offset: 0xC995A0, count: 4, symbol: vtx_C2D6A0 }
+vtx_C2D6E0.vtx:
+  { type: VTX, offset: 0xC995E0, count: 21, symbol: vtx_C2D6E0 }
+vtx_C2D830.vtx:
+  { type: VTX, offset: 0xC99730, count: 12, symbol: vtx_C2D830 }
+vtx_C2D8F0.vtx:
+  { type: VTX, offset: 0xC997F0, count: 19, symbol: vtx_C2D8F0 }
+vtx_C2DA20.vtx:
+  { type: VTX, offset: 0xC99920, count: 30, symbol: vtx_C2DA20 }
+vtx_C2DBE0.vtx:
+  { type: VTX, offset: 0xC99AE0, count: 13, symbol: vtx_C2DBE0 }
+vtx_C2DCB0.vtx:
+  { type: VTX, offset: 0xC99BB0, count: 12, symbol: vtx_C2DCB0 }
+vtx_C2DD50.vtx:
+  { type: VTX, offset: 0xC99C50, count: 4, symbol: vtx_C2DD50 }
+vtx_C2DD90.vtx:
+  { type: VTX, offset: 0xC99C90, count: 17, symbol: vtx_C2DD90 }
+vtx_C2DEA0.vtx:
+  { type: VTX, offset: 0xC99DA0, count: 20, symbol: vtx_C2DEA0 }
+vtx_C2DFC0.vtx:
+  { type: VTX, offset: 0xC99EC0, count: 6, symbol: vtx_C2DFC0 }
+vtx_C2E020.vtx:
+  { type: VTX, offset: 0xC99F20, count: 30, symbol: vtx_C2E020 }
+vtx_C2E1E0.vtx:
+  { type: VTX, offset: 0xC9A0E0, count: 13, symbol: vtx_C2E1E0 }
+vtx_C2E2B0.vtx:
+  { type: VTX, offset: 0xC9A1B0, count: 12, symbol: vtx_C2E2B0 }
+vtx_C2E360.vtx:
+  { type: VTX, offset: 0xC9A260, count: 3, symbol: vtx_C2E360 }
+vtx_C2E390.vtx:
+  { type: VTX, offset: 0xC9A290, count: 17, symbol: vtx_C2E390 }
+vtx_C2E4A0.vtx:
+  { type: VTX, offset: 0xC9A3A0, count: 20, symbol: vtx_C2E4A0 }
+vtx_C2E5D0.vtx:
+  { type: VTX, offset: 0xC9A4D0, count: 5, symbol: vtx_C2E5D0 }
+vtx_C2E620.vtx:
+  { type: VTX, offset: 0xC9A520, count: 32, symbol: vtx_C2E620 }
+vtx_C2E7B0.vtx:
+  { type: VTX, offset: 0xC9A6B0, count: 5, symbol: vtx_C2E7B0 }
+vtx_C2E800.vtx:
+  { type: VTX, offset: 0xC9A700, count: 14, symbol: vtx_C2E800 }
+vtx_C2E8C0.vtx:
+  { type: VTX, offset: 0xC9A7C0, count: 12, symbol: vtx_C2E8C0 }
+vtx_C2E980.vtx:
+  { type: VTX, offset: 0xC9A880, count: 15, symbol: vtx_C2E980 }
+vtx_C2EA60.vtx:
+  { type: VTX, offset: 0xC9A960, count: 20, symbol: vtx_C2EA60 }

@@ -1,0 +1,33 @@
+# PAL starpoint labels (en) rom 0x818CF0 vram 0x802ABC80
+
+:config:
+  virtual: [0x802ABC80, 0x818CF0]
+
+lights1:
+  { type: LIGHTS, offset: 0x818CF0, symbol: starpoint_lights1 }
+starpoint:
+  { type: TEXTURE, offset: 0x818D08, format: IA8, width: 128, height: 32, symbol: starpoint_starpoint_png }
+load_starpoint.gfx:
+  { type: GFX, offset: 0x819D08, symbol: starpoint_load_starpoint_gfx }
+starpoint.vtx:
+  { type: VTX, offset: 0x819D80, count: 4, symbol: starpoint_starpoint_vtx }
+render_starpoint.gfx:
+  { type: GFX, offset: 0x819DC0, symbol: starpoint_render_starpoint_gfx }
+render_starpoint_wrap.gfx:
+  { type: GFX, offset: 0x819E20, symbol: starpoint_render_starpoint_wrap_gfx }
+render_starpoint_top.gfx:
+  { type: GFX, offset: 0x819E48, symbol: starpoint_render_starpoint_top_gfx }
+lights2:
+  { type: LIGHTS, offset: 0x819E70, symbol: starpoint_lights2 }
+starpoints.vtx:
+  { type: VTX, offset: 0x819E88, count: 4, symbol: starpoint_starpoints_vtx }
+starpoints:
+  { type: TEXTURE, offset: 0x819EC8, format: IA8, width: 128, height: 32, symbol: starpoint_starpoints_png }
+load_starpoints.gfx:
+  { type: GFX, offset: 0x81AEC8, symbol: starpoint_load_starpoints_gfx }
+render_starpoints.gfx:
+  { type: GFX, offset: 0x81AF40, symbol: starpoint_render_starpoints_gfx }
+render_starpoints_wrap.gfx:
+  { type: GFX, offset: 0x81AFA0, symbol: starpoint_render_starpoints_wrap_gfx }
+render_starpoints_top.gfx:
+  { type: GFX, offset: 0x81AFC8, symbol: starpoint_render_starpoints_top_gfx }

@@ -1,0 +1,52 @@
+:config:
+  segments:
+    - [0x0A, 0xEB82F0]
+  virtual: [0x0A000000, 0xEB82F0]
+
+vtx_0:
+  { type: VTX, offset: 0x0A000000, count: 20, symbol: vtx_0 }
+vtx_370:
+  { type: VTX, offset: 0x0A000370, count: 30, symbol: vtx_370 }
+vtx_520:
+  { type: VTX, offset: 0x0A000520, count: 26, symbol: vtx_520 }
+vtx_6C0:
+  { type: VTX, offset: 0x0A0006C0, count: 31, symbol: vtx_6C0 }
+vtx_880:
+  { type: VTX, offset: 0x0A000880, count: 8, symbol: vtx_880 }
+
+tex_900:
+  { type: TEXTURE, format: RGBA16, offset: 0x0A000900, width: 32, height: 32, symbol: tex_900 }
+tex_21E8:
+  { type: TEXTURE, format: RGBA16, offset: 0x0A001170, width: 64, height: 32, symbol: tex_21E8 }
+
+dlist_1100:
+  { type: GFX, offset: 0x0A001100, symbol: dlist_1100 }
+dlist_31E8:
+  { type: GFX, offset: 0x0A002970, symbol: dlist_31E8 }
+
+mtx_3260:
+  { type: MTX, offset: 0x0A002A60, symbol: Entity_SaveBlock_Mtx }
+
+dlist_32A0:
+  { type: GFX, offset: 0x0A002AA0, symbol: Entity_SaveBlock_RenderLetterS }
+dlist_3360:
+  { type: GFX, offset: 0x0A002C20, symbol: Entity_SaveBlock_RenderBlock }
+dlist_3468:
+  { type: GFX, offset: 0x0A002D28, symbol: Entity_SaveBlock_RenderStar }
+dlist_34E0:
+  { type: GFX, offset: 0x0A002DA0, symbol: dlist_34E0 }
+dlist_34F0:
+  { type: GFX, offset: 0x0A002DB0, symbol: dlist_34F0 }
+dlist_3508:
+  { type: GFX, offset: 0x0A002DE0, symbol: dlist_3508 }
+
+# --- PAL-only: Spanish 'G' letter texture and its render lists ---
+tex_2170:
+  { type: TEXTURE, format: IA8, offset: 0x0A002170, width: 64, height: 32, symbol: tex_2170 }
+
+dlist_29E8:
+  { type: GFX, offset: 0x0A0029E8, symbol: Entity_SaveBlock_LoadTextureLetterG }
+dlist_2B60:
+  { type: GFX, offset: 0x0A002B60, symbol: Entity_SaveBlock_RenderLetterG }
+dlist_2DC8:
+  { type: GFX, offset: 0x0A002DC8, symbol: Entity_SaveBlock_RenderBlock_es }

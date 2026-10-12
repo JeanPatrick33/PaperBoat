@@ -2,6 +2,7 @@
 #define UIWidgets2_hpp
 
 #include <string>
+#include "MenuI18n.h"
 #include <vector>
 #include <span>
 #include <stdint.h>
@@ -660,9 +661,9 @@ bool Combobox(const char* label, T* value, const std::unordered_map<T, const cha
     const char* longest;
     size_t length = 0;
     for (auto& [index, string] : comboMap) {
-        size_t len = strlen(string);
+        size_t len = strlen(Tr(string));
         if (len > length) {
-            longest = string;
+            longest = Tr(string);
             length = len;
         }
     }
@@ -688,11 +689,11 @@ bool Combobox(const char* label, T* value, const std::unordered_map<T, const cha
     }
 
     ImGui::SetNextItemWidth(comboWidth);
-    if (ImGui::BeginCombo(invisibleLabel, comboMap.at(*value), options.flags)) {
+    if (ImGui::BeginCombo(invisibleLabel, Tr(comboMap.at(*value)), options.flags)) {
         ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(10.0f, 10.0f));
         for (const auto& pair : comboMap) {
             if (strlen(pair.second) > 1) {
-                if (ImGui::Selectable(pair.second, pair.first == *value)) {
+                if (ImGui::Selectable(Tr(pair.second), pair.first == *value)) {
                     *value = pair.first;
                     dirty = true;
                 }
@@ -708,7 +709,7 @@ bool Combobox(const char* label, T* value, const std::unordered_map<T, const cha
                 ImGui::SameLine();
                 ImGui::Text("%s", label);
             } else if (options.labelPosition == LabelPositions::Far) {
-                float width = ImGui::CalcTextSize(comboMap.at(*value)).x + ImGui::GetStyle().FramePadding.x * 2;
+                float width = ImGui::CalcTextSize(Tr(comboMap.at(*value))).x + ImGui::GetStyle().FramePadding.x * 2;
                 ImGui::SameLine(ImGui::GetContentRegionAvail().x - width);
                 ImGui::Text("%s", label);
             }

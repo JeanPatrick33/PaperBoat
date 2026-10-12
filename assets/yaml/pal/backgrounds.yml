@@ -1,0 +1,65 @@
+# Background assets (18 total)
+#
+# Each entry produces:
+#   backgrounds/<name>       — CI8 raster
+#   backgrounds/<name>_pal0  — palette 0
+#   backgrounds/<name>_pal1  — extra one for sbk (dry dry desert)
+
+:config:
+  segments:
+    - [0x01, 0x01000000]
+
+arn_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F5E72A, symbol: arn_bg }
+
+fla_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F804F2, symbol: fla_bg }
+
+flb_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F8C608, symbol: flb_bg }
+
+hos_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F5441E, symbol: hos_bg }
+
+iwa_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F4E1EA, symbol: iwa_bg }
+
+jan_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F74236, symbol: jan_bg }
+
+kmr_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F3459E, symbol: kmr_bg }
+
+kpa_bg:
+  { type: PM64:BACKGROUND, offset: 0x2FA800A, symbol: kpa_bg }
+
+nok_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F3EB60, symbol: nok_bg }
+
+obk_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F61D84, symbol: obk_bg }
+
+omo_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F63B64, symbol: omo_bg }
+
+sam_bg:
+  { type: PM64:BACKGROUND, offset: 0x2FA3606, symbol: sam_bg }
+
+sbk3_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F4967C, symbol: sbk3_bg }
+
+sbk_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F44546, symbol: sbk_bg }
+
+sra_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F95B46, symbol: sra_bg }
+
+title_bg:
+  { type: PM64:BACKGROUND, offset: 0x2FAB53A, symbol: title_bg }
+
+yki_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F9C4D4, symbol: yki_bg }
+
+yos_bg:
+  { type: PM64:BACKGROUND, offset: 0x2F68046, symbol: yos_bg }
+

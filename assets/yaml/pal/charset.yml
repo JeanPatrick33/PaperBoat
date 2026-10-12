@@ -1,0 +1,91 @@
+
+charset_standard:
+  { type: PM64:CHARSET, offset: 0x110CB0, size: 0x5300, symbol: gCharsetStandard, glyph_width: 16, glyph_height: 16 }
+
+charset_standard_palette:
+  { type: PM64:CHARSET, offset: 0x115FB0, size: 0x500, symbol: gCharsetStandardPalette, palette_stride: 16 }
+
+charset_title:
+  { type: PM64:CHARSET, offset: 0x1164B0, size: 0xF60, symbol: gCharsetTitle, glyph_width: 12, glyph_height: 16 }
+
+charset_subtitle:
+  { type: PM64:CHARSET, offset: 0x117410, size: 0xB88, symbol: gCharsetSubtitle, glyph_width: 12, glyph_height: 12 }
+
+charset_subtitle_palette:
+  { type: PM64:CHARSET, offset: 0x117F98, size: 0x80, symbol: gCharsetSubtitlePalette, palette_stride: 16 }
+
+charset_title_palette:
+  { type: BLOB, offset: 0x117FA8, size: 0x10, symbol: gCharsetTitlePalette }
+
+# Peach letter (CI8 150x105)
+charset_peach_letter:
+  { type: PM64:CHARSET, offset: 0x117FB8, size: 0x3D88, symbol: gCharsetPeachLetter, img_format: CI8, img_width: 150, img_height: 105 }
+charset_peach_letter_palette:
+  { type: PM64:CHARSET, offset: 0x11BD40, size: 0x200, symbol: gCharsetPeachLetterPalette, tlut_colors: 256 }
+
+# Postcard (CI4 150x105)
+charset_postcard:
+  { type: PM64:CHARSET, offset: 0x11BF40, size: 0x1EC8, symbol: gCharsetPostcard, img_format: CI4, img_width: 150, img_height: 105 }
+charset_postcard_palette:
+  { type: PM64:CHARSET, offset: 0x11DE08, size: 0x20, symbol: gCharsetPostcardPalette, tlut_colors: 16 }
+
+# Letter content 1-12 (CI8 70x95 each)
+charset_letter_content_1:
+  { type: PM64:CHARSET, offset: 0x11DE28, size: 0x1A00, symbol: gCharsetLetterContent1, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_1_palette:
+  { type: PM64:CHARSET, offset: 0x11F828, size: 0x200, symbol: gCharsetLetterContent1Palette, tlut_colors: 256 }
+
+charset_letter_content_2:
+  { type: PM64:CHARSET, offset: 0x11FA28, size: 0x1A00, symbol: gCharsetLetterContent2, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_2_palette:
+  { type: PM64:CHARSET, offset: 0x121428, size: 0x200, symbol: gCharsetLetterContent2Palette, tlut_colors: 256 }
+
+charset_letter_content_3:
+  { type: PM64:CHARSET, offset: 0x121628, size: 0x1A00, symbol: gCharsetLetterContent3, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_3_palette:
+  { type: PM64:CHARSET, offset: 0x123028, size: 0x200, symbol: gCharsetLetterContent3Palette, tlut_colors: 256 }
+
+charset_letter_content_4:
+  { type: PM64:CHARSET, offset: 0x123228, size: 0x1A00, symbol: gCharsetLetterContent4, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_4_palette:
+  { type: PM64:CHARSET, offset: 0x124C28, size: 0x200, symbol: gCharsetLetterContent4Palette, tlut_colors: 256 }
+
+charset_letter_content_5:
+  { type: PM64:CHARSET, offset: 0x124E28, size: 0x1A00, symbol: gCharsetLetterContent5, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_5_palette:
+  { type: PM64:CHARSET, offset: 0x126828, size: 0x200, symbol: gCharsetLetterContent5Palette, tlut_colors: 256 }
+
+charset_letter_content_6:
+  { type: PM64:CHARSET, offset: 0x126A28, size: 0x1A00, symbol: gCharsetLetterContent6, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_6_palette:
+  { type: PM64:CHARSET, offset: 0x128428, size: 0x200, symbol: gCharsetLetterContent6Palette, tlut_colors: 256 }
+
+charset_letter_content_7:
+  { type: PM64:CHARSET, offset: 0x128628, size: 0x1A00, symbol: gCharsetLetterContent7, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_7_palette:
+  { type: PM64:CHARSET, offset: 0x12A028, size: 0x200, symbol: gCharsetLetterContent7Palette, tlut_colors: 256 }
+
+charset_letter_content_8:
+  { type: PM64:CHARSET, offset: 0x12A228, size: 0x1A00, symbol: gCharsetLetterContent8, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_8_palette:
+  { type: PM64:CHARSET, offset: 0x12BC28, size: 0x200, symbol: gCharsetLetterContent8Palette, tlut_colors: 256 }
+
+charset_letter_content_9:
+  { type: PM64:CHARSET, offset: 0x12BE28, size: 0x1A00, symbol: gCharsetLetterContent9, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_9_palette:
+  { type: PM64:CHARSET, offset: 0x12D828, size: 0x200, symbol: gCharsetLetterContent9Palette, tlut_colors: 256 }
+
+charset_letter_content_10:
+  { type: PM64:CHARSET, offset: 0x12DA28, size: 0x1A00, symbol: gCharsetLetterContent10, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_10_palette:
+  { type: PM64:CHARSET, offset: 0x12F428, size: 0x200, symbol: gCharsetLetterContent10Palette, tlut_colors: 256 }
+
+charset_letter_content_11:
+  { type: PM64:CHARSET, offset: 0x12F628, size: 0x1A00, symbol: gCharsetLetterContent11, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_11_palette:
+  { type: PM64:CHARSET, offset: 0x131028, size: 0x200, symbol: gCharsetLetterContent11Palette, tlut_colors: 256 }
+
+charset_letter_content_12:
+  { type: PM64:CHARSET, offset: 0x131228, size: 0x1A00, symbol: gCharsetLetterContent12, img_format: CI8, img_width: 70, img_height: 95 }
+charset_letter_content_12_palette:
+  { type: PM64:CHARSET, offset: 0x132C28, size: 0x200, symbol: gCharsetLetterContent12Palette, tlut_colors: 256 }

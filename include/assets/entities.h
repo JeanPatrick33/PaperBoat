@@ -195,6 +195,10 @@ static const ALIGN_ASSET(2) char Entity_SaveBlock_RenderLetterS[] = "__OTR__enti
 static const ALIGN_ASSET(2) char Entity_SaveBlock_RenderBlock[] = "__OTR__entities/SaveBlock/dlist_3360";
 static const ALIGN_ASSET(2) char Entity_SaveBlock_RenderStar[] = "__OTR__entities/SaveBlock/dlist_3468";
 static const ALIGN_ASSET(2) char Entity_SaveBlock_Mtx[] = "__OTR__entities/SaveBlock/mtx_3260";
+#if VERSION_PAL
+static const ALIGN_ASSET(2) char Entity_SaveBlock_RenderLetterG[] = "__OTR__entities/SaveBlock/dlist_2B60";
+static const ALIGN_ASSET(2) char Entity_SaveBlock_RenderBlock_es[] = "__OTR__entities/SaveBlock/dlist_2DC8";
+#endif
 
 // ScriptSpring
 static const ALIGN_ASSET(2) char Entity_ScriptSpring_RenderPart1[] = "__OTR__entities/ScriptSpring/dlist_1710";

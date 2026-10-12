@@ -10,7 +10,9 @@
 extern u8 MessagePlural[];
 extern u8 MessageSingular[];
 #endif
-
+#if VERSION_PAL
+extern u8 MessagePlural_de[];
+#endif
 extern HudScript HES_Item_Coin;
 void create_shop_popup_menu(PopupMenu* popup);
 
@@ -106,11 +108,23 @@ s32 shop_owner_buy_dialog(s32 messageIndex, s32 itemName, s32 coinCost, s32 bpCo
         set_message_int_var(bpCost, 2);
 #if !VERSION_JP
     } else {
+#if VERSION_PAL
+        if (gCurrentLanguage == 1) {
+            suffix = MessagePlural_de;
+        } else {
+            suffix = MessagePlural;
+        }
+
+        if (coinCost == 1) {
+            suffix = MessageSingular;
+        }
+#else
         if (coinCost == 1) {
             suffix = MessageSingular;
         } else {
             suffix = MessagePlural;
         }
+#endif
         set_message_text_var((intptr_t) suffix, 2);
 #endif
     }

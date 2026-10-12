@@ -1,0 +1,9 @@
+# PAL message bank (en): 8092 messages in 47 sections.
+# Exported as a single blob (see tools/pal/gen_pal_messages.py for why).
+:config:
+  segments:
+    - [1, 0x2030000]
+  no_compression: true
+
+bank:
+  { type: BLOB, offset: 0x0, size: 0x102438, symbol: gMsgPalBank_en }

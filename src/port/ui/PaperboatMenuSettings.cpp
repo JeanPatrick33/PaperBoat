@@ -1,4 +1,5 @@
 #include "Notification.h"
+#include "MenuI18n.h"
 #include "PaperboatInputEditorWindow.h"
 #include "PaperboatMenu.h"
 #include "PaperboatModals.h"
@@ -31,6 +32,13 @@ static std::unordered_map<int32_t, const char*> imguiScaleOptions = {
     { 1, "Normal" },
     { 2, "Large" },
     { 3, "X-Large" },
+};
+
+static const std::unordered_map<int32_t, const char*> menuLanguageOptions = {
+    { 0, "English" },
+    { 1, "Deutsch" },
+    { 2, "Français" },
+    { 3, "Español" },
 };
 
 static const std::unordered_map<int32_t, const char*> menuThemeOptions = {
@@ -73,6 +81,18 @@ void PaperboatMenu::AddMenuSettings() {
 
     // Settings > General
     AddWidget(path, "Menu Settings", WIDGET_SEPARATOR_TEXT);
+    AddWidget(path, "Menu Language", WIDGET_CVAR_COMBOBOX)
+        .CVar(CVAR_MENU_LANGUAGE)
+        .RaceDisable(false)
+        .Options(
+            ComboboxOptions()
+                .Tooltip(
+                    "Changes the language of this menu. Uses the same languages as the European (PAL) version of the "
+                    "game."
+                )
+                .ComboMap(menuLanguageOptions)
+                .DefaultIndex(0)
+        );
     AddWidget(path, "Menu Theme", WIDGET_CVAR_COMBOBOX)
         .CVar(CVAR_SETTING("Menu.Theme"))
         .RaceDisable(false)
@@ -399,8 +419,11 @@ void PaperboatMenu::AddMenuSettings() {
                 .DefaultValue(1)
         );
 #endif
+    // With PAL timing the "original" frame rate is 25; the slider's minimum (30) stands for it.
+    const bool palTiming = GameEngine_GetNativeViHz() == 50;
+    const char* originalFpsFormat = palTiming ? "Original (25)" : "Original (%d)";
     auto fps = CVarGetInteger(CVAR_SETTING("InterpolationFPS"), 30);
-    const char* fpsFormat = fps == 30 ? "Original (%d)" : "%d";
+    const char* fpsFormat = fps <= 30 ? originalFpsFormat : "%d";
     AddWidget(path, "Current FPS", WIDGET_CVAR_SLIDER_INT)
         .CVar(CVAR_SETTING("InterpolationFPS"))
         .RaceDisable(false)
@@ -408,7 +431,7 @@ void PaperboatMenu::AddMenuSettings() {
             auto options = std::static_pointer_cast<IntSliderOptions>(info.options);
             int32_t defaultValue = options->defaultValue;
             if (CVarGetInteger(info.cVar, defaultValue) == defaultValue) {
-                options->format = "Original (%d)";
+                options->format = GameEngine_GetNativeViHz() == 50 ? "Original (25)" : "Original (%d)";
             } else {
                 options->format = "%d";
             }
@@ -418,10 +441,29 @@ void PaperboatMenu::AddMenuSettings() {
                 info.activeDisables.push_back(DISABLE_FOR_MATCH_REFRESH_RATE_ON);
         })
         .Options(IntSliderOptions().Tooltip(tooltip).Min(30).Max(maxFps).DefaultValue(30).Format(fpsFormat));
+#if VERSION_PAL
+    AddWidget(path, "Authentic PAL Timing (Needs reload)", WIDGET_CVAR_CHECKBOX)
+        .CVar(CVAR_SETTING("PalTiming"))
+        .RaceDisable(false)
+        .Options(
+            CheckboxOptions()
+                .DefaultValue(false)
+                .Tooltip(
+                    "Runs the game at the European console's native 50 Hz (25 logic frames per second), "
+                    "exactly like the original PAL cartridge. The PAL game's speeds, timers and music "
+                    "were written for that rate. Off by default: the game then runs at 60 Hz "
+                    "(faster, NTSC-like pacing). Requires a restart."
+                )
+        );
+#endif
     AddWidget(path, "Match Refresh Rate", WIDGET_CVAR_CHECKBOX)
         .CVar(CVAR_SETTING("MatchRefreshRate"))
         .RaceDisable(false)
         .Options(CheckboxOptions().Tooltip("Matches interpolation value to the refresh rate of your display."));
+    AddWidget(path, "Show FPS Counter", WIDGET_CVAR_CHECKBOX)
+        .CVar(CVAR_SETTING("ShowFPSCounter"))
+        .RaceDisable(false)
+        .Options(CheckboxOptions().Tooltip("Displays the current frame rate and frame time in the top-left corner."));
     AddWidget(path, "Renderer API (Needs reload)", WIDGET_VIDEO_BACKEND).RaceDisable(false);
     AddWidget(path, "Enable Vsync", WIDGET_CVAR_CHECKBOX)
         .CVar(CVAR_VSYNC_ENABLED)

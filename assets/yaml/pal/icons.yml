@@ -1,0 +1,2050 @@
+key/Gift:
+  { type: TEXTURE, format: CI4, offset: 0x1DA1E0, width: 32, height: 32, symbol: ICON_key_Gift_raster }
+key/Gift.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DA3E0, colors: 16, symbol: ICON_key_Gift_palette }
+key/CakeDone:
+  { type: TEXTURE, format: CI4, offset: 0x1DA400, width: 32, height: 32, symbol: ICON_key_CakeDone_raster }
+key/CakeDone.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DA600, colors: 16, symbol: ICON_key_CakeDone_palette }
+key/CakeBare:
+  { type: TEXTURE, format: CI4, offset: 0x1DA620, width: 32, height: 32, symbol: ICON_key_CakeBare_raster }
+key/CakeBare.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DA820, colors: 16, symbol: ICON_key_CakeBare_palette }
+key/CakePan:
+  { type: TEXTURE, format: CI4, offset: 0x1DA840, width: 32, height: 32, symbol: ICON_key_CakePan_raster }
+key/CakePan.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DAA40, colors: 16, symbol: ICON_key_CakePan_palette }
+key/CakeBatter:
+  { type: TEXTURE, format: CI4, offset: 0x1DAA60, width: 32, height: 32, symbol: ICON_key_CakeBatter_raster }
+key/CakeBatter.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DAC60, colors: 16, symbol: ICON_key_CakeBatter_palette }
+key/CakeBowl:
+  { type: TEXTURE, format: CI4, offset: 0x1DAC80, width: 32, height: 32, symbol: ICON_key_CakeBowl_raster }
+key/CakeBowl.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DAE80, colors: 16, symbol: ICON_key_CakeBowl_palette }
+key/CakeMixed:
+  { type: TEXTURE, format: CI4, offset: 0x1DAEA0, width: 32, height: 32, symbol: ICON_key_CakeMixed_raster }
+key/CakeMixed.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DB0A0, colors: 16, symbol: ICON_key_CakeMixed_palette }
+key/CakeWithIcing:
+  { type: TEXTURE, format: CI4, offset: 0x1DB0C0, width: 32, height: 32, symbol: ICON_key_CakeWithIcing_raster }
+key/CakeWithIcing.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DB2C0, colors: 16, symbol: ICON_key_CakeWithIcing_palette }
+key/CakeWithBerries:
+  { type: TEXTURE, format: CI4, offset: 0x1DB2E0, width: 32, height: 32, symbol: ICON_key_CakeWithBerries_raster }
+key/CakeWithBerries.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DB4E0, colors: 16, symbol: ICON_key_CakeWithBerries_palette }
+gear/boots_1:
+  { type: TEXTURE, format: CI4, offset: 0x1DB500, width: 32, height: 32, symbol: ICON_gear_boots_1_raster }
+gear/boots_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DB700, colors: 16, symbol: ICON_gear_boots_1_palette }
+gear/boots_2:
+  { type: TEXTURE, format: CI4, offset: 0x1DB720, width: 32, height: 32, symbol: ICON_gear_boots_2_raster }
+gear/boots_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DB920, colors: 16, symbol: ICON_gear_boots_2_palette }
+gear/boots_3:
+  { type: TEXTURE, format: CI4, offset: 0x1DB940, width: 32, height: 32, symbol: ICON_gear_boots_3_raster }
+gear/boots_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DBB40, colors: 16, symbol: ICON_gear_boots_3_palette }
+gear/hammer_1:
+  { type: TEXTURE, format: CI4, offset: 0x1DBB60, width: 32, height: 32, symbol: ICON_gear_hammer_1_raster }
+gear/hammer_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DBD60, colors: 16, symbol: ICON_gear_hammer_1_palette }
+gear/hammer_2:
+  { type: TEXTURE, format: CI4, offset: 0x1DBD80, width: 32, height: 32, symbol: ICON_gear_hammer_2_raster }
+gear/hammer_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DBF80, colors: 16, symbol: ICON_gear_hammer_2_palette }
+gear/hammer_3:
+  { type: TEXTURE, format: CI4, offset: 0x1DBFA0, width: 32, height: 32, symbol: ICON_gear_hammer_3_raster }
+gear/hammer_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DC1A0, colors: 16, symbol: ICON_gear_hammer_3_palette }
+gear/lucky_star:
+  { type: TEXTURE, format: CI4, offset: 0x1DC1C0, width: 32, height: 32, symbol: ICON_gear_lucky_star_raster }
+gear/lucky_star.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DC3C0, colors: 16, symbol: ICON_gear_lucky_star_palette }
+key/map:
+  { type: TEXTURE, format: CI4, offset: 0x1DC3E0, width: 32, height: 32, symbol: ICON_key_map_raster }
+key/map.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DC5E0, colors: 16, symbol: ICON_key_map_palette }
+food/SpicySoup:
+  { type: TEXTURE, format: CI4, offset: 0x1DC600, width: 32, height: 32, symbol: ICON_food_SpicySoup_raster }
+food/SpicySoup.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DC800, colors: 16, symbol: ICON_food_SpicySoup_palette }
+food/SpicySoup.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DC820, colors: 16, symbol: ICON_food_SpicySoup_disabled_palette }
+food/ApplePie:
+  { type: TEXTURE, format: CI4, offset: 0x1DC840, width: 32, height: 32, symbol: ICON_food_ApplePie_raster }
+food/ApplePie.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DCA40, colors: 16, symbol: ICON_food_ApplePie_palette }
+food/ApplePie.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DCA60, colors: 16, symbol: ICON_food_ApplePie_disabled_palette }
+food/HoneyUltra:
+  { type: TEXTURE, format: CI4, offset: 0x1DCA80, width: 32, height: 32, symbol: ICON_food_HoneyUltra_raster }
+food/HoneyUltra.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DCC80, colors: 16, symbol: ICON_food_HoneyUltra_palette }
+food/HoneyUltra.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DCCA0, colors: 16, symbol: ICON_food_HoneyUltra_disabled_palette }
+food/MapleUltra:
+  { type: TEXTURE, format: CI4, offset: 0x1DCCC0, width: 32, height: 32, symbol: ICON_food_MapleUltra_raster }
+food/MapleUltra.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DCEC0, colors: 16, symbol: ICON_food_MapleUltra_palette }
+food/MapleUltra.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DCEE0, colors: 16, symbol: ICON_food_MapleUltra_disabled_palette }
+food/JellyUltra:
+  { type: TEXTURE, format: CI4, offset: 0x1DCF00, width: 32, height: 32, symbol: ICON_food_JellyUltra_raster }
+food/JellyUltra.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DD100, colors: 16, symbol: ICON_food_JellyUltra_palette }
+food/JellyUltra.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DD120, colors: 16, symbol: ICON_food_JellyUltra_disabled_palette }
+food/Koopasta:
+  { type: TEXTURE, format: CI4, offset: 0x1DD140, width: 32, height: 32, symbol: ICON_food_Koopasta_raster }
+food/Koopasta.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DD340, colors: 16, symbol: ICON_food_Koopasta_palette }
+food/Koopasta.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DD360, colors: 16, symbol: ICON_food_Koopasta_disabled_palette }
+food/FriedShroom:
+  { type: TEXTURE, format: CI4, offset: 0x1DD380, width: 32, height: 32, symbol: ICON_food_FriedShroom_raster }
+food/FriedShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DD580, colors: 16, symbol: ICON_food_FriedShroom_palette }
+food/FriedShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DD5A0, colors: 16, symbol: ICON_food_FriedShroom_disabled_palette }
+food/ShroomCake:
+  { type: TEXTURE, format: CI4, offset: 0x1DD5C0, width: 32, height: 32, symbol: ICON_food_ShroomCake_raster }
+food/ShroomCake.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DD7C0, colors: 16, symbol: ICON_food_ShroomCake_palette }
+food/ShroomCake.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DD7E0, colors: 16, symbol: ICON_food_ShroomCake_disabled_palette }
+food/ShroomSteak:
+  { type: TEXTURE, format: CI4, offset: 0x1DD800, width: 32, height: 32, symbol: ICON_food_ShroomSteak_raster }
+food/ShroomSteak.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DDA00, colors: 16, symbol: ICON_food_ShroomSteak_palette }
+food/ShroomSteak.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DDA20, colors: 16, symbol: ICON_food_ShroomSteak_disabled_palette }
+food/HotShroom:
+  { type: TEXTURE, format: CI4, offset: 0x1DDA40, width: 32, height: 32, symbol: ICON_food_HotShroom_raster }
+food/HotShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DDC40, colors: 16, symbol: ICON_food_HotShroom_palette }
+food/HotShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DDC60, colors: 16, symbol: ICON_food_HotShroom_disabled_palette }
+food/SweetShroom:
+  { type: TEXTURE, format: CI4, offset: 0x1DDC80, width: 32, height: 32, symbol: ICON_food_SweetShroom_raster }
+food/SweetShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DDE80, colors: 16, symbol: ICON_food_SweetShroom_palette }
+food/SweetShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DDEA0, colors: 16, symbol: ICON_food_SweetShroom_disabled_palette }
+food/HealthyJuice:
+  { type: TEXTURE, format: CI4, offset: 0x1DDEC0, width: 32, height: 32, symbol: ICON_food_HealthyJuice_raster }
+food/HealthyJuice.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DE0C0, colors: 16, symbol: ICON_food_HealthyJuice_palette }
+food/HealthyJuice.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DE0E0, colors: 16, symbol: ICON_food_HealthyJuice_disabled_palette }
+food/BlandMeal:
+  { type: TEXTURE, format: CI4, offset: 0x1DE100, width: 32, height: 32, symbol: ICON_food_BlandMeal_raster }
+food/BlandMeal.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DE300, colors: 16, symbol: ICON_food_BlandMeal_palette }
+food/BlandMeal.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DE320, colors: 16, symbol: ICON_food_BlandMeal_disabled_palette }
+food/YummyMeal:
+  { type: TEXTURE, format: CI4, offset: 0x1DE340, width: 32, height: 32, symbol: ICON_food_YummyMeal_raster }
+food/YummyMeal.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DE540, colors: 16, symbol: ICON_food_YummyMeal_palette }
+food/YummyMeal.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DE560, colors: 16, symbol: ICON_food_YummyMeal_disabled_palette }
+food/DeluxeFeast:
+  { type: TEXTURE, format: CI4, offset: 0x1DE580, width: 32, height: 32, symbol: ICON_food_DeluxeFeast_raster }
+food/DeluxeFeast.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DE780, colors: 16, symbol: ICON_food_DeluxeFeast_palette }
+food/DeluxeFeast.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DE7A0, colors: 16, symbol: ICON_food_DeluxeFeast_disabled_palette }
+food/SpecialShake:
+  { type: TEXTURE, format: CI4, offset: 0x1DE7C0, width: 32, height: 32, symbol: ICON_food_SpecialShake_raster }
+food/SpecialShake.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DE9C0, colors: 16, symbol: ICON_food_SpecialShake_palette }
+food/SpecialShake.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DE9E0, colors: 16, symbol: ICON_food_SpecialShake_disabled_palette }
+food/BigCookie:
+  { type: TEXTURE, format: CI4, offset: 0x1DEA00, width: 32, height: 32, symbol: ICON_food_BigCookie_raster }
+food/BigCookie.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DEC00, colors: 16, symbol: ICON_food_BigCookie_palette }
+food/BigCookie.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DEC20, colors: 16, symbol: ICON_food_BigCookie_disabled_palette }
+food/Cake:
+  { type: TEXTURE, format: CI4, offset: 0x1DEC40, width: 32, height: 32, symbol: ICON_food_Cake_raster }
+food/Cake.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DEE40, colors: 16, symbol: ICON_food_Cake_palette }
+food/Cake.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DEE60, colors: 16, symbol: ICON_food_Cake_disabled_palette }
+food/Mistake:
+  { type: TEXTURE, format: CI4, offset: 0x1DEE80, width: 32, height: 32, symbol: ICON_food_Mistake_raster }
+food/Mistake.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DF080, colors: 16, symbol: ICON_food_Mistake_palette }
+food/Mistake.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DF0A0, colors: 16, symbol: ICON_food_Mistake_disabled_palette }
+food/KoopaTea:
+  { type: TEXTURE, format: CI4, offset: 0x1DF0C0, width: 32, height: 32, symbol: ICON_food_KoopaTea_raster }
+food/KoopaTea.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DF2C0, colors: 16, symbol: ICON_food_KoopaTea_palette }
+food/KoopaTea.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DF2E0, colors: 16, symbol: ICON_food_KoopaTea_disabled_palette }
+food/HoneySuper:
+  { type: TEXTURE, format: CI4, offset: 0x1DF300, width: 32, height: 32, symbol: ICON_food_HoneySuper_raster }
+food/HoneySuper.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DF500, colors: 16, symbol: ICON_food_HoneySuper_palette }
+food/HoneySuper.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DF520, colors: 16, symbol: ICON_food_HoneySuper_disabled_palette }
+food/MapleSuper:
+  { type: TEXTURE, format: CI4, offset: 0x1DF540, width: 32, height: 32, symbol: ICON_food_MapleSuper_raster }
+food/MapleSuper.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DF740, colors: 16, symbol: ICON_food_MapleSuper_palette }
+food/MapleSuper.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DF760, colors: 16, symbol: ICON_food_MapleSuper_disabled_palette }
+food/JellySuper:
+  { type: TEXTURE, format: CI4, offset: 0x1DF780, width: 32, height: 32, symbol: ICON_food_JellySuper_raster }
+food/JellySuper.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DF980, colors: 16, symbol: ICON_food_JellySuper_palette }
+food/JellySuper.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DF9A0, colors: 16, symbol: ICON_food_JellySuper_disabled_palette }
+food/Spaghetti:
+  { type: TEXTURE, format: CI4, offset: 0x1DF9C0, width: 32, height: 32, symbol: ICON_food_Spaghetti_raster }
+food/Spaghetti.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DFBC0, colors: 16, symbol: ICON_food_Spaghetti_palette }
+food/Spaghetti.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DFBE0, colors: 16, symbol: ICON_food_Spaghetti_disabled_palette }
+food/EggMissile:
+  { type: TEXTURE, format: CI4, offset: 0x1DFC00, width: 32, height: 32, symbol: ICON_food_EggMissile_raster }
+food/EggMissile.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DFE00, colors: 16, symbol: ICON_food_EggMissile_palette }
+food/EggMissile.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1DFE20, colors: 16, symbol: ICON_food_EggMissile_disabled_palette }
+food/FriedEgg:
+  { type: TEXTURE, format: CI4, offset: 0x1DFE40, width: 32, height: 32, symbol: ICON_food_FriedEgg_raster }
+food/FriedEgg.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0040, colors: 16, symbol: ICON_food_FriedEgg_palette }
+food/FriedEgg.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0060, colors: 16, symbol: ICON_food_FriedEgg_disabled_palette }
+food/HoneyShroom:
+  { type: TEXTURE, format: CI4, offset: 0x1E0080, width: 32, height: 32, symbol: ICON_food_HoneyShroom_raster }
+food/HoneyShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0280, colors: 16, symbol: ICON_food_HoneyShroom_palette }
+food/HoneyShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E02A0, colors: 16, symbol: ICON_food_HoneyShroom_disabled_palette }
+food/HoneyCandy:
+  { type: TEXTURE, format: CI4, offset: 0x1E02C0, width: 32, height: 32, symbol: ICON_food_HoneyCandy_raster }
+food/HoneyCandy.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E04C0, colors: 16, symbol: ICON_food_HoneyCandy_palette }
+food/HoneyCandy.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E04E0, colors: 16, symbol: ICON_food_HoneyCandy_disabled_palette }
+food/ElectroPop:
+  { type: TEXTURE, format: CI4, offset: 0x1E0500, width: 32, height: 32, symbol: ICON_food_ElectroPop_raster }
+food/ElectroPop.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0700, colors: 16, symbol: ICON_food_ElectroPop_palette }
+food/ElectroPop.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0720, colors: 16, symbol: ICON_food_ElectroPop_disabled_palette }
+food/FirePop:
+  { type: TEXTURE, format: CI4, offset: 0x1E0740, width: 32, height: 32, symbol: ICON_food_FirePop_raster }
+food/FirePop.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0940, colors: 16, symbol: ICON_food_FirePop_palette }
+food/FirePop.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0960, colors: 16, symbol: ICON_food_FirePop_disabled_palette }
+food/LimeCandy:
+  { type: TEXTURE, format: CI4, offset: 0x1E0980, width: 32, height: 32, symbol: ICON_food_LimeCandy_raster }
+food/LimeCandy.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0B80, colors: 16, symbol: ICON_food_LimeCandy_palette }
+food/LimeCandy.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0BA0, colors: 16, symbol: ICON_food_LimeCandy_disabled_palette }
+food/CocoPop:
+  { type: TEXTURE, format: CI4, offset: 0x1E0BC0, width: 32, height: 32, symbol: ICON_food_CocoPop_raster }
+food/CocoPop.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0DC0, colors: 16, symbol: ICON_food_CocoPop_palette }
+food/CocoPop.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E0DE0, colors: 16, symbol: ICON_food_CocoPop_disabled_palette }
+food/LemonCandy:
+  { type: TEXTURE, format: CI4, offset: 0x1E0E00, width: 32, height: 32, symbol: ICON_food_LemonCandy_raster }
+food/LemonCandy.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1000, colors: 16, symbol: ICON_food_LemonCandy_palette }
+food/LemonCandy.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1020, colors: 16, symbol: ICON_food_LemonCandy_disabled_palette }
+food/JellyPop:
+  { type: TEXTURE, format: CI4, offset: 0x1E1040, width: 32, height: 32, symbol: ICON_food_JellyPop_raster }
+food/JellyPop.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1240, colors: 16, symbol: ICON_food_JellyPop_palette }
+food/JellyPop.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1260, colors: 16, symbol: ICON_food_JellyPop_disabled_palette }
+food/StrangeCake:
+  { type: TEXTURE, format: CI4, offset: 0x1E1280, width: 32, height: 32, symbol: ICON_food_StrangeCake_raster }
+food/StrangeCake.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1480, colors: 16, symbol: ICON_food_StrangeCake_palette }
+food/StrangeCake.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E14A0, colors: 16, symbol: ICON_food_StrangeCake_disabled_palette }
+food/KookyCookie:
+  { type: TEXTURE, format: CI4, offset: 0x1E14C0, width: 32, height: 32, symbol: ICON_food_KookyCookie_raster }
+food/KookyCookie.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E16C0, colors: 16, symbol: ICON_food_KookyCookie_palette }
+food/KookyCookie.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E16E0, colors: 16, symbol: ICON_food_KookyCookie_disabled_palette }
+food/FrozenFries:
+  { type: TEXTURE, format: CI4, offset: 0x1E1700, width: 32, height: 32, symbol: ICON_food_FrozenFries_raster }
+food/FrozenFries.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1900, colors: 16, symbol: ICON_food_FrozenFries_palette }
+food/FrozenFries.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1920, colors: 16, symbol: ICON_food_FrozenFries_disabled_palette }
+food/PotatoSalad:
+  { type: TEXTURE, format: CI4, offset: 0x1E1940, width: 32, height: 32, symbol: ICON_food_PotatoSalad_raster }
+food/PotatoSalad.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1B40, colors: 16, symbol: ICON_food_PotatoSalad_palette }
+food/PotatoSalad.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1B60, colors: 16, symbol: ICON_food_PotatoSalad_disabled_palette }
+food/NuttyCake:
+  { type: TEXTURE, format: CI4, offset: 0x1E1B80, width: 32, height: 32, symbol: ICON_food_NuttyCake_raster }
+food/NuttyCake.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1D80, colors: 16, symbol: ICON_food_NuttyCake_palette }
+food/NuttyCake.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1DA0, colors: 16, symbol: ICON_food_NuttyCake_disabled_palette }
+food/MapleShroom:
+  { type: TEXTURE, format: CI4, offset: 0x1E1DC0, width: 32, height: 32, symbol: ICON_food_MapleShroom_raster }
+food/MapleShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1FC0, colors: 16, symbol: ICON_food_MapleShroom_palette }
+food/MapleShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E1FE0, colors: 16, symbol: ICON_food_MapleShroom_disabled_palette }
+food/BoiledEgg:
+  { type: TEXTURE, format: CI4, offset: 0x1E2000, width: 32, height: 32, symbol: ICON_food_BoiledEgg_raster }
+food/BoiledEgg.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2200, colors: 16, symbol: ICON_food_BoiledEgg_palette }
+food/BoiledEgg.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2220, colors: 16, symbol: ICON_food_BoiledEgg_disabled_palette }
+food/YoshiCookie:
+  { type: TEXTURE, format: CI4, offset: 0x1E2240, width: 32, height: 32, symbol: ICON_food_YoshiCookie_raster }
+food/YoshiCookie.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2440, colors: 16, symbol: ICON_food_YoshiCookie_palette }
+food/YoshiCookie.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2460, colors: 16, symbol: ICON_food_YoshiCookie_disabled_palette }
+food/JellyShroom:
+  { type: TEXTURE, format: CI4, offset: 0x1E2480, width: 32, height: 32, symbol: ICON_food_JellyShroom_raster }
+food/JellyShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2680, colors: 16, symbol: ICON_food_JellyShroom_palette }
+food/JellyShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E26A0, colors: 16, symbol: ICON_food_JellyShroom_disabled_palette }
+unused/item_02C:
+  { type: TEXTURE, format: CI4, offset: 0x1E26C0, width: 32, height: 32, symbol: ICON_unused_item_02C_raster }
+unused/item_02C.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E28C0, colors: 16, symbol: ICON_unused_item_02C_palette }
+unused/item_02C.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E28E0, colors: 16, symbol: ICON_unused_item_02C_disabled_palette }
+unused/item_02D:
+  { type: TEXTURE, format: CI4, offset: 0x1E2900, width: 32, height: 32, symbol: ICON_unused_item_02D_raster }
+unused/item_02D.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2B00, colors: 16, symbol: ICON_unused_item_02D_palette }
+unused/item_02D.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2B20, colors: 16, symbol: ICON_unused_item_02D_disabled_palette }
+unused/item_02E:
+  { type: TEXTURE, format: CI4, offset: 0x1E2B40, width: 32, height: 32, symbol: ICON_unused_item_02E_raster }
+unused/item_02E.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2D40, colors: 16, symbol: ICON_unused_item_02E_palette }
+unused/item_02E.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2D60, colors: 16, symbol: ICON_unused_item_02E_disabled_palette }
+unused/item_02F:
+  { type: TEXTURE, format: CI4, offset: 0x1E2D80, width: 32, height: 32, symbol: ICON_unused_item_02F_raster }
+unused/item_02F.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2F80, colors: 16, symbol: ICON_unused_item_02F_palette }
+unused/item_02F.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E2FA0, colors: 16, symbol: ICON_unused_item_02F_disabled_palette }
+unused/item_030:
+  { type: TEXTURE, format: CI4, offset: 0x1E2FC0, width: 32, height: 32, symbol: ICON_unused_item_030_raster }
+unused/item_030.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E31C0, colors: 16, symbol: ICON_unused_item_030_palette }
+unused/item_030.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E31E0, colors: 16, symbol: ICON_unused_item_030_disabled_palette }
+key/key_koopa_fortress:
+  { type: TEXTURE, format: CI4, offset: 0x1E3200, width: 32, height: 32, symbol: ICON_key_key_koopa_fortress_raster }
+key/key_koopa_fortress.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E3400, colors: 16, symbol: ICON_key_key_koopa_fortress_palette }
+key/key_ruins:
+  { type: TEXTURE, format: CI4, offset: 0x1E3420, width: 32, height: 32, symbol: ICON_key_key_ruins_raster }
+key/key_ruins.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E3620, colors: 16, symbol: ICON_key_key_ruins_palette }
+key/key_tubba_castle:
+  { type: TEXTURE, format: CI4, offset: 0x1E3640, width: 32, height: 32, symbol: ICON_key_key_tubba_castle_raster }
+key/key_tubba_castle.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E3840, colors: 16, symbol: ICON_key_key_tubba_castle_palette }
+key/key_ice_palace:
+  { type: TEXTURE, format: CI4, offset: 0x1E3860, width: 32, height: 32, symbol: ICON_key_key_ice_palace_raster }
+key/key_ice_palace.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E3A60, colors: 16, symbol: ICON_key_key_ice_palace_palette }
+key/key_bowser_castle:
+  { type: TEXTURE, format: CI4, offset: 0x1E3A80, width: 32, height: 32, symbol: ICON_key_key_bowser_castle_raster }
+key/key_bowser_castle.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E3C80, colors: 16, symbol: ICON_key_key_bowser_castle_palette }
+key/dolly:
+  { type: TEXTURE, format: CI4, offset: 0x1E3CA0, width: 32, height: 32, symbol: ICON_key_dolly_raster }
+key/dolly.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E3EA0, colors: 16, symbol: ICON_key_dolly_palette }
+key/kooper_shell:
+  { type: TEXTURE, format: CI4, offset: 0x1E3EC0, width: 32, height: 32, symbol: ICON_key_kooper_shell_raster }
+key/kooper_shell.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E40C0, colors: 16, symbol: ICON_key_kooper_shell_palette }
+key/pulse_stone:
+  { type: TEXTURE, format: CI4, offset: 0x1E40E0, width: 32, height: 32, symbol: ICON_key_pulse_stone_raster }
+key/pulse_stone.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E42E0, colors: 16, symbol: ICON_key_pulse_stone_palette }
+key/artifact:
+  { type: TEXTURE, format: CI4, offset: 0x1E4300, width: 32, height: 32, symbol: ICON_key_artifact_raster }
+key/artifact.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E4500, colors: 16, symbol: ICON_key_artifact_palette }
+key/vase:
+  { type: TEXTURE, format: CI4, offset: 0x1E4520, width: 32, height: 32, symbol: ICON_key_vase_raster }
+key/vase.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E4720, colors: 16, symbol: ICON_key_vase_palette }
+key/ruins_stone_pyramid:
+  { type: TEXTURE, format: CI4, offset: 0x1E4740, width: 32, height: 32, symbol: ICON_key_ruins_stone_pyramid_raster }
+key/ruins_stone_pyramid.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E4940, colors: 16, symbol: ICON_key_ruins_stone_pyramid_palette }
+key/ruins_stone_star:
+  { type: TEXTURE, format: CI4, offset: 0x1E4960, width: 32, height: 32, symbol: ICON_key_ruins_stone_star_raster }
+key/ruins_stone_star.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E4B60, colors: 16, symbol: ICON_key_ruins_stone_star_palette }
+key/ruins_stone_moon:
+  { type: TEXTURE, format: CI4, offset: 0x1E4B80, width: 32, height: 32, symbol: ICON_key_ruins_stone_moon_raster }
+key/ruins_stone_moon.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E4D80, colors: 16, symbol: ICON_key_ruins_stone_moon_palette }
+key/forest_pass:
+  { type: TEXTURE, format: CI4, offset: 0x1E4DA0, width: 32, height: 32, symbol: ICON_key_forest_pass_raster }
+key/forest_pass.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E4FA0, colors: 16, symbol: ICON_key_forest_pass_palette }
+key/boo_record_mask:
+  { type: TEXTURE, format: CI4, offset: 0x1E4FC0, width: 32, height: 32, symbol: ICON_key_boo_record_mask_raster }
+key/boo_record_mask.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E51C0, colors: 16, symbol: ICON_key_boo_record_mask_palette }
+key/boo_record:
+  { type: TEXTURE, format: CI4, offset: 0x1E51E0, width: 32, height: 32, symbol: ICON_key_boo_record_raster }
+key/boo_record.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E53E0, colors: 16, symbol: ICON_key_boo_record_palette }
+key/boo_weight:
+  { type: TEXTURE, format: CI4, offset: 0x1E5400, width: 32, height: 32, symbol: ICON_key_boo_weight_raster }
+key/boo_weight.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E5600, colors: 16, symbol: ICON_key_boo_weight_palette }
+key/boo_portrait:
+  { type: TEXTURE, format: CI4, offset: 0x1E5620, width: 32, height: 32, symbol: ICON_key_boo_portrait_raster }
+key/boo_portrait.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E5820, colors: 16, symbol: ICON_key_boo_portrait_palette }
+key/mystic_key:
+  { type: TEXTURE, format: CI4, offset: 0x1E5840, width: 32, height: 32, symbol: ICON_key_mystic_key_raster }
+key/mystic_key.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E5A40, colors: 16, symbol: ICON_key_mystic_key_palette }
+key/key_storeroom:
+  { type: TEXTURE, format: CI4, offset: 0x1E5A60, width: 32, height: 32, symbol: ICON_key_key_storeroom_raster }
+key/key_storeroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E5C60, colors: 16, symbol: ICON_key_key_storeroom_palette }
+key/toybox_train:
+  { type: TEXTURE, format: CI4, offset: 0x1E5C80, width: 32, height: 32, symbol: ICON_key_toybox_train_raster }
+key/toybox_train.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E5E80, colors: 16, symbol: ICON_key_toybox_train_palette }
+key/frying_pan:
+  { type: TEXTURE, format: CI4, offset: 0x1E5EA0, width: 32, height: 32, symbol: ICON_key_frying_pan_raster }
+key/frying_pan.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E60A0, colors: 16, symbol: ICON_key_frying_pan_palette }
+key/dictionary:
+  { type: TEXTURE, format: CI4, offset: 0x1E60C0, width: 32, height: 32, symbol: ICON_key_dictionary_raster }
+key/dictionary.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E62C0, colors: 16, symbol: ICON_key_dictionary_palette }
+key/mystery_note:
+  { type: TEXTURE, format: CI4, offset: 0x1E62E0, width: 32, height: 32, symbol: ICON_key_mystery_note_raster }
+key/mystery_note.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E64E0, colors: 16, symbol: ICON_key_mystery_note_palette }
+key/suspicious_note:
+  { type: TEXTURE, format: CI4, offset: 0x1E6500, width: 32, height: 32, symbol: ICON_key_suspicious_note_raster }
+key/suspicious_note.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E6700, colors: 16, symbol: ICON_key_suspicious_note_palette }
+key/seed_1:
+  { type: TEXTURE, format: CI4, offset: 0x1E6720, width: 32, height: 32, symbol: ICON_key_seed_1_raster }
+key/seed_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E6920, colors: 16, symbol: ICON_key_seed_1_palette }
+key/seed_2:
+  { type: TEXTURE, format: CI4, offset: 0x1E6940, width: 32, height: 32, symbol: ICON_key_seed_2_raster }
+key/seed_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E6B40, colors: 16, symbol: ICON_key_seed_2_palette }
+key/seed_3:
+  { type: TEXTURE, format: CI4, offset: 0x1E6B60, width: 32, height: 32, symbol: ICON_key_seed_3_raster }
+key/seed_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E6D60, colors: 16, symbol: ICON_key_seed_3_palette }
+key/seed_4:
+  { type: TEXTURE, format: CI4, offset: 0x1E6D80, width: 32, height: 32, symbol: ICON_key_seed_4_raster }
+key/seed_4.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E6F80, colors: 16, symbol: ICON_key_seed_4_palette }
+key/crystal_berry:
+  { type: TEXTURE, format: CI4, offset: 0x1E6FA0, width: 32, height: 32, symbol: ICON_key_crystal_berry_raster }
+key/crystal_berry.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E71A0, colors: 16, symbol: ICON_key_crystal_berry_palette }
+key/water_stone:
+  { type: TEXTURE, format: CI4, offset: 0x1E71C0, width: 32, height: 32, symbol: ICON_key_water_stone_raster }
+key/water_stone.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E73C0, colors: 16, symbol: ICON_key_water_stone_palette }
+key/magic_bean:
+  { type: TEXTURE, format: CI4, offset: 0x1E73E0, width: 32, height: 32, symbol: ICON_key_magic_bean_raster }
+key/magic_bean.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E75E0, colors: 16, symbol: ICON_key_magic_bean_palette }
+key/fertile_soil:
+  { type: TEXTURE, format: CI4, offset: 0x1E7600, width: 32, height: 32, symbol: ICON_key_fertile_soil_raster }
+key/fertile_soil.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E7800, colors: 16, symbol: ICON_key_fertile_soil_palette }
+key/miracle_water:
+  { type: TEXTURE, format: CI4, offset: 0x1E7820, width: 32, height: 32, symbol: ICON_key_miracle_water_raster }
+key/miracle_water.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E7A20, colors: 16, symbol: ICON_key_miracle_water_palette }
+key/ultra_stone:
+  { type: TEXTURE, format: CI4, offset: 0x1E7A40, width: 32, height: 32, symbol: ICON_key_ultra_stone_raster }
+key/ultra_stone.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E7C40, colors: 16, symbol: ICON_key_ultra_stone_palette }
+key/ultra_stone.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E7C60, colors: 16, symbol: ICON_key_ultra_stone_disabled_palette }
+key/toad_doll:
+  { type: TEXTURE, format: CI4, offset: 0x1E7C80, width: 32, height: 32, symbol: ICON_key_toad_doll_raster }
+key/toad_doll.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E7E80, colors: 16, symbol: ICON_key_toad_doll_palette }
+key/calculator:
+  { type: TEXTURE, format: CI4, offset: 0x1E7EA0, width: 32, height: 32, symbol: ICON_key_calculator_raster }
+key/calculator.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E80A0, colors: 16, symbol: ICON_key_calculator_palette }
+key/screwdriver:
+  { type: TEXTURE, format: CI4, offset: 0x1E80C0, width: 32, height: 32, symbol: ICON_key_screwdriver_raster }
+key/screwdriver.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E82C0, colors: 16, symbol: ICON_key_screwdriver_palette }
+key/book_cook:
+  { type: TEXTURE, format: CI4, offset: 0x1E82E0, width: 32, height: 32, symbol: ICON_key_book_cook_raster }
+key/book_cook.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E84E0, colors: 16, symbol: ICON_key_book_cook_palette }
+key/jade_raven:
+  { type: TEXTURE, format: CI4, offset: 0x1E8500, width: 32, height: 32, symbol: ICON_key_jade_raven_raster }
+key/jade_raven.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E8700, colors: 16, symbol: ICON_key_jade_raven_palette }
+key/snowman_bucket:
+  { type: TEXTURE, format: CI4, offset: 0x1E8720, width: 32, height: 32, symbol: ICON_key_snowman_bucket_raster }
+key/snowman_bucket.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E8920, colors: 16, symbol: ICON_key_snowman_bucket_palette }
+key/snowman_scarf:
+  { type: TEXTURE, format: CI4, offset: 0x1E8940, width: 32, height: 32, symbol: ICON_key_snowman_scarf_raster }
+key/snowman_scarf.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E8B40, colors: 16, symbol: ICON_key_snowman_scarf_palette }
+key/key_red:
+  { type: TEXTURE, format: CI4, offset: 0x1E8B60, width: 32, height: 32, symbol: ICON_key_key_red_raster }
+key/key_red.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E8D60, colors: 16, symbol: ICON_key_key_red_palette }
+key/key_red.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E8D80, colors: 16, symbol: ICON_key_key_red_disabled_palette }
+key/key_blue:
+  { type: TEXTURE, format: CI4, offset: 0x1E8DA0, width: 32, height: 32, symbol: ICON_key_key_blue_raster }
+key/key_blue.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E8FA0, colors: 16, symbol: ICON_key_key_blue_palette }
+key/koot_package:
+  { type: TEXTURE, format: CI4, offset: 0x1E8FC0, width: 32, height: 32, symbol: ICON_key_koot_package_raster }
+key/koot_package.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E91C0, colors: 16, symbol: ICON_key_koot_package_palette }
+key/koot_red_jar:
+  { type: TEXTURE, format: CI4, offset: 0x1E91E0, width: 32, height: 32, symbol: ICON_key_koot_red_jar_raster }
+key/koot_red_jar.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E93E0, colors: 16, symbol: ICON_key_koot_red_jar_palette }
+key/book_melody:
+  { type: TEXTURE, format: CI4, offset: 0x1E9400, width: 32, height: 32, symbol: ICON_key_book_melody_raster }
+key/book_melody.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E9600, colors: 16, symbol: ICON_key_book_melody_palette }
+key/book_lyrics:
+  { type: TEXTURE, format: CI4, offset: 0x1E9620, width: 32, height: 32, symbol: ICON_key_book_lyrics_raster }
+key/book_lyrics.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E9820, colors: 16, symbol: ICON_key_book_lyrics_palette }
+key/mailbag:
+  { type: TEXTURE, format: CI4, offset: 0x1E9840, width: 32, height: 32, symbol: ICON_key_mailbag_raster }
+key/mailbag.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E9A40, colors: 16, symbol: ICON_key_mailbag_palette }
+key/star_stone:
+  { type: TEXTURE, format: CI4, offset: 0x1E9A60, width: 32, height: 32, symbol: ICON_key_star_stone_raster }
+key/star_stone.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E9C60, colors: 16, symbol: ICON_key_star_stone_palette }
+peach/sneaky_parasol:
+  { type: TEXTURE, format: CI4, offset: 0x1E9C80, width: 32, height: 32, symbol: ICON_peach_sneaky_parasol_raster }
+peach/sneaky_parasol.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E9E80, colors: 16, symbol: ICON_peach_sneaky_parasol_palette }
+peach/sneaky_parasol.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1E9EA0, colors: 16, symbol: ICON_peach_sneaky_parasol_disabled_palette }
+key/key_peach:
+  { type: TEXTURE, format: CI4, offset: 0x1E9EC0, width: 32, height: 32, symbol: ICON_key_key_peach_raster }
+key/key_peach.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EA0C0, colors: 16, symbol: ICON_key_key_peach_palette }
+key/1DC210:
+  { type: TEXTURE, format: CI4, offset: 0x1EA0E0, width: 32, height: 32, symbol: ICON_key_1DC210_raster }
+key/1DC210.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EA2E0, colors: 16, symbol: ICON_key_1DC210_palette }
+key/1DC430:
+  { type: TEXTURE, format: CI4, offset: 0x1EA300, width: 32, height: 32, symbol: ICON_key_1DC430_raster }
+key/1DC430.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EA500, colors: 16, symbol: ICON_key_1DC430_palette }
+key/1DC650:
+  { type: TEXTURE, format: CI4, offset: 0x1EA520, width: 32, height: 32, symbol: ICON_key_1DC650_raster }
+key/1DC650.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EA720, colors: 16, symbol: ICON_key_1DC650_palette }
+key/1DC870:
+  { type: TEXTURE, format: CI4, offset: 0x1EA740, width: 32, height: 32, symbol: ICON_key_1DC870_raster }
+key/1DC870.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EA940, colors: 16, symbol: ICON_key_1DC870_palette }
+key/dojo_card_1:
+  { type: TEXTURE, format: CI4, offset: 0x1EA960, width: 32, height: 32, symbol: ICON_key_dojo_card_1_raster }
+key/dojo_card_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EAB60, colors: 16, symbol: ICON_key_dojo_card_1_palette }
+key/dojo_card_2:
+  { type: TEXTURE, format: CI4, offset: 0x1EAB80, width: 32, height: 32, symbol: ICON_key_dojo_card_2_raster }
+key/dojo_card_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EAD80, colors: 16, symbol: ICON_key_dojo_card_2_palette }
+key/dojo_card_3:
+  { type: TEXTURE, format: CI4, offset: 0x1EADA0, width: 32, height: 32, symbol: ICON_key_dojo_card_3_raster }
+key/dojo_card_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EAFA0, colors: 16, symbol: ICON_key_dojo_card_3_palette }
+key/dojo_card_3.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EAFC0, colors: 16, symbol: ICON_key_dojo_card_3_disabled_palette }
+key/dojo_card_4:
+  { type: TEXTURE, format: CI4, offset: 0x1EAFE0, width: 32, height: 32, symbol: ICON_key_dojo_card_4_raster }
+key/dojo_card_4.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EB1E0, colors: 16, symbol: ICON_key_dojo_card_4_palette }
+key/dojo_card_5:
+  { type: TEXTURE, format: CI4, offset: 0x1EB200, width: 32, height: 32, symbol: ICON_key_dojo_card_5_raster }
+key/dojo_card_5.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EB400, colors: 16, symbol: ICON_key_dojo_card_5_palette }
+key/crystal_ball:
+  { type: TEXTURE, format: CI4, offset: 0x1EB420, width: 32, height: 32, symbol: ICON_key_crystal_ball_raster }
+key/crystal_ball.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EB620, colors: 16, symbol: ICON_key_crystal_ball_palette }
+key/card_gold:
+  { type: TEXTURE, format: CI4, offset: 0x1EB640, width: 32, height: 32, symbol: ICON_key_card_gold_raster }
+key/card_gold.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EB840, colors: 16, symbol: ICON_key_card_gold_palette }
+key/card_silver:
+  { type: TEXTURE, format: CI4, offset: 0x1EB860, width: 32, height: 32, symbol: ICON_key_card_silver_raster }
+key/card_silver.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EBA60, colors: 16, symbol: ICON_key_card_silver_palette }
+key/koot_book:
+  { type: TEXTURE, format: CI4, offset: 0x1EBA80, width: 32, height: 32, symbol: ICON_key_koot_book_raster }
+key/koot_book.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EBC80, colors: 16, symbol: ICON_key_koot_book_palette }
+key/koot_the_tape:
+  { type: TEXTURE, format: CI4, offset: 0x1EBCA0, width: 32, height: 32, symbol: ICON_key_koot_the_tape_raster }
+key/koot_the_tape.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EBEA0, colors: 16, symbol: ICON_key_koot_the_tape_palette }
+key/koot_autograph_luigi:
+  { type: TEXTURE, format: CI4, offset: 0x1EBEC0, width: 32, height: 32, symbol: ICON_key_koot_autograph_luigi_raster }
+key/koot_autograph_luigi.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EC0C0, colors: 16, symbol: ICON_key_koot_autograph_luigi_palette }
+key/koot_autograph_luigi.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EC0E0, colors: 16, symbol: ICON_key_koot_autograph_luigi_disabled_palette }
+key/koot_empty_wallet:
+  { type: TEXTURE, format: CI4, offset: 0x1EC100, width: 32, height: 32, symbol: ICON_key_koot_empty_wallet_raster }
+key/koot_empty_wallet.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EC300, colors: 16, symbol: ICON_key_koot_empty_wallet_palette }
+key/koot_autograph_merluvlee:
+  { type: TEXTURE, format: CI4, offset: 0x1EC320, width: 32, height: 32, symbol: ICON_key_koot_autograph_merluvlee_raster }
+key/koot_autograph_merluvlee.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EC520, colors: 16, symbol: ICON_key_koot_autograph_merluvlee_palette }
+key/koot_shell:
+  { type: TEXTURE, format: CI4, offset: 0x1EC540, width: 32, height: 32, symbol: ICON_key_koot_shell_raster }
+key/koot_shell.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EC740, colors: 16, symbol: ICON_key_koot_shell_palette }
+key/koot_photo:
+  { type: TEXTURE, format: CI4, offset: 0x1EC760, width: 32, height: 32, symbol: ICON_key_koot_photo_raster }
+key/koot_photo.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EC960, colors: 16, symbol: ICON_key_koot_photo_palette }
+key/koot_glasses:
+  { type: TEXTURE, format: CI4, offset: 0x1EC980, width: 32, height: 32, symbol: ICON_key_koot_glasses_raster }
+key/koot_glasses.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ECB80, colors: 16, symbol: ICON_key_koot_glasses_palette }
+key/Letter:
+  { type: TEXTURE, format: CI4, offset: 0x1ECBA0, width: 32, height: 32, symbol: ICON_key_Letter_raster }
+key/Letter.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ECDA0, colors: 16, symbol: ICON_key_Letter_palette }
+key/Letter.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ECDC0, colors: 16, symbol: ICON_key_Letter_disabled_palette }
+key/LongLetter:
+  { type: TEXTURE, format: CI4, offset: 0x1ECDE0, width: 32, height: 32, symbol: ICON_key_LongLetter_raster }
+key/LongLetter.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ECFE0, colors: 16, symbol: ICON_key_LongLetter_palette }
+key/LongLetter.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ED000, colors: 16, symbol: ICON_key_LongLetter_disabled_palette }
+key/TealLetter:
+  { type: TEXTURE, format: CI4, offset: 0x1ED020, width: 32, height: 32, symbol: ICON_key_TealLetter_raster }
+key/TealLetter.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ED220, colors: 16, symbol: ICON_key_TealLetter_palette }
+key/TealLetter.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ED240, colors: 16, symbol: ICON_key_TealLetter_disabled_palette }
+key/Postcard:
+  { type: TEXTURE, format: CI4, offset: 0x1ED260, width: 32, height: 32, symbol: ICON_key_Postcard_raster }
+key/Postcard.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ED460, colors: 16, symbol: ICON_key_Postcard_palette }
+key/Postcard.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ED480, colors: 16, symbol: ICON_key_Postcard_disabled_palette }
+key/EmptyBook:
+  { type: TEXTURE, format: CI4, offset: 0x1ED4A0, width: 32, height: 32, symbol: ICON_key_EmptyBook_raster }
+key/EmptyBook.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ED6A0, colors: 16, symbol: ICON_key_EmptyBook_palette }
+key/EmptyBook.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ED6C0, colors: 16, symbol: ICON_key_EmptyBook_disabled_palette }
+unused/item_08D:
+  { type: TEXTURE, format: CI4, offset: 0x1ED6E0, width: 32, height: 32, symbol: ICON_unused_item_08D_raster }
+unused/item_08D.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ED8E0, colors: 16, symbol: ICON_unused_item_08D_palette }
+unused/item_08D.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1ED900, colors: 16, symbol: ICON_unused_item_08D_disabled_palette }
+unused/item_08E:
+  { type: TEXTURE, format: CI4, offset: 0x1ED920, width: 32, height: 32, symbol: ICON_unused_item_08E_raster }
+unused/item_08E.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EDB20, colors: 16, symbol: ICON_unused_item_08E_palette }
+unused/item_08E.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EDB40, colors: 16, symbol: ICON_unused_item_08E_disabled_palette }
+unused/item_08F:
+  { type: TEXTURE, format: CI4, offset: 0x1EDB60, width: 32, height: 32, symbol: ICON_unused_item_08F_raster }
+unused/item_08F.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EDD60, colors: 16, symbol: ICON_unused_item_08F_palette }
+unused/item_08F.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EDD80, colors: 16, symbol: ICON_unused_item_08F_disabled_palette }
+battle/PleaseComeBack:
+  { type: TEXTURE, format: CI4, offset: 0x1EDDA0, width: 32, height: 32, symbol: ICON_battle_PleaseComeBack_raster }
+battle/PleaseComeBack.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EDFA0, colors: 16, symbol: ICON_battle_PleaseComeBack_palette }
+battle/PleaseComeBack.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EDFC0, colors: 16, symbol: ICON_battle_PleaseComeBack_disabled_palette }
+battle/item_139:
+  { type: TEXTURE, format: CI4, offset: 0x1EDFE0, width: 32, height: 32, symbol: ICON_battle_item_139_raster }
+battle/item_139.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EE1E0, colors: 16, symbol: ICON_battle_item_139_palette }
+battle/item_139.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EE200, colors: 16, symbol: ICON_battle_item_139_disabled_palette }
+battle/FrightJar:
+  { type: TEXTURE, format: CI4, offset: 0x1EE220, width: 32, height: 32, symbol: ICON_battle_FrightJar_raster }
+battle/FrightJar.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EE420, colors: 16, symbol: ICON_battle_FrightJar_palette }
+battle/FrightJar.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EE440, colors: 16, symbol: ICON_battle_FrightJar_disabled_palette }
+battle/Mystery:
+  { type: TEXTURE, format: CI4, offset: 0x1EE460, width: 32, height: 32, symbol: ICON_battle_Mystery_raster }
+battle/Mystery.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EE660, colors: 16, symbol: ICON_battle_Mystery_palette }
+battle/Mystery.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EE680, colors: 16, symbol: ICON_battle_Mystery_disabled_palette }
+battle/RepelGel:
+  { type: TEXTURE, format: CI4, offset: 0x1EE6A0, width: 32, height: 32, symbol: ICON_battle_RepelGel_raster }
+battle/RepelGel.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EE8A0, colors: 16, symbol: ICON_battle_RepelGel_palette }
+battle/RepelGel.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EE8C0, colors: 16, symbol: ICON_battle_RepelGel_disabled_palette }
+battle/InsecticideHerb:
+  { type: TEXTURE, format: CI4, offset: 0x1EE8E0, width: 32, height: 32, symbol: ICON_battle_InsecticideHerb_raster }
+battle/InsecticideHerb.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EEAE0, colors: 16, symbol: ICON_battle_InsecticideHerb_palette }
+battle/InsecticideHerb.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EEB00, colors: 16, symbol: ICON_battle_InsecticideHerb_disabled_palette }
+battle/item_13E:
+  { type: TEXTURE, format: CI4, offset: 0x1EEB20, width: 32, height: 32, symbol: ICON_battle_item_13E_raster }
+battle/item_13E.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EED20, colors: 16, symbol: ICON_battle_item_13E_palette }
+battle/item_13E.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EED40, colors: 16, symbol: ICON_battle_item_13E_disabled_palette }
+battle/item_13F:
+  { type: TEXTURE, format: CI4, offset: 0x1EED60, width: 32, height: 32, symbol: ICON_battle_item_13F_raster }
+battle/item_13F.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EEF60, colors: 16, symbol: ICON_battle_item_13F_palette }
+battle/item_13F.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EEF80, colors: 16, symbol: ICON_battle_item_13F_disabled_palette }
+badge/SpinSmash:
+  { type: TEXTURE, format: CI4, offset: 0x1EEFA0, width: 32, height: 32, symbol: ICON_badge_SpinSmash_raster }
+badge/SpinSmash.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EF1A0, colors: 16, symbol: ICON_badge_SpinSmash_palette }
+badge/SpinSmash.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EF1C0, colors: 16, symbol: ICON_badge_SpinSmash_disabled_palette }
+badge/Multibounce:
+  { type: TEXTURE, format: CI4, offset: 0x1EF1E0, width: 32, height: 32, symbol: ICON_badge_Multibounce_raster }
+badge/Multibounce.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EF3E0, colors: 16, symbol: ICON_badge_Multibounce_palette }
+badge/Multibounce.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EF400, colors: 16, symbol: ICON_badge_Multibounce_disabled_palette }
+badge/PowerPlus:
+  { type: TEXTURE, format: CI4, offset: 0x1EF420, width: 32, height: 32, symbol: ICON_badge_PowerPlus_raster }
+badge/PowerPlus.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EF620, colors: 16, symbol: ICON_badge_PowerPlus_palette }
+badge/PowerPlus.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EF640, colors: 16, symbol: ICON_badge_PowerPlus_disabled_palette }
+badge/DodgeMaster:
+  { type: TEXTURE, format: CI4, offset: 0x1EF660, width: 32, height: 32, symbol: ICON_badge_DodgeMaster_raster }
+badge/DodgeMaster.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EF860, colors: 16, symbol: ICON_badge_DodgeMaster_palette }
+badge/DodgeMaster.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EF880, colors: 16, symbol: ICON_badge_DodgeMaster_disabled_palette }
+badge/PowerBounce:
+  { type: TEXTURE, format: CI4, offset: 0x1EF8A0, width: 32, height: 32, symbol: ICON_badge_PowerBounce_raster }
+badge/PowerBounce.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EFAA0, colors: 16, symbol: ICON_badge_PowerBounce_palette }
+badge/PowerBounce.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EFAC0, colors: 16, symbol: ICON_badge_PowerBounce_disabled_palette }
+badge/SpikeShield:
+  { type: TEXTURE, format: CI4, offset: 0x1EFAE0, width: 32, height: 32, symbol: ICON_badge_SpikeShield_raster }
+badge/SpikeShield.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EFCE0, colors: 16, symbol: ICON_badge_SpikeShield_palette }
+badge/SpikeShield.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EFD00, colors: 16, symbol: ICON_badge_SpikeShield_disabled_palette }
+badge/FirstAttack:
+  { type: TEXTURE, format: CI4, offset: 0x1EFD20, width: 32, height: 32, symbol: ICON_badge_FirstAttack_raster }
+badge/FirstAttack.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EFF20, colors: 16, symbol: ICON_badge_FirstAttack_palette }
+badge/FirstAttack.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1EFF40, colors: 16, symbol: ICON_badge_FirstAttack_disabled_palette }
+badge/HPPlus:
+  { type: TEXTURE, format: CI4, offset: 0x1EFF60, width: 32, height: 32, symbol: ICON_badge_HPPlus_raster }
+badge/HPPlus.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0160, colors: 16, symbol: ICON_badge_HPPlus_palette }
+badge/HPPlus.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0180, colors: 16, symbol: ICON_badge_HPPlus_disabled_palette }
+badge/QuakeHammer:
+  { type: TEXTURE, format: CI4, offset: 0x1F01A0, width: 32, height: 32, symbol: ICON_badge_QuakeHammer_raster }
+badge/QuakeHammer.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F03A0, colors: 16, symbol: ICON_badge_QuakeHammer_palette }
+badge/QuakeHammer.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F03C0, colors: 16, symbol: ICON_badge_QuakeHammer_disabled_palette }
+badge/DoubleDip:
+  { type: TEXTURE, format: CI4, offset: 0x1F03E0, width: 32, height: 32, symbol: ICON_badge_DoubleDip_raster }
+badge/DoubleDip.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F05E0, colors: 16, symbol: ICON_badge_DoubleDip_palette }
+badge/DoubleDip.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0600, colors: 16, symbol: ICON_badge_DoubleDip_disabled_palette }
+badge/PowerQuake:
+  { type: TEXTURE, format: CI4, offset: 0x1F0620, width: 32, height: 32, symbol: ICON_badge_PowerQuake_raster }
+badge/PowerQuake.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0820, colors: 16, symbol: ICON_badge_PowerQuake_palette }
+badge/PowerQuake.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0840, colors: 16, symbol: ICON_badge_PowerQuake_disabled_palette }
+badge/MegaQuake:
+  { type: TEXTURE, format: CI4, offset: 0x1F0860, width: 32, height: 32, symbol: ICON_badge_MegaQuake_raster }
+badge/MegaQuake.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0A60, colors: 16, symbol: ICON_badge_MegaQuake_palette }
+badge/MegaQuake.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0A80, colors: 16, symbol: ICON_badge_MegaQuake_disabled_palette }
+badge/SleepStomp:
+  { type: TEXTURE, format: CI4, offset: 0x1F0AA0, width: 32, height: 32, symbol: ICON_badge_SleepStomp_raster }
+badge/SleepStomp.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0CA0, colors: 16, symbol: ICON_badge_SleepStomp_palette }
+badge/SleepStomp.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0CC0, colors: 16, symbol: ICON_badge_SleepStomp_disabled_palette }
+badge/SmashCharge:
+  { type: TEXTURE, format: CI4, offset: 0x1F0CE0, width: 32, height: 32, symbol: ICON_badge_SmashCharge_raster }
+badge/SmashCharge.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0EE0, colors: 16, symbol: ICON_badge_SmashCharge_palette }
+badge/SmashCharge.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F0F00, colors: 16, symbol: ICON_badge_SmashCharge_disabled_palette }
+badge/SSmashChg:
+  { type: TEXTURE, format: CI4, offset: 0x1F0F20, width: 32, height: 32, symbol: ICON_badge_SSmashChg_raster }
+badge/SSmashChg.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1120, colors: 16, symbol: ICON_badge_SSmashChg_palette }
+badge/SSmashChg.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1140, colors: 16, symbol: ICON_badge_SSmashChg_disabled_palette }
+badge/AutoSmash:
+  { type: TEXTURE, format: CI4, offset: 0x1F1160, width: 32, height: 32, symbol: ICON_badge_AutoSmash_raster }
+badge/AutoSmash.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1360, colors: 16, symbol: ICON_badge_AutoSmash_palette }
+badge/AutoSmash.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1380, colors: 16, symbol: ICON_badge_AutoSmash_disabled_palette }
+badge/FireShield:
+  { type: TEXTURE, format: CI4, offset: 0x1F13A0, width: 32, height: 32, symbol: ICON_badge_FireShield_raster }
+badge/FireShield.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F15A0, colors: 16, symbol: ICON_badge_FireShield_palette }
+badge/FireShield.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F15C0, colors: 16, symbol: ICON_badge_FireShield_disabled_palette }
+badge/JumpCharge:
+  { type: TEXTURE, format: CI4, offset: 0x1F15E0, width: 32, height: 32, symbol: ICON_badge_JumpCharge_raster }
+badge/JumpCharge.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F17E0, colors: 16, symbol: ICON_badge_JumpCharge_palette }
+badge/JumpCharge.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1800, colors: 16, symbol: ICON_badge_JumpCharge_disabled_palette }
+badge/SJumpChg:
+  { type: TEXTURE, format: CI4, offset: 0x1F1820, width: 32, height: 32, symbol: ICON_badge_SJumpChg_raster }
+badge/SJumpChg.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1A20, colors: 16, symbol: ICON_badge_SJumpChg_palette }
+badge/SJumpChg.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1A40, colors: 16, symbol: ICON_badge_SJumpChg_disabled_palette }
+badge/AutoJump:
+  { type: TEXTURE, format: CI4, offset: 0x1F1A60, width: 32, height: 32, symbol: ICON_badge_AutoJump_raster }
+badge/AutoJump.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1C60, colors: 16, symbol: ICON_badge_AutoJump_palette }
+badge/AutoJump.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1C80, colors: 16, symbol: ICON_badge_AutoJump_disabled_palette }
+badge/DDownPound:
+  { type: TEXTURE, format: CI4, offset: 0x1F1CA0, width: 32, height: 32, symbol: ICON_badge_DDownPound_raster }
+badge/DDownPound.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1EA0, colors: 16, symbol: ICON_badge_DDownPound_palette }
+badge/DDownPound.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F1EC0, colors: 16, symbol: ICON_badge_DDownPound_disabled_palette }
+badge/AutoMultibounce:
+  { type: TEXTURE, format: CI4, offset: 0x1F1EE0, width: 32, height: 32, symbol: ICON_badge_AutoMultibounce_raster }
+badge/AutoMultibounce.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F20E0, colors: 16, symbol: ICON_badge_AutoMultibounce_palette }
+badge/AutoMultibounce.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F2100, colors: 16, symbol: ICON_badge_AutoMultibounce_disabled_palette }
+badge/DizzyStomp:
+  { type: TEXTURE, format: CI4, offset: 0x1F2120, width: 32, height: 32, symbol: ICON_badge_DizzyStomp_raster }
+badge/DizzyStomp.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F2320, colors: 16, symbol: ICON_badge_DizzyStomp_palette }
+badge/DizzyStomp.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F2340, colors: 16, symbol: ICON_badge_DizzyStomp_disabled_palette }
+badge/HammerThrow:
+  { type: TEXTURE, format: CI4, offset: 0x1F2360, width: 32, height: 32, symbol: ICON_badge_HammerThrow_raster }
+badge/HammerThrow.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F2560, colors: 16, symbol: ICON_badge_HammerThrow_palette }
+badge/HammerThrow.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F2580, colors: 16, symbol: ICON_badge_HammerThrow_disabled_palette }
+badge/SmashCharge0:
+  { type: TEXTURE, format: CI4, offset: 0x1F25A0, width: 32, height: 32, symbol: ICON_badge_SmashCharge0_raster }
+badge/SmashCharge0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F27A0, colors: 16, symbol: ICON_badge_SmashCharge0_palette }
+badge/SmashCharge0.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F27C0, colors: 16, symbol: ICON_badge_SmashCharge0_disabled_palette }
+badge/PrettyLucky:
+  { type: TEXTURE, format: CI4, offset: 0x1F27E0, width: 32, height: 32, symbol: ICON_badge_PrettyLucky_raster }
+badge/PrettyLucky.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F29E0, colors: 16, symbol: ICON_badge_PrettyLucky_palette }
+badge/PrettyLucky.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F2A00, colors: 16, symbol: ICON_badge_PrettyLucky_disabled_palette }
+badge/FeelingFine:
+  { type: TEXTURE, format: CI4, offset: 0x1F2A20, width: 32, height: 32, symbol: ICON_badge_FeelingFine_raster }
+badge/FeelingFine.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F2C20, colors: 16, symbol: ICON_badge_FeelingFine_palette }
+badge/FeelingFine.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F2C40, colors: 16, symbol: ICON_badge_FeelingFine_disabled_palette }
+badge/AttackFXA:
+  { type: TEXTURE, format: CI4, offset: 0x1F2C60, width: 32, height: 32, symbol: ICON_badge_AttackFXA_raster }
+badge/AttackFXA.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F2E60, colors: 16, symbol: ICON_badge_AttackFXA_palette }
+badge/AttackFXA.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F2E80, colors: 16, symbol: ICON_badge_AttackFXA_disabled_palette }
+badge/AllorNothing:
+  { type: TEXTURE, format: CI4, offset: 0x1F2EA0, width: 32, height: 32, symbol: ICON_badge_AllorNothing_raster }
+badge/AllorNothing.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F30A0, colors: 16, symbol: ICON_badge_AllorNothing_palette }
+badge/AllorNothing.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F30C0, colors: 16, symbol: ICON_badge_AllorNothing_disabled_palette }
+badge/HPDrain:
+  { type: TEXTURE, format: CI4, offset: 0x1F30E0, width: 32, height: 32, symbol: ICON_badge_HPDrain_raster }
+badge/HPDrain.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F32E0, colors: 16, symbol: ICON_badge_HPDrain_palette }
+badge/HPDrain.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F3300, colors: 16, symbol: ICON_badge_HPDrain_disabled_palette }
+badge/JumpCharge0:
+  { type: TEXTURE, format: CI4, offset: 0x1F3320, width: 32, height: 32, symbol: ICON_badge_JumpCharge0_raster }
+badge/JumpCharge0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F3520, colors: 16, symbol: ICON_badge_JumpCharge0_palette }
+badge/JumpCharge0.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F3540, colors: 16, symbol: ICON_badge_JumpCharge0_disabled_palette }
+badge/SlowGo:
+  { type: TEXTURE, format: CI4, offset: 0x1F3560, width: 32, height: 32, symbol: ICON_badge_SlowGo_raster }
+badge/SlowGo.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F3760, colors: 16, symbol: ICON_badge_SlowGo_palette }
+badge/SlowGo.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F3780, colors: 16, symbol: ICON_badge_SlowGo_disabled_palette }
+badge/FPPlus:
+  { type: TEXTURE, format: CI4, offset: 0x1F37A0, width: 32, height: 32, symbol: ICON_badge_FPPlus_raster }
+badge/FPPlus.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F39A0, colors: 16, symbol: ICON_badge_FPPlus_palette }
+badge/FPPlus.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F39C0, colors: 16, symbol: ICON_badge_FPPlus_disabled_palette }
+badge/MegaRush:
+  { type: TEXTURE, format: CI4, offset: 0x1F39E0, width: 32, height: 32, symbol: ICON_badge_MegaRush_raster }
+badge/MegaRush.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F3BE0, colors: 16, symbol: ICON_badge_MegaRush_palette }
+badge/MegaRush.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F3C00, colors: 16, symbol: ICON_badge_MegaRush_disabled_palette }
+badge/IcePower:
+  { type: TEXTURE, format: CI4, offset: 0x1F3C20, width: 32, height: 32, symbol: ICON_badge_IcePower_raster }
+badge/IcePower.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F3E20, colors: 16, symbol: ICON_badge_IcePower_palette }
+badge/IcePower.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F3E40, colors: 16, symbol: ICON_badge_IcePower_disabled_palette }
+badge/DefendPlus:
+  { type: TEXTURE, format: CI4, offset: 0x1F3E60, width: 32, height: 32, symbol: ICON_badge_DefendPlus_raster }
+badge/DefendPlus.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4060, colors: 16, symbol: ICON_badge_DefendPlus_palette }
+badge/DefendPlus.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4080, colors: 16, symbol: ICON_badge_DefendPlus_disabled_palette }
+badge/PayOff:
+  { type: TEXTURE, format: CI4, offset: 0x1F40A0, width: 32, height: 32, symbol: ICON_badge_PayOff_raster }
+badge/PayOff.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F42A0, colors: 16, symbol: ICON_badge_PayOff_palette }
+badge/PayOff.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F42C0, colors: 16, symbol: ICON_badge_PayOff_disabled_palette }
+badge/MoneyMoney:
+  { type: TEXTURE, format: CI4, offset: 0x1F42E0, width: 32, height: 32, symbol: ICON_badge_MoneyMoney_raster }
+badge/MoneyMoney.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F44E0, colors: 16, symbol: ICON_badge_MoneyMoney_palette }
+badge/MoneyMoney.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4500, colors: 16, symbol: ICON_badge_MoneyMoney_disabled_palette }
+badge/ChillOut:
+  { type: TEXTURE, format: CI4, offset: 0x1F4520, width: 32, height: 32, symbol: ICON_badge_ChillOut_raster }
+badge/ChillOut.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4720, colors: 16, symbol: ICON_badge_ChillOut_palette }
+badge/ChillOut.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4740, colors: 16, symbol: ICON_badge_ChillOut_disabled_palette }
+badge/HappyHeart:
+  { type: TEXTURE, format: CI4, offset: 0x1F4760, width: 32, height: 32, symbol: ICON_badge_HappyHeart_raster }
+badge/HappyHeart.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4960, colors: 16, symbol: ICON_badge_HappyHeart_palette }
+badge/HappyHeart.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4980, colors: 16, symbol: ICON_badge_HappyHeart_disabled_palette }
+badge/ZapTap:
+  { type: TEXTURE, format: CI4, offset: 0x1F49A0, width: 32, height: 32, symbol: ICON_badge_ZapTap_raster }
+badge/ZapTap.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4BA0, colors: 16, symbol: ICON_badge_ZapTap_palette }
+badge/ZapTap.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4BC0, colors: 16, symbol: ICON_badge_ZapTap_disabled_palette }
+badge/Berserker:
+  { type: TEXTURE, format: CI4, offset: 0x1F4BE0, width: 32, height: 32, symbol: ICON_badge_Berserker_raster }
+badge/Berserker.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4DE0, colors: 16, symbol: ICON_badge_Berserker_palette }
+badge/Berserker.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F4E00, colors: 16, symbol: ICON_badge_Berserker_disabled_palette }
+badge/RightOn:
+  { type: TEXTURE, format: CI4, offset: 0x1F4E20, width: 32, height: 32, symbol: ICON_badge_RightOn_raster }
+badge/RightOn.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5020, colors: 16, symbol: ICON_badge_RightOn_palette }
+badge/RightOn.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5040, colors: 16, symbol: ICON_badge_RightOn_disabled_palette }
+badge/RunawayPay:
+  { type: TEXTURE, format: CI4, offset: 0x1F5060, width: 32, height: 32, symbol: ICON_badge_RunawayPay_raster }
+badge/RunawayPay.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5260, colors: 16, symbol: ICON_badge_RunawayPay_palette }
+badge/RunawayPay.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5280, colors: 16, symbol: ICON_badge_RunawayPay_disabled_palette }
+badge/Refund:
+  { type: TEXTURE, format: CI4, offset: 0x1F52A0, width: 32, height: 32, symbol: ICON_badge_Refund_raster }
+badge/Refund.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F54A0, colors: 16, symbol: ICON_badge_Refund_palette }
+badge/Refund.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F54C0, colors: 16, symbol: ICON_badge_Refund_disabled_palette }
+badge/FlowerSaver:
+  { type: TEXTURE, format: CI4, offset: 0x1F54E0, width: 32, height: 32, symbol: ICON_badge_FlowerSaver_raster }
+badge/FlowerSaver.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F56E0, colors: 16, symbol: ICON_badge_FlowerSaver_palette }
+badge/FlowerSaver.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5700, colors: 16, symbol: ICON_badge_FlowerSaver_disabled_palette }
+badge/TripleDip:
+  { type: TEXTURE, format: CI4, offset: 0x1F5720, width: 32, height: 32, symbol: ICON_badge_TripleDip_raster }
+badge/TripleDip.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5920, colors: 16, symbol: ICON_badge_TripleDip_palette }
+badge/TripleDip.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5940, colors: 16, symbol: ICON_badge_TripleDip_disabled_palette }
+badge/FlowerFanatic:
+  { type: TEXTURE, format: CI4, offset: 0x1F5960, width: 32, height: 32, symbol: ICON_badge_FlowerFanatic_raster }
+badge/FlowerFanatic.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5B60, colors: 16, symbol: ICON_badge_FlowerFanatic_palette }
+badge/FlowerFanatic.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5B80, colors: 16, symbol: ICON_badge_FlowerFanatic_disabled_palette }
+badge/PowerJump:
+  { type: TEXTURE, format: CI4, offset: 0x1F5BA0, width: 32, height: 32, symbol: ICON_badge_PowerJump_raster }
+badge/PowerJump.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5DA0, colors: 16, symbol: ICON_badge_PowerJump_palette }
+badge/PowerJump.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5DC0, colors: 16, symbol: ICON_badge_PowerJump_disabled_palette }
+badge/SuperJump:
+  { type: TEXTURE, format: CI4, offset: 0x1F5DE0, width: 32, height: 32, symbol: ICON_badge_SuperJump_raster }
+badge/SuperJump.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F5FE0, colors: 16, symbol: ICON_badge_SuperJump_palette }
+badge/SuperJump.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6000, colors: 16, symbol: ICON_badge_SuperJump_disabled_palette }
+badge/MegaJump:
+  { type: TEXTURE, format: CI4, offset: 0x1F6020, width: 32, height: 32, symbol: ICON_badge_MegaJump_raster }
+badge/MegaJump.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6220, colors: 16, symbol: ICON_badge_MegaJump_palette }
+badge/MegaJump.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6240, colors: 16, symbol: ICON_badge_MegaJump_disabled_palette }
+badge/PowerSmash:
+  { type: TEXTURE, format: CI4, offset: 0x1F6260, width: 32, height: 32, symbol: ICON_badge_PowerSmash_raster }
+badge/PowerSmash.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6460, colors: 16, symbol: ICON_badge_PowerSmash_palette }
+badge/PowerSmash.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6480, colors: 16, symbol: ICON_badge_PowerSmash_disabled_palette }
+badge/SuperSmash:
+  { type: TEXTURE, format: CI4, offset: 0x1F64A0, width: 32, height: 32, symbol: ICON_badge_SuperSmash_raster }
+badge/SuperSmash.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F66A0, colors: 16, symbol: ICON_badge_SuperSmash_palette }
+badge/SuperSmash.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F66C0, colors: 16, symbol: ICON_badge_SuperSmash_disabled_palette }
+badge/MegaSmash:
+  { type: TEXTURE, format: CI4, offset: 0x1F66E0, width: 32, height: 32, symbol: ICON_badge_MegaSmash_raster }
+badge/MegaSmash.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F68E0, colors: 16, symbol: ICON_badge_MegaSmash_palette }
+badge/MegaSmash.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6900, colors: 16, symbol: ICON_badge_MegaSmash_disabled_palette }
+badge/LuckyDay:
+  { type: TEXTURE, format: CI4, offset: 0x1F6920, width: 32, height: 32, symbol: ICON_badge_LuckyDay_raster }
+badge/LuckyDay.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6B20, colors: 16, symbol: ICON_badge_LuckyDay_palette }
+badge/LuckyDay.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6B40, colors: 16, symbol: ICON_badge_LuckyDay_disabled_palette }
+badge/MegaHPDrain:
+  { type: TEXTURE, format: CI4, offset: 0x1F6B60, width: 32, height: 32, symbol: ICON_badge_MegaHPDrain_raster }
+badge/MegaHPDrain.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6D60, colors: 16, symbol: ICON_badge_MegaHPDrain_palette }
+badge/MegaHPDrain.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6D80, colors: 16, symbol: ICON_badge_MegaHPDrain_disabled_palette }
+badge/BumpAttack:
+  { type: TEXTURE, format: CI4, offset: 0x1F6DA0, width: 32, height: 32, symbol: ICON_badge_BumpAttack_raster }
+badge/BumpAttack.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6FA0, colors: 16, symbol: ICON_badge_BumpAttack_palette }
+badge/BumpAttack.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F6FC0, colors: 16, symbol: ICON_badge_BumpAttack_disabled_palette }
+badge/PUpDDown:
+  { type: TEXTURE, format: CI4, offset: 0x1F6FE0, width: 32, height: 32, symbol: ICON_badge_PUpDDown_raster }
+badge/PUpDDown.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F71E0, colors: 16, symbol: ICON_badge_PUpDDown_palette }
+badge/PUpDDown.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7200, colors: 16, symbol: ICON_badge_PUpDDown_disabled_palette }
+badge/PDownDUp:
+  { type: TEXTURE, format: CI4, offset: 0x1F7220, width: 32, height: 32, symbol: ICON_badge_PDownDUp_raster }
+badge/PDownDUp.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7420, colors: 16, symbol: ICON_badge_PDownDUp_palette }
+badge/PDownDUp.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7440, colors: 16, symbol: ICON_badge_PDownDUp_disabled_palette }
+badge/HeartFinder:
+  { type: TEXTURE, format: CI4, offset: 0x1F7460, width: 32, height: 32, symbol: ICON_badge_HeartFinder_raster }
+badge/HeartFinder.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7660, colors: 16, symbol: ICON_badge_HeartFinder_palette }
+badge/HeartFinder.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7680, colors: 16, symbol: ICON_badge_HeartFinder_disabled_palette }
+badge/FlowerFinder:
+  { type: TEXTURE, format: CI4, offset: 0x1F76A0, width: 32, height: 32, symbol: ICON_badge_FlowerFinder_raster }
+badge/FlowerFinder.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F78A0, colors: 16, symbol: ICON_badge_FlowerFinder_palette }
+badge/FlowerFinder.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F78C0, colors: 16, symbol: ICON_badge_FlowerFinder_disabled_palette }
+badge/DizzyAttack:
+  { type: TEXTURE, format: CI4, offset: 0x1F78E0, width: 32, height: 32, symbol: ICON_badge_DizzyAttack_raster }
+badge/DizzyAttack.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7AE0, colors: 16, symbol: ICON_badge_DizzyAttack_palette }
+badge/DizzyAttack.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7B00, colors: 16, symbol: ICON_badge_DizzyAttack_disabled_palette }
+badge/SpeedySpin:
+  { type: TEXTURE, format: CI4, offset: 0x1F7B20, width: 32, height: 32, symbol: ICON_badge_SpeedySpin_raster }
+badge/SpeedySpin.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7D20, colors: 16, symbol: ICON_badge_SpeedySpin_palette }
+badge/SpeedySpin.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7D40, colors: 16, symbol: ICON_badge_SpeedySpin_disabled_palette }
+badge/SpinAttack:
+  { type: TEXTURE, format: CI4, offset: 0x1F7D60, width: 32, height: 32, symbol: ICON_badge_SpinAttack_raster }
+badge/SpinAttack.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7F60, colors: 16, symbol: ICON_badge_SpinAttack_palette }
+badge/SpinAttack.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F7F80, colors: 16, symbol: ICON_badge_SpinAttack_disabled_palette }
+badge/ISpy:
+  { type: TEXTURE, format: CI4, offset: 0x1F7FA0, width: 32, height: 32, symbol: ICON_badge_ISpy_raster }
+badge/ISpy.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F81A0, colors: 16, symbol: ICON_badge_ISpy_palette }
+badge/ISpy.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F81C0, colors: 16, symbol: ICON_badge_ISpy_disabled_palette }
+badge/PowerRush:
+  { type: TEXTURE, format: CI4, offset: 0x1F81E0, width: 32, height: 32, symbol: ICON_badge_PowerRush_raster }
+badge/PowerRush.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F83E0, colors: 16, symbol: ICON_badge_PowerRush_palette }
+badge/PowerRush.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8400, colors: 16, symbol: ICON_badge_PowerRush_disabled_palette }
+badge/LastStand:
+  { type: TEXTURE, format: CI4, offset: 0x1F8420, width: 32, height: 32, symbol: ICON_badge_LastStand_raster }
+badge/LastStand.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8620, colors: 16, symbol: ICON_badge_LastStand_palette }
+badge/LastStand.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8640, colors: 16, symbol: ICON_badge_LastStand_disabled_palette }
+badge/CloseCall:
+  { type: TEXTURE, format: CI4, offset: 0x1F8660, width: 32, height: 32, symbol: ICON_badge_CloseCall_raster }
+badge/CloseCall.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8860, colors: 16, symbol: ICON_badge_CloseCall_palette }
+badge/CloseCall.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8880, colors: 16, symbol: ICON_badge_CloseCall_disabled_palette }
+badge/CrazyHeart:
+  { type: TEXTURE, format: CI4, offset: 0x1F88A0, width: 32, height: 32, symbol: ICON_badge_CrazyHeart_raster }
+badge/CrazyHeart.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8AA0, colors: 16, symbol: ICON_badge_CrazyHeart_palette }
+badge/CrazyHeart.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8AC0, colors: 16, symbol: ICON_badge_CrazyHeart_disabled_palette }
+unused/item_0D5:
+  { type: TEXTURE, format: CI4, offset: 0x1F8AE0, width: 32, height: 32, symbol: ICON_unused_item_0D5_raster }
+unused/item_0D5.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8CE0, colors: 16, symbol: ICON_unused_item_0D5_palette }
+unused/item_0D5.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8D00, colors: 16, symbol: ICON_unused_item_0D5_disabled_palette }
+unused/item_0D6:
+  { type: TEXTURE, format: CI4, offset: 0x1F8D20, width: 32, height: 32, symbol: ICON_unused_item_0D6_raster }
+unused/item_0D6.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8F20, colors: 16, symbol: ICON_unused_item_0D6_palette }
+unused/item_0D6.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F8F40, colors: 16, symbol: ICON_unused_item_0D6_disabled_palette }
+unused/item_0D7:
+  { type: TEXTURE, format: CI4, offset: 0x1F8F60, width: 32, height: 32, symbol: ICON_unused_item_0D7_raster }
+unused/item_0D7.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9160, colors: 16, symbol: ICON_unused_item_0D7_palette }
+unused/item_0D7.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9180, colors: 16, symbol: ICON_unused_item_0D7_disabled_palette }
+badge/ShrinkSmash:
+  { type: TEXTURE, format: CI4, offset: 0x1F91A0, width: 32, height: 32, symbol: ICON_badge_ShrinkSmash_raster }
+badge/ShrinkSmash.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F93A0, colors: 16, symbol: ICON_badge_ShrinkSmash_palette }
+badge/ShrinkSmash.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F93C0, colors: 16, symbol: ICON_badge_ShrinkSmash_disabled_palette }
+badge/ShrinkStomp:
+  { type: TEXTURE, format: CI4, offset: 0x1F93E0, width: 32, height: 32, symbol: ICON_badge_ShrinkStomp_raster }
+badge/ShrinkStomp.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F95E0, colors: 16, symbol: ICON_badge_ShrinkStomp_palette }
+badge/ShrinkStomp.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9600, colors: 16, symbol: ICON_badge_ShrinkStomp_disabled_palette }
+badge/DDownJump:
+  { type: TEXTURE, format: CI4, offset: 0x1F9620, width: 32, height: 32, symbol: ICON_badge_DDownJump_raster }
+badge/DDownJump.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9820, colors: 16, symbol: ICON_badge_DDownJump_palette }
+badge/DDownJump.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9840, colors: 16, symbol: ICON_badge_DDownJump_disabled_palette }
+badge/DamageDodge:
+  { type: TEXTURE, format: CI4, offset: 0x1F9860, width: 32, height: 32, symbol: ICON_badge_DamageDodge_raster }
+badge/DamageDodge.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9A60, colors: 16, symbol: ICON_badge_DamageDodge_palette }
+badge/DamageDodge.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9A80, colors: 16, symbol: ICON_badge_DamageDodge_disabled_palette }
+badge/EarthquakeJump:
+  { type: TEXTURE, format: CI4, offset: 0x1F9AA0, width: 32, height: 32, symbol: ICON_badge_EarthquakeJump_raster }
+badge/EarthquakeJump.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9CA0, colors: 16, symbol: ICON_badge_EarthquakeJump_palette }
+badge/EarthquakeJump.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9CC0, colors: 16, symbol: ICON_badge_EarthquakeJump_disabled_palette }
+badge/HappyFlower:
+  { type: TEXTURE, format: CI4, offset: 0x1F9CE0, width: 32, height: 32, symbol: ICON_badge_HappyFlower_raster }
+badge/HappyFlower.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9EE0, colors: 16, symbol: ICON_badge_HappyFlower_palette }
+badge/HappyFlower.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1F9F00, colors: 16, symbol: ICON_badge_HappyFlower_disabled_palette }
+badge/HappyCoin:
+  { type: TEXTURE, format: CI4, offset: 0x1F9F20, width: 32, height: 32, symbol: ICON_badge_HappyCoin_raster }
+badge/HappyCoin.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FA120, colors: 16, symbol: ICON_badge_HappyCoin_palette }
+badge/HappyCoin.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FA140, colors: 16, symbol: ICON_badge_HappyCoin_disabled_palette }
+unused/item_0DF:
+  { type: TEXTURE, format: CI4, offset: 0x1FA160, width: 32, height: 32, symbol: ICON_unused_item_0DF_raster }
+unused/item_0DF.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FA360, colors: 16, symbol: ICON_unused_item_0DF_palette }
+unused/item_0DF.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FA380, colors: 16, symbol: ICON_unused_item_0DF_disabled_palette }
+badge/DeepFocus:
+  { type: TEXTURE, format: CI4, offset: 0x1FA3A0, width: 32, height: 32, symbol: ICON_badge_DeepFocus_raster }
+badge/DeepFocus.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FA5A0, colors: 16, symbol: ICON_badge_DeepFocus_palette }
+badge/DeepFocus.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FA5C0, colors: 16, symbol: ICON_badge_DeepFocus_disabled_palette }
+badge/SuperFocus:
+  { type: TEXTURE, format: CI4, offset: 0x1FA5E0, width: 32, height: 32, symbol: ICON_badge_SuperFocus_raster }
+badge/SuperFocus.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FA7E0, colors: 16, symbol: ICON_badge_SuperFocus_palette }
+badge/SuperFocus.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FA800, colors: 16, symbol: ICON_badge_SuperFocus_disabled_palette }
+badge/Kaiden:
+  { type: TEXTURE, format: CI4, offset: 0x1FA820, width: 32, height: 32, symbol: ICON_badge_Kaiden_raster }
+badge/Kaiden.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FAA20, colors: 16, symbol: ICON_badge_Kaiden_palette }
+badge/Kaiden.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FAA40, colors: 16, symbol: ICON_badge_Kaiden_disabled_palette }
+badge/QuickChange:
+  { type: TEXTURE, format: CI4, offset: 0x1FAA60, width: 32, height: 32, symbol: ICON_badge_QuickChange_raster }
+badge/QuickChange.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FAC60, colors: 16, symbol: ICON_badge_QuickChange_palette }
+badge/QuickChange.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FAC80, colors: 16, symbol: ICON_badge_QuickChange_disabled_palette }
+unused/item_0E4:
+  { type: TEXTURE, format: CI4, offset: 0x1FACA0, width: 32, height: 32, symbol: ICON_unused_item_0E4_raster }
+unused/item_0E4.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FAEA0, colors: 16, symbol: ICON_unused_item_0E4_palette }
+unused/item_0E4.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FAEC0, colors: 16, symbol: ICON_unused_item_0E4_disabled_palette }
+unused/item_0E5:
+  { type: TEXTURE, format: CI4, offset: 0x1FAEE0, width: 32, height: 32, symbol: ICON_unused_item_0E5_raster }
+unused/item_0E5.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FB0E0, colors: 16, symbol: ICON_unused_item_0E5_palette }
+unused/item_0E5.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FB100, colors: 16, symbol: ICON_unused_item_0E5_disabled_palette }
+unused/item_0E6:
+  { type: TEXTURE, format: CI4, offset: 0x1FB120, width: 32, height: 32, symbol: ICON_unused_item_0E6_raster }
+unused/item_0E6.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FB320, colors: 16, symbol: ICON_unused_item_0E6_palette }
+unused/item_0E6.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FB340, colors: 16, symbol: ICON_unused_item_0E6_disabled_palette }
+unused/item_0E7:
+  { type: TEXTURE, format: CI4, offset: 0x1FB360, width: 32, height: 32, symbol: ICON_unused_item_0E7_raster }
+unused/item_0E7.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FB560, colors: 16, symbol: ICON_unused_item_0E7_palette }
+unused/item_0E7.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FB580, colors: 16, symbol: ICON_unused_item_0E7_disabled_palette }
+badge/Peekaboo:
+  { type: TEXTURE, format: CI4, offset: 0x1FB5A0, width: 32, height: 32, symbol: ICON_badge_Peekaboo_raster }
+badge/Peekaboo.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FB7A0, colors: 16, symbol: ICON_badge_Peekaboo_palette }
+badge/Peekaboo.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FB7C0, colors: 16, symbol: ICON_badge_Peekaboo_disabled_palette }
+badge/GroupFocus:
+  { type: TEXTURE, format: CI4, offset: 0x1FB7E0, width: 32, height: 32, symbol: ICON_badge_GroupFocus_raster }
+badge/GroupFocus.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FB9E0, colors: 16, symbol: ICON_badge_GroupFocus_palette }
+badge/GroupFocus.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FBA00, colors: 16, symbol: ICON_badge_GroupFocus_disabled_palette }
+badge/AttackFXD:
+  { type: TEXTURE, format: CI4, offset: 0x1FBA20, width: 32, height: 32, symbol: ICON_badge_AttackFXD_raster }
+badge/AttackFXD.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FBC20, colors: 16, symbol: ICON_badge_AttackFXD_palette }
+badge/AttackFXD.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FBC40, colors: 16, symbol: ICON_badge_AttackFXD_disabled_palette }
+badge/AttackFXB:
+  { type: TEXTURE, format: CI4, offset: 0x1FBC60, width: 32, height: 32, symbol: ICON_badge_AttackFXB_raster }
+badge/AttackFXB.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FBE60, colors: 16, symbol: ICON_badge_AttackFXB_palette }
+badge/AttackFXB.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FBE80, colors: 16, symbol: ICON_badge_AttackFXB_disabled_palette }
+badge/AttackFXE:
+  { type: TEXTURE, format: CI4, offset: 0x1FBEA0, width: 32, height: 32, symbol: ICON_badge_AttackFXE_raster }
+badge/AttackFXE.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FC0A0, colors: 16, symbol: ICON_badge_AttackFXE_palette }
+badge/AttackFXE.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FC0C0, colors: 16, symbol: ICON_badge_AttackFXE_disabled_palette }
+badge/AttackFXC:
+  { type: TEXTURE, format: CI4, offset: 0x1FC0E0, width: 32, height: 32, symbol: ICON_badge_AttackFXC_raster }
+badge/AttackFXC.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FC2E0, colors: 16, symbol: ICON_badge_AttackFXC_palette }
+badge/AttackFXC.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FC300, colors: 16, symbol: ICON_badge_AttackFXC_disabled_palette }
+badge/AttackFXF:
+  { type: TEXTURE, format: CI4, offset: 0x1FC320, width: 32, height: 32, symbol: ICON_badge_AttackFXF_raster }
+badge/AttackFXF.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FC520, colors: 16, symbol: ICON_badge_AttackFXF_palette }
+badge/AttackFXF.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FC540, colors: 16, symbol: ICON_badge_AttackFXF_disabled_palette }
+unused/item_0EF:
+  { type: TEXTURE, format: CI4, offset: 0x1FC560, width: 32, height: 32, symbol: ICON_unused_item_0EF_raster }
+unused/item_0EF.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FC760, colors: 16, symbol: ICON_unused_item_0EF_palette }
+unused/item_0EF.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FC780, colors: 16, symbol: ICON_unused_item_0EF_disabled_palette }
+badge/HealthyHealthy:
+  { type: TEXTURE, format: CI4, offset: 0x1FC7A0, width: 32, height: 32, symbol: ICON_badge_HealthyHealthy_raster }
+badge/HealthyHealthy.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FC9A0, colors: 16, symbol: ICON_badge_HealthyHealthy_palette }
+badge/HealthyHealthy.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FC9C0, colors: 16, symbol: ICON_badge_HealthyHealthy_disabled_palette }
+unused/item_0F1:
+  { type: TEXTURE, format: CI4, offset: 0x1FC9E0, width: 32, height: 32, symbol: ICON_unused_item_0F1_raster }
+unused/item_0F1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FCBE0, colors: 16, symbol: ICON_unused_item_0F1_palette }
+unused/item_0F1.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FCC00, colors: 16, symbol: ICON_unused_item_0F1_disabled_palette }
+unused/item_0F2:
+  { type: TEXTURE, format: CI4, offset: 0x1FCC20, width: 32, height: 32, symbol: ICON_unused_item_0F2_raster }
+unused/item_0F2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FCE20, colors: 16, symbol: ICON_unused_item_0F2_palette }
+unused/item_0F2.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FCE40, colors: 16, symbol: ICON_unused_item_0F2_disabled_palette }
+unused/item_0F3:
+  { type: TEXTURE, format: CI4, offset: 0x1FCE60, width: 32, height: 32, symbol: ICON_unused_item_0F3_raster }
+unused/item_0F3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FD060, colors: 16, symbol: ICON_unused_item_0F3_palette }
+unused/item_0F3.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FD080, colors: 16, symbol: ICON_unused_item_0F3_disabled_palette }
+unused/item_0F4:
+  { type: TEXTURE, format: CI4, offset: 0x1FD0A0, width: 32, height: 32, symbol: ICON_unused_item_0F4_raster }
+unused/item_0F4.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FD2A0, colors: 16, symbol: ICON_unused_item_0F4_palette }
+unused/item_0F4.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FD2C0, colors: 16, symbol: ICON_unused_item_0F4_disabled_palette }
+unused/item_0F5:
+  { type: TEXTURE, format: CI4, offset: 0x1FD2E0, width: 32, height: 32, symbol: ICON_unused_item_0F5_raster }
+unused/item_0F5.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FD4E0, colors: 16, symbol: ICON_unused_item_0F5_palette }
+unused/item_0F5.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FD500, colors: 16, symbol: ICON_unused_item_0F5_disabled_palette }
+unused/item_0F6:
+  { type: TEXTURE, format: CI4, offset: 0x1FD520, width: 32, height: 32, symbol: ICON_unused_item_0F6_raster }
+unused/item_0F6.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FD720, colors: 16, symbol: ICON_unused_item_0F6_palette }
+unused/item_0F6.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FD740, colors: 16, symbol: ICON_unused_item_0F6_disabled_palette }
+unused/item_0F7:
+  { type: TEXTURE, format: CI4, offset: 0x1FD760, width: 32, height: 32, symbol: ICON_unused_item_0F7_raster }
+unused/item_0F7.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FD960, colors: 16, symbol: ICON_unused_item_0F7_palette }
+unused/item_0F7.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FD980, colors: 16, symbol: ICON_unused_item_0F7_disabled_palette }
+food/Mushroom:
+  { type: TEXTURE, format: CI4, offset: 0x1FD9A0, width: 32, height: 32, symbol: ICON_food_Mushroom_raster }
+food/Mushroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FDBA0, colors: 16, symbol: ICON_food_Mushroom_palette }
+food/Mushroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FDBC0, colors: 16, symbol: ICON_food_Mushroom_disabled_palette }
+food/SuperShroom:
+  { type: TEXTURE, format: CI4, offset: 0x1FDBE0, width: 32, height: 32, symbol: ICON_food_SuperShroom_raster }
+food/SuperShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FDDE0, colors: 16, symbol: ICON_food_SuperShroom_palette }
+food/SuperShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FDE00, colors: 16, symbol: ICON_food_SuperShroom_disabled_palette }
+food/UltraShroom:
+  { type: TEXTURE, format: CI4, offset: 0x1FDE20, width: 32, height: 32, symbol: ICON_food_UltraShroom_raster }
+food/UltraShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FE020, colors: 16, symbol: ICON_food_UltraShroom_palette }
+food/UltraShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FE040, colors: 16, symbol: ICON_food_UltraShroom_disabled_palette }
+food/LifeShroom:
+  { type: TEXTURE, format: CI4, offset: 0x1FE060, width: 32, height: 32, symbol: ICON_food_LifeShroom_raster }
+food/LifeShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FE260, colors: 16, symbol: ICON_food_LifeShroom_palette }
+food/LifeShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FE280, colors: 16, symbol: ICON_food_LifeShroom_disabled_palette }
+food/DriedShroom:
+  { type: TEXTURE, format: CI4, offset: 0x1FE2A0, width: 32, height: 32, symbol: ICON_food_DriedShroom_raster }
+food/DriedShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FE4A0, colors: 16, symbol: ICON_food_DriedShroom_palette }
+food/DriedShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FE4C0, colors: 16, symbol: ICON_food_DriedShroom_disabled_palette }
+food/TastyTonic:
+  { type: TEXTURE, format: CI4, offset: 0x1FE4E0, width: 32, height: 32, symbol: ICON_food_TastyTonic_raster }
+food/TastyTonic.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FE6E0, colors: 16, symbol: ICON_food_TastyTonic_palette }
+food/TastyTonic.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FE700, colors: 16, symbol: ICON_food_TastyTonic_disabled_palette }
+food/SuperSoda:
+  { type: TEXTURE, format: CI4, offset: 0x1FE720, width: 32, height: 32, symbol: ICON_food_SuperSoda_raster }
+food/SuperSoda.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FE920, colors: 16, symbol: ICON_food_SuperSoda_palette }
+food/SuperSoda.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FE940, colors: 16, symbol: ICON_food_SuperSoda_disabled_palette }
+food/BlueBerry:
+  { type: TEXTURE, format: CI4, offset: 0x1FE960, width: 32, height: 32, symbol: ICON_food_BlueBerry_raster }
+food/BlueBerry.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FEB60, colors: 16, symbol: ICON_food_BlueBerry_palette }
+food/BlueBerry.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FEB80, colors: 16, symbol: ICON_food_BlueBerry_disabled_palette }
+food/RedBerry:
+  { type: TEXTURE, format: CI4, offset: 0x1FEBA0, width: 32, height: 32, symbol: ICON_food_RedBerry_raster }
+food/RedBerry.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FEDA0, colors: 16, symbol: ICON_food_RedBerry_palette }
+food/RedBerry.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FEDC0, colors: 16, symbol: ICON_food_RedBerry_disabled_palette }
+food/YellowBerry:
+  { type: TEXTURE, format: CI4, offset: 0x1FEDE0, width: 32, height: 32, symbol: ICON_food_YellowBerry_raster }
+food/YellowBerry.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FEFE0, colors: 16, symbol: ICON_food_YellowBerry_palette }
+food/YellowBerry.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FF000, colors: 16, symbol: ICON_food_YellowBerry_disabled_palette }
+food/BubbleBerry:
+  { type: TEXTURE, format: CI4, offset: 0x1FF020, width: 32, height: 32, symbol: ICON_food_BubbleBerry_raster }
+food/BubbleBerry.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FF220, colors: 16, symbol: ICON_food_BubbleBerry_palette }
+food/BubbleBerry.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FF240, colors: 16, symbol: ICON_food_BubbleBerry_disabled_palette }
+food/Goomnut:
+  { type: TEXTURE, format: CI4, offset: 0x1FF260, width: 32, height: 32, symbol: ICON_food_Goomnut_raster }
+food/Goomnut.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FF460, colors: 16, symbol: ICON_food_Goomnut_palette }
+food/Goomnut.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FF480, colors: 16, symbol: ICON_food_Goomnut_disabled_palette }
+food/KoopaLeaf:
+  { type: TEXTURE, format: CI4, offset: 0x1FF4A0, width: 32, height: 32, symbol: ICON_food_KoopaLeaf_raster }
+food/KoopaLeaf.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FF6A0, colors: 16, symbol: ICON_food_KoopaLeaf_palette }
+food/KoopaLeaf.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FF6C0, colors: 16, symbol: ICON_food_KoopaLeaf_disabled_palette }
+food/DriedPasta:
+  { type: TEXTURE, format: CI4, offset: 0x1FF6E0, width: 32, height: 32, symbol: ICON_food_DriedPasta_raster }
+food/DriedPasta.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FF8E0, colors: 16, symbol: ICON_food_DriedPasta_palette }
+food/DriedPasta.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FF900, colors: 16, symbol: ICON_food_DriedPasta_disabled_palette }
+food/Lime:
+  { type: TEXTURE, format: CI4, offset: 0x1FF920, width: 32, height: 32, symbol: ICON_food_Lime_raster }
+food/Lime.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FFB20, colors: 16, symbol: ICON_food_Lime_palette }
+food/Lime.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FFB40, colors: 16, symbol: ICON_food_Lime_disabled_palette }
+food/Lemon:
+  { type: TEXTURE, format: CI4, offset: 0x1FFB60, width: 32, height: 32, symbol: ICON_food_Lemon_raster }
+food/Lemon.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FFD60, colors: 16, symbol: ICON_food_Lemon_palette }
+food/Lemon.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FFD80, colors: 16, symbol: ICON_food_Lemon_disabled_palette }
+food/DriedFruit:
+  { type: TEXTURE, format: CI4, offset: 0x1FFDA0, width: 32, height: 32, symbol: ICON_food_DriedFruit_raster }
+food/DriedFruit.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FFFA0, colors: 16, symbol: ICON_food_DriedFruit_palette }
+food/DriedFruit.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x1FFFC0, colors: 16, symbol: ICON_food_DriedFruit_disabled_palette }
+food/StrangeLeaf:
+  { type: TEXTURE, format: CI4, offset: 0x1FFFE0, width: 32, height: 32, symbol: ICON_food_StrangeLeaf_raster }
+food/StrangeLeaf.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2001E0, colors: 16, symbol: ICON_food_StrangeLeaf_palette }
+food/StrangeLeaf.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200200, colors: 16, symbol: ICON_food_StrangeLeaf_disabled_palette }
+food/CakeMix:
+  { type: TEXTURE, format: CI4, offset: 0x200220, width: 32, height: 32, symbol: ICON_food_CakeMix_raster }
+food/CakeMix.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200420, colors: 16, symbol: ICON_food_CakeMix_palette }
+food/CakeMix.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200440, colors: 16, symbol: ICON_food_CakeMix_disabled_palette }
+food/Egg:
+  { type: TEXTURE, format: CI4, offset: 0x200460, width: 32, height: 32, symbol: ICON_food_Egg_raster }
+food/Egg.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200660, colors: 16, symbol: ICON_food_Egg_palette }
+food/Egg.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200680, colors: 16, symbol: ICON_food_Egg_disabled_palette }
+food/Coconut:
+  { type: TEXTURE, format: CI4, offset: 0x2006A0, width: 32, height: 32, symbol: ICON_food_Coconut_raster }
+food/Coconut.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2008A0, colors: 16, symbol: ICON_food_Coconut_palette }
+food/Coconut.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2008C0, colors: 16, symbol: ICON_food_Coconut_disabled_palette }
+food/Melon:
+  { type: TEXTURE, format: CI4, offset: 0x2008E0, width: 32, height: 32, symbol: ICON_food_Melon_raster }
+food/Melon.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200AE0, colors: 16, symbol: ICON_food_Melon_palette }
+food/Melon.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200B00, colors: 16, symbol: ICON_food_Melon_disabled_palette }
+food/StinkyHerb:
+  { type: TEXTURE, format: CI4, offset: 0x200B20, width: 32, height: 32, symbol: ICON_food_StinkyHerb_raster }
+food/StinkyHerb.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200D20, colors: 16, symbol: ICON_food_StinkyHerb_palette }
+food/StinkyHerb.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200D40, colors: 16, symbol: ICON_food_StinkyHerb_disabled_palette }
+food/IcedPotato:
+  { type: TEXTURE, format: CI4, offset: 0x200D60, width: 32, height: 32, symbol: ICON_food_IcedPotato_raster }
+food/IcedPotato.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200F60, colors: 16, symbol: ICON_food_IcedPotato_palette }
+food/IcedPotato.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x200F80, colors: 16, symbol: ICON_food_IcedPotato_disabled_palette }
+food/HoneySyrup:
+  { type: TEXTURE, format: CI4, offset: 0x200FA0, width: 32, height: 32, symbol: ICON_food_HoneySyrup_raster }
+food/HoneySyrup.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2011A0, colors: 16, symbol: ICON_food_HoneySyrup_palette }
+food/HoneySyrup.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2011C0, colors: 16, symbol: ICON_food_HoneySyrup_disabled_palette }
+food/MapleSyrup:
+  { type: TEXTURE, format: CI4, offset: 0x2011E0, width: 32, height: 32, symbol: ICON_food_MapleSyrup_raster }
+food/MapleSyrup.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2013E0, colors: 16, symbol: ICON_food_MapleSyrup_palette }
+food/MapleSyrup.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201400, colors: 16, symbol: ICON_food_MapleSyrup_disabled_palette }
+food/JamminJelly:
+  { type: TEXTURE, format: CI4, offset: 0x201420, width: 32, height: 32, symbol: ICON_food_JamminJelly_raster }
+food/JamminJelly.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201620, colors: 16, symbol: ICON_food_JamminJelly_palette }
+food/JamminJelly.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201640, colors: 16, symbol: ICON_food_JamminJelly_disabled_palette }
+food/WhackasBump:
+  { type: TEXTURE, format: CI4, offset: 0x201660, width: 32, height: 32, symbol: ICON_food_WhackasBump_raster }
+food/WhackasBump.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201860, colors: 16, symbol: ICON_food_WhackasBump_palette }
+food/WhackasBump.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201880, colors: 16, symbol: ICON_food_WhackasBump_disabled_palette }
+food/Apple:
+  { type: TEXTURE, format: CI4, offset: 0x2018A0, width: 32, height: 32, symbol: ICON_food_Apple_raster }
+food/Apple.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201AA0, colors: 16, symbol: ICON_food_Apple_palette }
+food/Apple.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201AC0, colors: 16, symbol: ICON_food_Apple_disabled_palette }
+peach/BakingSalt:
+  { type: TEXTURE, format: CI4, offset: 0x201AE0, width: 32, height: 32, symbol: ICON_peach_BakingSalt_raster }
+peach/BakingSalt.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201CE0, colors: 16, symbol: ICON_peach_BakingSalt_palette }
+peach/BakingSalt.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201D00, colors: 16, symbol: ICON_peach_BakingSalt_disabled_palette }
+peach/BakingSugar:
+  { type: TEXTURE, format: CI4, offset: 0x201D20, width: 32, height: 32, symbol: ICON_peach_BakingSugar_raster }
+peach/BakingSugar.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201F20, colors: 16, symbol: ICON_peach_BakingSugar_palette }
+peach/BakingSugar.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x201F40, colors: 16, symbol: ICON_peach_BakingSugar_disabled_palette }
+peach/BakingEgg:
+  { type: TEXTURE, format: CI4, offset: 0x201F60, width: 32, height: 32, symbol: ICON_peach_BakingEgg_raster }
+peach/BakingEgg.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202160, colors: 16, symbol: ICON_peach_BakingEgg_palette }
+peach/BakingEgg.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202180, colors: 16, symbol: ICON_peach_BakingEgg_disabled_palette }
+peach/BakingCream:
+  { type: TEXTURE, format: CI4, offset: 0x2021A0, width: 32, height: 32, symbol: ICON_peach_BakingCream_raster }
+peach/BakingCream.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2023A0, colors: 16, symbol: ICON_peach_BakingCream_palette }
+peach/BakingCream.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2023C0, colors: 16, symbol: ICON_peach_BakingCream_disabled_palette }
+peach/BakingStrawberry:
+  { type: TEXTURE, format: CI4, offset: 0x2023E0, width: 32, height: 32, symbol: ICON_peach_BakingStrawberry_raster }
+peach/BakingStrawberry.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2025E0, colors: 16, symbol: ICON_peach_BakingStrawberry_palette }
+peach/BakingStrawberry.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202600, colors: 16, symbol: ICON_peach_BakingStrawberry_disabled_palette }
+peach/BakingButter:
+  { type: TEXTURE, format: CI4, offset: 0x202620, width: 32, height: 32, symbol: ICON_peach_BakingButter_raster }
+peach/BakingButter.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202820, colors: 16, symbol: ICON_peach_BakingButter_palette }
+peach/BakingButter.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202840, colors: 16, symbol: ICON_peach_BakingButter_disabled_palette }
+peach/BakingCleanser:
+  { type: TEXTURE, format: CI4, offset: 0x202860, width: 32, height: 32, symbol: ICON_peach_BakingCleanser_raster }
+peach/BakingCleanser.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202A60, colors: 16, symbol: ICON_peach_BakingCleanser_palette }
+peach/BakingCleanser.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202A80, colors: 16, symbol: ICON_peach_BakingCleanser_disabled_palette }
+peach/BakingWater:
+  { type: TEXTURE, format: CI4, offset: 0x202AA0, width: 32, height: 32, symbol: ICON_peach_BakingWater_raster }
+peach/BakingWater.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202CA0, colors: 16, symbol: ICON_peach_BakingWater_palette }
+peach/BakingWater.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202CC0, colors: 16, symbol: ICON_peach_BakingWater_disabled_palette }
+peach/BakingFlour:
+  { type: TEXTURE, format: CI4, offset: 0x202CE0, width: 32, height: 32, symbol: ICON_peach_BakingFlour_raster }
+peach/BakingFlour.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202EE0, colors: 16, symbol: ICON_peach_BakingFlour_palette }
+peach/BakingFlour.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x202F00, colors: 16, symbol: ICON_peach_BakingFlour_disabled_palette }
+peach/BakingMilk:
+  { type: TEXTURE, format: CI4, offset: 0x202F20, width: 32, height: 32, symbol: ICON_peach_BakingMilk_raster }
+peach/BakingMilk.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203120, colors: 16, symbol: ICON_peach_BakingMilk_palette }
+peach/BakingMilk.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203140, colors: 16, symbol: ICON_peach_BakingMilk_disabled_palette }
+unused/item_11F:
+  { type: TEXTURE, format: CI4, offset: 0x203160, width: 32, height: 32, symbol: ICON_unused_item_11F_raster }
+unused/item_11F.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203360, colors: 16, symbol: ICON_unused_item_11F_palette }
+unused/item_11F.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203380, colors: 16, symbol: ICON_unused_item_11F_disabled_palette }
+battle/SleepySheep:
+  { type: TEXTURE, format: CI4, offset: 0x2033A0, width: 32, height: 32, symbol: ICON_battle_SleepySheep_raster }
+battle/SleepySheep.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2035A0, colors: 16, symbol: ICON_battle_SleepySheep_palette }
+battle/SleepySheep.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2035C0, colors: 16, symbol: ICON_battle_SleepySheep_disabled_palette }
+battle/XBandage:
+  { type: TEXTURE, format: CI4, offset: 0x2035E0, width: 32, height: 32, symbol: ICON_battle_XBandage_raster }
+battle/XBandage.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2037E0, colors: 16, symbol: ICON_battle_XBandage_palette }
+battle/XBandage.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203800, colors: 16, symbol: ICON_battle_XBandage_disabled_palette }
+battle/POWBlock:
+  { type: TEXTURE, format: CI4, offset: 0x203820, width: 32, height: 32, symbol: ICON_battle_POWBlock_raster }
+battle/POWBlock.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203A20, colors: 16, symbol: ICON_battle_POWBlock_palette }
+battle/POWBlock.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203A40, colors: 16, symbol: ICON_battle_POWBlock_disabled_palette }
+battle/HustleDrink:
+  { type: TEXTURE, format: CI4, offset: 0x203A60, width: 32, height: 32, symbol: ICON_battle_HustleDrink_raster }
+battle/HustleDrink.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203C60, colors: 16, symbol: ICON_battle_HustleDrink_palette }
+battle/HustleDrink.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203C80, colors: 16, symbol: ICON_battle_HustleDrink_disabled_palette }
+battle/StopWatch:
+  { type: TEXTURE, format: CI4, offset: 0x203CA0, width: 32, height: 32, symbol: ICON_battle_StopWatch_raster }
+battle/StopWatch.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203EA0, colors: 16, symbol: ICON_battle_StopWatch_palette }
+battle/StopWatch.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x203EC0, colors: 16, symbol: ICON_battle_StopWatch_disabled_palette }
+battle/DizzyDial:
+  { type: TEXTURE, format: CI4, offset: 0x203EE0, width: 32, height: 32, symbol: ICON_battle_DizzyDial_raster }
+battle/DizzyDial.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2040E0, colors: 16, symbol: ICON_battle_DizzyDial_palette }
+battle/DizzyDial.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x204100, colors: 16, symbol: ICON_battle_DizzyDial_disabled_palette }
+battle/item_136:
+  { type: TEXTURE, format: CI4, offset: 0x204120, width: 32, height: 32, symbol: ICON_battle_item_136_raster }
+battle/item_136.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x204320, colors: 16, symbol: ICON_battle_item_136_palette }
+battle/item_136.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x204340, colors: 16, symbol: ICON_battle_item_136_disabled_palette }
+battle/item_137:
+  { type: TEXTURE, format: CI4, offset: 0x204360, width: 32, height: 32, symbol: ICON_battle_item_137_raster }
+battle/item_137.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x204560, colors: 16, symbol: ICON_battle_item_137_palette }
+battle/item_137.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x204580, colors: 16, symbol: ICON_battle_item_137_disabled_palette }
+battle/FireFlower:
+  { type: TEXTURE, format: CI4, offset: 0x2045A0, width: 32, height: 32, symbol: ICON_battle_FireFlower_raster }
+battle/FireFlower.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2047A0, colors: 16, symbol: ICON_battle_FireFlower_palette }
+battle/FireFlower.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2047C0, colors: 16, symbol: ICON_battle_FireFlower_disabled_palette }
+battle/SnowmanDoll:
+  { type: TEXTURE, format: CI4, offset: 0x2047E0, width: 32, height: 32, symbol: ICON_battle_SnowmanDoll_raster }
+battle/SnowmanDoll.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2049E0, colors: 16, symbol: ICON_battle_SnowmanDoll_palette }
+battle/SnowmanDoll.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x204A00, colors: 16, symbol: ICON_battle_SnowmanDoll_disabled_palette }
+battle/ThunderRage:
+  { type: TEXTURE, format: CI4, offset: 0x204A20, width: 32, height: 32, symbol: ICON_battle_ThunderRage_raster }
+battle/ThunderRage.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x204C20, colors: 16, symbol: ICON_battle_ThunderRage_palette }
+battle/ThunderRage.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x204C40, colors: 16, symbol: ICON_battle_ThunderRage_disabled_palette }
+battle/ThunderBolt:
+  { type: TEXTURE, format: CI4, offset: 0x204C60, width: 32, height: 32, symbol: ICON_battle_ThunderBolt_raster }
+battle/ThunderBolt.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x204E60, colors: 16, symbol: ICON_battle_ThunderBolt_palette }
+battle/ThunderBolt.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x204E80, colors: 16, symbol: ICON_battle_ThunderBolt_disabled_palette }
+battle/ShootingStar:
+  { type: TEXTURE, format: CI4, offset: 0x204EA0, width: 32, height: 32, symbol: ICON_battle_ShootingStar_raster }
+battle/ShootingStar.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2050A0, colors: 16, symbol: ICON_battle_ShootingStar_palette }
+battle/ShootingStar.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2050C0, colors: 16, symbol: ICON_battle_ShootingStar_disabled_palette }
+battle/DustyHammer:
+  { type: TEXTURE, format: CI4, offset: 0x2050E0, width: 32, height: 32, symbol: ICON_battle_DustyHammer_raster }
+battle/DustyHammer.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2052E0, colors: 16, symbol: ICON_battle_DustyHammer_palette }
+battle/DustyHammer.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x205300, colors: 16, symbol: ICON_battle_DustyHammer_disabled_palette }
+battle/Pebble:
+  { type: TEXTURE, format: CI4, offset: 0x205320, width: 32, height: 32, symbol: ICON_battle_Pebble_raster }
+battle/Pebble.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x205520, colors: 16, symbol: ICON_battle_Pebble_palette }
+battle/Pebble.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x205540, colors: 16, symbol: ICON_battle_Pebble_disabled_palette }
+unused/item_127:
+  { type: TEXTURE, format: CI4, offset: 0x205560, width: 32, height: 32, symbol: ICON_unused_item_127_raster }
+unused/item_127.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x205760, colors: 16, symbol: ICON_unused_item_127_palette }
+unused/item_127.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x205780, colors: 16, symbol: ICON_unused_item_127_disabled_palette }
+battle/StoneCap:
+  { type: TEXTURE, format: CI4, offset: 0x2057A0, width: 32, height: 32, symbol: ICON_battle_StoneCap_raster }
+battle/StoneCap.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2059A0, colors: 16, symbol: ICON_battle_StoneCap_palette }
+battle/StoneCap.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2059C0, colors: 16, symbol: ICON_battle_StoneCap_disabled_palette }
+battle/VoltShroom:
+  { type: TEXTURE, format: CI4, offset: 0x2059E0, width: 32, height: 32, symbol: ICON_battle_VoltShroom_raster }
+battle/VoltShroom.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x205BE0, colors: 16, symbol: ICON_battle_VoltShroom_palette }
+battle/VoltShroom.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x205C00, colors: 16, symbol: ICON_battle_VoltShroom_disabled_palette }
+battle/PowerStar:
+  { type: TEXTURE, format: CI4, offset: 0x205C20, width: 32, height: 32, symbol: ICON_battle_PowerStar_raster }
+battle/PowerStar.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x205E20, colors: 16, symbol: ICON_battle_PowerStar_palette }
+battle/PowerStar.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x205E40, colors: 16, symbol: ICON_battle_PowerStar_disabled_palette }
+battle/Parasol:
+  { type: TEXTURE, format: CI4, offset: 0x205E60, width: 32, height: 32, symbol: ICON_battle_Parasol_raster }
+battle/Parasol.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206060, colors: 16, symbol: ICON_battle_Parasol_palette }
+battle/Parasol.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206080, colors: 16, symbol: ICON_battle_Parasol_disabled_palette }
+battle/MagicMirror:
+  { type: TEXTURE, format: CI4, offset: 0x2060A0, width: 32, height: 32, symbol: ICON_battle_MagicMirror_raster }
+battle/MagicMirror.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2062A0, colors: 16, symbol: ICON_battle_MagicMirror_palette }
+battle/MagicMirror.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2062C0, colors: 16, symbol: ICON_battle_MagicMirror_disabled_palette }
+unused/item_12D:
+  { type: TEXTURE, format: CI4, offset: 0x2062E0, width: 32, height: 32, symbol: ICON_unused_item_12D_raster }
+unused/item_12D.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2064E0, colors: 16, symbol: ICON_unused_item_12D_palette }
+unused/item_12D.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206500, colors: 16, symbol: ICON_unused_item_12D_disabled_palette }
+unused/item_12E:
+  { type: TEXTURE, format: CI4, offset: 0x206520, width: 32, height: 32, symbol: ICON_unused_item_12E_raster }
+unused/item_12E.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206720, colors: 16, symbol: ICON_unused_item_12E_palette }
+unused/item_12E.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206740, colors: 16, symbol: ICON_unused_item_12E_disabled_palette }
+unused/item_12F:
+  { type: TEXTURE, format: CI4, offset: 0x206760, width: 32, height: 32, symbol: ICON_unused_item_12F_raster }
+unused/item_12F.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206960, colors: 16, symbol: ICON_unused_item_12F_palette }
+unused/item_12F.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206980, colors: 16, symbol: ICON_unused_item_12F_disabled_palette }
+anim/hand_0:
+  { type: TEXTURE, format: CI4, offset: 0x2069A0, width: 24, height: 24, symbol: ICON_anim_hand_0_raster }
+anim/hand_0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206AC0, colors: 16, symbol: ICON_anim_hand_0_palette }
+anim/hand_1:
+  { type: TEXTURE, format: CI4, offset: 0x206AE0, width: 24, height: 24, symbol: ICON_anim_hand_1_raster }
+anim/hand_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206C00, colors: 16, symbol: ICON_anim_hand_1_palette }
+anim/hand_2:
+  { type: TEXTURE, format: CI4, offset: 0x206C20, width: 24, height: 24, symbol: ICON_anim_hand_2_raster }
+anim/hand_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206D40, colors: 16, symbol: ICON_anim_hand_2_palette }
+anim/hand_3:
+  { type: TEXTURE, format: CI4, offset: 0x206D60, width: 24, height: 24, symbol: ICON_anim_hand_3_raster }
+anim/hand_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206E80, colors: 16, symbol: ICON_anim_hand_3_palette }
+anim/hand_4:
+  { type: TEXTURE, format: CI4, offset: 0x206EA0, width: 24, height: 24, symbol: ICON_anim_hand_4_raster }
+anim/hand_4.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x206FC0, colors: 16, symbol: ICON_anim_hand_4_palette }
+anim/hand_5:
+  { type: TEXTURE, format: CI4, offset: 0x206FE0, width: 24, height: 24, symbol: ICON_anim_hand_5_raster }
+anim/hand_5.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207100, colors: 16, symbol: ICON_anim_hand_5_palette }
+anim/hand_6:
+  { type: TEXTURE, format: CI4, offset: 0x207120, width: 24, height: 24, symbol: ICON_anim_hand_6_raster }
+anim/hand_6.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207240, colors: 16, symbol: ICON_anim_hand_6_palette }
+anim/hand_7:
+  { type: TEXTURE, format: CI4, offset: 0x207260, width: 24, height: 24, symbol: ICON_anim_hand_7_raster }
+anim/hand_7.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207380, colors: 16, symbol: ICON_anim_hand_7_palette }
+anim/hand_8:
+  { type: TEXTURE, format: CI4, offset: 0x2073A0, width: 24, height: 24, symbol: ICON_anim_hand_8_raster }
+anim/hand_8.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2074C0, colors: 16, symbol: ICON_anim_hand_8_palette }
+anim/hand_9:
+  { type: TEXTURE, format: CI4, offset: 0x2074E0, width: 24, height: 24, symbol: ICON_anim_hand_9_raster }
+anim/hand_9.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207600, colors: 16, symbol: ICON_anim_hand_9_palette }
+hud/heart:
+  { type: TEXTURE, format: CI4, offset: 0x207620, width: 24, height: 24, symbol: ICON_hud_heart_raster }
+hud/heart.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207740, colors: 16, symbol: ICON_hud_heart_palette }
+hud/coin:
+  { type: TEXTURE, format: CI4, offset: 0x207760, width: 24, height: 24, symbol: ICON_hud_coin_raster }
+hud/coin.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207880, colors: 16, symbol: ICON_hud_coin_palette }
+hud/heart_container:
+  { type: TEXTURE, format: CI4, offset: 0x2078A0, width: 24, height: 24, symbol: ICON_hud_heart_container_raster }
+hud/heart_container.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2079C0, colors: 16, symbol: ICON_hud_heart_container_palette }
+hud/star_point:
+  { type: TEXTURE, format: CI4, offset: 0x2079E0, width: 24, height: 24, symbol: ICON_hud_star_point_raster }
+hud/star_point.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207B00, colors: 16, symbol: ICON_hud_star_point_palette }
+menu/hammer_1:
+  { type: TEXTURE, format: CI4, offset: 0x207B20, width: 32, height: 32, symbol: ICON_menu_hammer_1_raster }
+menu/hammer_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207D20, colors: 16, symbol: ICON_menu_hammer_1_palette }
+menu/hammer_1.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207D40, colors: 16, symbol: ICON_menu_hammer_1_disabled_palette }
+menu/hammer_2:
+  { type: TEXTURE, format: CI4, offset: 0x207D60, width: 32, height: 32, symbol: ICON_menu_hammer_2_raster }
+menu/hammer_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207F60, colors: 16, symbol: ICON_menu_hammer_2_palette }
+menu/hammer_2.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x207F80, colors: 16, symbol: ICON_menu_hammer_2_disabled_palette }
+menu/hammer_3:
+  { type: TEXTURE, format: CI4, offset: 0x207FA0, width: 32, height: 32, symbol: ICON_menu_hammer_3_raster }
+menu/hammer_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2081A0, colors: 16, symbol: ICON_menu_hammer_3_palette }
+menu/hammer_3.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2081C0, colors: 16, symbol: ICON_menu_hammer_3_disabled_palette }
+menu/boots_1:
+  { type: TEXTURE, format: CI4, offset: 0x2081E0, width: 32, height: 32, symbol: ICON_menu_boots_1_raster }
+menu/boots_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2083E0, colors: 16, symbol: ICON_menu_boots_1_palette }
+menu/boots_1.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x208400, colors: 16, symbol: ICON_menu_boots_1_disabled_palette }
+menu/boots_2:
+  { type: TEXTURE, format: CI4, offset: 0x208420, width: 32, height: 32, symbol: ICON_menu_boots_2_raster }
+menu/boots_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x208620, colors: 16, symbol: ICON_menu_boots_2_palette }
+menu/boots_2.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x208640, colors: 16, symbol: ICON_menu_boots_2_disabled_palette }
+menu/boots_3:
+  { type: TEXTURE, format: CI4, offset: 0x208660, width: 32, height: 32, symbol: ICON_menu_boots_3_raster }
+menu/boots_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x208860, colors: 16, symbol: ICON_menu_boots_3_palette }
+menu/boots_3.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x208880, colors: 16, symbol: ICON_menu_boots_3_disabled_palette }
+menu/items:
+  { type: TEXTURE, format: CI4, offset: 0x2088A0, width: 32, height: 32, symbol: ICON_menu_items_raster }
+menu/items.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x208AA0, colors: 16, symbol: ICON_menu_items_palette }
+menu/items.disabled.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x208AC0, colors: 16, symbol: ICON_menu_items_disabled_palette }
+anim/hp_0:
+  { type: TEXTURE, format: CI4, offset: 0x208AE0, width: 32, height: 32, symbol: ICON_anim_hp_0_raster }
+anim/hp_0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x208CE0, colors: 16, symbol: ICON_anim_hp_0_palette }
+anim/hp_1:
+  { type: TEXTURE, format: CI4, offset: 0x208D00, width: 32, height: 32, symbol: ICON_anim_hp_1_raster }
+anim/hp_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x208F00, colors: 16, symbol: ICON_anim_hp_1_palette }
+anim/hp_2:
+  { type: TEXTURE, format: CI4, offset: 0x208F20, width: 32, height: 32, symbol: ICON_anim_hp_2_raster }
+anim/hp_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x209120, colors: 16, symbol: ICON_anim_hp_2_palette }
+anim/fp_0:
+  { type: TEXTURE, format: CI4, offset: 0x209140, width: 32, height: 32, symbol: ICON_anim_fp_0_raster }
+anim/fp_0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x209340, colors: 16, symbol: ICON_anim_fp_0_palette }
+anim/fp_1:
+  { type: TEXTURE, format: CI4, offset: 0x209360, width: 32, height: 32, symbol: ICON_anim_fp_1_raster }
+anim/fp_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x209560, colors: 16, symbol: ICON_anim_fp_1_palette }
+anim/fp_2:
+  { type: TEXTURE, format: CI4, offset: 0x209580, width: 32, height: 32, symbol: ICON_anim_fp_2_raster }
+anim/fp_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x209780, colors: 16, symbol: ICON_anim_fp_2_palette }
+anim/coin_0:
+  { type: TEXTURE, format: CI4, offset: 0x2097A0, width: 24, height: 24, symbol: ICON_anim_coin_0_raster }
+anim/coin_0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x2098C0, colors: 16, symbol: ICON_anim_coin_0_palette }
+anim/coin_1:
+  { type: TEXTURE, format: CI4, offset: 0x2098E0, width: 24, height: 24, symbol: ICON_anim_coin_1_raster }
+anim/coin_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x209A00, colors: 16, symbol: ICON_anim_coin_1_palette }
+anim/coin_2:
+  { type: TEXTURE, format: CI4, offset: 0x209A20, width: 24, height: 24, symbol: ICON_anim_coin_2_raster }
+anim/coin_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x209B40, colors: 16, symbol: ICON_anim_coin_2_palette }
+anim/coin_3:
+  { type: TEXTURE, format: CI4, offset: 0x209B60, width: 24, height: 24, symbol: ICON_anim_coin_3_raster }
+anim/coin_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x209C80, colors: 16, symbol: ICON_anim_coin_3_palette }
+anim/coin_4:
+  { type: TEXTURE, format: CI4, offset: 0x209CA0, width: 24, height: 24, symbol: ICON_anim_coin_4_raster }
+anim/coin_4.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x209DC0, colors: 16, symbol: ICON_anim_coin_4_palette }
+anim/coin_5:
+  { type: TEXTURE, format: CI4, offset: 0x209DE0, width: 24, height: 24, symbol: ICON_anim_coin_5_raster }
+anim/coin_5.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x209F00, colors: 16, symbol: ICON_anim_coin_5_palette }
+anim/coin_6:
+  { type: TEXTURE, format: CI4, offset: 0x209F20, width: 24, height: 24, symbol: ICON_anim_coin_6_raster }
+anim/coin_6.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A040, colors: 16, symbol: ICON_anim_coin_6_palette }
+anim/coin_7:
+  { type: TEXTURE, format: CI4, offset: 0x20A060, width: 24, height: 24, symbol: ICON_anim_coin_7_raster }
+anim/coin_7.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A180, colors: 16, symbol: ICON_anim_coin_7_palette }
+anim/coin_8:
+  { type: TEXTURE, format: CI4, offset: 0x20A1A0, width: 24, height: 24, symbol: ICON_anim_coin_8_raster }
+anim/coin_8.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A2C0, colors: 16, symbol: ICON_anim_coin_8_palette }
+anim/coin_9:
+  { type: TEXTURE, format: CI4, offset: 0x20A2E0, width: 24, height: 24, symbol: ICON_anim_coin_9_raster }
+anim/coin_9.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A400, colors: 16, symbol: ICON_anim_coin_9_palette }
+anim/shimmer_0:
+  { type: TEXTURE, format: CI4, offset: 0x20A420, width: 8, height: 8, symbol: ICON_anim_shimmer_0_raster }
+anim/shimmer_0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A440, colors: 16, symbol: ICON_anim_shimmer_0_palette }
+anim/shimmer_1:
+  { type: TEXTURE, format: CI4, offset: 0x20A460, width: 8, height: 8, symbol: ICON_anim_shimmer_1_raster }
+anim/shimmer_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A480, colors: 16, symbol: ICON_anim_shimmer_1_palette }
+anim/shimmer_2:
+  { type: TEXTURE, format: CI4, offset: 0x20A4A0, width: 8, height: 8, symbol: ICON_anim_shimmer_2_raster }
+anim/shimmer_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A4C0, colors: 16, symbol: ICON_anim_shimmer_2_palette }
+anim/shimmer_3:
+  { type: TEXTURE, format: CI4, offset: 0x20A4E0, width: 8, height: 8, symbol: ICON_anim_shimmer_3_raster }
+anim/shimmer_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A500, colors: 16, symbol: ICON_anim_shimmer_3_palette }
+anim/shimmer_4:
+  { type: TEXTURE, format: CI4, offset: 0x20A520, width: 8, height: 8, symbol: ICON_anim_shimmer_4_raster }
+anim/shimmer_4.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A540, colors: 16, symbol: ICON_anim_shimmer_4_palette }
+anim/shimmer_5:
+  { type: TEXTURE, format: CI4, offset: 0x20A560, width: 8, height: 8, symbol: ICON_anim_shimmer_5_raster }
+anim/shimmer_5.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A580, colors: 16, symbol: ICON_anim_shimmer_5_palette }
+anim/shimmer_6:
+  { type: TEXTURE, format: CI4, offset: 0x20A5A0, width: 8, height: 8, symbol: ICON_anim_shimmer_6_raster }
+anim/shimmer_6.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A5C0, colors: 16, symbol: ICON_anim_shimmer_6_palette }
+anim/star_piece_0:
+  { type: TEXTURE, format: CI4, offset: 0x20A5E0, width: 32, height: 32, symbol: ICON_anim_star_piece_0_raster }
+anim/star_piece_0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20A7E0, colors: 16, symbol: ICON_anim_star_piece_0_palette }
+anim/star_piece_1:
+  { type: TEXTURE, format: CI4, offset: 0x20A800, width: 32, height: 32, symbol: ICON_anim_star_piece_1_raster }
+anim/star_piece_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20AA00, colors: 16, symbol: ICON_anim_star_piece_1_palette }
+anim/star_piece_2:
+  { type: TEXTURE, format: CI4, offset: 0x20AA20, width: 32, height: 32, symbol: ICON_anim_star_piece_2_raster }
+anim/star_piece_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20AC20, colors: 16, symbol: ICON_anim_star_piece_2_palette }
+anim/heart_0:
+  { type: TEXTURE, format: CI4, offset: 0x20AC40, width: 24, height: 24, symbol: ICON_anim_heart_0_raster }
+anim/heart_0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20AD60, colors: 16, symbol: ICON_anim_heart_0_palette }
+anim/heart_1:
+  { type: TEXTURE, format: CI4, offset: 0x20AD80, width: 24, height: 24, symbol: ICON_anim_heart_1_raster }
+anim/heart_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20AEA0, colors: 16, symbol: ICON_anim_heart_1_palette }
+anim/heart_piece:
+  { type: TEXTURE, format: CI4, offset: 0x20AEC0, width: 24, height: 24, symbol: ICON_anim_heart_piece_raster }
+anim/heart_piece.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20AFE0, colors: 16, symbol: ICON_anim_heart_piece_palette }
+anim/sp_0:
+  { type: TEXTURE, format: CI4, offset: 0x20B000, width: 24, height: 24, symbol: ICON_anim_sp_0_raster }
+anim/sp_0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20B120, colors: 16, symbol: ICON_anim_sp_0_palette }
+anim/sp_1:
+  { type: TEXTURE, format: CI4, offset: 0x20B140, width: 24, height: 24, symbol: ICON_anim_sp_1_raster }
+anim/sp_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20B260, colors: 16, symbol: ICON_anim_sp_1_palette }
+anim/sp_2:
+  { type: TEXTURE, format: CI4, offset: 0x20B280, width: 24, height: 24, symbol: ICON_anim_sp_2_raster }
+anim/sp_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20B3A0, colors: 16, symbol: ICON_anim_sp_2_palette }
+anim/sp_3:
+  { type: TEXTURE, format: CI4, offset: 0x20B3C0, width: 24, height: 24, symbol: ICON_anim_sp_3_raster }
+anim/sp_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20B4E0, colors: 16, symbol: ICON_anim_sp_3_palette }
+anim/sp_4:
+  { type: TEXTURE, format: CI4, offset: 0x20B500, width: 24, height: 24, symbol: ICON_anim_sp_4_raster }
+anim/sp_4.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20B620, colors: 16, symbol: ICON_anim_sp_4_palette }
+anim/sp_5:
+  { type: TEXTURE, format: CI4, offset: 0x20B640, width: 24, height: 24, symbol: ICON_anim_sp_5_raster }
+anim/sp_5.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20B760, colors: 16, symbol: ICON_anim_sp_5_palette }
+anim/sp_6:
+  { type: TEXTURE, format: CI4, offset: 0x20B780, width: 24, height: 24, symbol: ICON_anim_sp_6_raster }
+anim/sp_6.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20B8A0, colors: 16, symbol: ICON_anim_sp_6_palette }
+anim/sp_7:
+  { type: TEXTURE, format: CI4, offset: 0x20B8C0, width: 24, height: 24, symbol: ICON_anim_sp_7_raster }
+anim/sp_7.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20B9E0, colors: 16, symbol: ICON_anim_sp_7_palette }
+unk_1FC550:
+  { type: TEXTURE, format: RGBA16, offset: 0x20BA00, width: 24, height: 24, symbol: ICON_unk_1FC550_raster }
+anim/sp_small_0:
+  { type: TEXTURE, format: CI4, offset: 0x20BE80, width: 8, height: 8, symbol: ICON_anim_sp_small_0_raster }
+anim/sp_small_0.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20BEA0, colors: 16, symbol: ICON_anim_sp_small_0_palette }
+anim/sp_small_1:
+  { type: TEXTURE, format: CI4, offset: 0x20BEC0, width: 8, height: 8, symbol: ICON_anim_sp_small_1_raster }
+anim/sp_small_1.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20BEE0, colors: 16, symbol: ICON_anim_sp_small_1_palette }
+anim/sp_small_2:
+  { type: TEXTURE, format: CI4, offset: 0x20BF00, width: 8, height: 8, symbol: ICON_anim_sp_small_2_raster }
+anim/sp_small_2.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20BF20, colors: 16, symbol: ICON_anim_sp_small_2_palette }
+anim/sp_small_3:
+  { type: TEXTURE, format: CI4, offset: 0x20BF40, width: 8, height: 8, symbol: ICON_anim_sp_small_3_raster }
+anim/sp_small_3.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20BF60, colors: 16, symbol: ICON_anim_sp_small_3_palette }
+anim/sp_small_4:
+  { type: TEXTURE, format: CI4, offset: 0x20BF80, width: 8, height: 8, symbol: ICON_anim_sp_small_4_raster }
+anim/sp_small_4.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20BFA0, colors: 16, symbol: ICON_anim_sp_small_4_palette }
+anim/sp_small_5:
+  { type: TEXTURE, format: CI4, offset: 0x20BFC0, width: 8, height: 8, symbol: ICON_anim_sp_small_5_raster }
+anim/sp_small_5.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20BFE0, colors: 16, symbol: ICON_anim_sp_small_5_palette }
+anim/sp_small_6:
+  { type: TEXTURE, format: CI4, offset: 0x20C000, width: 8, height: 8, symbol: ICON_anim_sp_small_6_raster }
+anim/sp_small_6.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20C020, colors: 16, symbol: ICON_anim_sp_small_6_palette }
+anim/sp_small_7:
+  { type: TEXTURE, format: CI4, offset: 0x20C040, width: 8, height: 8, symbol: ICON_anim_sp_small_7_raster }
+anim/sp_small_7.pal:
+  { type: TEXTURE, format: TLUT, offset: 0x20C060, colors: 16, symbol: ICON_anim_sp_small_7_palette }
+inspect_icon/img:
+  { type: TEXTURE, format: CI4, offset: 0xE8DB40, width: 32, height: 32, symbol: ICON_inspect_icon_img }
+inspect_icon/pal:
+  { type: TEXTURE, format: TLUT, offset: 0xE8DD40, colors: 16, symbol: ICON_inspect_icon_pal }
+ispy_icon/img:
+  { type: TEXTURE, format: CI4, offset: 0xE8FB40, width: 56, height: 56, symbol: ICON_ispy_icon_img }
+ispy_icon/pal1:
+  { type: TEXTURE, format: TLUT, offset: 0xE90160, colors: 16, symbol: ICON_ispy_icon_1_pal }
+ispy_icon/pal2:
+  { type: TEXTURE, format: TLUT, offset: 0xE90180, colors: 16, symbol: ICON_ispy_icon_2_pal }
+ispy_icon/pal3:
+  { type: TEXTURE, format: TLUT, offset: 0xE901A0, colors: 16, symbol: ICON_ispy_icon_3_pal }

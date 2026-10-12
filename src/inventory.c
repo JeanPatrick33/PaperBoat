@@ -541,6 +541,7 @@ void initialize_status_bar(void) {
 
 #if VERSION_PAL
     switch (gCurrentLanguage) {
+        default:
         case LANGUAGE_EN:
             hid = statusBar->hpIconHIDs[0] = hud_element_create(&HES_StatusHP);
             break;
@@ -569,6 +570,7 @@ void initialize_status_bar(void) {
 
 #if VERSION_PAL
     switch (gCurrentLanguage) {
+        default:
         case LANGUAGE_EN:
             hid = statusBar->fpIconHIDs[0] = hud_element_create(&HES_StatusFP);
             break;
