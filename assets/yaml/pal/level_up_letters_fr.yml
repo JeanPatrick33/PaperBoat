@@ -22,19 +22,19 @@ draw_EU:
 draw_R_exclamation_mark:
   { type: VTX, offset: 0x7FEE68, count: 8, symbol: fr_level_up_draw_R_exclamation_mark_vtx }
 big_NI:
-  { type: TEXTURE, offset: 0x7FEEE8, format: IA8, width: 64, height: 54, symbol: fr_level_up_big_NI_png }
+  { type: TEXTURE, offset: 0x7FEEE8, format: IA8, width: 64, height: 64, symbol: fr_level_up_big_NI_png }
 big_VE:
-  { type: TEXTURE, offset: 0x7FFC68, format: IA8, width: 64, height: 52, symbol: fr_level_up_big_VE_png }
+  { type: TEXTURE, offset: 0x7FFC68, format: IA8, width: 64, height: 64, symbol: fr_level_up_big_VE_png }
 big_AU:
-  { type: TEXTURE, offset: 0x800968, format: IA8, width: 64, height: 55, symbol: fr_level_up_big_AU_png }
+  { type: TEXTURE, offset: 0x800968, format: IA8, width: 64, height: 64, symbol: fr_level_up_big_AU_png }
 big_SU:
-  { type: TEXTURE, offset: 0x801728, format: IA8, width: 64, height: 55, symbol: fr_level_up_big_SU_png }
+  { type: TEXTURE, offset: 0x801728, format: IA8, width: 64, height: 64, symbol: fr_level_up_big_SU_png }
 big_RI:
-  { type: TEXTURE, offset: 0x8024E8, format: IA8, width: 64, height: 55, symbol: fr_level_up_big_RI_png }
+  { type: TEXTURE, offset: 0x8024E8, format: IA8, width: 64, height: 64, symbol: fr_level_up_big_RI_png }
 big_EU:
-  { type: TEXTURE, offset: 0x8032A8, format: IA8, width: 64, height: 55, symbol: fr_level_up_big_EU_png }
+  { type: TEXTURE, offset: 0x8032A8, format: IA8, width: 64, height: 64, symbol: fr_level_up_big_EU_png }
 big_R_exclamation_mark:
-  { type: TEXTURE, offset: 0x804068, format: IA8, width: 64, height: 56, symbol: fr_level_up_big_R_exclamation_mark_png }
+  { type: TEXTURE, offset: 0x804068, format: IA8, width: 64, height: 64, symbol: fr_level_up_big_R_exclamation_mark_png }
 big_PE:
   { type: TEXTURE, offset: 0x804E68, format: IA16, width: 64, height: 32, symbol: fr_level_up_big_PE_png }
 big_NI.gfx:
