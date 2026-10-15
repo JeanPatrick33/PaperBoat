@@ -21,6 +21,11 @@
 #endif
 #if (defined(__linux__) || defined(__APPLE__)) && !defined(__ANDROID__)
 #include <cerrno>
+#include <exception>
+#include <typeinfo>
+#ifdef __linux__
+#include <execinfo.h>
+#endif
 #include <cstring>
 #include <unistd.h>
 #endif
@@ -204,6 +209,30 @@ GameEngine::GameEngine() {
     gShipContext = this->context;
 
     this->context->InitLogging();
+
+    // Name the cause of an uncaught exception (otherwise the process just aborts with an empty report).
+    std::set_terminate([]() {
+        try {
+            if (auto ex = std::current_exception()) {
+                std::rethrow_exception(ex);
+            }
+            SPDLOG_CRITICAL("std::terminate called without an active exception");
+        } catch (const std::exception& e) {
+            SPDLOG_CRITICAL("Uncaught exception ({}): {}", typeid(e).name(), e.what());
+        } catch (...) {
+            SPDLOG_CRITICAL("Uncaught non-standard exception");
+        }
+#ifdef __linux__
+        void* frames[48];
+        int n = backtrace(frames, 48);
+        char** syms = backtrace_symbols(frames, n);
+        for (int i = 0; i < n; i++) {
+            SPDLOG_CRITICAL("  #{} {}", i, syms != nullptr ? syms[i] : "?");
+        }
+#endif
+        spdlog::shutdown();
+        std::abort();
+    });
     this->context->InitConfiguration();
     this->context->InitConsoleVariables();
 
