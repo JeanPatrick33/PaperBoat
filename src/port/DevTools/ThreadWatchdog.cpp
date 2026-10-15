@@ -18,6 +18,9 @@
 #include <dlfcn.h>
 #include <execinfo.h>
 #include <pthread.h>
+#include <ucontext.h>
+#include <cstdio>
+#include <vector>
 #endif
 
 #if defined(_WIN32)
@@ -154,10 +157,61 @@ std::string FormatFrames(void* const* frames, int n) {
     return out;
 }
 
-void LinuxAbortHandler(int sig, siginfo_t*, void*) {
+// Fallback when the unwinder gives up: every word on the interrupted stack that points into
+// executable memory is a candidate return address, innermost first.
+std::string ScanStackForCode(void* ucontextPtr) {
+    std::string out;
+#if defined(__x86_64__)
+    struct Range {
+        uintptr_t lo, hi;
+    };
+    std::vector<Range> exec;
+    if (FILE* maps = fopen("/proc/self/maps", "r")) {
+        char line[512];
+        while (fgets(line, sizeof(line), maps) != nullptr) {
+            unsigned long lo = 0, hi = 0;
+            char perms[8] = {};
+            if (sscanf(line, "%lx-%lx %7s", &lo, &hi, perms) == 3 && perms[2] == 'x') {
+                exec.push_back({ lo, hi });
+            }
+        }
+        fclose(maps);
+    }
+    auto* uc = static_cast<ucontext_t*>(ucontextPtr);
+    if (uc == nullptr) {
+        return out;
+    }
+    const uintptr_t* sp = reinterpret_cast<const uintptr_t*>(uc->uc_mcontext.gregs[REG_RSP]);
+    int found = 0;
+    for (int i = 0; i < 4096 && found < 60; i++) {
+        const uintptr_t word = sp[i];
+        bool isCode = false;
+        for (const Range& r : exec) {
+            if (word >= r.lo && word < r.hi) {
+                isCode = true;
+                break;
+            }
+        }
+        if (!isCode) {
+            continue;
+        }
+        void* addr = reinterpret_cast<void*>(word);
+        out += FormatFrames(&addr, 1);
+        found++;
+    }
+#else
+    (void) ucontextPtr;
+#endif
+    return out;
+}
+
+void LinuxAbortHandler(int sig, siginfo_t*, void* ucontextPtr) {
     void* frames[48];
     const int n = backtrace(frames, 48);
-    SPDLOG_CRITICAL("SIGABRT raised on thread {}\n{}", (unsigned long) pthread_self(), FormatFrames(frames, n));
+    std::string scan = n < 3 ? "Stack scan:\n" + ScanStackForCode(ucontextPtr) : std::string();
+    SPDLOG_CRITICAL(
+        "SIGABRT raised on thread {}\n{}{}", (unsigned long) pthread_self(), FormatFrames(frames, n), scan
+    );
     if (auto logger = spdlog::default_logger()) {
         logger->flush();
     }
