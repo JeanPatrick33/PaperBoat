@@ -521,6 +521,10 @@ extern "C" void ThreadWatchdog_Start(void) {
     }
 #if defined(__linux__)
     {
+        // backtrace() lazily loads libgcc on first use, which fails inside a signal handler; load it now.
+        void* preload[2];
+        backtrace(preload, 2);
+
         struct sigaction usr = {};
         usr.sa_handler = LinuxStackSignal;
         sigemptyset(&usr.sa_mask);
