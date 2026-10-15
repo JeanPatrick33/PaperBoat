@@ -13,6 +13,13 @@
 
 #include "port/os/OS.h"
 
+#if defined(__linux__)
+#include <csignal>
+#include <dlfcn.h>
+#include <execinfo.h>
+#include <pthread.h>
+#endif
+
 #if defined(_WIN32)
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
@@ -116,6 +123,48 @@ const std::string& ProjectSourceRoot() {
     }();
     return root;
 }
+
+#if defined(__linux__)
+// Linux has no way to suspend and walk another thread, so the watcher signals
+// it and the handler records its own backtrace.
+void* sLinuxFrames[48];
+std::atomic<int> sLinuxFrameCount { -1 };
+struct sigaction sOldAbortAction;
+
+void LinuxStackSignal(int) {
+    sLinuxFrameCount.store(backtrace(sLinuxFrames, 48), std::memory_order_release);
+}
+
+std::string FormatFrames(void* const* frames, int n) {
+    std::string out;
+    for (int i = 0; i < n; i++) {
+        Dl_info info = {};
+        if (dladdr(frames[i], &info) && info.dli_fname != nullptr) {
+            const char* slash = strrchr(info.dli_fname, '/');
+            const uintptr_t base = reinterpret_cast<uintptr_t>(info.dli_fbase);
+            out += fmt::format(
+                "  #{:02} {}+0x{:x}{}{}\n", i, slash != nullptr ? slash + 1 : info.dli_fname,
+                reinterpret_cast<uintptr_t>(frames[i]) - base, info.dli_sname != nullptr ? " " : "",
+                info.dli_sname != nullptr ? info.dli_sname : ""
+            );
+        } else {
+            out += fmt::format("  #{:02} {}\n", i, frames[i]);
+        }
+    }
+    return out;
+}
+
+void LinuxAbortHandler(int sig, siginfo_t*, void*) {
+    void* frames[48];
+    const int n = backtrace(frames, 48);
+    SPDLOG_CRITICAL("SIGABRT raised on thread {}\n{}", (unsigned long) pthread_self(), FormatFrames(frames, n));
+    if (auto logger = spdlog::default_logger()) {
+        logger->flush();
+    }
+    sigaction(SIGABRT, &sOldAbortAction, nullptr);
+    raise(sig);
+}
+#endif
 
 // Stack of the stalled thread, symbolized against the shipped PDB. Nothing else
 // in the report can be reconstructed after the fact: by the time a maintainer
@@ -224,6 +273,20 @@ std::string CaptureStalledStack(int threadIdx) {
         }
     }
     return out;
+#elif defined(__linux__)
+    const unsigned long tid = sBeats[threadIdx].tid.load(std::memory_order_relaxed);
+    if (tid == 0) {
+        return {};
+    }
+    sLinuxFrameCount.store(-1, std::memory_order_release);
+    if (pthread_kill((pthread_t) tid, SIGUSR2) != 0) {
+        return {};
+    }
+    for (int i = 0; i < 100 && sLinuxFrameCount.load(std::memory_order_acquire) < 0; i++) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+    const int n = sLinuxFrameCount.load(std::memory_order_acquire);
+    return n > 0 ? "Stack:\n" + FormatFrames(sLinuxFrames, n) : std::string();
 #else
     (void) threadIdx;
     return {};
@@ -456,6 +519,21 @@ extern "C" void ThreadWatchdog_Start(void) {
     if (sWatcherRun.exchange(true)) {
         return;
     }
+#if defined(__linux__)
+    {
+        struct sigaction usr = {};
+        usr.sa_handler = LinuxStackSignal;
+        sigemptyset(&usr.sa_mask);
+        sigaction(SIGUSR2, &usr, nullptr);
+
+        // Chained in front of the crash handler so an abort names the thread and stack that raised it.
+        struct sigaction abrt = {};
+        abrt.sa_sigaction = LinuxAbortHandler;
+        abrt.sa_flags = SA_SIGINFO;
+        sigemptyset(&abrt.sa_mask);
+        sigaction(SIGABRT, &abrt, &sOldAbortAction);
+    }
+#endif
     sWatcher = std::thread(Watcher);
 }
 
