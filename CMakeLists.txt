@@ -719,6 +719,13 @@ elseif(UNIX)
         endif()
     endif()
 
+    # The decomp game code writes outside its own stack objects in places (harmless on the original
+    # console and in MSVC/Clang builds). Distro GCC enables stack canaries and fortified libc calls,
+    # which abort the game the first time that happens (fio_load_game on the file select screen).
+    if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(${PROJECT_NAME} PRIVATE -fno-stack-protector -U_FORTIFY_SOURCE)
+    endif()
+
     target_compile_options(${PROJECT_NAME} PRIVATE
         -Wall -Wextra -Wno-error
         -Wno-unused-parameter
