@@ -99,6 +99,9 @@ jobs:
         run: |
           cmake --preset ninja-release -DPAPERBOAT_REGION=pal \
             -DCMAKE_C_COMPILER=gcc-14 -DCMAKE_CXX_COMPILER=g++-14 \
+            -DCMAKE_C_FLAGS="-fsanitize=address -fsanitize-recover=address -fno-omit-frame-pointer -g1 -static-libasan" \
+            -DCMAKE_CXX_FLAGS="-fsanitize=address -fsanitize-recover=address -fno-omit-frame-pointer -g1 -static-libasan" \
+            -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=address -static-libasan -rdynamic" \
             -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
           set +e
           cmake --build build/ninja-release --parallel $(nproc) -- -k 0 > build.log 2>&1
